@@ -1,6 +1,6 @@
 # Criação de um....
 
-#### Projeto de conclusão de curso do Grupo 5 do curso de Python Entra21 de 2022.
+#### <u>Projeto de conclusão de curso do Grupo 5 do curso de Python Entra21 de 2022</u>
 
 ### Desenvolvedores:
 - ### Diego Dalmolini;
