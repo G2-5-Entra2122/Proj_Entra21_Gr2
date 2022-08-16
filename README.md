@@ -5,11 +5,11 @@
 ### Desenvolvedores:
 - ### Diego Dalmolini
 - ### Felipe Sartorato
-- ### João Paulo Santini
+- ### João Paulo Correa Santini
 - ### José Goetten
-- ### Luiza Pollmann
+- ### Luiza Bicalho Pollmann
 - ### Mark Odebrecht
-- ### Nicolas Felsi
+- ### Nicolas Felipe da Silva
 - ### Raquel Schwartz
 
 ### Orientador: Adriano Machado
