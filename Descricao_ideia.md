@@ -2,7 +2,7 @@
   <img src="logo3.png" />
 </p>
 
-# História do usuário
+# Descrição da Idéia
 
 ## Inspiração
 
