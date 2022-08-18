@@ -14,4 +14,8 @@
 
 ### Orientador: Adriano Machado
 
+#### 18/08/2022
 
+- Início dos trabalhos, onde foram finalizadas a História do Usuário e a descrição da idéia;
+- Foi inciado também o esboço das entidades do banco de dados do projeto, onde cada participante trará sugestões de como será a estrutura de registro de anunciantes e candidatos;
+  
