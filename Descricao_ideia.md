@@ -12,7 +12,7 @@ Um portal que busca a simplificação e maior agilidade na visualização tanto 
 
 Nesse portal, é possível que as empresas anunciem suas vagas, identificando especificamente as tecnologias, e seus respectivos níveis de conhecimento desejados.
 
-Estas informações servirãocomo filtros automáticos na apresentação dessas vagas a candidatos que tenham o perfil desejado. 
+Estas informações servirão como filtros automáticos na apresentação dessas vagas a candidatos que tenham o perfil desejado. 
 
 Isso traz leads mais diretos e efetivos para o contratante que pode escolher, entre os mini-currículos recebidos dos candidatos interessados, os perfis que mais se encaixam em sua busca por profissionais.
 
