@@ -1,7 +1,12 @@
 # História do Usuário
 
-Tem-se a necessidade de uma plataforma de vagas exclusivas para a área de tecnologia, que concentre tanto anunciantes quanto candidatos.
 
-Essa plataforma deve ser transparente para ambos os lados, sem que um deles entre em viés de preferências, para que tanto o desafio (pelo lado do candidato), quanto  perfil técnico desejado (pelo lado do anunciante) sejam os principais atrativos mútuos.
+Programação de sistema que conectará profissionais às vagas em empresas de tecnologia. 
 
-Ela também deve ser monetizável, porém gratuita para os candidatos.
+Haverá o portal do profissional e o portal das oportunidades. A plataforma conectará as capacidades de forma prática e transparente, sendo um *Tinder* voltado à contratação de profissionais Tech.
+
+A aplicação será desenvolvida com Python, Django e PostgreSQL.
+
+
+
+
