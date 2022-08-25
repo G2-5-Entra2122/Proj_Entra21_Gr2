@@ -1,4 +1,4 @@
-# Criação de um....
+# Criação de um portal de busca de vagas e headhunting com dinâmica similar apps como o Tinder
 
 #### <u>Projeto de conclusão de curso do Grupo 2 do curso de Python Entra21 de 2022</u>
 
