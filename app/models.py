@@ -17,7 +17,7 @@ class EmpresaRamo(models.Model):
 
     class Meta:
         verbose_name = 'Ramo da empresa'
-        verbose_name_plural = 'Ramo da empresas'
+        verbose_name_plural = 'Ramo das empresas'
 
     def __str__(self):
         return self.ramo

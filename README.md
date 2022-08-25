@@ -37,6 +37,7 @@
 - Mark Odebrecht foi definido como o Project Owner;
 - Iniciada a criação da primeira entidade no Django (Empresas);
 - Criado o repositório de teste do projeto;
+- Entidade "Empresas" registrada e carregada no Django;
 - 
 
 
