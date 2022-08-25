@@ -32,7 +32,12 @@
 - Foi criado o ambiente Django no repositório;
 - Foi também feita conexão do repositório ao Linear[^1] para acompanhamento das tasks durante o projeto;
 
+#### 25/08/2022
 
+- Mark Odebrecht foi definido como o Project Owner;
+- Iniciada a criação da primeira entidade no Django (Empresas);
+- Criado o repositório de teste do projeto;
+- 
 
 
 
