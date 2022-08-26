@@ -7,7 +7,7 @@ class EmpresaTamanho(models.Model):
 
     class Meta:
         verbose_name = 'Tamanho da empresa'
-        verbose_name_plural = 'Tamanho da empresas'
+        verbose_name_plural = 'Tamanho das empresas'
 
     def __str__(self):
         return self.tamanho
@@ -17,7 +17,7 @@ class EmpresaRamo(models.Model):
 
     class Meta:
         verbose_name = 'Ramo da empresa'
-        verbose_name_plural = 'Ramo da empresas'
+        verbose_name_plural = 'Ramo das empresas'
 
     def __str__(self):
         return self.ramo
@@ -25,7 +25,7 @@ class EmpresaRamo(models.Model):
 
 class Empresas(models.Model):
     razao_social = models.CharField('Razão Social', max_length=100)
-    cnpj = models.CharField('CNPJ', max_length=18)
+    cnpj = models.CharField('CNPJ', max_length=14)
     endereco = models.CharField('Endereço', max_length=100)
     tamanho = models.ForeignKey('app.EmpresaTamanho', verbose_name='Tamanho', on_delete=models.CASCADE)
     ramo = models.ForeignKey('app.EmpresaRamo', verbose_name='Ramo da empresa', on_delete=models.CASCADE)
