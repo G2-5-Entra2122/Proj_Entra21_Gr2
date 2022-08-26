@@ -44,7 +44,7 @@
 - Unificação das bases de dados para todos os usuários na nuvem;
 - foi feita a criação de banco de dados para o projeto e testes de criação de tabelas;
 
-
+- todos os integrantes do grupo psossuem acesso ao DB na nuvem;
 
 
 Referências:
