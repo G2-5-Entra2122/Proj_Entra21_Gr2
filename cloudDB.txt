@@ -1,0 +1,7 @@
+host: 3.89.36.150
+
+usuario = pye2122g2
+
+senha = pye2122g2@25@ago
+
+database pye2122g2
