@@ -6,7 +6,7 @@ class EmpresaTamanho(models.Model):
 
     class Meta:
         verbose_name = 'Tamanho da empresa'
-        verbose_name_plural = 'Tamanho da empresas'
+        verbose_name_plural = 'Tamanho das empresas'
 
     def __str__(self):
         return self.tamanho
