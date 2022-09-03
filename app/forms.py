@@ -5,7 +5,7 @@ class CandidatoForm(forms.ModelForm):
     
     class Meta:
         model = Candidato
-        fields = (
+        fields = [
             'nome',
             'sobrenome',
             'cpf',
@@ -13,5 +13,6 @@ class CandidatoForm(forms.ModelForm):
             'data_nasc',
             'perfil_linkedin',
             'nivel',
-            'area',       
-        )
+            'area',
+            'habilidades'       
+        ]
