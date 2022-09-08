@@ -29,7 +29,7 @@ class AreaAdmin(admin.ModelAdmin):
 
 @admin.register(Habilidades)
 class HabilidadesAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'tempo')
+    list_display = ('habilidades', 'tempo')
 
 
 @admin.register(Candidato)

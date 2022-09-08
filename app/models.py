@@ -1,3 +1,4 @@
+
 from django.db import models
 
 
@@ -40,13 +41,13 @@ class Empresas(models.Model):
 class Pessoas(models.Model):
     nome = models.CharField('Nome', max_length=100)
     sobrenome = models.CharField('Sobrenome', max_length=100)
-    cpf = models.CharField('CPF', max_length=10)
+    cpf = models.CharField('CPF', max_length=11)
     endereco = models.CharField('Endereco', max_length=100)
     data_nasc = models.CharField('Data de Nascimento', max_length=10)
-
     class Meta:
         verbose_name = 'Pessoa'
         verbose_name_plural = 'Pessoas'
+        abstract = True
 
     def __str__(self):
         return self.nome
@@ -75,19 +76,27 @@ class Area(models.Model):
 
 
 class Habilidades(models.Model):
-    nome = models.CharField('Nome', max_length=100)
-    experiencia = [
-        ('1', '0-1 anos'),
-        ('2', '1-2 anos'),
-        ('3', '2-3 anos'),
-        ('4', '3-4 anos'),
-        ('5', '4-5 anos'),
-        ('6', '5+ anos')
+    nome = [
+        ('py', 'Python'),
+        ('js', 'JavaScript'),
+        ('ts', 'TypeScript'),
+        ('dj', 'Django'),
+        ('php', 'PHP')
     ]
-    tempo = models.CharField('Tempo', max_length=100, choices=experiencia, default='#')
+    habilidades = models.CharField('Habilidade', max_length=15, choices=nome)
+    
+    experiencia = [
+        ('0-1-anos', '0-1 anos'),
+        ('1-2-anos', '1-2 anos'),
+        ('2-3-anos', '2-3 anos'),
+        ('3-4-anos', '3-4 anos'),
+        ('4-5-anos', '4-5 anos'),
+        ('5+-anos', '5+ anos')
+    ]
+    tempo = models.CharField('Tempo', max_length=15, choices=experiencia, blank=False, default='Unspecified')
 
     class Meta:
-        ordering = ['nome']
+        ordering = ['habilidades']
         verbose_name = 'Habilidade'
         verbose_name_plural = 'Habilidades'
 

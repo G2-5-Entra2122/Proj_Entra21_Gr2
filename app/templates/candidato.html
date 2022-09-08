@@ -6,9 +6,15 @@
     <div>
         <form action="" method="post" >    
             {% csrf_token %}
-            <table>  
-                {{ form.as_table }}  
-            </table>       
+            <div class="candidatos">
+                {{ candidato_formset.as_table }}
+            </div>
+            <div class="habilidades">
+                {{ habilidades_formset.as_table }}
+            </div>
+            <div class="habilidades">
+                {{ habilidades_formset.as_table }}
+            </div>
             <input type="submit" value="Submit">
         </form>    
     </div>
