@@ -15,7 +15,8 @@
 }
 
 .navbar-nav {
-    margin: auto;
+    display: flex;
+    align-items: right
 }
 
 .navbar-brand {
@@ -228,3 +229,4 @@ ul.messages li {
     margin-top: 30px;
     text-align: center;
 }
+

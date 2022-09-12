@@ -1,30 +1,12 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
 
 
-@login_required
-def home(request):
+class HomeView(TemplateView):
+    template_name = 'index.html'
 
-    data = "Versao 0.01"
+class VagasView(TemplateView):
+    template_name = 'vagas.html'
 
-    return render(request, 'index.html', 
-        { 'dados' : data } 
-    )
+class EmpresasView(TemplateView):
+    template_name = 'empresas.html'
 
-@login_required
-def vagas(request):
-
-    data = "Versao 0.01 - Dashboard 1 (um) "
-
-    return render(request, 'vagas.html', 
-        { 'dados' : data } 
-    )    
-
-@login_required
-def empresas(request):
-
-    data = "Versao 0.01 - Dashboard 2 (dois)"
-
-    return render(request, 'empresas.html', 
-        { 'dados' : data } 
-    )        
