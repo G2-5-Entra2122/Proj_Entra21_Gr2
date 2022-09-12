@@ -64,8 +64,8 @@
 
 #### 09/09/2022
 
-- Trabalhamos em formulário para checklists;
-- Também trabalhamos para evoluir o login para a página, já que teremos dois tipos de login diferente.
+- Criação em formulário para checklists;
+- Também trabalhou-se para evoluir o login para a página, já que teremos dois tipos de login diferente.
 
 #### 12/09/2022
 
@@ -78,6 +78,8 @@
   - Cadastro Candidatos;
   - Cadastro de CV;
 - Criadas as diferentes branches no GitHub para as diferentes aplicações do projeto;
+- Criados os apps no projeto;
+
   
 
 
