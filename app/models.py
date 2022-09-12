@@ -36,7 +36,7 @@ class Empresas(models.Model):
 
     def __str__(self):
         return self.razao_social
-    
+    #telefone, senha, confirma senha, tamanho/porte da empresa; inscrição estadual (se tiver); tamanho/porte; campo para logo da empresa; campo para história da empresa
 
 class Pessoas(models.Model):
     nome = models.CharField('Nome', max_length=100)
@@ -51,6 +51,8 @@ class Pessoas(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    #e-mail, telefone, linkedin, github, facebook, instagram, apresente-se (campo para pessoa escrever sobre ela mesma) e botão salvar
 
 
 class Nivel(models.Model):
@@ -117,3 +119,5 @@ class Candidato(Pessoas):
 
     def __str__(self):
         return self.nome
+    #titulo do curriculo, local da vaga (presencial, hibrido ou remoto), objetivo (full/front/back), nivel de experiência (geral), habilidades (já esta aqui/ mais tempo de habilidade por linguagem), experiencias (inicio, fim, cargo, descrição), 
+    #o que você busca {[tipo de contrato pj/clt/estagio]; faixa salarial; porte da empresa (em discussao se coloca ou nao)}
