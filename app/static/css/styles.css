@@ -229,6 +229,7 @@ ul.messages li {
     text-align: center;
 }
 
+
 .candidatos {
     display: grid;
     grid-template-columns: 200px 200px;
@@ -266,3 +267,9 @@ select, input {
     gap: 6px;
     align-items: center;
 }
+
+.navbar-wagon-right {
+    display: flex;
+    align-items: right;
+}
+

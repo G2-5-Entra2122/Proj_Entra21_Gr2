@@ -44,7 +44,43 @@
 - Unificação das bases de dados para todos os usuários na nuvem;
 - foi feita a criação de banco de dados para o projeto e testes de criação de tabelas;
 
-- todos os integrantes do grupo psossuem acesso ao DB na nuvem;
+- todos os integrantes do grupo possuem acesso ao DB na nuvem;
+
+#### 29/08/2022
+
+- Daily Scrum realizado;
+- Apenas um dos integrantes não havia conectado ao DB e foi auxiliado pelos outros componentes do grupo;
+- Com exceção desse ponto, não há pendências ou dificuldades por parte dos integrantes;
+- Durante a manhã foi feta a revisão e atualização da matriz dem entidades do projeto;
+- Foram inciados ajustes e construções de classes no arquivo models, para adequar os campos do banco de dados às necessidades do projeto;
+  
+
+#### De 30/08/2022 a 08/09/2022
+
+- Foi revisado o planejamento de entidades e aplicativos do projeto para que fique mais organizado;
+- Foi criado o template about;
+- Adicionados o app accounts e login required;
+- Criados Forms de candidatos;
+
+#### 09/09/2022
+
+- Criação em formulário para checklists;
+- Também trabalhou-se para evoluir o login para a página, já que teremos dois tipos de login diferente.
+
+#### 12/09/2022
+
+- Foi finalizada a revisão da estrutura do projeto;
+- Serão 6 aplicações diferentes:
+  - Login;
+  - Cadastro empresas;
+  - Cadastro Vagas;
+  - Formas de pagamento;
+  - Cadastro Candidatos;
+  - Cadastro de CV;
+- Criadas as diferentes branches no GitHub para as diferentes aplicações do projeto;
+- Criados os apps no projeto;
+
+  
 
 
 Referências:
