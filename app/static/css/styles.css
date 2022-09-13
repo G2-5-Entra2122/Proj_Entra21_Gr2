@@ -15,8 +15,7 @@
 }
 
 .navbar-nav {
-    display: flex;
-    align-items: right
+    margin-left: auto;
 }
 
 .navbar-brand {
@@ -230,3 +229,7 @@ ul.messages li {
     text-align: center;
 }
 
+.navbar-wagon-right {
+    display: flex;
+    align-items: right;
+}

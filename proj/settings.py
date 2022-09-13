@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'app.apps.AppConfig',
     'crispy_forms',
+    'fontawesomefree',
 ]
 
 MIDDLEWARE = [
