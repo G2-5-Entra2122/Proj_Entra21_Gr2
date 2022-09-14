@@ -1,9 +1,10 @@
 from django.views.generic.edit import CreateView
 from .models import Candidatos, Curriculo, Habilidades
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-
-class CandidatosCreateView(CreateView):
+class CandidatosCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('login')
     model = Candidatos
     fields = ['nome', 'sobrenome', 'cpf', 'cep', 'data_nasc', 'github', 'linkedin', 'facebook', 'instagram', 'descricao']    
     template_name = 'candidatos/form.html'
@@ -15,7 +16,10 @@ class CandidatosCreateView(CreateView):
 
         context['titulo'] = 'Perfil'
         return context    
-class CurriculoCreateView(CreateView):
+
+
+class CurriculoCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('login')
     model = Curriculo
     fields = [
         'perfil',
@@ -34,7 +38,8 @@ class CurriculoCreateView(CreateView):
         return context
 
 
-class HabilidadesCreateView(CreateView):
+class HabilidadesCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('login')
     model = Habilidades
     fields = [
         'habilidade',

@@ -2,6 +2,7 @@ from django.views.generic.edit import CreateView
 from .forms import CandidatoForm, EmpresaForm
 from django.urls import reverse_lazy
 
+
 class CandidatoCreate(CreateView):
     template_name = 'registration/register.html'
     form_class = CandidatoForm
