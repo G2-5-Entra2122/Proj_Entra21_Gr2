@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'app.apps.AppConfig',
+    'candidatos.apps.CandidatosConfig',
     'crispy_forms',
     'fontawesomefree',
 ]
