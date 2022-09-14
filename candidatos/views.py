@@ -1,5 +1,6 @@
 from django.views.generic.edit import CreateView
 from .models import Candidatos, Curriculo, Habilidades
+from .forms import HabilidadesForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -40,11 +41,8 @@ class CurriculoCreateView(LoginRequiredMixin, CreateView):
 
 class HabilidadesCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
-    model = Habilidades
-    fields = [
-        'habilidade',
-        'experiencia',
-    ]
+    form_class = HabilidadesForm
+
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
 
