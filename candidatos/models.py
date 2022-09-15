@@ -82,6 +82,9 @@ class Candidatos(models.Model):
     instagram = models.CharField('Instagram', max_length=100, default='#')
     descricao = models.TextField('Descrição', max_length=200)
 
+    class Meta:
+        verbose_name = 'Candidato'
+        verbose_name_plural = 'Candidatos'
 
     def __str__(self):
         return f'{self.nome} {self.sobrenome}'
