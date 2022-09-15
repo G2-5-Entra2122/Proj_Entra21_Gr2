@@ -80,8 +80,20 @@
 - Criadas as diferentes branches no GitHub para as diferentes aplicações do projeto;
 - Criados os apps no projeto;
 
+### 15/09/2022
+
+- Definido o número de aplicativos a serem usados no projeto. São cinco ao todo:
+  - Candidatos (Dados de cadastro do candidato);
+  - CV's (Cadastro dos dados profissionais);
+  - Empresas (Dados de cadastro de empresas contratantes);
+  - Vagas (Cadastro de vagas);
+  - Tabela de preços;
+
+- foi também definido o template de front-end (Jobzilla)[^2];
+- 
   
 
 
 Referências:
 [^1]: https://linear.app/
+[^2]: 
