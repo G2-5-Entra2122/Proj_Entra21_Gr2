@@ -11,6 +11,7 @@ class EmpresaTamanho(models.Model):
     def __str__(self):
         return self.tamanho
         
+        
 class EmpresaRamo(models.Model):
     ramo = models.CharField('Ramo da empresa', max_length=100)
 
