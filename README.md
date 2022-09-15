@@ -89,11 +89,14 @@
   - Vagas (Cadastro de vagas);
   - Tabela de preços;
 
-- foi também definido o template de front-end (Jobzilla)[^2];
-- 
+- foi também definido o template de front-end (Jobzilla)[^2][^3];
+
+
+  
   
 
 
 Referências:
 [^1]: https://linear.app/
-[^2]: 
+[^2]: https://github.com/G2-5-Entra2122/Proj_Entra21_Gr2/blob/feature/pro-11-atualizar-readme/Entidades_Grupo2_E4H.pdf
+[^3]: https://github.com/G2-5-Entra2122/Proj_Entra21_Gr2/blob/feature/pro-11-atualizar-readme/Entidades_Grupo2_E4H.png
