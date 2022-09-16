@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Habilidades(models.Model):
     HABILIDADES_CHOICES = [
@@ -61,6 +61,7 @@ class Curriculo(models.Model):
     local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES)
     salario = models.IntegerField(verbose_name='Salário desejado')
     habilidades = models.ManyToManyField(Habilidades)
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Curriculo'
@@ -75,12 +76,13 @@ class Candidatos(models.Model):
     sobrenome = models.CharField(max_length=50)
     cpf = models.CharField(max_length=11)
     cep = models.CharField(max_length=50)
-    data_nasc = models.CharField('Data de Nascimento', max_length=10)
+    data_nasc = models.DateField('Data de Nascimento', null=True, blank=True)
     github = models.CharField('GitHub', max_length=100, default='#')
     linkedin = models.CharField('Linkedin', max_length=100, default='#')
     facebook = models.CharField('Facebook', max_length=100, default='#')
     instagram = models.CharField('Instagram', max_length=100, default='#')
     descricao = models.TextField('Descrição', max_length=200)
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Candidato'

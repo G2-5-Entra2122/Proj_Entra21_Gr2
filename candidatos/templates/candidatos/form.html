@@ -12,8 +12,15 @@
                 <p class="lead">
                     Preencha todos os campos obrigatórios.
                 </p>
-        
-                <form method="post">
+                {% if habilidades %}
+                {% for x in habilidades %}
+                <p>
+                    {{ x.habilidade }}
+                    {{ x.experiencia }}
+                </p>
+                {% endfor %}
+                {% endif %}
+                <form action="" method="post">
                     {% csrf_token %}
         
                     

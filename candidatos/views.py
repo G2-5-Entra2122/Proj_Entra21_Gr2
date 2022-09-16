@@ -1,8 +1,12 @@
-from django.views.generic.edit import CreateView, UpdateView
-from .models import Candidatos, Curriculo
-from .forms import HabilidadesForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.list import ListView
+
+from .models import Candidatos, Curriculo, Habilidades
+from .forms import HabilidadesForm, CandidatosForm
+
+
 
 
 ################## CREATEVIEW ##################
@@ -10,10 +14,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class CandidatosCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
-    model = Candidatos
-    fields = ['nome', 'sobrenome', 'cpf', 'cep', 'data_nasc', 'github', 'linkedin', 'facebook', 'instagram', 'descricao']    
+    form_class = CandidatosForm 
     template_name = 'candidatos/form.html' 
     success_url = reverse_lazy('index')
+
+    def form_valid(self, form):
+
+        form.instance.usuario = self.request.user
+
+        url = super().form_valid(form)
+        
+        return url
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -29,6 +40,15 @@ class CurriculoCreateView(LoginRequiredMixin, CreateView):
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
 
+    def form_valid(self, form):
+
+        form.instance.usuario = self.request.user
+
+        url = super().form_valid(form)
+        
+        return url
+
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
@@ -36,16 +56,27 @@ class CurriculoCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
+
 class HabilidadesCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     form_class = HabilidadesForm
     template_name = 'candidatos/form.html'
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('candidato/habilidades')
+    todas_habilidades = Habilidades.objects.all()
+    
+    def form_valid(self, form):
+
+        form.instance.usuario = self.request.user
+
+        url = super().form_valid(form)
+        
+        return url
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
         context['titulo'] = 'Habilidades'
+        context['habilidades'] = self.todas_habilidades
         return context
 
 
@@ -73,3 +104,22 @@ class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
     form_class = HabilidadesForm
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
+    todas_habilidades = Habilidades.objects.all()
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['habilidades'] = self.todas_habilidades
+        return context
+
+
+################## LISTVIEW ##################
+
+class CandidatoListView(ListView):
+    model = Candidatos
+    template_name = 'candidatos/listas/candidato.html'
+
+
+class CurrucloListView(ListView):
+    model = Curriculo
+    template_name = 'candidatos/listas/curriculo.html'
