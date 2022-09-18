@@ -9,7 +9,7 @@
                 {% if user.perfilcandidato.nome %}        
                 Bem vindo ao sistema {{ user.perfilcandidato.nome }} {{ user.perfilcandidato.sobrenome }}.
                 {% else %}
-                Voçê precisa completar seu cadastro. Acesse os <a href="{% url 'atualizar-dados' %}">meus dados</a> para atualiziar.
+                Você precisa completar seu cadastro. Acesse os <a href="{% url 'atualizar-dados' %}">meus dados</a> para atualizar.
                 {% endif %}
 
     </div>
