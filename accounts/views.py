@@ -4,7 +4,6 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 from .models import PerfilCandidato
-# from .forms import PerfilCandidatoForm
 
 class CandidatoCreate(CreateView):
     template_name = 'registration/register.html'
