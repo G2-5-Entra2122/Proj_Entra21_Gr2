@@ -1,7 +1,8 @@
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView
-from django.views.generic.list import ListView
+from django.shortcuts import get_object_or_404
+# from django.views.generic.list import ListView
 
 from .models import Candidatos, Curriculo, Habilidades
 from .forms import HabilidadesForm, CandidatosForm
@@ -19,7 +20,7 @@ class CandidatosCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('index')
 
     def form_valid(self, form):
-
+        # Define o atributo usuario, como o usuario que está logado.
         form.instance.usuario = self.request.user
 
         url = super().form_valid(form)
@@ -41,7 +42,7 @@ class CurriculoCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('index')
 
     def form_valid(self, form):
-
+        # Define o atributo usuario, como o usuario que está logado.
         form.instance.usuario = self.request.user
 
         url = super().form_valid(form)
@@ -65,7 +66,7 @@ class HabilidadesCreateView(LoginRequiredMixin, CreateView):
     todas_habilidades = Habilidades.objects.all()
     
     def form_valid(self, form):
-
+        # Define o atributo usuario, como o usuario que está logado.
         form.instance.usuario = self.request.user
 
         url = super().form_valid(form)
@@ -73,7 +74,7 @@ class HabilidadesCreateView(LoginRequiredMixin, CreateView):
         return url
 
     def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+        context = super().get_context_data(*args, **kwargs )
 
         context['titulo'] = 'Habilidades'
         context['habilidades'] = self.todas_habilidades
@@ -90,6 +91,12 @@ class CandidatosUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'candidatos/form.html' 
     success_url = reverse_lazy('index')
 
+    def get_object(self, queryset=None):
+        # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
+        self.object = get_object_or_404(Candidatos, pk=self.kwargs['pk'], usuario=self.user)
+        return self.object
+
+
 
 class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
@@ -97,6 +104,11 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['perfil', 'nivel', 'contrato', 'local', 'salario']
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
+
+    def get_object(self, queryset=None):
+        # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
+        self.object = get_object_or_404(Candidatos, pk=self.kwargs['pk'], usuario=self.user)
+        return self.object
 
 
 class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
@@ -106,20 +118,23 @@ class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('index')
     todas_habilidades = Habilidades.objects.all()
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+    def get_object(self, queryset=None):
+        # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
+        self.object = get_object_or_404(Candidatos, pk=self.kwargs['pk'], usuario=self.user)
+        return self.object
 
-        context['habilidades'] = self.todas_habilidades
-        return context
 
 
 ################## LISTVIEW ##################
 
-class CandidatoListView(ListView):
-    model = Candidatos
-    template_name = 'candidatos/listas/candidato.html'
+# class CandidatoListView(ListView):
+#     model = Candidatos
+#     template_name = 'candidatos/listas/candidato.html'
+    # def get_queryset(self):
+    #     self.object_list = Candidatos.objects.filter(usuario=self.request.user)
+    #     return self.objeto_list
 
 
-class CurrucloListView(ListView):
-    model = Curriculo
-    template_name = 'candidatos/listas/curriculo.html'
+# class CurriculoListView(ListView):
+#     model = Curriculo
+#     template_name = 'candidatos/listas/curriculo.html'

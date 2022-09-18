@@ -83,6 +83,7 @@ class Candidatos(models.Model):
     instagram = models.CharField('Instagram', max_length=100, default='#')
     descricao = models.TextField('Descrição', max_length=200)
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
+    curriculo = models.ForeignKey(Curriculo, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Candidato'
