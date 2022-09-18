@@ -4,34 +4,13 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.shortcuts import get_object_or_404
 # from django.views.generic.list import ListView
 
-from .models import Candidatos, Curriculo, Habilidades
-from .forms import HabilidadesForm, CandidatosForm
+from .models import Curriculo, Habilidades
+from .forms import HabilidadesForm
 
 
 
 
 ################## CREATEVIEW ##################
-
-
-class CandidatosCreateView(LoginRequiredMixin, CreateView):
-    login_url = reverse_lazy('login')
-    form_class = CandidatosForm 
-    template_name = 'candidatos/form.html' 
-    success_url = reverse_lazy('index')
-
-    def form_valid(self, form):
-        # Define o atributo usuario, como o usuario que está logado.
-        form.instance.usuario = self.request.user
-
-        url = super().form_valid(form)
-        
-        return url
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
-
-        context['titulo'] = 'Perfil'
-        return context    
 
 
 class CurriculoCreateView(LoginRequiredMixin, CreateView):
@@ -84,17 +63,7 @@ class HabilidadesCreateView(LoginRequiredMixin, CreateView):
 
 ################## UPDATEVIEW ##################
 
-class CandidatosUpdateView(LoginRequiredMixin, UpdateView):
-    login_url = reverse_lazy('login')
-    model = Candidatos
-    fields = ['nome', 'sobrenome', 'cpf', 'cep', 'data_nasc', 'github', 'linkedin', 'facebook', 'instagram', 'descricao']
-    template_name = 'candidatos/form.html' 
-    success_url = reverse_lazy('index')
 
-    def get_object(self, queryset=None):
-        # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
-        self.object = get_object_or_404(Candidatos, pk=self.kwargs['pk'], usuario=self.user)
-        return self.object
 
 
 
@@ -107,8 +76,13 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
-        self.object = get_object_or_404(Candidatos, pk=self.kwargs['pk'], usuario=self.user)
+        self.object = get_object_or_404(Curriculo, pk=self.kwargs['pk'], usuario=self.user)
         return self.object
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Meus curriculo'
 
 
 class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
@@ -120,7 +94,7 @@ class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
-        self.object = get_object_or_404(Candidatos, pk=self.kwargs['pk'], usuario=self.user)
+        self.object = get_object_or_404(Habilidades, pk=self.kwargs['pk'], usuario=self.user)
         return self.object
 
 
