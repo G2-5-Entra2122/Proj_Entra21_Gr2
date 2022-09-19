@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% load static %}
 
 {% block title %}{{ titulo }}{% endblock %}
 
@@ -10,12 +9,24 @@
         <div class="card  auth-card">
             <div class="card-body">
                 <h4 class="card-title text-center">{{ titulo }}</h4>
-        
-                <form method="post">
+                <p class="lead">
+                    Preencha todos os campos obrigatórios.
+                </p>
+                {% if habilidades %}
+                {% for x in habilidades %}
+                <p>
+                    {{ x.habilidade }}
+                    {{ x.experiencia }}
+                </p>
+                {% endfor %}
+                {% endif %}
+                <form action="" method="post">
                     {% csrf_token %}
         
-        
+                    
                     {{ form|crispy }}
+                    
+                    
 
                     <button type="submit" class="btn btn-light mt-3">Cadastrar</button>
                 </form>
@@ -25,16 +36,4 @@
         </div>
     </div>
 </div>
-{% endblock %}
-
-{% block scripts %}
-<script src="{% static 'js/jquery.mask.min.js' %}"></script>
-
-<script>
-    $(document).ready(function(){     
-        $("#id_cpf").mask("000.000.000-00");
-        $("#id_cep").mask("00000-000");
-        $("#id_data_nasc").mask("00/00/0000");
-    });
-</script>
 {% endblock %}

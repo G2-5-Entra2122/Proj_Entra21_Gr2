@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'app.apps.AppConfig',
+    'candidatos.apps.CandidatosConfig',
     'crispy_forms',
     'fontawesomefree',
 ]
@@ -90,6 +91,13 @@ WSGI_APPLICATION = 'proj.wsgi.application'
 
 # DATABASES = {
 #     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'pye2122g2',
+#         'USER': 'pye2122g2',
+#         'PASSWORD': 'pye2122g2@16@set*',
+#         'HOST': '3.89.36.150',
+#         'PORT': '3306',
+=======
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
@@ -130,9 +138,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-MEDIA_URL = 'media/'
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Candidato{% endblock %}
+
+{% block content %}
+    <div>
+        <form action="" method="post" >    
+            {% csrf_token %}
+            <div class="candidatos">
+                {{ candidato_formset.as_table }}
+            </div>
+            <div class="habilidades">
+                {{ habilidades_formset.as_table }}
+            </div>
+            <div class="habilidades">
+                {{ habilidades_formset.as_table }}
+            </div>
+            <input type="submit" value="Submit">
+        </form>    
+    </div>
+{% endblock %}
