@@ -102,6 +102,11 @@
 - A senha é: Grupo2entra2122&
 
 
+### 20/09/2022
+
+- Ajustes foram feitos nos aplicativos;
+- A criação de perfis fora do app accounts trouxe dificuldades que foram corrigidas trazendo todos os registros de canididatos e empresas para esse app;
+- Dessa forma, a estrutura de 
 
 
   
