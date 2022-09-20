@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import PerfilCandidato
+from .models import PerfilCandidatos
 
-admin.site.register(PerfilCandidato)
+admin.site.register(PerfilCandidatos)
