@@ -106,7 +106,11 @@
 
 - Ajustes foram feitos nos aplicativos;
 - A criação de perfis fora do app accounts trouxe dificuldades que foram corrigidas trazendo todos os registros de canididatos e empresas para esse app;
-- Dessa forma, a estrutura de 
+- Dessa forma, a estrutura de apps ficou como segue:
+  - accounts (receberá todos os dados de candidatos e empresas);
+  - candidatos (será o registro dos currículos dos candidatos);
+  - vagas (registro das vagas);
+  - tabela de preços (registro das informações e entidades relativas ao preço)
 
 
   
