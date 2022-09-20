@@ -1,0 +1,35 @@
+{% extends  'base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<h3>Lista de candidatos</h3>
+<hr>
+<div class="table-responsive"></div>
+    <table class="table table-striped">
+        <tr>
+            <th>Perfil</th>
+            <th>Nivel</th>
+            <th>Contrato</th>
+            <th>Local</th>
+            <th>Salário</th>
+        </tr>
+
+        {% for curriculo in object_list %}
+        <tr>
+            <th>{{ request.user }}</th>
+            <th>{{ curriculo.nivel }}</th>
+            <th>{{ curriculo.contrato }}</th>
+            <th>{{ curriculo.local }}</th>
+            <th>{{ curriculo.salario }}</th>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">Nenhum candidato registrado</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -229,7 +229,47 @@ ul.messages li {
     text-align: center;
 }
 
+
+.candidatos {
+    display: grid;
+    grid-template-columns: 200px 200px;
+}
+
+.habilidades {
+    display: grid;
+    grid-template-columns: 200px 200px 100px 1fr;
+}
+
+.habilidades > label:nth-of-type(2) {
+    text-align: center;
+}
+
+.habilidades label, .candidatos label {
+    margin: 0;
+}
+
+select, input {
+    height: 30px;
+}
+
+.habilidades > label, .candidatos > label{
+    font-weight: bold;
+    
+}
+
+.tempo-container {
+    display: flex;
+    gap: 10px;
+}
+
+.tempo-container label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
 .navbar-wagon-right {
     display: flex;
     align-items: right;
 }
+

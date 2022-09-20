@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 class Empresas(models.Model):
     fantasia = models.CharField('Nome Fantasia', max_length=100)
     razao_social = models.CharField('Razão Social', max_length=100)
@@ -32,10 +33,13 @@ class Empresas(models.Model):
     apresentacao = models.CharField('Apresentação', max_length=500)
     #logo = models.ImageField('Logo') limitar o tamanho da logo
 
+
     class Meta:
         verbose_name = 'Empresa'
         verbose_name_plural = 'Empresas'
 
+
     def _str_(self):
         return self.fantasia
         
+
