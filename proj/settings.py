@@ -97,7 +97,8 @@ WSGI_APPLICATION = 'proj.wsgi.application'
 #         'PASSWORD': 'pye2122g2@16@set*',
 #         'HOST': '3.89.36.150',
 #         'PORT': '3306',
-=======
+
+
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
