@@ -94,6 +94,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'pye2122g2',
+#         'USER': 'pye2122g2',
+#         'PASSWORD': 'pye2122g2@16@set*',
+#         'HOST': '3.89.36.150',
+#         'PORT': '3306',
+#     }
+# }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
