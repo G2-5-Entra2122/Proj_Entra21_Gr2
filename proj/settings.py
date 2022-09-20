@@ -98,7 +98,6 @@ WSGI_APPLICATION = 'proj.wsgi.application'
 #         'HOST': '3.89.36.150',
 #         'PORT': '3306',
 
-
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
