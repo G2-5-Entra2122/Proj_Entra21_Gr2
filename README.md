@@ -100,8 +100,8 @@
 - Aberta a conta no Heroku;
 - O endereço de email é o informado acima;
 - A senha é: Grupo2entra2122&
-- 
-- 
+
+
 
 
   
