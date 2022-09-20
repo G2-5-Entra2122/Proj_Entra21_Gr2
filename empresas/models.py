@@ -1,38 +1,45 @@
 from django.db import models
 
 
-class EmpresaTamanho(models.Model):
-    tamanho = models.CharField('Tamanho da Empresa', max_length=100)
-
-    class Meta:
-        verbose_name = 'Tamanho da empresa'
-        verbose_name_plural = 'Tamanho das empresas'
-
-    def __str__(self):
-        return self.tamanho
-        
-        
-class EmpresaRamo(models.Model):
-    ramo = models.CharField('Ramo da empresa', max_length=100)
-
-    class Meta:
-        verbose_name = 'Ramo da empresa'
-        verbose_name_plural = 'Ramo das empresas'
-
-    def __str__(self):
-        return self.ramo
-
 
 class Empresas(models.Model):
+    fantasia = models.CharField('Nome Fantasia', max_length=100)
     razao_social = models.CharField('Razão Social', max_length=100)
     cnpj = models.CharField('CNPJ', max_length=14)
+    ie = models.CharField('Inscrição Estadual', max_length=6)
     endereco = models.CharField('Endereço', max_length=100)
-    tamanho = models.ForeignKey('app.EmpresaTamanho', verbose_name='Tamanho', on_delete=models.CASCADE)
-    ramo = models.ForeignKey('app.EmpresaRamo', verbose_name='Ramo da empresa', on_delete=models.CASCADE)
+    
+    TAMANHO_CHOICES = (
+        ('pequena', 'Pequena'),
+        ('media', 'Média'),
+        ('grande', 'Grande'),
+    )
+
+    tamanho = models.CharField('Tamanho', max_length=7, choices= TAMANHO_CHOICES) 
+    
+    RAMO_CHOICES = (
+        ('tecnologia', 'Tecnologia'),
+        ('servicos', 'Serviços'),
+        ('financeiro', 'Financeiro'),
+        ('varejo', 'Varejo'),
+        ('atacado', 'Atacado'),
+        ('industria', 'Industria'),
+        ('comercio', 'Comércio')
+    )
+    ramo = models.CharField('Ramo', max_length=50, choices=RAMO_CHOICES)
+    cep = models.CharField('CEP', max_length=8,)
+    email = models.EmailField('Email', max_length=100)
+    telefone = models.IntegerField('Telefone', max_length=11)
+    apresentacao = models.CharField('Apresentação', max_length=500)
+    #logo = models.ImageField('Logo') limitar o tamanho da logo
+
 
     class Meta:
         verbose_name = 'Empresa'
         verbose_name_plural = 'Empresas'
 
-    def __str__(self):
-        return self.razao_social
+
+    def _str_(self):
+        return self.fantasia
+        
+
