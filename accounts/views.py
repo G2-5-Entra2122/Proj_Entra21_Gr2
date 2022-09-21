@@ -1,4 +1,5 @@
 from django.views.generic.edit import CreateView, UpdateView
+from django.contrib.auth.models import Group
 from .forms import CandidatoForm, EmpresaForm
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -12,12 +13,12 @@ class CandidatoCreate(CreateView):
 
     def form_valid(self, form):
 
-        # grupo = get_objetct_or_404(Group, name="Candidato")
+        grupo = get_object_or_404(Group, name="Candidato")
         
         url = super().form_valid(form)
         
-        #self.object.groups.add(grupo)
-        #self.object.save()
+        self.object.groups.add(grupo)
+        self.object.save()
 
         PerfilCandidatos.objects.create(usuario=self.object)
 
@@ -37,12 +38,12 @@ class EmpresaCreate(CreateView):
 
     def form_valid(self, form):
 
-        # grupo = get_objetct_or_404(Group, name="Empresas")
+        grupo = get_object_or_404(Group, name="Empresa")
         
         url = super().form_valid(form)
         
-        #self.object.groups.add(grupo)
-        #self.object.save()
+        self.object.groups.add(grupo)
+        self.object.save()
 
         PerfilEmpresas.objects.create(usuario=self.object)
 
