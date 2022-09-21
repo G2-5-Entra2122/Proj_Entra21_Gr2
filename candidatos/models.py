@@ -9,7 +9,7 @@ class Habilidades(models.Model):
         ('Django', 'Django'),
         ('PHP', 'PHP')
     ]
-    habilidade = models.CharField('Habilidade', max_length=15, choices=HABILIDADES_CHOICES)
+    habilidade = models.CharField('Habilidade', max_length=15, choices=HABILIDADES_CHOICES, null=True)
     
     EXPERIENCIA_CHOICES = [
         ('0-1-anos', '0-1 anos'),
@@ -19,7 +19,7 @@ class Habilidades(models.Model):
         ('4-5-anos', '4-5 anos'),
         ('5+-anos', '5+ anos')
     ]
-    experiencia = models.CharField('Tempo de experiência', max_length=15, choices=EXPERIENCIA_CHOICES, blank=False, default='Unspecified')
+    experiencia = models.CharField('Tempo de experiência', max_length=15, choices=EXPERIENCIA_CHOICES, blank=False, default='Unspecified', null=True)
 
     class Meta:
         verbose_name = 'Habilidade'
@@ -60,7 +60,7 @@ class Curriculo(models.Model):
     )
     local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES, null=True)
     salario = models.IntegerField(verbose_name='Salário desejado', null=True)
-    # habilidades = models.ManyToManyField(Habilidades)
+    habilidades = models.ManyToManyField(Habilidades)
     usuario = models.OneToOneField(User, on_delete=models.PROTECT)
 
     class Meta:
