@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, CreateView
 from django.shortcuts import get_object_or_404
 # from django.views.generic.list import ListView
 
@@ -37,33 +37,31 @@ from .forms import HabilidadesForm
 
 
 
-# class HabilidadesCreateView(LoginRequiredMixin, CreateView):
-#     login_url = reverse_lazy('login')
-#     form_class = HabilidadesForm
-#     template_name = 'candidatos/form.html'
-#     success_url = reverse_lazy('candidato/habilidades')
-#     todas_habilidades = Habilidades.objects.all()
+class HabilidadesCreateView(LoginRequiredMixin, CreateView):
+    login_url = reverse_lazy('login')
+    form_class = HabilidadesForm
+    template_name = 'candidatos/form.html'
+    success_url = reverse_lazy('candidato-habilidades')
+    todas_habilidades = Habilidades.objects.all()
     
-#     def form_valid(self, form):
-#         # Define o atributo usuario, como o usuario que está logado.
-#         form.instance.usuario = self.request.user
+    def form_valid(self, form):
+        # Define o atributo usuario, como o usuario que está logado.
+        form.instance.usuario = self.request.user
 
-#         url = super().form_valid(form)
+        url = super().form_valid(form)
         
-#         return url
+        return url
 
-#     def get_context_data(self, *args, **kwargs):
-#         context = super().get_context_data(*args, **kwargs )
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs )
 
-#         context['titulo'] = 'Habilidades'
-#         context['habilidades'] = self.todas_habilidades
-#         return context
+        context['titulo'] = 'Habilidades'
+        context['habilidades'] = self.todas_habilidades
+        return context
 
 
 
 ################## UPDATEVIEW ##################
-
-
 
 
 
@@ -96,9 +94,16 @@ class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
-        self.object = get_object_or_404(Habilidades, pk=self.kwargs['pk'], usuario=self.user)
+        self.object = get_object_or_404(Habilidades, usuario=self.user)
+        
         return self.object
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs )
+
+        context['titulo'] = 'Habilidades'
+        context['habilidades'] = self.todas_habilidades
+        return context
 
 
 ################## LISTVIEW ##################
