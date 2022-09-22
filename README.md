@@ -114,7 +114,15 @@
   - vagas (registro das vagas);
 
 
-  
+   accounts/admin.py                             |  4 +--
+ accounts/migrations/0001_initial.py           | 25 +++++++++++--
+ accounts/models.py                            | 44 ++++++++++++++++++++++-
+ accounts/templates/registration/register.html | 15 +++++++-
+ accounts/urls.py                              |  5 +--
+ accounts/views.py                             | 40 ++++++++++++++++++---
+ app/admin.py                                  | 16 ---------
+ app/migrations/0001_initial.py                | 52 ---------------------------
+ proj/settings.py                              | 35 +++++++++---------
   
 
 
