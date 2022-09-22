@@ -86,12 +86,13 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
         return context
 
 
-class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
+class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):    
     login_url = reverse_lazy('login')
     form_class = HabilidadesForm
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
     todas_habilidades = Habilidades.objects.all()
+    #todas_habilidades = Habilidades.objects.filter(usuario=self.request.user.username).order_by('campoxxx')
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
