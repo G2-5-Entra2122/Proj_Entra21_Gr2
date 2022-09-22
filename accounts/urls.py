@@ -1,6 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import CandidatoCreate, EmpresaCreate, PerfilEmpresaUpdateView, PerfilCandidatoUpdateView
+from .views import CandidatoCreate, EmpresaCreate, PerfilEmpresaUpdateView, PerfilCandidatoUpdateView, change_password
+from accounts import views
 
 urlpatterns = [
     # path('register/', views.SignUp.as_view(), name='register'),
@@ -12,5 +13,6 @@ urlpatterns = [
     path('registrar/empresa', EmpresaCreate.as_view(), name='registrar-empresa'),
     path('atualizar-dados/candidato/', PerfilCandidatoUpdateView.as_view(), name='atualizar-dados'),
     path('atualizar-dados/empresa/', PerfilEmpresaUpdateView.as_view(), name='atualizar-dados-empresas'),
+    path('alterar-senha', views.change_password(), name='change-password') 
 
 ]
