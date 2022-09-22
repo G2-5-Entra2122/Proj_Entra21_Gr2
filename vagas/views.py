@@ -3,7 +3,7 @@ from models import Vaga
 from forms import VagasForm
 from django.http import HttpResponseRedirect
 
-
+# login required a ser observado na review
 def vaga_add(request):
     if request.method=='POST':
         form=VagasForm(request.POST)
