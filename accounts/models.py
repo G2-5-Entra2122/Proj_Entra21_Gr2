@@ -14,6 +14,13 @@ class PerfilCandidatos(models.Model):
     descricao = models.TextField('Descrição', max_length=200, null=True)
     usuario = models.OneToOneField(User, on_delete=models.PROTECT)
 
+    class Meta:
+        verbose_name = 'Candidato'
+        verbose_name_plural = 'Candidatos'
+
+
+    def _str_(self):
+        return self.nome
 
 class PerfilEmpresas(models.Model):
     fantasia = models.CharField('Nome Fantasia', max_length=100, null=True)
