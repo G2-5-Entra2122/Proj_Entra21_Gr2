@@ -114,15 +114,19 @@
   - vagas (registro das vagas);
 
 
-   accounts/admin.py                             |  4 +--
- accounts/migrations/0001_initial.py           | 25 +++++++++++--
- accounts/models.py                            | 44 ++++++++++++++++++++++-
- accounts/templates/registration/register.html | 15 +++++++-
- accounts/urls.py                              |  5 +--
- accounts/views.py                             | 40 ++++++++++++++++++---
- app/admin.py                                  | 16 ---------
- app/migrations/0001_initial.py                | 52 ---------------------------
- proj/settings.py                              | 35 +++++++++---------
+### 22/09/2022
+
+- Foram criados nomes de empresas e candidatos fictícios para popular o banco de dados;
+- Montado o Forms e Views do app Vagas;
+- Feita uma função de mudança de senha no app accounts;
+- No front-end já foi criado um repositório e um novo projeto Django para ajustes;
+- Trabalhando no momento na página inicial (index) e na página Vagas;
+- No back-end o trabalho está concentrado no form Habilidades, buscando um loop para especificar as habilidades por candidato;
+- Será criada uma branch "Developer" de onde serão criadas todas as próximas branches;
+- A branch Developer será administrada unicamente pelo PO, que também será responsável pelos merges com a Main;
+- O arquivo README será atualizado diretamente nessa branch;
+
+
   
 
 
