@@ -80,8 +80,57 @@
 - Criadas as diferentes branches no GitHub para as diferentes aplicações do projeto;
 - Criados os apps no projeto;
 
+### 15/09/2022
+
+- Definido o número de aplicativos a serem usados no projeto. São cinco ao todo:
+  - Candidatos (Dados de cadastro do candidato);
+  - CV's (Cadastro dos dados profissionais);
+  - Empresas (Dados de cadastro de empresas contratantes);
+  - Vagas (Cadastro de vagas);
+  - Tabela de preços;
+
+- foi também definido o template de front-end (Jobzilla)[^2][^3];
+
+### 16/09/2022
+
+- Criada a conta de email para o grupo de trabalho;
+- Esse endereço será usado para cadastro no Heroku, onde o prjeto será publicado;
+- Endereço: grupo2pythonentra21@gmail.com;
+- Senha: Grupo2entra21;
+- Aberta a conta no Heroku;
+- O endereço de email é o informado acima;
+- A senha é: Grupo2entra2122&
+
+
+### 20/09/2022
+
+- Ajustes foram feitos nos aplicativos;
+- A criação de perfis fora do app accounts trouxe dificuldades que foram corrigidas trazendo todos os registros de canididatos e empresas para esse app;
+- Dessa forma, a estrutura de apps ficou como segue:
+  - accounts (receberá todos os dados de candidatos e empresas);
+  - app (terá todos os templates e arquivos estáticos do projeto);
+  - candidatos (será o registro dos currículos dos candidatos);
+  - tabela de preços (registro das informações e entidades relativas ao preço);
+  - vagas (registro das vagas);
+
+
+### 22/09/2022
+
+- Foram criados nomes de empresas e candidatos fictícios para popular o banco de dados;
+- Montado o Forms e Views do app Vagas;
+- Feita uma função de mudança de senha no app accounts;
+- No front-end já foi criado um repositório e um novo projeto Django para ajustes;
+- Trabalhando no momento na página inicial (index) e na página Vagas;
+- No back-end o trabalho está concentrado no form Habilidades, buscando um loop para especificar as habilidades por candidato;
+- Será criada uma branch "Developer" de onde serão criadas todas as próximas branches;
+- A branch Developer será administrada unicamente pelo PO, que também será responsável pelos merges com a Main;
+- O arquivo README será atualizado diretamente nessa branch;
+
+
   
 
 
 Referências:
 [^1]: https://linear.app/
+[^2]: https://github.com/G2-5-Entra2122/Proj_Entra21_Gr2/blob/feature/pro-11-atualizar-readme/Entidades_Grupo2_E4H.pdf
+[^3]: https://github.com/G2-5-Entra2122/Proj_Entra21_Gr2/blob/feature/pro-11-atualizar-readme/Entidades_Grupo2_E4H.png
