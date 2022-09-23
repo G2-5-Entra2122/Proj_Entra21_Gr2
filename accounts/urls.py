@@ -13,6 +13,6 @@ urlpatterns = [
     path('registrar/empresa', EmpresaCreate.as_view(), name='registrar-empresa'),
     path('atualizar-dados/candidato/', PerfilCandidatoUpdateView.as_view(), name='atualizar-dados'),
     path('atualizar-dados/empresa/', PerfilEmpresaUpdateView.as_view(), name='atualizar-dados-empresas'),
-    path('alterar-senha', views.change_password(), name='change-password') 
+    path('alterar-senha', views.change_password, name='change-password') 
 
 ]

@@ -103,11 +103,11 @@ def change_password(request):
             user = form.save()
             update_session_auth_hash(request,user)
             messages.success(request, 'Você alterou sua senha com sucesso!')
-            return redirect ('change-passaword')
+            return redirect ('index')
         else:
             messages.error(request, 'Tente novamente!')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'accounts/change-password.html', {
+    return render(request, 'registration/changepassword.html', {
         'form' : form
     })
