@@ -126,7 +126,9 @@
 - A branch Developer será administrada unicamente pelo PO, que também será responsável pelos merges com a Main;
 - O arquivo README será atualizado diretamente nessa branch;
 
+### 23/09/2022
 
+- 
   
 
 
