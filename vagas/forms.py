@@ -1,5 +1,5 @@
 from django import forms
-from models import Vaga
+from .models import Vaga
 
 class VagasForm(forms.ModelForm):
 
