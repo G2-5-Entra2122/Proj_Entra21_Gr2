@@ -1,13 +1,14 @@
 from django.shortcuts import render
 from .models import Vaga
 from .forms import VagasForm
-from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
+from braces.views import GroupRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
-class VagaCreateView(LoginRequiredMixin, CreateView):
+class VagaCreateView(LoginRequiredMixin,GroupRequiredMixin,CreateView):
+    group_required= u'Empresa'
     login_url=reverse_lazy('login')
     model=Vaga
     fields=[
@@ -43,7 +44,8 @@ class VagaCreateView(LoginRequiredMixin, CreateView):
         # context['vagas']=self.vagas_obj
         return context
 
-class VagaUpdateView(LoginRequiredMixin,UpdateView):
+class VagaUpdateView(LoginRequiredMixin,GroupRequiredMixin,UpdateView):
+    group_required= u'Empresa'
     login_url=reverse_lazy('login')
     form_class=VagasForm
     template_name='vagas/form.html'
@@ -53,22 +55,3 @@ class VagaUpdateView(LoginRequiredMixin,UpdateView):
     def get_object(self, queryset: None):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
-
-# def vaga_add(request):
-#     if request.method=='POST':
-#         form=VagasForm(request.POST)
-#         if form.is_valid():
-#             nova_vaga=form.save()
-#             nova_vaga.save()
-#             return HttpResponseRedirect('/vagas.html') # Nome provisório. A ser visto e alterado.
-#     else:
-#         form=VagasForm()
-
-#     vagas=Vaga.objects.all()
-
-#     return render(request,'vagas/add.html',
-#     {
-#         'form':form,
-#         'vagas':vagas
-#     }
-#     )
