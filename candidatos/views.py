@@ -43,10 +43,13 @@ class HabilidadesCreateView(LoginRequiredMixin, CreateView):
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('candidato-habilidades')
     todas_habilidades = Habilidades.objects.all()
+    # todas_habilidades = Habilidades.objects.filter(usuario=self.request.user.username)
     
+
     def form_valid(self, form):
         # Define o atributo usuario, como o usuario que está logado.
-        form.instance.usuario = self.request.user
+        form.instance.usuario = self.request.user.username
+        
 
         url = super().form_valid(form)
         
@@ -89,8 +92,8 @@ class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
     form_class = HabilidadesForm
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
-    todas_habilidades = Habilidades.objects.all()
-    #todas_habilidades = Habilidades.objects.filter(usuario=self.request.user.username).order_by('campoxxx')
+    #todas_habilidades = Habilidades.objects.all()
+    
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
