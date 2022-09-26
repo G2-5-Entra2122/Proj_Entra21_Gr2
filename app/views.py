@@ -18,7 +18,7 @@ class EmpresasView(TemplateView):
     template_name = 'empresas.html'
 
 class SobreView(TemplateView):
-    template_name = 'sobre.html'
+    template_name = 'about.html'
 
 
 # @login_required
