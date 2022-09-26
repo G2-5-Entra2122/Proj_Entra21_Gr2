@@ -2,7 +2,12 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.models import Group
 from .forms import CandidatoForm, EmpresaForm
 from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.decorators import login_required
+
 
 from .models import PerfilCandidatos, PerfilEmpresas
 from candidatos.models import Curriculo
@@ -92,3 +97,21 @@ class PerfilEmpresaUpdateView(UpdateView):
 
         context['titulo'] = 'Dados da empresa'
         return context
+
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request,user)
+            messages.success(request, 'Você alterou sua senha com sucesso!')
+            return redirect ('index')
+        else:
+            messages.error(request, 'Tente novamente!')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'registration/changepassword.html', {
+        'form' : form
+    })

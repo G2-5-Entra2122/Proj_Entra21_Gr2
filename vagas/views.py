@@ -6,6 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
+
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
@@ -54,3 +55,4 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     def get_object(self, queryset: None):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
+
