@@ -1,7 +1,7 @@
 from django import forms
-from models import Vaga
+from .models import Vaga
 
-# form
+
 class VagasForm(forms.ModelForm):
 
     class Meta:

@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from .models import PerfilCandidatos, PerfilEmpresas
+from candidatos.models import Curriculo
 
 class CandidatoCreate(CreateView):
     template_name = 'registration/register.html'
@@ -26,6 +27,7 @@ class CandidatoCreate(CreateView):
         self.object.save()
 
         PerfilCandidatos.objects.create(usuario=self.object)
+        Curriculo.objects.create(usuario=self.object)
 
         return url
 
