@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 from .models import PerfilCandidatos, PerfilEmpresas
+from candidatos.models import Curriculo
 
 class CandidatoCreate(CreateView):
     template_name = 'registration/register.html'
@@ -21,6 +22,7 @@ class CandidatoCreate(CreateView):
         self.object.save()
 
         PerfilCandidatos.objects.create(usuario=self.object)
+        Curriculo.objects.create(usuario=self.object)
 
         return url
 

@@ -1,6 +1,6 @@
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import UpdateView, CreateView
 from django.shortcuts import get_object_or_404
 # from django.views.generic.list import ListView
 
@@ -13,27 +13,27 @@ from .forms import HabilidadesForm
 ################## CREATEVIEW ##################
 
 
-class CurriculoCreateView(LoginRequiredMixin, CreateView):
-    login_url = reverse_lazy('login')
-    model = Curriculo
-    fields = ['perfil', 'nivel', 'contrato', 'local', 'salario']
-    template_name = 'candidatos/form.html'
-    success_url = reverse_lazy('index')
+# class CurriculoCreateView(LoginRequiredMixin, CreateView):
+#     login_url = reverse_lazy('login')
+#     model = Curriculo
+#     fields = ['perfil', 'nivel', 'contrato', 'local', 'salario']
+#     template_name = 'candidatos/form.html'
+#     success_url = reverse_lazy('index')
 
-    def form_valid(self, form):
-        # Define o atributo usuario, como o usuario que está logado.
-        form.instance.usuario = self.request.user
+#     def form_valid(self, form):
+#         # Define o atributo usuario, como o usuario que está logado.
+#         form.instance.usuario = self.request.user
 
-        url = super().form_valid(form)
+#         url = super().form_valid(form)
         
-        return url
+#         return url
 
 
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+#     def get_context_data(self, *args, **kwargs):
+#         context = super().get_context_data(*args, **kwargs)
 
-        context['titulo'] = 'Curriculo'
-        return context
+#         context['titulo'] = 'Curriculo'
+#         return context
 
 
 
@@ -41,12 +41,15 @@ class HabilidadesCreateView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('login')
     form_class = HabilidadesForm
     template_name = 'candidatos/form.html'
-    success_url = reverse_lazy('candidato/habilidades')
+    success_url = reverse_lazy('candidato-habilidades')
     todas_habilidades = Habilidades.objects.all()
+    # todas_habilidades = Habilidades.objects.filter(usuario=self.request.user.username)
     
+
     def form_valid(self, form):
         # Define o atributo usuario, como o usuario que está logado.
-        form.instance.usuario = self.request.user
+        form.instance.usuario = self.request.user.username
+        
 
         url = super().form_valid(form)
         
@@ -65,8 +68,6 @@ class HabilidadesCreateView(LoginRequiredMixin, CreateView):
 
 
 
-
-
 class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
     model = Curriculo
@@ -76,27 +77,36 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
-        self.object = get_object_or_404(Curriculo, pk=self.kwargs['pk'], usuario=self.user)
+        self.object = get_object_or_404(Curriculo, usuario=self.request.user)
         return self.object
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
-        context['titulo'] = 'Meus curriculo'
+        context['titulo'] = 'Meu curriculo'
+        return context
 
 
-class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):
+class HabilidadesUpdateView(LoginRequiredMixin, UpdateView):    
     login_url = reverse_lazy('login')
     form_class = HabilidadesForm
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
-    todas_habilidades = Habilidades.objects.all()
+    #todas_habilidades = Habilidades.objects.all()
+    
 
     def get_object(self, queryset=None):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
-        self.object = get_object_or_404(Habilidades, pk=self.kwargs['pk'], usuario=self.user)
+        self.object = get_object_or_404(Habilidades, usuario=self.user)
+        
         return self.object
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs )
+
+        context['titulo'] = 'Habilidades'
+        context['habilidades'] = self.todas_habilidades
+        return context
 
 
 ################## LISTVIEW ##################

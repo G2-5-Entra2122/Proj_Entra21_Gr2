@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'candidatos.apps.CandidatosConfig',
     'crispy_forms',
     'fontawesomefree',
+    'vagas.apps.VagasConfig',
 ]
 
 MIDDLEWARE = [

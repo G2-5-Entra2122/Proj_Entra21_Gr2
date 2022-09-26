@@ -7,6 +7,19 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 <div class="row">
+    
+    {% if request.user.is_authenticated %}
+    <div class="col-md-8 mx-auto">
+        <h3>Ação não permitida</h3>
+        <hr>
+        <p class="lead">
+            <strong>
+                Houve algum problema para processar a alçao dejesada ou você não tem permissão para isso.
+            </strong>
+        </p>
+    </div>
+    {% else %}
+
     <div class="col-md-4 offset-md-4">
         <div class="card  auth-card">
             <div class="card-body">
@@ -26,5 +39,6 @@
             </div>
         </div>
     </div>
+    {% endif %}
 </div>
 {% endblock %}
