@@ -21,6 +21,7 @@ class SobreView(TemplateView):
     template_name = 'about.html'
 
 
+
 # @login_required
 # def candidato(request):
 #     CandidatoFormSet = formset_factory(CandidatoForm)
