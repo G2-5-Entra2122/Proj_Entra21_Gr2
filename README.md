@@ -125,7 +125,8 @@
 - Será criada uma branch "Developer" de onde serão criadas todas as próximas branches;
 - A branch Developer será administrada unicamente pelo PO, que também será responsável pelos merges com a Main;
 - O arquivo README será atualizado diretamente nessa branch;
-
+- Continuando o trabalho do form Candidatos;
+- 
 
   
 
