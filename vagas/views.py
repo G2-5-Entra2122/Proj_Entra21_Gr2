@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import Vaga
 from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -7,7 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
-class VagaCreateView(LoginRequiredMixin,GroupRequiredMixin,CreateView):
+class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
     model=Vaga
@@ -44,7 +43,7 @@ class VagaCreateView(LoginRequiredMixin,GroupRequiredMixin,CreateView):
         # context['vagas']=self.vagas_obj
         return context
 
-class VagaUpdateView(LoginRequiredMixin,GroupRequiredMixin,UpdateView):
+class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
     form_class=VagasForm
