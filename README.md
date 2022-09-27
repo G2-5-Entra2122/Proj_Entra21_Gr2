@@ -125,12 +125,10 @@
 - Será criada uma branch "Developer" de onde serão criadas todas as próximas branches;
 - A branch Developer será administrada unicamente pelo PO, que também será responsável pelos merges com a Main;
 - O arquivo README será atualizado diretamente nessa branch;
-<<<<<<< HEAD
 - Continuando o trabalho do form Candidatos;
 
 ### 27/09/2022
 
-- 
 - Demandas:
   - Criação de listagem de todas as vagas criadas no DB para apresentar na página inicial;
   - List view que apresente as vagas próprias de cada empresa;
@@ -143,15 +141,7 @@
 - Também será analisada uma drop-window que não tem funcionado corretamente;
 - Será montada a seção sobre, referente aos criadores do projeto;
 - No back-end será buscada a validação de e-mails pelos usuários;
-- 
 
-
-=======
-
-### 23/09/2022
-
-- 
->>>>>>> feature/pro-11-atualizar-readme
   
 
 
