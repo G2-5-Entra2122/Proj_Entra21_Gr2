@@ -126,7 +126,16 @@
 - A branch Developer será administrada unicamente pelo PO, que também será responsável pelos merges com a Main;
 - O arquivo README será atualizado diretamente nessa branch;
 - Continuando o trabalho do form Candidatos;
+
+### 27/09/2022
+
 - 
+- Demandas:
+  - Criação de listagem de todas as vagas criadas no DB para apresentar na página inicial;
+  - List view que apresente as vagas próprias de cada empresa;
+  - Limpar a árvore git do projeto;
+  - Delete view, para deletar as vagas que devem ser descartadas;
+  - Desenvolvimento da página de vagas com filtros e 
 
   
 
