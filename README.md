@@ -135,7 +135,8 @@
   - List view que apresente as vagas próprias de cada empresa;
   - Limpar a árvore git do projeto;
   - Delete view, para deletar as vagas que devem ser descartadas;
-  - Desenvolvimento da página de vagas com filtros e 
+  - Desenvolvimento da página de vagas com filtro;
+  - 
 
   
 
