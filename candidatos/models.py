@@ -9,7 +9,7 @@ class Habilidades(models.Model):
         ('Django', 'Django'),
         ('PHP', 'PHP')
     ]
-    habilidade = models.CharField('Habilidade', max_length=15, choices=HABILIDADES_CHOICES)
+    habilidade = models.CharField('Habilidade', max_length=15, choices=HABILIDADES_CHOICES, null=True)
     
     EXPERIENCIA_CHOICES = [
         ('0-1-anos', '0-1 anos'),
@@ -19,7 +19,7 @@ class Habilidades(models.Model):
         ('4-5-anos', '4-5 anos'),
         ('5+-anos', '5+ anos')
     ]
-    experiencia = models.CharField('Tempo de experiência', max_length=15, choices=EXPERIENCIA_CHOICES, blank=False, default='Unspecified')
+    experiencia = models.CharField('Tempo de experiência', max_length=15, choices=EXPERIENCIA_CHOICES, blank=False, default='Unspecified', null=True)
 
     class Meta:
         verbose_name = 'Habilidade'
@@ -37,31 +37,31 @@ class Curriculo(models.Model):
         ('back_end', 'Back-End'),
         ('mobile', 'Mobile'),
     )
-    perfil = models.CharField('Área', max_length=10, choices=PERFIL_CHOICES)    
+    perfil = models.CharField('Área', max_length=10, choices=PERFIL_CHOICES, null=True)    
     
     NIVEL_CHOICES = (
         ('senior', 'Sênior'),
         ('pleno', 'Pleno'),
         ('junior', 'Junior'),
         )
-    nivel = models.CharField('Nível', max_length=6, choices=NIVEL_CHOICES)
+    nivel = models.CharField('Nível', max_length=6, choices=NIVEL_CHOICES, null=True)
     
     CONTRATO_CHOICES = (
         ('estagio', 'Estágio'),
         ('pj', 'PJ'),
         ('clt', 'CLT'),
     )
-    contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES)
+    contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
 
     LOCAL_CHOICES = (
         ('presencial', 'Presencial'),
         ('hibrido', 'Híbrido'),
         ('remoto', 'Remoto'),
     )
-    local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES)
-    salario = models.IntegerField(verbose_name='Salário desejado')
+    local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES, null=True)
+    salario = models.IntegerField(verbose_name='Salário desejado', null=True)
     habilidades = models.ManyToManyField(Habilidades)
-    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
+    usuario = models.OneToOneField(User, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Curriculo'
