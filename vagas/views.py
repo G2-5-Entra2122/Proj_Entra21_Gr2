@@ -3,6 +3,7 @@ from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
@@ -55,4 +56,25 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     def get_object(self, queryset: None):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
+
+class VagaListView(ListView):
+    model = Vaga
+    fields=[
+            'nome',
+            'nivel',
+            'descricao',
+            'tipo_contrato',
+            'local',
+            'outras_reg',
+            'requisitos',
+            'habil_obr',
+            'salmin',
+            'salmax',
+            'beneficios'
+        ]
+    paginate_by: 10
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 

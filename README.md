@@ -127,6 +127,14 @@
 - O arquivo README será atualizado diretamente nessa branch;
 - Continuando o trabalho do form Candidatos;
 
+### 26/09/2022
+- Front-end finalizará a página inicial da página web e revisará as cores de acordo com nova logo desenvolvida;
+- Também será analisada uma drop-window que não tem funcionado corretamente;
+- Será montada a seção sobre, referente aos criadores do projeto;
+- No back-end será buscada a validação de e-mails pelos usuários;
+
+
+
 ### 27/09/2022
 
 - Demandas:
@@ -135,13 +143,6 @@
   - Limpar a árvore git do projeto;
   - Delete view, para deletar as vagas que devem ser descartadas;
   - Desenvolvimento da página de vagas com filtro;
-  - 
-
-### 26/09/2022
-- Front-end finalizará a página inicial da página web e revisará as cores de acordo com nova logo desenvolvida;
-- Também será analisada uma drop-window que não tem funcionado corretamente;
-- Será montada a seção sobre, referente aos criadores do projeto;
-- No back-end será buscada a validação de e-mails pelos usuários;
 
   
 
