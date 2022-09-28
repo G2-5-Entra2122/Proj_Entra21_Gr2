@@ -8,6 +8,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 
+
+
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
@@ -57,8 +59,9 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
 
+
 class VagaListView(ListView):
-    model = Vaga
+    model=Vaga
     fields=[
             'nome',
             'nivel',
@@ -71,10 +74,9 @@ class VagaListView(ListView):
             'salmin',
             'salmax',
             'beneficios'
-        ]
-    paginate_by: 10
-
+    ]
     def get_context_data(self, **kwargs):
+        vagas_obj = Vaga.objects.all().values_list()
         context = super().get_context_data(**kwargs)
+        context['vaga']=vagas_obj
         return context
-
