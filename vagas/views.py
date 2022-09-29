@@ -1,3 +1,4 @@
+from msilib.schema import ListView
 from .models import Vaga
 from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -56,3 +57,5 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
 
+class Vagalistview(GroupRequiredMixin, LoginRequiredMixin,ListView ):
+    pass
