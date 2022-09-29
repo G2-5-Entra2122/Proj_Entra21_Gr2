@@ -61,26 +61,5 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
 
 
 class VagaListView(ListView):
-    model=Vaga
-    fields=[
-            'nome',
-            'nivel',
-            'descricao',
-            'tipo_contrato',
-            'local',
-            'outras_reg',
-            'requisitos',
-            'habil_obr',
-            'salmin',
-            'salmax',
-            'beneficios'
-    ]
     template_name='vagas/vagas_list.html'
-    vagas_obj=Vaga.objects.all()
-
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs )
-
-        context['titulo'] = 'Vagas disponíveis'
-        context['vagas'] = self.vagas_obj
-        return context
+    model=Vaga

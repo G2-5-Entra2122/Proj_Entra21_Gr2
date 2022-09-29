@@ -3,14 +3,43 @@
 {% load static %}
 
 {% block content %}
-    <h1> {{ titulo }} </h1>
+    <h1> Vagas disponíveis </h1>
+    <hr>
     <body>
-        {% if fields %}
-        {% for x in fields %}
-        <p>
-            {{ x.nome - x.nivel}}
-            {{  }}                
-        </p>
+        <table class="table table-striped">
+            {% if vaga_list %}
+            {% for x in vaga_list %}
+            <p>
+                <h3> {{ x.nome }} - {{  x.nivel }} </h3>
+            </p>
+            <p><h5>Descrição da vaga</h5></p>
+            <p>
+                {{ x.descricao }}               
+            </p>
+            <p><h5>Modalidade da vaga</h5></p>
+            <p>
+                {{ x.tipo_contrato }}               
+            </p>
+            <p><h5>Local</h5></p>
+            <p>
+                {{ x.local }}               
+            </p>
+            <p>Aceita candidatos de outras regiões? {{ x.outras_reg }} </p>
+            <p><h5>Requisistos</h5></p>
+            <p>
+                {{ x.requisitos }}               
+            </p>
+            <p><h5>Habilidade obrigatória</h5></p>
+            <p>
+                {{ x.habil_obr }}               
+            </p>
+            <p><h6>Range salarial R$ {{ x.salmin }} a {{ x.salmax }} </h6></p>
+            <p><h5>Benefícios</h5></p>
+            <p>
+                {{ x.beneficios }}               
+            </p>
+        </table>
+
         {% endfor %}
         {% endif %}
 <!-- 
