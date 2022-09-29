@@ -57,5 +57,10 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
 
-class Vagalistview(GroupRequiredMixin, LoginRequiredMixin,ListView ):
-    pass
+class MinhasVagaslistview(GroupRequiredMixin, LoginRequiredMixin,ListView ):
+    model = Vaga
+    template_name = 'vagas/template/vagas/minhasvagas.html'
+
+    def get_queryset(self):
+        self.object_list = Vaga.objects.filter(usuario=self.request.user)
+
