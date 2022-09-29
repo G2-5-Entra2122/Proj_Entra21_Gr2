@@ -75,8 +75,12 @@ class VagaListView(ListView):
             'salmax',
             'beneficios'
     ]
-    def get_context_data(self, **kwargs):
-        vagas_obj = Vaga.objects.all().values_list()
-        context = super().get_context_data(**kwargs)
-        context['vaga']=vagas_obj
+    template_name='vagas/vagas_list.html'
+    vagas_obj=Vaga.objects.all()
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs )
+
+        context['titulo'] = 'Vagas disponíveis'
+        context['vagas'] = self.vagas_obj
         return context

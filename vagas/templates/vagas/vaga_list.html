@@ -1,17 +1,26 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
+    <h1> {{ titulo }} </h1>
     <body>
-        <h1>Vagas disponíveis</h1>
-        <body>
-            <dl>
-                <dt>{{ vaga_list }}</dt>
-                <!-- <dd> Html Basico</dd>
-                <dd> Html Avançado</dd>
-                <dt> PHP</dt>
-                <dd> PHP Básico</dd>
-                <dd> PHP Intermediário</dd>
-                <dd> PHP Avançado</dd> -->
-            </dl>
-        </body>
+        {% if fields %}
+        {% for x in fields %}
+        <p>
+            {{ x.nome - x.nivel}}
+            {{  }}                
+        </p>
+        {% endfor %}
+        {% endif %}
+<!-- 
+        <dl>
+            <dt>{{ vaga_list }}</dt>
+            <dd> Html Basico</dd>
+            <dd> Html Avançado</dd>
+            <dt> PHP</dt>
+            <dd> PHP Básico</dd>
+            <dd> PHP Intermediário</dd>
+            <dd> PHP Avançado</dd> -->
+        <!-- </dl> -->
 {% endblock %}
