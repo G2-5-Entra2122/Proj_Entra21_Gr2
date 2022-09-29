@@ -1,9 +1,9 @@
-from msilib.schema import ListView
 from .models import Vaga
 from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
@@ -57,10 +57,11 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
 
-class MinhasVagaslistview(GroupRequiredMixin, LoginRequiredMixin,ListView ):
+class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     model = Vaga
     template_name = 'vagas/template/vagas/minhasvagas.html'
 
     def get_queryset(self):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
+        return self.object_list
 
