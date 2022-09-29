@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import MinhasVagasListView, MinhasVagaslistview, VagaCreateView,VagaUpdateView
+from .views import MinhasVagasListView, VagaCreateView,VagaUpdateView
 
 urlpatterns=[
     path('minhasvagas/adicionar',VagaCreateView.as_view(),name='minhasvagas-adicionar'),
