@@ -154,7 +154,7 @@
 - Também foram revisadas as cores de alguns temas;
 - Serão montados header e footer para integração à base;
 - Será iniciada a integração para a ocorrência de matches entre vagas e curriculos;
-- 
+- Finalizado desenvolvimento da view vagas;
 
 
   
