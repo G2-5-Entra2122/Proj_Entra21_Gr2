@@ -51,32 +51,26 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     form_class=VagasForm
     template_name='vagas/form.html'
     success_url=reverse_lazy('index')
-    vagas_obj=Vaga.objects.all()
-
+    
     def get_object(self, queryset: None):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
 
 class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     group_required = u'Empresa'
-    model = Vaga
-    template_name = 'vagas/template/vagas/minhasvagas.html'
-    vagas_totais = Vaga.objects.all()
+    model = VagasForm
+    template_name = 'vagas/minhasvagas.html'
     
-    def get_object(self, queryset: None):
-        self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
-        return self.object
-
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs )
 
-        context['titulo'] = 'Vagas'
-        context['vagas'] = self.vagas_totais.filter('pk')
+        context['titulo'] = 'Minhas Vagas'
         return context
 
-    #def get_queryset(self):
-    #    self.object_list = Vaga.objects.filter(usuario=self.request.user)
-    #    return self.object_list
+    def get_queryset(self):
+        self.object_list = Vaga.objects.filter(usuario=self.request.user)
+        return self.object_list
+        
 
 class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
    group_required = u'Empresas'

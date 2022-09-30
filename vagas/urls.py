@@ -3,7 +3,7 @@ from .views import MinhasVagasListView, VagaCreateView,VagaUpdateView, MinhasVag
 
 urlpatterns=[
     path('minhasvagas/adicionar',VagaCreateView.as_view(),name='minhasvagas-adicionar'),
-    path('minhasvagas/alterar',VagaUpdateView.as_view(), name='minhasvagas-alterar'),
+    #path('minhasvagas/alterar',VagaUpdateView.as_view(), name='minhasvagas-alterar'),
     path('minhasvagas/',MinhasVagasListView.as_view(),name='minhas-vagas'),
-    path('minhasvagas/deletar', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar')
+    #path('minhasvagas/deletar', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar')
 ]

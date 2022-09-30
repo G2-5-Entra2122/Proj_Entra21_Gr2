@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Vaga(models.Model):
     nome=models.CharField('Nome da Vaga',max_length=100)
@@ -27,6 +28,7 @@ class Vaga(models.Model):
     salmin=models.DecimalField('Salário Mínimo',decimal_places=2,max_digits=10)
     salmax=models.DecimalField('Salário Máximo',decimal_places=2,max_digits=10)
     beneficios=models.TextField('Benefícios',max_length=100)
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name = 'Vaga'
