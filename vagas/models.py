@@ -26,7 +26,7 @@ class Vaga(models.Model):
     habil_obr=models.CharField('Habilidade',max_length=30)
     salmin=models.DecimalField('Salário Mínimo',decimal_places=2,max_digits=10)
     salmax=models.DecimalField('Salário Máximo',decimal_places=2,max_digits=10)
-    beneficios=models.TextField('Benefícios',max_length=100)
+    beneficios=models.TextField('Benefícios',max_length=500)
 
     class Meta:
         verbose_name = 'Vaga'

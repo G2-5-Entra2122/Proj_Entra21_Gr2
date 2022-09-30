@@ -3,8 +3,11 @@ from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
+
+
 
 
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
@@ -56,3 +59,7 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
         return self.object
 
+
+class VagaListView(ListView):
+    template_name='vagas/vagas_list.html'
+    model=Vaga

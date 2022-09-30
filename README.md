@@ -190,9 +190,7 @@
 
 
 
-  
-
-
+ 
 Referências:
 [^1]: https://linear.app/
 [^2]: https://github.com/G2-5-Entra2122/Proj_Entra21_Gr2/blob/feature/pro-11-atualizar-readme/Entidades_Grupo2_E4H.pdf
