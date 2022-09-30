@@ -2,7 +2,7 @@ from .models import Vaga
 from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -61,8 +61,23 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     group_required = u'Empresa'
     model = Vaga
     template_name = 'vagas/template/vagas/minhasvagas.html'
+    vagas_totais = Vaga.objects.all()
+    
+    def get_object(self, queryset: None):
+        self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
+        return self.object
 
-    def get_queryset(self):
-        self.object_list = Vaga.objects.filter(usuario=self.request.user)
-        return self.object_list
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs )
 
+        context['titulo'] = 'Vagas'
+        context['vagas'] = self.vagas_totais.filter('pk')
+        return context
+
+    #def get_queryset(self):
+    #    self.object_list = Vaga.objects.filter(usuario=self.request.user)
+    #    return self.object_list
+
+class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
+   group_required = u'Empresas'
+   model = Vaga
