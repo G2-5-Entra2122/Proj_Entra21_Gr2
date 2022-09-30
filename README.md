@@ -157,6 +157,39 @@
 - Finalizado desenvolvimento da view vagas;
 
 
+### 30/09/2022
+
+- Demandas:
+  - contador de vagas (front: colocar um count do id de vagas - nicolas);
+  - ordenar: ficar só salario (mais alto para mais baixo e vice versa); vagas mais recentes para mais antigas; mais antigas para mais recentes: felipe e mark vao adicionar as variaveis de salario e data; 
+  - mostrar 10...20... (front - nicolas)
+  - demanda para back: colocar a variavel de data na publicação da vaga e a de salario (para fazer o ranqueamento);
+  - verificarem se tem variavel categoria (full, back, front) - adicionar models (felipe);
+  - nicolas: tirar palavra chave;
+  - modalidade: presencial, hibrido, remoto (nicolas);
+  - demanda posterior: depois que concluir essas demandas anteriores (principalmente a da data); ver se consegue implementar a parte do "tempo de postagem" para conseguir filtrar vagas mais recentes( mark, felipe e nicolas)
+  - criar filtro de cidade (mark e felipe);
+  - nicolas: tirar quadradinho de logos das empresas;
+  - adicionar no models choices tipo de vaga: freelance; tempo integral; estagio; meio período; temporário; voluntário (felipe e mark);
+  - mudar de "tipo de empresa" para "tamanho" e verificar os portes q estão definidos no models (nicolas)
+  - ajustes no html de vagas;
+  - mostrando xxx candidatos (nicolas, arrumar);
+  - duvida tirada: os ordenar por da pagina de vagas, tem q ser na views e nao no front;
+  - sobre candidatos: nao terá nome nem foto; tera: categoria (full, back etc etc); linguagens (perfil); nivel (jr; pleno, senior); contrato (estagio, pj, clt...); habilidades, resumo e local; 
+  - alteração no models: local ser cidade e modalidade ser: hibrido, remoto ou presencial;
+  - renomear no models perfil por categoria (diego);
+  -  renomear no models perfil por categoria (no models vagas - felipe);
+  - tirar palavra-chave (nicolas);
+  - verificar a possibilidade de autopreeencher localização a partir do cep ou usuario conseguir escrever cidade tendo opções previas pq o usuario é uma capivara;
+  - candidatos seremos só nós - fazer essa alteração no banco de dados;
+  - nicolas: remover tempo de postagem da pagina de candidatos;
+  - nicolas: remover tipo de empresa  
+  - inserção de busca de endereço por CEP
+  - verificar
+
+
+
+
   
 
 
