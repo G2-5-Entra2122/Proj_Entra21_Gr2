@@ -58,6 +58,7 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         return self.object
 
 class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
+    group_required = u'Empresa'
     model = Vaga
     template_name = 'vagas/template/vagas/minhasvagas.html'
 
