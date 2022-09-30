@@ -79,6 +79,7 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
         # Define que apenas o usuario que criou o Form, pode editar-lo e se não for envia o usuario pra uma página 404.
         self.object = get_object_or_404(Curriculo, usuario=self.request.user)
         return self.object
+        
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
