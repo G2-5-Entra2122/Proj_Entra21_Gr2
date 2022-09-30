@@ -7,7 +7,6 @@
     <hr>
     <body>
         <table class="table table-striped">
-            {% if vaga_list %}
             {% for x in vaga_list %}
             <p>
                 <h3> {{ x.nome }} - {{  x.nivel }} </h3>
@@ -39,17 +38,7 @@
                 {{ x.beneficios }}               
             </p>
         </table>
-
+        {% empty %}
+        <h2> Não foram encontradas vagas disponíveis </h2>
         {% endfor %}
-        {% endif %}
-<!-- 
-        <dl>
-            <dt>{{ vaga_list }}</dt>
-            <dd> Html Basico</dd>
-            <dd> Html Avançado</dd>
-            <dt> PHP</dt>
-            <dd> PHP Básico</dd>
-            <dd> PHP Intermediário</dd>
-            <dd> PHP Avançado</dd> -->
-        <!-- </dl> -->
 {% endblock %}
