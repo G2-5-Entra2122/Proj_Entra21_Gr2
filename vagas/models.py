@@ -3,6 +3,13 @@ from django.db import models
 class Vaga(models.Model):
     nome=models.CharField('Nome da Vaga',max_length=100)
     empregador=models.CharField('Empregador',max_length=100)
+    CATEGORIA_CHOICES = (
+        ('full_stack', 'Full-Stack'),
+        ('front_end', 'Front-End'),
+        ('back_end', 'Back-End'),
+        ('mobile', 'Mobile'),
+    )
+    categoria = models.CharField('Categoria', max_length=10, choices=CATEGORIA_CHOICES, null=True)
     NIVEIS_CHOICES=[
         ('Junior','Junior'),
         ('Pleno','Pleno'),
@@ -15,7 +22,13 @@ class Vaga(models.Model):
         ('Híbrido','Híbrido'),
         ('Remoto','Remoto')
     ]
-    tipo_contrato=models.CharField('Modalidade da Vaga',choices=MODALIDADES_CHOICES,max_length=10)
+    modalidade=models.CharField('Modalidade da Vaga',choices=MODALIDADES_CHOICES,max_length=10)
+    CONTRATO_CHOICES = (
+        ('estagio', 'Estágio'),
+        ('pj', 'PJ'),
+        ('clt', 'CLT'),
+    )
+    contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
     local=models.CharField('Local da Vaga',max_length=30)
     SN_CHOICES=[
         ('sim','Sim'),
@@ -27,6 +40,7 @@ class Vaga(models.Model):
     salmin=models.DecimalField('Salário Mínimo',decimal_places=2,max_digits=10)
     salmax=models.DecimalField('Salário Máximo',decimal_places=2,max_digits=10)
     beneficios=models.TextField('Benefícios',max_length=500)
+    data=models.DateField('Data de criação:',auto_now_add=True)
 
     class Meta:
         verbose_name = 'Vaga'
