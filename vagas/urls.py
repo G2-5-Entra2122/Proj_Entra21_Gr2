@@ -5,5 +5,5 @@ urlpatterns=[
     path('minhasvagas/adicionar',VagaCreateView.as_view(),name='minhasvagas-adicionar'),
     #path('minhasvagas/alterar',VagaUpdateView.as_view(), name='minhasvagas-alterar'),=>adicionar o id 
     path('minhasvagas/',MinhasVagasListView.as_view(),name='minhas-vagas'),
-    #path('minhasvagas/deletar', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar')=>Adicionar o id
+    path('<pk>/minhasvagas/deletar', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar')
 ]

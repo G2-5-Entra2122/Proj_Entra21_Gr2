@@ -75,3 +75,5 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
 class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
    group_required = u'Empresas'
    model = Vaga
+   success_url ="/"
+   template_name ='vagas/deletevagas.html'
