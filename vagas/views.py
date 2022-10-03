@@ -71,6 +71,8 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
         return self.object_list
         
+######################## DELETE ##########################
+
 
 class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
    group_required = u'Empresas'
