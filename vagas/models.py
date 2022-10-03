@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Vaga(models.Model):
     nome=models.CharField('Nome da Vaga',max_length=100)
     empregador=models.CharField('Empregador',max_length=100)
