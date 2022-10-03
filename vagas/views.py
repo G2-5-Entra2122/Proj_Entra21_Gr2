@@ -5,7 +5,7 @@ from braces.views import GroupRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render, HttpResponseRedirect
 
 
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
@@ -77,3 +77,15 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
    model = Vaga
    success_url ="/"
    template_name ='vagas/deletevagas.html'
+
+   def delete_view(request, id):
+    context ={}
+ 
+    obj = get_object_or_404(Vaga, id = id)
+ 
+ 
+    if request.method =="POST":
+        obj.delete()
+        return HttpResponseRedirect("/")
+ 
+    return render(request, "delete_view.html", context)
