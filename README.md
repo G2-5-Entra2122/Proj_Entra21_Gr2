@@ -15,7 +15,7 @@
 - ### Diego Dalmolini
 - ### Felipe Sartorato
 - ### João Paulo Correa Santini
-- ### José Goetten
+- ### José Orli Goetten
 - ### Luiza Bicalho Pollmann
 - ### Mark Odebrecht
 - ### Nicolas Felipe da Silva
@@ -38,7 +38,7 @@ A aplicação será desenvolvida com Python, Django e MySQL.
 
 ## Inspiração
 
-Seek-o-Mode é um ambiente resultante da busca por um sistema buscador de candidatos (por parte das empresas) e de vagas (por parte dos candidatos) mais transparente e direto.
+Experts 4 Hire é um ambiente resultante da busca por um sistema buscador de candidatos (por parte das empresas) e de vagas (por parte dos candidatos) mais transparente e direto.
 
 Um portal que busca a simplificação e maior agilidade na visualização tanto de perfis, quanto de vagas, levando a maior assertividade no processo de contratação.
 
@@ -70,7 +70,7 @@ A dinâmica do portal consiste nos seguintes passos:
   - busca por vagas que combinem com suas aptidões, conhecimentos e pretensão salarial (somente após preenchimento completo do cadastro);
 
 - Para empresas:
-  - Cadastro no sistema Seek-o-Mode, composto por:
+  - Cadastro no sistema Experts 4 Hire, composto por:
     - nome da empresa/contratante,
     - CNPJ, IE etc.,
     - endereço;
@@ -91,9 +91,9 @@ A dinâmica do portal consiste nos seguintes passos:
 
 ### A dinâmica do ambiente
 
-Candidatos preenchem seus cadastros e somente após o preenchimento completo têm acesso as vagas.
+Candidatos preenchem seus cadastros e após o preenchimento completo têm acesso exclusivamente às vagas que se relacionam com seu perfil.
 
-As empresas preenchem seus cadastros e também o cadastro da vaga. Somente após o cadastro da vaga, passarão a receber os mini-currículos de candidatos.
+As empresas preenchem seus cadastros e também o cadastro da vaga. Somente após o cadastro da vaga, passarão a receber os mini-currículos de candidatos que se relacionam às vagas.
 
 Pelos candidatos, as vagas são visualizadas somente com as descrições constantes no cadasatro da vaga, sem citar o nome da empresa.
 
@@ -101,7 +101,7 @@ O que o candidato verá são oportunidades para que exerça suas qualidades em u
 
 Nos mini-currículos recebidos pela empresa, constarão apenas as tecnologias usuais aos candidatos, bem como outras informações que os mesmos considerem válidas (serão direcionados sobre o que podem informar, no momento da montagem do cadastro). Não constarão o nome ou qualquer outra informação pessoal do candidato.
 
-Isso é feito, para que as competências técnicas sejam a primeira vitrine apresentada ao contratante, trazendo transparência ao processo, já que nenhum tipo de viés prejudique a escolha inicial, seja ele por sexo, cor, idade etc.
+Isso é feito, para que as competências técnicas sejam a primeira vitrine apresentada ao contratante, trazendo transparência ao processo para que nenhum tipo de viés prejudique a escolha inicial, seja ele por sexo, cor, idade etc.
 
 A intenção é que, com os mini-currículos em mãos, o profissional responsável pelo anúncio possa tomar a decisão de quais perfis completos deseja visualizar, seja por decisão própria ou por intermédio da análise dos mesmos que podem ser impressos e apresentados ao superior responsável pela posição.
 
