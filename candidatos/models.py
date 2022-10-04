@@ -31,13 +31,13 @@ class Habilidades(models.Model):
 
 
 class Curriculo(models.Model):
-    PERFIL_CHOICES = (
+    CATEGORIA_CHOICES = (
         ('full_stack', 'Full-Stack'),
-        ('fron_end', 'Front-End'),
+        ('front_end', 'Front-End'),
         ('back_end', 'Back-End'),
         ('mobile', 'Mobile'),
     )
-    perfil = models.CharField('Área', max_length=10, choices=PERFIL_CHOICES, null=True)    
+    categoria = models.CharField('Área', max_length=10, choices=CATEGORIA_CHOICES, null=True)    
     
     NIVEL_CHOICES = (
         ('senior', 'Sênior'),
@@ -53,12 +53,12 @@ class Curriculo(models.Model):
     )
     contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
 
-    LOCAL_CHOICES = (
+    MODALIDADE_CHOICES = (
         ('presencial', 'Presencial'),
         ('hibrido', 'Híbrido'),
         ('remoto', 'Remoto'),
     )
-    local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES, null=True)
+    modalidade = models.CharField('Local', max_length=10, choices=MODALIDADE_CHOICES, null=True)
     salario = models.IntegerField(verbose_name='Salário desejado', null=True)
     habilidades = models.ManyToManyField(Habilidades)
     usuario = models.OneToOneField(User, on_delete=models.PROTECT)
@@ -69,5 +69,5 @@ class Curriculo(models.Model):
 
 
     def __str__(self):
-        return f'{self.perfil} - {self.nivel} - {self.local}'
+        return f'{self.categoria} - {self.nivel} - {self.modalidade}'
 
