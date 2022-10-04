@@ -280,6 +280,11 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 
 
+### 04/10/2022
+
+- Hoje será adicionado no models choices tipo de vaga;
+- Revisão do progresso do projeto para fazer as migrações do DB;
+- 
 
  
 Referências:
