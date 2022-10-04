@@ -45,6 +45,8 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         # context['vagas']=self.vagas_obj
         return context
 
+######################## ALTERAR ##########################
+
 class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
@@ -52,9 +54,25 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     template_name='vagas/form.html'
     success_url=reverse_lazy('index')
     
-    def get_object(self, queryset: None):
-        self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
-        return self.object
+    def update_view(request, id):
+        context ={}
+
+        obj = get_object_or_404(Vaga, id = id)
+
+        form = VagasForm(request.POST or None, instance = obj)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/"+id)
+
+        context["form"] = form
+
+        return render(request, "update_view.html", context)
+
+
+    #def get_object(self, queryset: None):
+    #    self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
+    #    return self.object
 
 class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     group_required = u'Empresa'
