@@ -282,7 +282,8 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 ### 04/10/2022
 
-- Hoje será adicionado no models choices tipo de vaga;
+- Foi revisado o model "contrato" no arquivo models.py do app vagas. Adicionados diferentes tipos de contratos;
+- também, no mesmo app, foi criado o model/choices "jornada" para seleção da jornada da vaga;
 - Revisão do progresso do projeto para fazer as migrações do DB;
 - 
 
