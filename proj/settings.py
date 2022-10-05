@@ -83,27 +83,27 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'proj.wsgi.application'
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'pye2122g2',
-        'USER': 'pye2122g2',
-        'PASSWORD': 'pye2122g2@16@set*',
-        'HOST': '3.89.36.150',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'pye2122g2',
+#         'USER': 'pye2122g2',
+#         'PASSWORD': 'pye2122g2@16@set*',
+#         'HOST': '3.89.36.150',
+#         'PORT': '3306',
+#     }
+# }
 
 
 

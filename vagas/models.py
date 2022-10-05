@@ -9,10 +9,10 @@ class Vaga(models.Model):
     
     
     CATEGORIA_CHOICES = (
-        ('full_stack', 'Full-Stack'),
-        ('front_end', 'Front-End'),
-        ('back_end', 'Back-End'),
-        ('mobile', 'Mobile'),
+        ('Full-Stack', 'Full-Stack'),
+        ('Front-End', 'Front-End'),
+        ('Back-End', 'Back-End'),
+        ('Mobile', 'Mobile'),
     )
     categoria = models.CharField('Categoria', max_length=10, choices=CATEGORIA_CHOICES, null=True)
     
@@ -79,6 +79,8 @@ class Vaga(models.Model):
     
     
     data=models.DateField('Data de criação:',auto_now_add=True)
+
+    
 
     
     class Meta:
