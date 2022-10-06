@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Vaga(models.Model):
@@ -73,12 +74,12 @@ class Vaga(models.Model):
     
     
     salmax=models.DecimalField('Salário Máximo',decimal_places=2,max_digits=10)
-    
-    
+     
     beneficios=models.TextField('Benefícios',max_length=500)
     
     
     data=models.DateField('Data de criação:',auto_now_add=True)
+
 
     
     class Meta:

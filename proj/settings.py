@@ -23,18 +23,18 @@ DEBUG = True
 
 ALLOWED_HOSTS=['127.0.0.1','experts4hire.herokuapp.com']
 
-# try:
-#     SECRET_KEY=os.getenv('SECRET_KEY')
-# except ImportError:
-#     pass
+try:
+    SECRET_KEY=os.getenv('SECRET_KEY')
+except ImportError:
+    pass
 
-# try:
-#     DATABASE_URL=os.getenv('DATABASE_URL')
-# except ImportError:
-#     pass
+try:
+    DATABASE_URL=os.getenv('DATABASE_URL')
+except ImportError:
+    pass
 
-# DATABASES={}
-# DATABASES['default']=dj_database_url.config(conn_max_age=600)
+DATABASES={}
+DATABASES['default']=dj_database_url.config(conn_max_age=600)
 
 # Application definition
 
@@ -82,6 +82,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'proj.wsgi.application'
+
+
 
 # DATABASES = {
 #     'default': {

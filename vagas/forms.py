@@ -19,6 +19,6 @@ class VagasForm(forms.ModelForm):
             'habil_obr',
             'salmin',
             'salmax',
-            'beneficios'
+            'beneficios',
         ]
 
