@@ -75,7 +75,6 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     model = Vaga
     fields=[
         'nome',
-        'empregador',
         'nivel',
         'descricao',
         'tipo_contrato',
