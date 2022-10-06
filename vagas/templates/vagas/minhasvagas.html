@@ -10,19 +10,24 @@
 <div class="table-responsive"></div> 
     <table class="table table-striped"> 
         <tr> 
-            <th>Empresa</th> 
-            <th>Nivel</th> 
-            <th>Contrato</th> 
-            <th>Local</th> 
-            <th>Salário</th> 
+            <th>Nome</th> 
+            <th>Descrição</th> 
+            <th>Nível</th> 
+            <th>Modalidade da Vaga</th> 
+            <th>Opções</th> 
         </tr> 
  
         {% for vaga in object_list %} 
         <tr> 
-            <th>{{ vaga.nivel }}</th> 
-            <th>{{ vaga.contrato }}</th> 
-            <th>{{ vaga.local }}</th> 
-            <th>{{ vaga.salario }}</th> 
+            <td>{{ vaga.nome }}</td>
+            <td>{{ vaga.descricao }}</td> 
+            <td>{{ vaga.nivel }}</td> 
+            <td>{{ vaga.tipo_contrato }}</td>
+            <td>
+                <a href="{% url 'minhasvagas-alterar' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
+                <a href="{% url 'minhasvagas-deletar' vaga.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+                
+            </td>  
         </tr> 
         {% empty %} 
         <tr> 

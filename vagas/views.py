@@ -5,8 +5,10 @@ from braces.views import GroupRequiredMixin
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404, render, HttpResponseRedirect
 
+
+
+######################## CREATE ##########################
 
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
@@ -42,70 +44,71 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         context = super().get_context_data(*args, **kwargs)
 
         context['titulo'] = 'Adicionar uma vaga'
-        # context['vagas']=self.vagas_obj
+        context['lead'] = 'Preencha todos os campos obrigatórios.'
+        context['botao'] = 'Cadastrar'
         return context
 
-######################## ALTERAR ##########################
-
-class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
-    group_required= u'Empresa'
-    login_url=reverse_lazy('login')
-    form_class=VagasForm
-    template_name='vagas/form.html'
-    success_url=reverse_lazy('index')
-    
-    def update_view(request, id):
-        context ={}
-
-        obj = get_object_or_404(Vaga, id = id)
-
-        form = VagasForm(request.POST or None, instance = obj)
-
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/"+id)
-
-        context["form"] = form
-
-        return render(request, "update_view.html", context)
-
-
-    #def get_object(self, queryset: None):
-    #    self.object=get_object_or_404(Vaga,pk=self.kwargs['pk'],usuario=self.user)
-    #    return self.object
+######################## LIST ##########################
 
 class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     group_required = u'Empresa'
+    login_url = reverse_lazy('login')
     model = VagasForm
     template_name = 'vagas/minhasvagas.html'
     
-    def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs )
-
-        context['titulo'] = 'Minhas Vagas'
-        return context
 
     def get_queryset(self):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
         return self.object_list
+
+
+
+######################## ALTERAR ##########################
+
+class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
+    group_required = u'Empresa'
+    login_url = reverse_lazy('login')
+    model = Vaga
+    fields=[
+        'nome',
+        'empregador',
+        'nivel',
+        'descricao',
+        'tipo_contrato',
+        'local',
+        'outras_reg',
+        'requisitos',
+        'habil_obr',
+        'salmin',
+        'salmax',
+        'beneficios',
+        ]
+    template_name = 'vagas/form.html'
+    success_url = reverse_lazy('minhas-vagas')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Atualizar vaga'
+        context['lead'] = 'Preencha todos os campos obrigatórios.'
+        context['botao'] = 'Atualizar'
+        return context
+    
         
 ######################## DELETE ##########################
 
 
 class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
-   group_required = u'Empresas'
-   model = Vaga
-   success_url ="/"
-   template_name ='vagas/deletevagas.html'
+    group_required = u'Empresa'
+    model = Vaga
+    template_name ='vagas/form-excluir.html'
+    success_url = reverse_lazy('minhas-vagas')
 
-   def delete_view(request, id):
-    context ={}
- 
-    obj = get_object_or_404(Vaga, id = id)
- 
- 
-    if request.method =="POST":
-        obj.delete()
-        return HttpResponseRedirect("/")
- 
-    return render(request, "delete_view.html", context)
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Deletar vaga'
+        context['lead'] = 'Confirme para excluir a vaga definitivamente.'
+        context['botao'] = 'Deletar'
+        return context
+
