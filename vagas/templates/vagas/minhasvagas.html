@@ -5,7 +5,13 @@
  
  
 {% block content %} 
-<h3>Lista de Vagas</h3> 
+<h3>
+    Lista de Vagas
+    <a href="{% url 'minhasvagas-adicionar' %}" class="btn btn-primary btn-sm float-right">Adicionar uma vaga</a>
+</h3>
+
+
+
 <hr> 
 <div class="table-responsive"></div> 
     <table class="table table-striped"> 
@@ -24,8 +30,12 @@
             <td>{{ vaga.nivel }}</td> 
             <td>{{ vaga.tipo_contrato }}</td>
             <td>
-                <a href="{% url 'minhasvagas-alterar' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">Editar</a>
-                <a href="{% url 'minhasvagas-deletar' vaga.pk %}" class="btn btn-danger btn-sm" title="Excluir">Excluir</a>
+                <a href="{% url 'minhasvagas-alterar' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+                <a href="{% url 'minhasvagas-deletar' vaga.pk %}" class="btn btn-danger btn-sm" title="Excluir">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
                 
             </td>  
         </tr> 

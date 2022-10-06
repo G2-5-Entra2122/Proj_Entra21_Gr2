@@ -1,10 +1,14 @@
 from .models import Vaga
 from .forms import VagasForm
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+
 from django.urls import reverse_lazy
+from django.shortcuts import get_object_or_404
 
 
 
@@ -30,7 +34,7 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     # form_class=VagasForm
     # vagas_obj=Vaga.objects.all()
     template_name='vagas/form.html'
-    success_url=reverse_lazy('index')
+    success_url=reverse_lazy('minhas-vagas')
 
     def form_valid(self, form):
         form.instance.usuario=self.request.user
@@ -86,6 +90,11 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     template_name = 'vagas/form.html'
     success_url = reverse_lazy('minhas-vagas')
 
+    def get_object(self, queryset=None):
+        # self.object = Vaga.objects.get(pk=self.kwargs['pk'], usuario=self.request.user)
+        self.object = get_object_or_404(Vaga, pk=self.kwargs['pk'], usuario=self.request.user)
+        return self.object
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
 
@@ -103,6 +112,11 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
     model = Vaga
     template_name ='vagas/form-excluir.html'
     success_url = reverse_lazy('minhas-vagas')
+
+    def get_object(self, queryset=None):
+        # self.object = Vaga.objects.get(pk=self.kwargs['pk'], usuario=self.request.user)
+        self.object = get_object_or_404(Vaga, pk=self.kwargs['pk'], usuario=self.request.user)
+        return self.object
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
