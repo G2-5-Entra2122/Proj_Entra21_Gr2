@@ -1,0 +1,19 @@
+{
+    "sqltools.useNodeRuntime": true,
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "3.89.36.150",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "pye2122g2",
+            "password": "pye2122g2@16@set*",
+            "group": "pye2122g2",
+            "database": "pye2122g2",
+            "username": "pye2122g2"
+        }
+    ]
+}

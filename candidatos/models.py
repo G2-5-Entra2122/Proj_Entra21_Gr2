@@ -11,6 +11,7 @@ class Habilidades(models.Model):
     ]
     habilidade = models.CharField('Habilidade', max_length=15, choices=HABILIDADES_CHOICES, null=True)
     
+    
     EXPERIENCIA_CHOICES = [
         ('0-1-anos', '0-1 anos'),
         ('1-2-anos', '1-2 anos'),
@@ -21,53 +22,77 @@ class Habilidades(models.Model):
     ]
     experiencia = models.CharField('Tempo de experiência', max_length=15, choices=EXPERIENCIA_CHOICES, blank=False, default='Unspecified', null=True)
 
+    
     class Meta:
         verbose_name = 'Habilidade'
         verbose_name_plural = 'Habilidades'
 
+    
     def __str__(self):
         return f'{self.habilidade}({self.experiencia})'
 
 
 
 class Curriculo(models.Model):
-    PERFIL_CHOICES = (
-        ('full_stack', 'Full-Stack'),
-        ('fron_end', 'Front-End'),
-        ('back_end', 'Back-End'),
-        ('mobile', 'Mobile'),
+    CATEGORIA_CHOICES = (
+        ('Full-stack', 'Full-Stack'),
+        ('Front-end', 'Front-end'),
+        ('Back-end', 'Back-end'),
+        ('Mobile', 'Mobile'),
     )
-    perfil = models.CharField('Área', max_length=10, choices=PERFIL_CHOICES, null=True)    
+    categoria = models.CharField('Área', max_length=10, choices=CATEGORIA_CHOICES, null=True)    
+    
     
     NIVEL_CHOICES = (
-        ('senior', 'Sênior'),
-        ('pleno', 'Pleno'),
-        ('junior', 'Junior'),
+        ('Junior','Junior'),
+        ('Pleno','Pleno'),
+        ('Sênior','Sênior')
         )
     nivel = models.CharField('Nível', max_length=6, choices=NIVEL_CHOICES, null=True)
     
+    
     CONTRATO_CHOICES = (
-        ('estagio', 'Estágio'),
-        ('pj', 'PJ'),
-        ('clt', 'CLT'),
+        ('Estágio', 'Estágio'),
+        ('CLT', 'CLT'),
+        ('Freelance', 'Freelance'),
+        ('PJ', 'PJ'),
+        ('Voluntário', 'Voluntário'),
     )
     contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
 
-    LOCAL_CHOICES = (
-        ('presencial', 'Presencial'),
-        ('hibrido', 'Híbrido'),
-        ('remoto', 'Remoto'),
+    
+    MODALIDADE_CHOICES = (
+        ('Presencial','Presencial'),
+        ('Híbrido','Híbrido'),
+        ('Remoto','Remoto')
     )
-    local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES, null=True)
+
+    
+    JORNADA_CHOICES = (
+        ('Período Integral', 'Período Integral'),
+        ('Meio Preíodo', 'Meio Período'),
+    )
+    jornada = models.CharField('Jornada', max_length=30, choices=JORNADA_CHOICES, null=True)
+
+
+    modalidade = models.CharField('Local', max_length=10, choices=MODALIDADE_CHOICES, null=True)
+    
+    
     salario = models.IntegerField(verbose_name='Salário desejado', null=True)
+    
+    
     habilidades = models.ManyToManyField(Habilidades)
+    
+    
     usuario = models.OneToOneField(User, on_delete=models.PROTECT)
 
+    
     class Meta:
         verbose_name = 'Curriculo'
         verbose_name_plural = 'Curriculos'
 
 
+    
     def __str__(self):
-        return f'{self.perfil} - {self.nivel} - {self.local}'
+        return f'{self.categoria} - {self.nivel} - {self.modalidade}'
 

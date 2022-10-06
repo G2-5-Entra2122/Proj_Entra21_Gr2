@@ -8,10 +8,11 @@ class VagasForm(forms.ModelForm):
         model=Vaga
         fields=[
             'nome',
-            'empregador',
+            'categoria',
             'nivel',
             'descricao',
-            'tipo_contrato',
+            'modalidade',
+            'contrato',
             'local',
             'outras_reg',
             'requisitos',

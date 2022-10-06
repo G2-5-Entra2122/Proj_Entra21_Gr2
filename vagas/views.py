@@ -4,6 +4,7 @@ from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 
+
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 
@@ -11,8 +12,8 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 
-
 ######################## CREATE ##########################
+
 
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
@@ -64,6 +65,11 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     def get_queryset(self):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
         return self.object_list
+ 
+
+class VagaListView(ListView):
+    template_name='vagas/vagas_list.html'
+    model = Vaga
 
 
 
@@ -124,4 +130,7 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
         context['lead'] = 'Confirme para excluir a vaga definitivamente.'
         context['botao'] = 'Deletar'
         return context
+
+
+
 

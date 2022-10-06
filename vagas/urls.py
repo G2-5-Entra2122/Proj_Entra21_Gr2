@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import MinhasVagasListView, VagaCreateView,VagaUpdateView, MinhasVagasDeleteView
+
+from .views import MinhasVagasListView, VagaCreateView, VagaUpdateView, MinhasVagasDeleteView, VagaListView
 
 urlpatterns=[
     path('minhasvagas/adicionar/',VagaCreateView.as_view(),name='minhasvagas-adicionar'),
@@ -7,6 +8,7 @@ urlpatterns=[
     path('minhasvagas/alterar/<int:pk>/',VagaUpdateView.as_view(), name='minhasvagas-alterar'),
 
     path('minhasvagas/',MinhasVagasListView.as_view(),name='minhas-vagas'),
+    path('vagas/', VagaListView.as_view(), name='vaga-list'),
 
-    path('minhasvagas/deletar/<int:pk>/', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar')
+    path('minhasvagas/deletar/<int:pk>/', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar'),
 ]
