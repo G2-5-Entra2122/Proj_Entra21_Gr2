@@ -8,6 +8,7 @@ class VagasForm(forms.ModelForm):
         model=Vaga
         fields=[
             'nome',
+            'empregador',
             'nivel',
             'descricao',
             'tipo_contrato',
@@ -17,6 +18,6 @@ class VagasForm(forms.ModelForm):
             'habil_obr',
             'salmin',
             'salmax',
-            'beneficios'
+            'beneficios',
         ]
 
