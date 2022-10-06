@@ -40,9 +40,9 @@ class Curriculo(models.Model):
     perfil = models.CharField('Área', max_length=10, choices=PERFIL_CHOICES, null=True)    
     
     NIVEL_CHOICES = (
-        ('senior', 'Sênior'),
-        ('pleno', 'Pleno'),
-        ('junior', 'Junior'),
+        ('Junior','Junior'),
+        ('Pleno','Pleno'),
+        ('Sênior','Sênior')
         )
     nivel = models.CharField('Nível', max_length=6, choices=NIVEL_CHOICES, null=True)
     
@@ -54,9 +54,9 @@ class Curriculo(models.Model):
     contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
 
     LOCAL_CHOICES = (
-        ('presencial', 'Presencial'),
-        ('hibrido', 'Híbrido'),
-        ('remoto', 'Remoto'),
+        ('Presencial','Presencial'),
+        ('Híbrido','Híbrido'),
+        ('Remoto','Remoto')
     )
     local = models.CharField('Local', max_length=10, choices=LOCAL_CHOICES, null=True)
     salario = models.IntegerField(verbose_name='Salário desejado', null=True)

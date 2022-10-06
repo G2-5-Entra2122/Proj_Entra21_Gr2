@@ -19,8 +19,8 @@ class Vaga(models.Model):
     tipo_contrato=models.CharField('Modalidade da Vaga',choices=MODALIDADES_CHOICES,max_length=10)
     local=models.CharField('Local da Vaga',max_length=30)
     SN_CHOICES=[
-        ('sim','Sim'),
-        ('nao','Não')
+        ('Sim','Sim'),
+        ('Não','Não')
     ]
     outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=SN_CHOICES,max_length=3)
     requisitos=models.CharField('Requisitos',max_length=50)
