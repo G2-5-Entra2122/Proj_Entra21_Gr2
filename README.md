@@ -271,7 +271,7 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
   - renomear no models perfil por categoria (diego);
   -  renomear no models perfil por categoria (no models vagas - felipe);
   - tirar palavra-chave (nicolas);
-  - verificar a possibilidade de autopreeencher localização a partir do cep ou usuario conseguir escrever cidade tendo opções previas pq o usuario é uma capivara;
+  - verificar a possibilidade de autopreencher localização a partir do cep ou usuario conseguir escrever cidade tendo opções previas pq o usuario é uma capivara;
   - candidatos seremos só nós - fazer essa alteração no banco de dados;
   - nicolas: remover tempo de postagem da pagina de candidatos;
   - nicolas: remover tipo de empresa  
@@ -285,7 +285,12 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 - Foi revisado o model "contrato" no arquivo models.py do app vagas. Adicionados diferentes tipos de contratos;
 - também, no mesmo app, foi criado o model/choices "jornada" para seleção da jornada da vaga;
 - Revisão do progresso do projeto para fazer as migrações do DB;
-- 
+
+
+### 07/10/2022
+
+- Foram equalizados os nomes das choices entre os apps candidatos e vagas;
+- Serão 
 
  
 Referências:
