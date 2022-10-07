@@ -5,10 +5,6 @@ from django.contrib.auth.models import User
 class Vaga(models.Model):
     nome=models.CharField('Nome da Vaga',max_length=100)
     
-    
-    empregador=models.CharField('Empregador',max_length=100)
-    
-    
     CATEGORIA_CHOICES = (
         ('Full-stack', 'Full-Stack'),
         ('Front-end', 'Front-end'),
@@ -46,7 +42,13 @@ class Vaga(models.Model):
     )
     contrato = models.CharField('Contrato', max_length=15, choices=CONTRATO_CHOICES, null=True)
 
-
+    MODALIDADE_CHOICES = (
+        ('Presencial','Presencial'),
+        ('Híbrido','Híbrido'),
+        ('Remoto','Remoto')
+    )
+    modalidade = models.CharField('Local', max_length=10, choices=MODALIDADE_CHOICES, null=True)
+    
     JORNADA_CHOICES = (
         ('Período Integral', 'Período Integral'),
         ('Meio Preíodo', 'Meio Período'),
@@ -59,7 +61,6 @@ class Vaga(models.Model):
         ('sim','Sim'),
         ('nao','Não')
     ]
-    
     
     outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=SN_CHOICES,max_length=3)
     
@@ -77,10 +78,9 @@ class Vaga(models.Model):
      
     beneficios=models.TextField('Benefícios',max_length=500)
     
-    
     data=models.DateField('Data de criação:',auto_now_add=True)
 
-
+    usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     
     class Meta:
         verbose_name = 'Vaga'
