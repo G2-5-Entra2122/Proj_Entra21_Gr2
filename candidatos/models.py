@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Habilidades(models.Model):
+class Habilidade(models.Model):
 
     habilidade = models.CharField('Habilidade', max_length=15,  null=True, blank=True)
     
@@ -40,7 +40,7 @@ class Curriculo(models.Model):
         ('PJ', 'PJ'),
         ('Voluntário', 'Voluntário'),
     )
-    contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
+    contrato = models.CharField('Contrato', max_length=10, choices=CONTRATO_CHOICES, null=True)
 
     
     MODALIDADE_CHOICES = (
@@ -54,11 +54,11 @@ class Curriculo(models.Model):
     salario = models.IntegerField(verbose_name='Salário desejado', null=True)
     
     
-    habilidade_pri = models.ForeignKey(Habilidades, verbose_name='1ª - Habilidade')
-    habilidade_seg = models.ForeignKey(Habilidades, verbose_name='2ª - Habilidade')
-    habilidade_ter = models.ForeignKey(Habilidades, verbose_name='3ª - Habilidade')
-    habilidade_qua = models.ForeignKey(Habilidades, verbose_name='4ª - Habilidade')
-    habilidade_qui = models.ForeignKey(Habilidades, verbose_name='5ª - Habilidade')
+    pri_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='1ª - Habilidade', related_name='pri_habilidade_candidato+', null=True, on_delete=models.PROTECT)
+    seg_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='2ª - Habilidade', related_name='seg_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+    ter_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='3ª - Habilidade', related_name='ter_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+    qua_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='4ª - Habilidade', related_name='qua_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+    qui_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='5ª - Habilidade', related_name='qui_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
 
     
     usuario = models.OneToOneField(User, on_delete=models.PROTECT)

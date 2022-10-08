@@ -1,5 +1,4 @@
 from .models import Vaga
-from .forms import VagasForm
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
@@ -12,29 +11,37 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
 
+
 ######################## CREATE ##########################
 
 
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
-    model=Vaga
+    model = Vaga
     fields=[
             'nome',
+            'categoria',
             'nivel',
             'descricao',
-            'tipo_contrato',
+            'modalidade',
+            'contrato',
+            'jornada',
             'local',
             'outras_reg',
             'requisitos',
-            'habil_obr',
             'salmin',
             'salmax',
-            'beneficios'
+            'beneficios',
+            'pri_habilidade_vaga',
+            'seg_habilidade_vaga',
+            'ter_habilidade_vaga',
+            'qua_habilidade_vaga',
+            'qui_habilidade_vaga',
         ]
     # form_class=VagasForm
     # vagas_obj=Vaga.objects.all()
-    template_name='vagas/form.html'
+    template_name = 'vagas/form.html'
     success_url=reverse_lazy('minhas-vagas')
 
     def form_valid(self, form):
@@ -53,12 +60,35 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         context['botao'] = 'Cadastrar'
         return context
 
+
+
 ######################## LIST ##########################
+
 
 class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
     group_required = u'Empresa'
     login_url = reverse_lazy('login')
-    model = VagasForm
+    model = Vaga
+    fields=[
+            'nome',
+            'categoria',
+            'nivel',
+            'descricao',
+            'modalidade',
+            'contrato',
+            'jornada',
+            'local',
+            'outras_reg',
+            'requisitos',
+            'salmin',
+            'salmax',
+            'beneficios',
+            'pri_habilidade_vaga',
+            'seg_habilidade_vaga',
+            'ter_habilidade_vaga',
+            'qua_habilidade_vaga',
+            'qui_habilidade_vaga',
+        ]
     template_name = 'vagas/minhasvagas.html'
     
 
@@ -75,22 +105,30 @@ class VagaListView(ListView):
 
 ######################## ALTERAR ##########################
 
+
 class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     group_required = u'Empresa'
     login_url = reverse_lazy('login')
     model = Vaga
     fields=[
-        'nome',
-        'nivel',
-        'descricao',
-        'tipo_contrato',
-        'local',
-        'outras_reg',
-        'requisitos',
-        'habil_obr',
-        'salmin',
-        'salmax',
-        'beneficios',
+            'nome',
+            'categoria',
+            'nivel',
+            'descricao',
+            'modalidade',
+            'contrato',
+            'jornada',
+            'local',
+            'outras_reg',
+            'requisitos',
+            'salmin',
+            'salmax',
+            'beneficios',
+            'pri_habilidade_vaga',
+            'seg_habilidade_vaga',
+            'ter_habilidade_vaga',
+            'qua_habilidade_vaga',
+            'qui_habilidade_vaga',
         ]
     template_name = 'vagas/form.html'
     success_url = reverse_lazy('minhas-vagas')
@@ -107,7 +145,7 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         context['lead'] = 'Preencha todos os campos obrigatórios.'
         context['botao'] = 'Atualizar'
         return context
-    
+     
         
 ######################## DELETE ##########################
 

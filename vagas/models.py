@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from candidatos.models import Habilidade
+
 
 
 class Vaga(models.Model):
@@ -52,28 +54,30 @@ class Vaga(models.Model):
 
     local=models.CharField('Local da Vaga',max_length=30,help_text='Onde reside sua empresa, para vagas presenciais. Para trabalho remoto, use "Online".')
 
-    SN_CHOICES=[
+    OUTRAS_REG_CHOICES=[
         ('sim','Sim'),
         ('nao','Não')
     ]
     
-    outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=SN_CHOICES,max_length=3)
+    outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=OUTRAS_REG_CHOICES,max_length=3)
     
     
     requisitos=models.CharField('Requisitos',max_length=50,help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.')
     
-    
-    habil_obr=models.CharField('Habilidade',max_length=50,help_text='Qual ou quais habilidades obrigatórias o candidato deve ter?')
-    
-    
     salmin=models.DecimalField('Salário Mínimo',decimal_places=2,max_digits=10)
-    
     
     salmax=models.DecimalField('Salário Máximo',decimal_places=2,max_digits=10)
      
     beneficios=models.TextField('Benefícios',max_length=500,help_text='Exemplos: "Vale refeição", "Plano de saúde", etc.')
     
     data=models.DateField('Data de criação:',auto_now_add=True)
+
+    pri_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='1ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, on_delete=models.PROTECT)
+    seg_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='2ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
+    ter_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='3ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
+    qua_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='4ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
+    qui_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='5ª - Habilidade', related_name='pri_habilidade_vaga+', blank=True, on_delete=models.PROTECT)
+
 
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
     
