@@ -1,9 +1,14 @@
 from django.urls import path
-from .views import VagaCreateView,VagaUpdateView, VagaListView
 
+from .views import MinhasVagasListView, VagaCreateView, VagaUpdateView, MinhasVagasDeleteView, VagaListView
 
 urlpatterns=[
-    path('minhasvagas/adicionar',VagaCreateView.as_view(),name='minhasvagas-adicionar'),
-    path('lista/vagas', VagaListView.as_view(), name='vaga-list')
-]
+    path('minhasvagas/adicionar/',VagaCreateView.as_view(),name='minhasvagas-adicionar'),
 
+    path('minhasvagas/alterar/<int:pk>/',VagaUpdateView.as_view(), name='minhasvagas-alterar'),
+
+    path('minhasvagas/',MinhasVagasListView.as_view(),name='minhas-vagas'),
+    path('vagas/', VagaListView.as_view(), name='vaga-list'),
+
+    path('minhasvagas/deletar/<int:pk>/', MinhasVagasDeleteView.as_view(), name='minhasvagas-deletar'),
+]

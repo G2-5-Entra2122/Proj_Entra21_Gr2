@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,18 +24,18 @@ DEBUG = True
 
 ALLOWED_HOSTS=['127.0.0.1','experts4hire.herokuapp.com']
 
-# try:
-#     SECRET_KEY=os.getenv('SECRET_KEY')
-# except ImportError:
-#     pass
+try:
+    SECRET_KEY=os.getenv('SECRET_KEY')
+except ImportError:
+    pass
 
-# try:
-#     DATABASE_URL=os.getenv('DATABASE_URL')
-# except ImportError:
-#     pass
+try:
+    DATABASE_URL=os.getenv('DATABASE_URL')
+except ImportError:
+    pass
 
-# DATABASES={}
-# DATABASES['default']=dj_database_url.config(conn_max_age=600)
+DATABASES={}
+DATABASES['default']=dj_database_url.config(conn_max_age=600)
 
 # Application definition
 
@@ -83,27 +84,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'proj.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql', 
-#         'NAME': 'pye2122g2',
-#         'USER': 'pye2122g2',
-#         'PASSWORD': 'pye2122g2@16@set*',
-#         'HOST': '3.89.36.150',
-#         'PORT': '3306',
-#     }
-# }
 
 
 
