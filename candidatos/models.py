@@ -1,27 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Habilidades(models.Model):
-    HABILIDADES_CHOICES = [
-        ('Python', 'Python'),
-        ('JavaScript', 'JavaScript'),
-        ('TypeScript', 'TypeScript'),
-        ('Django', 'Django'),
-        ('PHP', 'PHP')
-    ]
-    habilidade = models.CharField('Habilidade', max_length=15, choices=HABILIDADES_CHOICES, null=True)
-    
-    
-    EXPERIENCIA_CHOICES = [
-        ('0-1-anos', '0-1 anos'),
-        ('1-2-anos', '1-2 anos'),
-        ('2-3-anos', '2-3 anos'),
-        ('3-4-anos', '3-4 anos'),
-        ('4-5-anos', '4-5 anos'),
-        ('5+-anos', '5+ anos')
-    ]
-    experiencia = models.CharField('Tempo de experiência', max_length=15, choices=EXPERIENCIA_CHOICES, blank=False, default='Unspecified', null=True)
+class Habilidade(models.Model):
 
+    habilidade = models.CharField('Habilidade', max_length=15,  null=True, blank=True)
     
     class Meta:
         verbose_name = 'Habilidade'
@@ -29,7 +11,7 @@ class Habilidades(models.Model):
 
     
     def __str__(self):
-        return f'{self.habilidade}({self.experiencia})'
+        return f'{self.habilidade}'
 
 
 
@@ -58,7 +40,7 @@ class Curriculo(models.Model):
         ('PJ', 'PJ'),
         ('Voluntário', 'Voluntário'),
     )
-    contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
+    contrato = models.CharField('Contrato', max_length=10, choices=CONTRATO_CHOICES, null=True)
 
     
     MODALIDADE_CHOICES = (
@@ -66,23 +48,18 @@ class Curriculo(models.Model):
         ('Híbrido','Híbrido'),
         ('Remoto','Remoto')
     )
-
-    
-    JORNADA_CHOICES = (
-        ('Período Integral', 'Período Integral'),
-        ('Meio Preíodo', 'Meio Período'),
-    )
-    jornada = models.CharField('Jornada', max_length=30, choices=JORNADA_CHOICES, null=True)
-
-
     modalidade = models.CharField('Local', max_length=10, choices=MODALIDADE_CHOICES, null=True)
-    
+
     
     salario = models.IntegerField(verbose_name='Salário desejado', null=True)
     
     
-    habilidades = models.ManyToManyField(Habilidades)
-    
+    pri_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='1ª - Habilidade', related_name='pri_habilidade_candidato+', null=True, on_delete=models.PROTECT)
+    seg_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='2ª - Habilidade', related_name='seg_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+    ter_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='3ª - Habilidade', related_name='ter_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+    qua_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='4ª - Habilidade', related_name='qua_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+    qui_habilidade_candidato = models.ForeignKey(Habilidade, verbose_name='5ª - Habilidade', related_name='qui_habilidade_candidato+', null=True, blank=True, on_delete=models.PROTECT)
+
     
     usuario = models.OneToOneField(User, on_delete=models.PROTECT)
 
@@ -90,7 +67,6 @@ class Curriculo(models.Model):
     class Meta:
         verbose_name = 'Curriculo'
         verbose_name_plural = 'Curriculos'
-
 
     
     def __str__(self):
