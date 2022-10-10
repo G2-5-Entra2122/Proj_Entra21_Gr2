@@ -58,7 +58,7 @@ class Curriculo(models.Model):
         ('PJ', 'PJ'),
         ('Voluntário', 'Voluntário'),
     )
-    contrato = models.CharField('Contrato', max_length=7, choices=CONTRATO_CHOICES, null=True)
+    contrato = models.CharField('Contrato', max_length=10, choices=CONTRATO_CHOICES, null=True)
 
     
     MODALIDADE_CHOICES = (
