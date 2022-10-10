@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Habilidades, Curriculo
+from .models import Habilidade, Curriculo
 
-admin.site.register(Habilidades)
+admin.site.register(Habilidade)
 admin.site.register(Curriculo)
