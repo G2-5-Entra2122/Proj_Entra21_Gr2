@@ -62,7 +62,7 @@ class Vaga(models.Model):
     outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=OUTRAS_REG_CHOICES,max_length=3)
     
     
-    requisitos=models.CharField('Requisitos',max_length=50,help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.')
+    requisitos=models.CharField('Requisitos',max_length=500,help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.')
     
     salmin=models.DecimalField('Salário Mínimo',decimal_places=2,max_digits=10)
     
@@ -76,7 +76,7 @@ class Vaga(models.Model):
     seg_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='2ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
     ter_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='3ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
     qua_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='4ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
-    qui_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='5ª - Habilidade', related_name='pri_habilidade_vaga+', blank=True, on_delete=models.PROTECT)
+    qui_habilidade_vaga = models.ForeignKey(Habilidade, verbose_name='5ª - Habilidade', related_name='pri_habilidade_vaga+', null=True, blank=True, on_delete=models.PROTECT)
 
 
     usuario = models.ForeignKey(User, on_delete=models.PROTECT)
