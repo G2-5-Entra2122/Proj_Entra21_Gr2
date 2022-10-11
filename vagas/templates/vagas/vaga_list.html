@@ -15,24 +15,30 @@
             <p>
                 {{ x.descricao }}               
             </p>
-            <p><h5>Modalidade da vaga</h5></p>
+            <p><h5>Tipo de contrato</h5></p>
             <p>
-                {{ x.tipo_contrato }}               
+                {{ x.contrato }}               
             </p>
             <p><h5>Local</h5></p>
             <p>
                 {{ x.local }}               
             </p>
-            <p>Aceita candidatos de outras regiões? {{ x.outras_reg }} </p>
+            <p><h5>Aceita candidatos de outras regiões? </h5></p>
+            <p>
+                {{ x.outras_reg }} 
+            </p>
             <p><h5>Requisistos</h5></p>
             <p>
                 {{ x.requisitos }}               
             </p>
             <p><h5>Habilidade obrigatória</h5></p>
             <p>
-                {{ x.habil_obr }}               
+                {{ x.pri_habilidade_vaga }}               
             </p>
-            <p><h6>Range salarial R$ {{ x.salmin }} a {{ x.salmax }} </h6></p>
+            <p><h5>Range salarial R$ </h5></p>
+            <p>
+                {{ x.salmin }} a {{ x.salmax }} 
+            </p>
             <p><h5>Benefícios</h5></p>
             <p>
                 {{ x.beneficios }}               
