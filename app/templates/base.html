@@ -90,15 +90,15 @@
                         <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
 
                             <ul class=" nav navbar-nav">
-                                <li class="has-child"><a href="javascript:;">Início</a>
+                                <li class="has-child"><a href="/index">Início</a>
                                 </li>
-                                <li class="has-child"><a href="javascript:;">Vagas</a>
+                                <li class="has-child"><a href="/about">Sobre</a>
+                                </li>                                
+                                <li class="has-child"><a href="{% url 'vaga-list' %}">Vagas</a> 
                                 </li>
-                                <li class="has-child"><a href="javascript:;">Empresas</a>
+                                <li class="has-child"><a href="{% url 'empresas' %}">Empresas</a>
                                 </li>
-                                <li class="has-child"><a href="javascript:;">Sobre</a>
-                                </li>
-                                <li class="has-child"><a href="javascript:;">Candidatos</a>
+                                <li class="has-child"><a href="javascript:;">Candidatos</a> <!--incluir a pagina do nicollas aqui, não tá no html q foi feito antes-->
                                 </li>
 
                             </ul>
@@ -119,7 +119,7 @@
                                     <div class="twm-nav-btn-right">
                                         <a href="dash-post-job.html" class="twm-nav-post-a-job">
                                             <i class="feather-briefcase"></i>
-                                             Publique Vagas 
+                                             Registre-se
                                         </a>
                                     </div>
                                 </div>

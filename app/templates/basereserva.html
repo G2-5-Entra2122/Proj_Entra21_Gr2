@@ -26,13 +26,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'vaga-list' %}">Vagas</a>
+                        <a class="nav-link" href="{% url 'vaga-list' %}">Vagas</a> <!--adicionado-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'empresas' %}">Empresas</a>
+                        <a class="nav-link" href="{% url 'empresas' %}">Empresas</a> <!--adicionado-->
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">Sobre</a>
+                        <a class="nav-link" href="/about">Sobre</a> <!--adicionado-->
                     </li>
 
                     {% if request.user|has_group:"Candidato" %}
