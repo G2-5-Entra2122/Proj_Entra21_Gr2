@@ -35,7 +35,7 @@
                         <a class="nav-link" href="/about">Sobre</a> <!--adicionado-->
                     </li>
 
-                    {% if request.user|has_group:"Candidato" %} <!--esa parte que tem que entender melhor, se esse group foi criado em algum outro lugar-->
+                    {% if request.user|has_group:"Candidato" %} <!--essa parte que tem que entender melhor, se esse group foi criado em algum outro lugar-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,7 +92,7 @@
                             <span id="username">Registrar</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{% url 'registrar-candidato' %}">
+                            <a class="dropdown-item" href="{% url 'registrar-candidato' %}"> <!--acredito que isso aqui não irá precisar, pois não abre uma nova aba e sim uma pop up-->
                                 <i class="fa fa-user-tie" aria-hidden="true"></i>
                                 Candidato</a>
                             <a class="dropdown-item" href="{% url 'registrar-empresa' %}">
