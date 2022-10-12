@@ -35,7 +35,7 @@
                         <a class="nav-link" href="/about">Sobre</a> <!--adicionado-->
                     </li>
 
-                    {% if request.user|has_group:"Candidato" %}
+                    {% if request.user|has_group:"Candidato" %} <!--esa parte que tem que entender melhor, se esse group foi criado em algum outro lugar-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
