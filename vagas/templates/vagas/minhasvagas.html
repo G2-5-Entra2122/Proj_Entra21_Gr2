@@ -1,7 +1,5 @@
 {% extends  'base.html' %} 
- 
 {% load static %} 
- 
  
  
 {% block content %} 
@@ -30,6 +28,9 @@
             <td>{{ vaga.nivel }}</td> 
             <td>{{ vaga.tipo_contrato }}</td>
             <td>
+                <a href="{% url 'minhavaga-detail' vaga.pk %}">
+                    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                </a>
                 <a href="{% url 'minhasvagas-alterar' vaga.pk %}" class="btn btn-warning btn-sm" title="Editar">
                     <i class="fa fa-pencil" aria-hidden="true"></i>
                 </a>
