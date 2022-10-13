@@ -6799,9 +6799,9 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .twm-jobs-list-style1 p {
   font-size: 14px;
 }
-/*.twm-jobs-list-style1 .twm-mid-content {
-  padding-left: 180px;
-} espaço de imagem com foto da empresa na jobs list*/ 
+.twm-jobs-list-style1 .twm-mid-content {
+  padding-left: 0px;
+} /*espaço de imagem com foto da empresa na jobs list*/ 
 @media (max-width: 767px) {
   .twm-jobs-list-style1 .twm-mid-content {
     padding-left: 0px;
