@@ -62,13 +62,13 @@ class Vaga(models.Model):
     outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=OUTRAS_REG_CHOICES,max_length=3)
     
     
-    requisitos=models.CharField('Requisitos',max_length=500,help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.')
+    requisitos=models.TextField('Requisitos',max_length=500,help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.')
     
     salmin=models.DecimalField('Salário Mínimo',decimal_places=2,max_digits=10)
     
     salmax=models.DecimalField('Salário Máximo',decimal_places=2,max_digits=10)
      
-    beneficios=models.TextField('Benefícios',max_length=500,help_text='Exemplos: "Vale refeição", "Plano de saúde", etc.')
+    beneficios=models.TextField('Benefícios',max_length=300,help_text='Exemplos: "Vale refeição", "Plano de saúde", etc.')
     
     data=models.DateField('Data de criação:',auto_now_add=True)
 

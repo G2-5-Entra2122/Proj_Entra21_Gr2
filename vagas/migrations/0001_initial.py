@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 ('jornada', models.CharField(choices=[('Período Integral', 'Período Integral'), ('Meio Preíodo', 'Meio Período')], max_length=30, null=True, verbose_name='Jornada')),
                 ('local', models.CharField(help_text='Onde reside sua empresa, para vagas presenciais. Para trabalho remoto, use "Online".', max_length=30, verbose_name='Local da Vaga')),
                 ('outras_reg', models.CharField(choices=[('sim', 'Sim'), ('nao', 'Não')], max_length=3, verbose_name='Aceita candidatos de outras regiões?')),
-                ('requisitos', models.CharField(help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.', max_length=500, verbose_name='Requisitos')),
+                ('requisitos', models.TextField(help_text='Exemplos: "Formação em nível superior", "Tecnólogo", etc.', max_length=300, verbose_name='Requisitos')),
                 ('salmin', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Salário Mínimo')),
                 ('salmax', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Salário Máximo')),
                 ('beneficios', models.TextField(help_text='Exemplos: "Vale refeição", "Plano de saúde", etc.', max_length=500, verbose_name='Benefícios')),
