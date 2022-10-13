@@ -1,3 +1,4 @@
+from requests import request
 from .models import Vaga
 
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -100,6 +101,32 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
 class VagaListView(ListView):
     template_name='vagas/vagas_list.html'
     model = Vaga
+
+    def Listafiltro(self):
+        if request.method == 'GET':
+            search = request.GET.get('search')
+            if search:
+                vaga=Vaga.objects.filter(categoria=search)
+                return vaga
+        
+
+        # for x in list([result5]):
+        #     Vaga.fields=[
+        #     x['nome'],
+        #     x['categoria'],
+        #     x['nivel'],
+        #     x['modalidade'],
+        #     x['contrato'],
+        #     x['jornada'],
+        #     x['local'],
+        #     x['outras_reg'],
+        #     x['salmin'],
+        #     x['salmax'],
+        #     x['beneficios'],
+        #     x['pri_habilidade_vaga'],
+        #     ]
+        #     return x
+
 
 
 
