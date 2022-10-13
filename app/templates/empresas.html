@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %}
 
 {% block title %}Empresas{% endblock %}
 
@@ -10,4 +10,412 @@
 
     </div>
 </div>
+{% endblock %} -->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image: url({% static 'images/background/bg-1.jpg' %});">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Empresas Parceiras</h2>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+
+
+            <!-- Employer Grid START -->
+            <div class="section-full p-t120  p-b90 site-bg-white">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-lg-4 col-md-12 rightSidebar">
+
+                            <div class="side-bar">
+
+                                <div class="sidebar-elements search-bx">
+                                                                            
+                                    <form>
+
+                                        <div class="form-group mb-4">
+                                            <h4 class="section-head-small mb-4">Categoria</h4>
+                                            <select class="wt-select-bar-large selectpicker"  data-live-search="true" data-bv-field="size">
+                                                <option selected>Todas categorias</option>
+                                                <option>Tecnologia</option>
+                                                <option>Telecomunicações</option>
+                                                <option>Varejo</option>
+                                                <option>Financeira</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            <h4 class="section-head-small mb-4">Palavra-chave</h4>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Título ou palavra-chave">
+                                                <button class="btn" type="button"><i class="feather-search"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            <h4 class="section-head-small mb-4">Localização</h4>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Cidade">
+                                                <button class="btn" type="button"><i class="feather-map-pin"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="twm-sidebar-ele-filter">
+                                            <h4 class="section-head-small mb-4">Última postagem</h4>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio1">
+                                                        <label class="form-check-label" for="exampleradio1">Há uma hora</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio2">
+                                                        <label class="form-check-label" for="exampleradio2">Últimas 24h</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio3">
+                                                        <label class="form-check-label" for="exampleradio3">Últimos 7 dias</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio4">
+                                                        <label class="form-check-label" for="exampleradio4">Últimos 14 dias</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio5">
+                                                        <label class="form-check-label" for="exampleradio5">Últimos 30 dias</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio6">
+                                                        <label class="form-check-label" for="exampleradio6">Todos</label>
+                                                    </div>
+                                                </li>
+                             
+                                            </ul>
+                                        </div>
+
+                                        <div class="twm-sidebar-ele-filter">
+                                            <h4 class="section-head-small mb-4">Tipo de vaga</h4>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="Freelance1">
+                                                        <label class="form-check-label" for="Freelance1">Freelance</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="FullTime1">
+                                                        <label class="form-check-label" for="FullTime1">Integral</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="Intership1">
+                                                        <label class="form-check-label" for="Intership1">Voluntário</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="Part-Time1">
+                                                        <label class="form-check-label" for="Part-Time1">Meio período</label>
+                                                    </div>
+                                                </li>
+                             
+                                            </ul>
+                                        </div>
+                                        
+                                    </form>
+                                    
+                                </div>
+
+                                <!-- <div class="widget tw-sidebar-tags-wrap"> -->
+                                    <!-- <h4 class="section-head-small mb-4">Tags</h4>
+                                    
+                                    <div class="tagcloud">
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">General</a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Jobs </a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Payment</a>                                            
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Application </a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Work</a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Recruiting</a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Employer</a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Income</a>
+                                        <a href="http://thememajestic.com/jobzilla/job-list.html">Tips</a>
+                                    </div>
+                                </div> -->
+
+                                
+                            </div>
+
+                            <div class="twm-advertisment" style="background-image:url({% static 'images/add-bg.jpg' %});">
+                               <div class="overlay"></div>
+                               <h4 class="twm-title">Recrutando?</h4>
+                               <p>Receba os currículos que mais <br>
+                                correspondem ao perfil que você busca</p>
+                                <a href="http://thememajestic.com/jobzilla/about-1.html" class="site-button white">Saiba mais</a> 
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-8 col-md-12">
+                            <!--Filter Short By-->
+                            <div class="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
+                                <span class="woocommerce-result-count-left">Mostrando 1-8 de 10 resultados</span>
+                               
+                                <form class="woocommerce-ordering twm-filter-select" method="get">
+                                    <span class="woocommerce-result-count">Ordenar por</span>
+                                    <select class="wt-select-bar-2 selectpicker"  data-live-search="true" data-bv-field="size">
+                                        <option>Most Recent</option>
+                                        <option>Freelance</option>
+                                        <option>Full Time</option>
+                                        <option>Internship</option>
+                                        <option>Part Time</option>
+                                        <option>Temporary</option>
+                                    </select>
+                                    <select class="wt-select-bar-2 selectpicker"  data-live-search="true" data-bv-field="size">
+                                        <option>Mostrar 10</option>
+                                        <option>Mostrar 20</option>
+                                        <option>Mostrar 30</option>
+
+                                    </select>
+                                </form>
+
+                            </div>
+
+                            <div class="twm-employer-list-wrap">
+                                <div class="row">
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="{% static 'images/jobs-company/capgemini.jpeg' %}" alt="#"> <!--ajustar as imagens das empresas amanha-->
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                     <h4>Herbal Ltd</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Accountancy</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                 <div class="twm-jobs-vacancies"><span>25</span>Vacancies</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic2.jpg" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                     <h4>Artistre Studio PVT Ltd</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">IT Contractor</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>30</span>Vacancies</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic3.jpg" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Wins Developers</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Banking</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>32</span>Vacancies</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic4.jpg" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Thewebmax PVT Ltd</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Digital & Creative</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>38</span>Vacancies</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic5.jpg" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Robo Tech</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Sales & Marketing</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>40</span>Vacancies</div>
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic1.jpg" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                    <h4>Galaxy IT Solution</h4>
+                                                </a>
+                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Leisure & Tourismm</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>38</span>Vacancies</div>
+                                            </div>
+                                        </div>
+                                     </div>
+    
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic2.jpg" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                    <h4>Coderbotics solutions</h4>
+                                                </a>
+                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Consultancy</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>35</span>Vacancies</div>
+                                            </div>
+                                        </div>
+                                     </div>
+    
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic3.jpg" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Microsoft solution</h4>
+                                                </a>
+                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Technologies</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>65</span>Vacancies</div>
+                                            </div>
+                                        </div>
+                                     </div>
+    
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic4.jpg" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Dot Circle PVT Ltd</h4>
+                                                </a>
+                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Sales & Marketing</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>50</span>Vacancies</div>
+                                            </div>
+                                        </div>
+                                     </div>
+
+                                    
+                                </div>
+                            </div>
+
+                            <div class="pagination-outer">
+                                <div class="pagination-style1">
+                                    <ul class="clearfix">
+                                        <li class="prev"><a href="javascript:;"><span> <i class="fa fa-angle-left"></i> </span></a></li>
+                                        <li><a href="javascript:;">1</a></li>
+                                        <li class="active"><a href="javascript:;">2</a></li>
+                                        <li><a href="javascript:;">3</a></li>
+                                        <li><a class="javascript:;" href="javascript:;"><i class="fa fa-ellipsis-h"></i></a></li>
+                                        <li><a href="javascript:;">5</a></li>
+                                        <li class="next"><a href="javascript:;"><span> <i class="fa fa-angle-right"></i> </span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>   
+            <!-- Employer Grid END -->
+          
+            
+     
+        </div>
+
+
+
+
+
+        <!--Model Popup Section End-->
+
+ 	</div>
+</body>
+</html>
+{% include 'rodape.html'%}
 {% endblock %}
+
