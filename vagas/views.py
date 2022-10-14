@@ -11,6 +11,8 @@ from django.views.generic.list import ListView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
+from .forms import FilterForm
+
 
 
 ######################## CREATE ##########################
@@ -103,11 +105,28 @@ class VagaListView(ListView):
     model = Vaga
 
     def Listafiltro(self):
-        if request.method == 'GET':
-            search = request.GET.get('search')
-            if search:
-                vaga=Vaga.objects.filter(categoria=search)
-                return vaga
+        def get_queryset(self):
+            query = self.request.GET.get('search')
+            filter_field = self.request.GET.get('filter_field')
+
+            return Vaga.objects.all()
+
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context['form'] = FilterForm(initial={
+                'search': self.request.GET.get('search', ''),
+                'filter_field': self.request.GET.get('filter_field', '')
+            })
+            return context
+
+
+
+
+        # if request.method == 'GET':
+        #     search = request.GET.get('search')
+        #     if search:
+        #         vaga=Vaga.objects.filter(categoria=search)
+        #         return vaga
         
 
         # for x in list([result5]):
