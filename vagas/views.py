@@ -99,7 +99,7 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
  
 
 class VagaListView(ListView):
-    template_name='vagas/vagas_list.html'
+    template_name='vagas/vagas-list.html'
     model = Vaga
 
     def Listafiltro(self):
