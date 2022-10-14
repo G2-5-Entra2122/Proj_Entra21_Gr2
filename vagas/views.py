@@ -102,6 +102,10 @@ class VagaListView(ListView):
     model = Vaga
     paginate_by = 4
 
+class VagaExibirListView(ListView):
+    template_name='vagas/exibirvaga.html'
+    model = Vaga
+
 
 
 ######################## ALTERAR ##########################
