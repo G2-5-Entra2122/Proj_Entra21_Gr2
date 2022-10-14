@@ -119,9 +119,10 @@
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
                                                 data-bv-field="size" id="search" name="cat" value="{{ request.GET.cat }}">
                                                 <option selected>Todas as categorias</option>
-                                                <option>Full-Stack</option>
-                                                <option>Back-End</option>
-                                                <option>Front-End</option>
+                                                <option value="Full-Stack">Full-Stack</option>
+                                                <option value="Back-End">Back-End</option>
+                                                <option value="Front-End">Front-End</option>
+                                                <option value="Mobile">Mobile</option>
                                             </select>
                                         {{ form.search }}
                                         {{ formu.filter_field }}
