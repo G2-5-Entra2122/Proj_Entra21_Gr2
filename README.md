@@ -290,7 +290,21 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 ### 07/10/2022
 
 - Foram equalizados os nomes das choices entre os apps candidatos e vagas;
-- Serão 
+
+### 13/10/2022
+
+- Construção de filtros para vagas;
+- Será feito migrate para disponibilizar base de dados aos usuários no repositório local;
+
+
+### 14/10/2022
+
+- Ajustes na paginação da lista de vagas;
+- continuação da construção de filtros de vagas;
+- cadastramento de vagas no DB;
+- finalizada a inserção do DB;
+- lógica do match entre contratantes e candidatos em andamento;
+- Nova demanda: criar o html de visualização de uma vaga selecionada;
 
  
 Referências:
