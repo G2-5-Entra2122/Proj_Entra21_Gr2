@@ -39,10 +39,13 @@
                                             <h4 class="section-head-small mb-4">Categoria</h4>
                                             <select class="wt-select-bar-large selectpicker"  data-live-search="true" data-bv-field="size">
                                                 <option selected>Todas categorias</option>
+                                                <option>Serviços de investimentos</option>
+                                                <option>Empresa de telecomunicação</option>
+                                                <option>Empresa de software</option>
                                                 <option>Tecnologia</option>
-                                                <option>Telecomunicações</option>
-                                                <option>Varejo</option>
-                                                <option>Financeira</option>
+                                                <option>Farmácia</option>
+                                                <option>Consultoria empresarial</option>
+                                                <option>Cooperativa de crédito</option>
                                             </select>
                                         </div>
 
@@ -202,17 +205,17 @@
                                      <div class="col-lg-6 col-md-6">
                                          <div class="twm-employer-grid-style1 mb-5">
                                              <div class="twm-media">
-                                                 <img src="{% static 'images/jobs-company/capgemini.jpeg' %}" alt="#"> <!--ajustar as imagens das empresas amanha-->
+                                                 <img src="{% static 'images/jobs-company/centralailos190px.png' %}" alt="#">
                                              </div>
                                              <div class="twm-mid-content">
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                     <h4>Capgemini</h4>
+                                                 <a href="https://www.ailos.coop.br/" class="twm-job-title">
+                                                     <h4>Central Ailos</h4>
                                                  </a>
                                                  <p class="twm-job-address">Blumenau</p>
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Accountancy</a>
+                                                 <a href="https://www.ailos.coop.br/" class="twm-job-websites site-text-primary">Cooperativa de crédito</a>
                                              </div>
                                              <div class="twm-right-content">
-                                                 <div class="twm-jobs-vacancies"><span>25</span>Vacancies</div>
+                                                 <div class="twm-jobs-vacancies"><span>{{ vagas.count }}</span>Vagas</div> <!--arrumar o contador de vagas aqui-->
                                              </div>
                                          </div>
                                      </div>
@@ -220,17 +223,17 @@
                                      <div class="col-lg-6 col-md-6">
                                          <div class="twm-employer-grid-style1 mb-5">
                                              <div class="twm-media">
-                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic2.jpg" alt="#">
+                                                 <img src="{% static 'images/jobs-company/ambevtech190px.png' %}" alt="#">
                                              </div>
                                              <div class="twm-mid-content">
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                     <h4>Artistre Studio PVT Ltd</h4>
+                                                 <a href="https://www.ambevtech.com.br/" class="twm-job-title">
+                                                     <h4>Ambev Tech</h4>
                                                  </a>
-                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">IT Contractor</a>
+                                                 <p class="twm-job-address">Vila Nova, Blumenau - SC</p>
+                                                 <a href="https://www.ambevtech.com.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
                                              </div>
                                              <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>30</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>30</span>Vagas</div>
                                              </div>
                                          </div>
                                      </div>
@@ -238,17 +241,17 @@
                                      <div class="col-lg-6 col-md-6">
                                          <div class="twm-employer-grid-style1 mb-5">
                                              <div class="twm-media">
-                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic3.jpg" alt="#">
+                                                 <img src="{% static 'images/jobs-company/capgemini190px.png' %}" alt="#">
                                              </div>
                                              <div class="twm-mid-content">
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                     <h4 class="twm-job-title">Wins Developers</h4>
+                                                 <a href="https://www.capgemini.com/br-pt/" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Capgemini</h4>
                                                  </a>
-                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Banking</a>
+                                                 <p class="twm-job-address">Itoupavazinha, Blumenau - SC</p>
+                                                 <a href="https://www.capgemini.com/br-pt/" class="twm-job-websites site-text-primary">Consultoria empresarial</a>
                                              </div>
                                              <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>32</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>32</span>Vagas</div>
                                              </div>
                                          </div>
                                      </div>
@@ -256,17 +259,17 @@
                                      <div class="col-lg-6 col-md-6">
                                          <div class="twm-employer-grid-style1 mb-5">
                                              <div class="twm-media">
-                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic4.jpg" alt="#">
+                                                 <img src="{% static 'images/jobs-company/datainfo190px.png' %}" alt="#">
                                              </div>
                                              <div class="twm-mid-content">
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                     <h4 class="twm-job-title">Thewebmax PVT Ltd</h4>
+                                                 <a href="https://www.datainfo.inf.br/" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Datainfo</h4>
                                                  </a>
-                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Digital & Creative</a>
+                                                 <p class="twm-job-address">Vorstadt, Blumenau - SC</p>
+                                                 <a href="https://www.datainfo.inf.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
                                              </div>
                                              <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>38</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>38</span>Vagas</div>
                                              </div>
                                          </div>
                                      </div>
@@ -274,17 +277,17 @@
                                      <div class="col-lg-6 col-md-6">
                                          <div class="twm-employer-grid-style1 mb-5">
                                              <div class="twm-media">
-                                                 <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic5.jpg" alt="#">
+                                                 <img src="{% static 'images/jobs-company/farmaciasapp190px.png' %}" alt="#">
                                              </div>
                                              <div class="twm-mid-content">
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                     <h4 class="twm-job-title">Robo Tech</h4>
+                                                 <a href="https://www.farmaciasapp.com.br/" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Farmácias App</h4>
                                                  </a>
-                                                 <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                 <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Sales & Marketing</a>
+                                                 <p class="twm-job-address">Blumenau - SC</p>
+                                                 <a href="https://www.farmaciasapp.com.br/" class="twm-job-websites site-text-primary">Farmácia</a>
                                              </div>
                                              <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>40</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>40</span>Vagas</div>
                                              </div>
                                          </div>
                                      </div>
@@ -292,17 +295,17 @@
                                      <div class="col-lg-6 col-md-6">
                                         <div class="twm-employer-grid-style1 mb-5">
                                             <div class="twm-media">
-                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic1.jpg" alt="#">
+                                                <img src="{% static 'images/jobs-company/havanlabs190px.png' %}" alt="#">
                                             </div>
                                             <div class="twm-mid-content">
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                    <h4>Galaxy IT Solution</h4>
+                                                <a href="https://havanlabs.gupy.io/" class="twm-job-title">
+                                                    <h4>Havan Labs</h4>
                                                 </a>
-                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Leisure & Tourismm</a>
+                                                <p class="twm-job-address">Centro, Brusque - SC</p>
+                                                <a href="https://havanlabs.gupy.io/" class="twm-job-websites site-text-primary">Tecnologia</a>
                                             </div>
                                             <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>38</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>38</span>Vagas</div>
                                             </div>
                                         </div>
                                      </div>
@@ -310,17 +313,17 @@
                                      <div class="col-lg-6 col-md-6">
                                         <div class="twm-employer-grid-style1 mb-5">
                                             <div class="twm-media">
-                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic2.jpg" alt="#">
+                                                <img src="{% static 'images/jobs-company/philips190px.png' %}" alt="#">
                                             </div>
                                             <div class="twm-mid-content">
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                    <h4>Coderbotics solutions</h4>
+                                                <a href="https://www.philips.com.br/" class="twm-job-title">
+                                                    <h4>Philips</h4>
                                                 </a>
-                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Consultancy</a>
+                                                <p class="twm-job-address">Itoupava Norte, Blumenau - SC</p>
+                                                <a href="https://www.philips.com.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
                                             </div>
                                             <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>35</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>35</span>Vagas</div>
                                             </div>
                                         </div>
                                      </div>
@@ -328,17 +331,17 @@
                                      <div class="col-lg-6 col-md-6">
                                         <div class="twm-employer-grid-style1 mb-5">
                                             <div class="twm-media">
-                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic3.jpg" alt="#">
+                                                <img src="{% static 'images/jobs-company/senior190px.png' %}" alt="#">
                                             </div>
                                             <div class="twm-mid-content">
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                    <h4 class="twm-job-title">Microsoft solution</h4>
+                                                <a href="https://www.senior.com.br/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Senior</h4>
                                                 </a>
-                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Technologies</a>
+                                                <p class="twm-job-address">Victor Konder, Blumenau - SC</p>
+                                                <a href="https://www.senior.com.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
                                             </div>
                                             <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>65</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>65</span>Vagas</div>
                                             </div>
                                         </div>
                                      </div>
@@ -346,21 +349,54 @@
                                      <div class="col-lg-6 col-md-6">
                                         <div class="twm-employer-grid-style1 mb-5">
                                             <div class="twm-media">
-                                                <img src="http://thememajestic.com/jobzilla/images/jobs-company/pic4.jpg" alt="#">
+                                                <img src="{% static 'images/jobs-company/tsystems190px.png' %}" alt="#">
                                             </div>
                                             <div class="twm-mid-content">
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-title">
-                                                    <h4 class="twm-job-title">Dot Circle PVT Ltd</h4>
+                                                <a href="https://www.t-systems.com/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">T-Systems</h4>
                                                 </a>
-                                                <p class="twm-job-address">1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
-                                                <a href="http://thememajestic.com/jobzilla/employer-detail.html" class="twm-job-websites site-text-primary">Sales & Marketing</a>
+                                                <p class="twm-job-address">Bom Retiro, Blumenau - SC</p>
+                                                <a href="https://www.t-systems.com/" class="twm-job-websites site-text-primary">Empresa de software</a>
                                             </div>
                                             <div class="twm-right-content">
-                                                <div class="twm-jobs-vacancies"><span>50</span>Vacancies</div>
+                                                <div class="twm-jobs-vacancies"><span>50</span>Vagas</div>
                                             </div>
                                         </div>
                                      </div>
-
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/unifique190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://unifique.com.br/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Unifique</h4>
+                                                </a>
+                                                <p class="twm-job-address">Centro, Blumenau - SC</p>
+                                                <a href="https://unifique.com.br/" class="twm-job-websites site-text-primary">Empresa de telecomunicação</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>20</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>                                     
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/warren190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://warren.com.br/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Warren</h4>
+                                                </a>
+                                                <p class="twm-job-address">Centro, Blumenau - SC</p>
+                                                <a href="https://warren.com.br/" class="twm-job-websites site-text-primary">Serviços de investimentos</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>28</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>
                                     
                                 </div>
                             </div>
