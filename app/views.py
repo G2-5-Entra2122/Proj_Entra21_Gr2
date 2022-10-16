@@ -6,7 +6,7 @@ class HomeView(TemplateView):
 
 
 class EmpresasView(TemplateView):
-    template_name = 'empresas.html'
+    template_name = 'empresas-lista.html'
 
 class SobreView(TemplateView):
     template_name = 'about.html'

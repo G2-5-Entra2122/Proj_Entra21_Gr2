@@ -71,7 +71,7 @@
 
                         <div class="logo-header">
                             <div class="logo-header-inner logo-header-one">
-                                <a href="index.html">
+                                <a href="{% url 'index' %}">
                                     <img src="{% static 'images/Logo_gg.png' %}" alt="" width=150% hight=150%>
                                 </a>
                             </div>
@@ -90,9 +90,9 @@
                         <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
 
                             <ul class=" nav navbar-nav">
-                                <li class="has-child"><a href="/index">Início</a>
+                                <li class="has-child"><a href="{% url 'index' %}">Início</a>
                                 </li>
-                                <li class="has-child"><a href="/about">Sobre</a>
+                                <li class="has-child"><a href="{% url 'about' %}">Sobre</a>
                                 </li>                                
                                 <li class="has-child"><a href="{% url 'vaga-list' %}">Vagas</a> 
                                 </li>
