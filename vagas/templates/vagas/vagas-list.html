@@ -1,73 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block content %}
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <!-- META -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <meta name="robots" content="" />
-    <meta name="description" content="" />
-
-    <!-- FAVICONS ICON -->
-    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon2.png' %}" />
+{% load static %} 
 
     <!-- PAGE TITLE HERE -->
+    {% block title %}
     <title>Experts 4 Hire | Vagas</title>
+    {% endblock %}
 
-    <!-- MOBILE SPECIFIC -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block content %}
 
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"><!-- BOOTSTRAP STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
-    <!-- FONTAWESOME STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/feather.css' %}"><!-- FEATHER ICON SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
-    <!-- OWL CAROUSEL STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.min.css' %}">
-    <!-- MAGNIFIC POPUP STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lc_lightbox.css' %}"><!-- Lc light box popup -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.min.css' %}">
-    <!-- BOOTSTRAP SLECT BOX STYLE SHEET  -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dataTables.bootstrap5.min.css' %}">
-    <!-- DATA table STYLE SHEET  -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/select.bootstrap5.min.css' %}">
-    <!-- DASHBOARD select bootstrap  STYLE SHEET  -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dropzone.css' %}"><!-- DROPZONE STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/scrollbar.css' %}">
-    <!-- CUSTOM SCROLL BAR STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/datepicker.css' %}"><!-- DATEPICKER STYLE SHEET -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"><!-- MAIN STYLE SHEET -->
-
-</head>
-
+   
 <body>
-
-
-    <!-- LOADING AREA START ===== -->
-    <div class="loading-area">
-        <div class="loading-box"></div>
-        <div class="loading-pic">
-            <div class="wrapper">
-                <div class="cssload-loader"></div>
-            </div>
-        </div>
-    </div>
-    <!-- LOADING AREA  END ====== -->
-
-    <div class="page-wraper">
-
-        <!-- HEADER START -->
-
-        <!-- HEADER END -->
-
-
         <!-- CONTENT START -->
         <div class="page-content">
 
@@ -96,7 +38,6 @@
                 </div>
             </div>
             <!-- INNER PAGE BANNER END -->
-
 
             <!-- OUR BLOG START -->
             <div class="section-full p-t120  p-b90 site-bg-white">
@@ -307,8 +248,7 @@
 
                             </div>
 
-                            <div class="twm-advertisment"
-                                style="background-image:url('/static/images/recruit.webp');">
+                            <div class="twm-advertisment">
                                 <div class="overlay"></div>
                                 <h4 class="twm-title">Procurando emprego?</h4>
                                 <p>Obtenha as melhores vagas correspondentes em seu E-mail. Adicionar currículo AGORA!
@@ -332,7 +272,7 @@
                                         <option>Maior Salário</option>
                                         <option>Menor Salário</option>
                                     </select>
-                                    <!-- <select class="wt-select-bar-2 selectpicker" data-live-search="true"
+                                    <select class="wt-select-bar-2 selectpicker" data-live-search="true"
                                         data-bv-field="size">
                                         <option>Mostrar 10</option>
                                         <option>Mostrar 20</option>
@@ -340,7 +280,7 @@
                                         <option>Mostrar 40</option>
                                         <option>Mostrar 50</option>
                                         <option>Mostrar 60</option>
-                                    </select> -->
+                                    </select>
                                 </form>
 
                             </div>
@@ -379,148 +319,14 @@
                 </div>
             </div>
             <!-- OUR BLOG END -->
-
-
-        
+    
         </div>
         <!-- CONTENT END -->
 
         <!-- FOOTER START -->
-        <footer class="footer-dark" style="background-image: url('/static/images/footer-bg.jpg');">
-            <div class="container">
-
-                <!-- NEWS LETTER SECTION START -->
-                <div class="ftr-nw-content">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="ftr-nw-title">
-                                Junte-se à nossa assinatura de e-mail agora para receber atualizações sobre novas
-                                vagas e notificações.
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <form>
-                                <div class="ftr-nw-form">
-                                    <input name="news-letter" class="form-control" placeholder="Digite seu e-mail"
-                                        type="text">
-                                    <button class="ftr-nw-subcribe-btn">Inscreva-se agora</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- NEWS LETTER SECTION END -->
-                <!-- FOOTER BLOCKES START -->
-                <div class="footer-top">
-                    <div class="row">
-
-                        <div class="col-lg-3 col-md-12">
-
-                            <div class="widget widget_about">
-                                <div class="logo-footer clearfix">
-                                    <a href="{% url 'index' %}"><img src="{% static 'images/experts-logoteste.png' %}"
-                                            alt="logo da experts 4 hire" width="60%"></a>
-                                </div>
-                                <p>Endereços de onde você pode nos encontrar tanto pessoalmente quanto virtualmente.</p>
-                                <ul class="ftr-list">
-                                    <li>
-                                        <p><span>Endereço :</span>65 Sunset CA 90026, USA </p>
-                                    </li>
-                                    <li>
-                                        <p><span>Email :</span>example@apus.com</p>
-                                    </li>
-                                    <li>
-                                        <p><span>Telefone :</span>555-555-1234</p>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-9 col-md-12">
-                            <div class="row">
-
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="widget widget_services ftr-list-center">
-                                        <h3 class="widget-title">Para Candidatos</h3>
-                                        <ul>
-                                            <li><a href="dashboard.html">Painel do usuário</a></li>
-                                            <li><a href="dash-resume-alert.html">Notificações</a></li>
-                                            <li><a href="candidate-grid.html">Candidatos</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="widget widget_services ftr-list-center">
-                                        <h3 class="widget-title">Para Empresas</h3>
-                                        <ul>
-                                            <li><a href="dash-post-job.html">Postar vagas</a></li>
-                                            <li><a href="contato.html">Contato</a></li>
-                                            <li><a href="job-list.html">Lista de empregos</a></li>
-                                            <li><a href="job-detail.html">Detalhes do trabalho</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="widget widget_services ftr-list-center">
-                                        <h3 class="widget-title">Recursos úteis</h3>
-                                        <ul>
-                                            <li><a href="faq.html">FAQs</a></li>
-                                            <li><a href="empresa_perfil.html">Detalhes da empresa</a></li>
-                                            <li><a href="perfil.html">Perfil</a></li>
-                                            <li><a href="preco.html">Preços</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="widget widget_services ftr-list-center">
-                                        <h3 class="widget-title">Links Rápidos</h3>
-                                        <ul>
-                                            <li><a href="{% url 'index' %}">Início</a></li>
-                                            <li><a href="sobre.html">Sobre nós</a></li>
-                                            <li><a href="{% url 'vaga-list' %}">Vagas</a></li>
-                                            <li><a href="empresas.html">Empresas</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <!-- FOOTER COPYRIGHT -->
-                <div class="footer-bottom">
-
-                    <div class="footer-bottom-info">
-
-                        <div class="footer-copy-right">
-                            <span class="copyrights-text">Copyright © 2022 by thewebmax All Rights Reserved.</span>
-                        </div>
-                        <ul class="social-icons">
-                            <li><a href="javascript:void(0);" class="fab fa-facebook-f"></a></li>
-                            <li><a href="javascript:void(0);" class="fab fa-twitter"></a></li>
-                            <li><a href="javascript:void(0);" class="fab fa-instagram"></a></li>
-                            <li><a href="javascript:void(0);" class="fab fa-youtube"></a></li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </footer>
+        {% include 'rodape.html' %}
         <!-- FOOTER END -->
         {% endblock %}
-
-        
-
-    </div>
     
 </body>
 
