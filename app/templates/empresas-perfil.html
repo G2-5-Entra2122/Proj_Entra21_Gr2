@@ -65,14 +65,14 @@
                                     <ul>
                                         <li class="active"><a href="{% url '404' %}"><i class="fa fa-user"></i> Perfil da Empresa</a></li>
                                         <li><a href="{% url '404' %}"><i class="fa fa-receipt"></i> Resumo</a></li>
-                                        <li><a href="{% url '404' %}"><i class="fa fa-suitcase"></i> Gerenciar Vagas</a></li>
-                                        <li><a href="{% url '404' %}"><i class="fa fa-book-reader"></i> Postar Vagas</a></li>
+                                        <li><a href="{% url 'minhas-vagas' %}"><i class="fa fa-suitcase"></i> Gerenciar Vagas</a></li>
+                                        <li><a href="{% url 'minhasvagas-adicionar' %}"><i class="fa fa-book-reader"></i> Postar Vagas</a></li>
                                         <li><a href="{% url '404' %}"><i class="fa fa-credit-card"></i>Transações</a></li>
                                         <li><a href="{% url '404' %}"><i class="fa fa-user-check"></i> Pagina de Candidatos</a></li>
-                                        <li><a href="{% url '404' %}"><i class="fa fa-fingerprint"></i> Mudar Senha</a></li>
-                                        <li><a href="{% url '404' %}"><i class="fa fa-share-square"></i> Sair</a></li>
-                                        <li><a href="{% url '404' %}"><i class="fa fa-pencil-alt"></i>Registrar </a></li>
-                                        <li><a href="{% url '404' %}"><i class="fa fa-pencil-alt"></i>Registro Profissional</a></li>
+                                        <li><a href="{% url 'change-password' %}"><i class="fa fa-fingerprint"></i> Mudar Senha</a></li>
+                                        <li><a href="{% url 'logout' %}"><i class="fa fa-share-square"></i> Sair</a></li>
+                                        <!-- <li><a href="{% url 'registrar-candidato' %}"><i class="fa fa-pencil-alt"></i>Registrar Candidato </a></li> -->
+                                        <!--<li><a href="{% url '404' %}"><i class="fa fa-pencil-alt"></i>Registro Profissional</a></li>-->
                                     </ul>
                                 </div>
                                 
@@ -185,29 +185,6 @@
                                                         </div>
                                                     </div>
                 
-
-                                                    <div class="col-xl-4 col-lg-6 col-md-12">
-                                                        <div class="form-group city-outer-bx has-feedback">
-                                                            <label>País</label>
-                                                            <div class="ls-inputicon-box">  
-                                                                <input class="form-control" name="company_since" type="text" placeholder="Brasil">
-                                                                <i class="fs-input-icon fa fa-globe-americas"></i>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xl-4 col-lg-6 col-md-12">
-                                                        <div class="form-group city-outer-bx has-feedback">
-                                                            <label>Cidade</label>
-                                                            <div class="ls-inputicon-box">  
-                                                                <input class="form-control" name="company_since" type="text" placeholder="Blumenau">
-                                                                <i class="fs-input-icon fa fa-globe-americas"></i>
-                                                            </div>
-                                                            
-                                                        </div>
-                                                    </div>
-
                                                     <div class="col-xl-4 col-lg-12 col-md-12">
                                                         <div class="form-group city-outer-bx has-feedback">
                                                             <label>Código Postal</label>
@@ -215,7 +192,7 @@
                                                                 <input class="form-control" name="company_since" type="text" placeholder="89057-500">
                                                                 <i class="fs-input-icon fas fa-map-pin"></i>
                                                             </div>
-                                                            
+
                                                         </div>
                                                     </div>
 
@@ -322,7 +299,7 @@
                                                                                                                                                                   
                                                 <div class="col-lg-12 col-md-12">                                   
                                                         <div class="text-left">
-                                                            <button type="submit" class="site-button">Save Changes</button>
+                                                            <button type="submit" class="site-button">Salvar Alterações</button>
                                                         </div>
                                                     </div> 
                                                                                         
