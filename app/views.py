@@ -14,4 +14,7 @@ class SobreView(TemplateView):
 class ErrorView(TemplateView):
     template_name = '404.html'
 
+class EmpresasPerfilView(TemplateView):
+    template_name = 'empresas-perfil.html'
+
 
