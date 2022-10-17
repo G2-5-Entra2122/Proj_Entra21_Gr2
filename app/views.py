@@ -17,4 +17,7 @@ class ErrorView(TemplateView):
 class TabeladePrecosView(TemplateView):
     template_name = 'tabela-de-precos.html'
 
+class FaqView(TemplateView):
+    template_name = 'faq.html'
+
 
