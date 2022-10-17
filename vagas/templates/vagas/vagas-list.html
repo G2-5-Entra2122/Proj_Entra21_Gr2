@@ -117,7 +117,7 @@
                                     <form method="get">
                                         <h4 class="section-head-small mb-4">Categoria</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
-                                                data-bv-field="size" id="search-001" name="search-001" value="{{ request.GET.cat }}">
+                                                data-bv-field="size" id="src01" name="src01" value="{{ request.GET.cat }}">
                                                 <option selected value="todas-as-categorias">Todas as categorias</option>
                                                 <option value="Full-stack">Full-Stack</option>
                                                 <option value="Back-end">Back-End</option>
@@ -128,7 +128,7 @@
 
                                         <h4 class="section-head-small mb-4">Nível</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
-                                                data-bv-field="size" id="search-002" name="search-002" value="{{ request.GET.nivel }}">
+                                                data-bv-field="size" id="src02" name="src02" value="{{ request.GET.nivel }}">
                                                 <option selected value="todos-os-niveis">Todos os níveis</option>
                                                 <option value="Junior">Junior</option>
                                                 <option value="Pleno">Pleno</option>
@@ -138,8 +138,8 @@
                                         
                                         <h4 class="section-head-small mb-4">Modalidade</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
-                                                data-bv-field="size" id="search-003" name="search-003" value="{{ request.GET.modalidade }}">
-                                                <option selected value="search-003">Todas as modalidades</option>
+                                                data-bv-field="size" id="src03" name="src03" value="{{ request.GET.modalidade }}">
+                                                <option selected value="todas-as-modalidades">Todas as modalidades</option>
                                                 <option value="Presencial">Presencial</option>
                                                 <option value="Híbrido">Híbrido</option>
                                                 <option value="Remoto">Remoto</option>
@@ -148,8 +148,8 @@
 
                                         <h4 class="section-head-small mb-4">Tipo de contrato</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
-                                                data-bv-field="size" id="search-004" name="search-004" value="{{ request.GET.contrato }}">
-                                                <option selected>Tipo de contrato</option>
+                                                data-bv-field="size" id="src04" name="src04" value="{{ request.GET.contrato }}">
+                                                <option selected value="tipo-de-contrato">Tipo de contrato</option>
                                                 <option value="Estágio">Estágio</option>
                                                 <option value="CLT">CLT</option>
                                                 <option value="Freelance">Freelance</option>
@@ -161,7 +161,7 @@
                                         <h4 class="section-head-small mb-4">Jornada</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
                                                 data-bv-field="size" id="search-005" name="search-005" value="{{ request.GET.jornada }}">
-                                                <option selected>Tipo de jornada</option>
+                                                <option selected value="tipo-de-jornada">Tipo de jornada</option>
                                                 <option value="Período Integral">Período Integral</option>
                                                 <option value="Meio Preíodo">Meio Preíodo</option>
                                             </select>
@@ -170,7 +170,7 @@
                                         <h4 class="section-head-small mb-4">Aceita candidatos de outras regiões?</h4>
                                         <select class="wt-select-bar-large selectpicker" data-live-search="true"
                                             data-bv-field="size" id="search-006" name="search-006" value="{{ request.GET.outras_reg }}">
-                                            <option selected>Aceita outra região?</option>
+                                            <option selected value="aceita-outra-regiao">Aceita outra região?</option>
                                             <option value="Sim">Sim</option>
                                             <option value="Não">Não</option>
                                         </select>
