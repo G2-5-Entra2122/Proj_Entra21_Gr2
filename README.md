@@ -306,6 +306,14 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 - lógica do match entre contratantes e candidatos em andamento;
 - Nova demanda: criar o html de visualização de uma vaga selecionada;
 
+### 17/10/2022
+
+- Filtros para a página de vagas construídos e funcionando parcialmente. Apenas filtra corretamente, se todos os campos estiverem selecionados.
+- Se alguma janela suspensa não sofre modificação, retorna a mensagem de que não há vagas disponíveis;
+- Também foi trabalhado na enumeração, contagem e compressão de objetos;
+
+
+
  
 Referências:
 [^1]: https://linear.app/
