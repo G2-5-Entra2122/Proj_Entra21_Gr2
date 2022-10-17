@@ -103,25 +103,28 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
 class VagaListView(ListView):
     template_name='vagas/vagas-list.html'
     model = Vaga
+    
+    def get_queryset(self):
+        vagas = Vaga.objects.all()        
+        search_001 = self.request.GET.get('search-001')
+        filter_field = self.request.GET.get('filter_field')
+        if search_001:
+            if search_001 != "Todas as categorias":
+                vagas = vagas.filter(categoria=search_001)            
 
-    def Listafiltro(self):
-        def get_queryset(self):
-            vagas = Vaga.objects.all()
-            search_001 = self.request.GET.get('search-001')
-            filter_field = self.request.GET.get('filter_field')
-            if search_001:
-                if search_001 != "Todas as categorias":
-                    vagas = vagas.filter(categoria=search_001)            
+        # if search_002:
+        #     if search_002 != "[filtro padrao]":
+        #         vagas = vagas.filter(categoria=search_002)            
+        
+        return vagas
 
-            return vagas
-
-        def get_context_data(self, *args, **kwargs):
-            context = super().get_context_data(*args, **kwargs)
-            context['form'] = FilterForm(initial={
-                'search': self.request.GET.get('search', ''),
-                'filter_field': self.request.GET.get('filter_field', '')
-            })
-            return context
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['form'] = FilterForm(initial={
+            'search': self.request.GET.get('search', ''),
+            'filter_field': self.request.GET.get('filter_field', '')
+        })
+        return context
 
 
 
