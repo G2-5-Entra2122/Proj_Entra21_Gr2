@@ -11,20 +11,20 @@
         <div class="page-content">
 
             <!-- INNER PAGE BANNER -->
-            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(http://thememajestic.com/jobzilla/images/banner/1.jpg);">
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url('/static/images/banner/top-page-bg.jpg');">
                 <div class="overlay-main site-bg-white opacity-01"></div>
                 <div class="container">
                     <div class="wt-bnr-inr-entry">
                         <div class="banner-title-outer">
                             <div class="banner-title-name">
-                                <h2 class="wt-title">Frequently Asked Questions</h2>
+                                <h2 class="wt-title">Dúvidas Frequentes</h2>
                             </div>
                         </div>
                         <!-- BREADCRUMB ROW -->                            
                         
                             <div>
                                 <ul class="wt-breadcrumb breadcrumb-style-2">
-                                    <li><a href="http://thememajestic.com/jobzilla/index.html">Home</a></li>
+                                    <li><a href="{% url 'index' %}">Inicio</a></li>
                                     <li>FAQ</li>
                                 </ul>
                             </div>
@@ -45,16 +45,16 @@
                         <div class="twm-tabs-style-1 center">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                               <li class="nav-item" role="presentation">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#General" type="button" role="tab" >General</button>
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#General" type="button" role="tab" >Candidatos</button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Jobs" type="button" role="tab" aria-controls="Jobs">Jobs</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Jobs" type="button" role="tab" aria-controls="Jobs">Empresas</button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Payment" type="button" role="tab" aria-controls="Payment">Payment</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Payment" type="button" role="tab" aria-controls="Payment">A Plataforma</button>
                               </li>
                               <li class="nav-item" role="presentation">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Return" type="button" role="tab" aria-controls="Return">Return</button>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Return" type="button" role="tab" aria-controls="Return">Voltar</button>
                               </li>
                              
                             </ul>
@@ -67,12 +67,16 @@
                                             <div class="accordion-item">
             
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true" data-bs-target="#FAQ1">
-                                                    Where is my job posting advertised?
+                                                    Como faço para me candidatar às vagas?
                                                 </button>
             
                                                 <div id="FAQ1" class="accordion-collapse collapse show" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                    A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        O primeiro passo é criar um perfil na plataforma, é bem fácil e 100% gratuito. 
+                                                        Nesta etapa, é muito importante preencher o perfil com suas informações, como por exemplo: 
+                                                        habilidades técnicas, nível de senioridade, experiências profissionais, entre outras.
+
+                                                        Todos os campos são essenciais para nosso algoritmo cruzar suas informações com os requisitos das oportunidades e criar a taxa de match.
                                                     </div>
                                                 </div>
             
@@ -82,12 +86,12 @@
                                             <div class="accordion-item">
                                             
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ2" aria-expanded="false">
-                                                    What Makes Your Business Plans So Special?
+                                                    É possível remover uma candidatura?
                                                 </button>
             
                                                 <div id="FAQ2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não é possível remover uma candidatura. Nesses casos recomendamos aguardar contato da empresa e informar que não possui disponibilidade para a oportunidade.
                                                     </div>
                                                 </div>
             
@@ -97,12 +101,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ3" aria-expanded="false">
-                                                    Reset Password With Phone Number?
+                                                    Fiz a candidatura, e agora?
                                                 </button>
             
                                                 <div id="FAQ3" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Após enviar a candidatura, a empresa receberá seu perfil para análise. Nesse momento, a decisão de entrar em contato ou não fica a critério da empresa. Além das notificações da plataforma, as empresas terão acesso a suas informações de contato: LinkedIn, email e telefone, por exemplo.
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,12 +115,15 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ4" aria-expanded="false">
-                                                    How do I redeem a coupon?
+                                                    Não tenho experiência profissional, posso me candidatar?
                                                 </button>
             
                                                 <div id="FAQ4" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        É possível se candidatar! Recomendados que busque por oportunidades de Estágio e/ou Júnior nesses casos. Oferecemos filtros para facilitar a busca por oportunidades que mais lhe interessam.
+                                                        Sempre buscamos ajudar profissionais que desejam entrar no mercado de programação e conquistar seu primeiro emprego como desenvolvedor(a).
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -125,12 +132,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ5" aria-expanded="false">
-                                                    How long will it take to post my job?
+                                                    A plataforma é gratuita?
                                                 </button>
             
                                                 <div id="FAQ5" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Sim, a plataforma é 100% gratuita para desenvolvedores(as). Para se candidatar a uma oportunidade é preciso criar um perfil na Experts4Hire.
                                                     </div>
                                                 </div>
                                             </div>
@@ -139,12 +146,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ6" aria-expanded="false">
-                                                    What is your cancellation policy?
+                                                    Após ser contratado(a) preciso pagar algo?
                                                 </button>
             
                                                 <div id="FAQ6" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não. Após ser contatados pedimos apenas seu feedback e indicação.
                                                     </div>
                                                 </div>
                                             </div>
@@ -153,12 +160,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ7" aria-expanded="false">
-                                                    Where Can I Find Market Research Reports?
+                                                    Estou trabalhando, mesmo assim posso me cadastrar na plataforma?
                                                 </button>
             
                                                 <div id="FAQ7" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Sim, você pode. Acreditamos no crescimento e no potencial de nossos candidatos, então fique a vontade para manter seu curriculo sempre atualizado que nós vamos encontrar as melhores vagas para você.
                                                     </div>
                                                 </div>
                                             </div>
@@ -167,12 +174,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ8" aria-expanded="false">
-                                                    Do I need to know PHP to use TheJobs?
+                                                    Preciso preencher todos os campos do cadastro?
                                                 </button>
             
                                                 <div id="FAQ8" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não, nem todos os campos são obrigatórios. Porém quanto mais informações nós tivermos melhor poderemos atende-lo(a).
                                                     </div>
                                                 </div>
                                             </div>
@@ -181,12 +188,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ9" aria-expanded="false">
-                                                    How soon will I start receiving resumes?
+                                                    Meu cadastro tem data de validade?
                                                 </button>
             
                                                 <div id="FAQ9" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não, uma vez em nossa base de dados continuaremos consultando seu cadastro sempre. Mas lembre-se de manter seu cadastro sempre atualizado.
                                                     </div>
                                                 </div>
                                             </div>
@@ -204,12 +211,14 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ1-2" aria-expanded="false">
-                                                    How do I redeem a coupon?
+                                                    Como funciona o teste gratuito?
                                                 </button>
             
                                                 <div id="FAQ1-2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-2">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        As empresas que ainda não testaram a plataforma têm direito a um período teste de 30 dias contados a partir da divulgação da primeira das 5 vagas disponibilizadas. Após o período gratuito, a usabilidade da plataforma ficará limitada e para ter acesso a todas as funcionalidades novamente será necessário contratar um de nossos pacotes.
+
+                                                        Para ter acesso ao teste, basta criar um perfil da empresa na plataforma. Além disso, não há necessidade de cadastrar qualquer meio de pagamento, portanto não haverá nenhuma cobrança automática.
                                                     </div>
                                                 </div>
                                             </div>
@@ -218,12 +227,15 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ2-2" aria-expanded="false">
-                                                    How long will it take to post my job?
+                                                    Como criar uma vaga?
                                                 </button>
             
                                                 <div id="FAQ2-2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-2">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Nesse momento é muito importante definir sua demanda. Ou seja, saber se você precisa de um(a) desenvolvedor(a) Front-end, Back-end, Full Stack ou Mobile. Além disso, é importante informar apenas as linguagens obrigatórias (PHP, Java, Javascript, .NET, Android, iOS, etc).
+
+                                                        Capriche na descrição da oportunidade e nas responsabilidades do profissional. Atente-se a localização, tipos de contrato e salário adequado ao mercado. Todas as informações apresentadas serão de extrema importância para nosso algoritmo calcular a taxa de match e entregar apenas candidatos compatíveis.
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -232,12 +244,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ3-2" aria-expanded="false">
-                                                    What is your cancellation policy?
+                                                    Como faço para selecionar que aceito candidatos de outras regiões e/ou remotos?
                                                 </button>
             
                                                 <div id="FAQ3-2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-2">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Temos alguns filtros que facilitam a seleção dos diferentes perfis, um deles é opção de aceitar ou não candidatos de fora da sua cidade, ou seja, aqueles que estão dispostos a se mudar.
                                                     </div>
                                                 </div>
                                             </div>
@@ -246,12 +258,14 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ4-2" aria-expanded="false">
-                                                    Where Can I Find Market Research Reports?
+                                                    Como editar uma vaga?
                                                 </button>
             
                                                 <div id="FAQ4-2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-2">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não recomendamos a edição da vaga após a aprovação, pois será necessário recalcular todos os matchs, o que influencia negativamente a performance da oportunidade. Caso a alteração seja muito importante, entre em contato com nosso time.
+
+                                                        Mas você pode acessar o menu Minhas Vagas, Alterar Vaga.
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,12 +274,14 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ5-2" aria-expanded="false">
-                                                    Do I need to know PHP to use TheJobs?
+                                                    As vagas ficam online por quanto tempo?
                                                 </button>
             
                                                 <div id="FAQ5-2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-2">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Após divulgada, a oportunidade ficará disponível por 30 dias na plataforma. Durante esse período a empresa poderá receber candidaturas.
+
+                                                        Caso encontre o(a) desenvolvedor(a) ideal ou não queira receber novas candidaturas, basta entrar em contato com nosso time para suspendermos a vaga.
                                                     </div>
                                                 </div>
                                             </div>
@@ -274,12 +290,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ6-2" aria-expanded="false">
-                                                    How soon will I start receiving resumes?
+                                                    Quais profissionais abrangemos?
                                                 </button>
             
                                                 <div id="FAQ6-2" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-2">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        A plataforma é exclusiva para a area de tecnologia, programadores(as), ou seja, desenvolvedores(as) Front-end, Back-end, Full Stack e/ou Mobile.
                                                     </div>
                                                 </div>
                                             </div>
@@ -298,12 +314,16 @@
                                             <div class="accordion-item">
                                             
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ1-3" aria-expanded="false">
-                                                    What Makes Your Business Plans So Special?
+                                                    O que faz a plataforma
                                                 </button>
             
                                                 <div id="FAQ1-3" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-3">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Plataforma completa de recrutamento e seleção que apoia empresas em seus processos de contratação para:
+                                                        Encontrar rapidamente profissionais qualificados: a vaga é divulgada no maior site de carreiras do país e conta com algoritmos para avisar candidatos compatíveis.
+                                                        Reduzir tarefas operacionais: facilita a definição de fases e automatiza o envio de mensagens, testes, fichas, etc.
+                                                        Ganhar tempo: disponibiliza centenas de critérios para ordenar as candidaturas mais aderentes, reduzindo o tempo investido na leitura de CVs fora de perfil.
+                                                        Otimizar a gestão de processos seletivos: possibilita o acompanhamento de métricas e indicadores e uma visão completa de todos os processos.
                                                     </div>
                                                 </div>
             
@@ -313,12 +333,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ2-3" aria-expanded="false">
-                                                    Reset Password With Phone Number?
+                                                    Como recebo os currículos dos candidatos?
                                                 </button>
             
                                                 <div id="FAQ2-3" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-3">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Receber currículos por e-mail ou ter que fazer o gerenciamento de um monte de papel não faz sentido nos dias de hoje. Ao utilizar nossa plataforma, todos os currículos das pessoas que se candidataram às vagas da sua empresa ficarão disponíveis para você dentro da ferramenta. Você não só poderá visualizá-los quando quiser, como também poderá fazer triagens utilizando critérios específicos para que sua “pilha virtual de currículos” fique ordenada da melhor forma possível.
                                                     </div>
                                                 </div>
                                             </div>
@@ -327,26 +347,26 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ3-3" aria-expanded="false">
-                                                    How do I redeem a coupon?
+                                                    Posso testar a Plataforma de Recrutamento?
                                                 </button>
             
                                                 <div id="FAQ3-3" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-3">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Nós temos um período de testes, e claro que você pode e deve conhecer os detalhes da Plataforma antes de fazer a contratação. Entre em contato e nos conte um pouco mais sobre sua empresa, que nossa equipe vai ajudá-lo a entender como podemos solucionar seus problemas de recrutamento e seleção e fazer uma demonstração.
                                                     </div>
                                                 </div>
                                             </div>
             
                                             <!--four-->
-                                            <div class="accordion-item">
+                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ4-3" aria-expanded="false">
-                                                    How long will it take to post my job?
+                                                    Quanto custa a Plataforma de Recrutamento Experts4Hire?
                                                 </button>
             
                                                 <div id="FAQ4-3" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-3">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Os valores correspondentes à utilização da plataforma variam de acordo com a necessidade da sua empresa. Você pode contratar nossa assinatura. Para conhecer todas as condições comerciais e planos entre em contato conosco.
                                                     </div>
                                                 </div>
                                             </div>
@@ -355,18 +375,18 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ5-3" aria-expanded="false">
-                                                    What is your cancellation policy?
+                                                    É possível comprar somente o acesso ao banco de currículos da Experts4Hire?
                                                 </button>
             
                                                 <div id="FAQ5-3" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-3">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não é possível comprar somente o acesso ao nosso banco de currículos, mas dentro da plataforma você poderá utilizar ferramentas que lhe permitirão pesquisar e encontrar em nossa base os profissionais que mais se encaixam no perfil que você busca. Nós chamamos isso de busca ativa ou hunting de currículos.
                                                     </div>
                                                 </div>
                                             </div>
             
                                             <!--six-->
-                                            <div class="accordion-item">
+                                            <!--<div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ6-3" aria-expanded="false">
                                                     Where Can I Find Market Research Reports?
@@ -377,10 +397,10 @@
                                                         A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
             
                                             <!--seven-->
-                                            <div class="accordion-item">
+                                            <!--<div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ7-3" aria-expanded="false">
                                                     Do I need to know PHP to use TheJobs?
@@ -391,10 +411,10 @@
                                                         A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
             
                                             <!--eight-->
-                                            <div class="accordion-item">
+                                            <!--<div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ8-3" aria-expanded="false">
                                                     How soon will I start receiving resumes?
@@ -409,7 +429,7 @@
             
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!--Tabs content Four-->
                                 <div class="tab-pane fade" id="Return" role="tabpanel" >
@@ -420,12 +440,14 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ1-4" aria-expanded="false">
-                                                    How long will it take to post my job?
+                                                    Como melhorar o meu perfil?
                                                 </button>
             
                                                 <div id="FAQ1-4" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-4">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Não tem muita experiência construindo currículos profissionais? Tudo bem, estamos aqui para te ajudar com isso!
+
+                                                        O seu perfil na Experts4Hire é equivalente ao seu currículo para as empresas que usam a plataforma, então adicionar informações atualizadas e atrativas é a chave para receber muuuitos convites!
                                                     </div>
                                                 </div>
                                             </div>
@@ -434,12 +456,12 @@
                                             <div class="accordion-item">
                                                 
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#FAQ2-4" aria-expanded="false">
-                                                    What is your cancellation policy?
+                                                    Qual o prazo para responder o convite?
                                                 </button>
             
                                                 <div id="FAQ2-4" class="accordion-collapse collapse" data-bs-parent="#sf-faq-accordion-4">
                                                     <div class="accordion-body">
-                                                        A digital interface the person causing the movement of goods uploads the relevant information prior to the commencement of movement of goods and generates e-way bill on the GST portal. Best service are provide us. simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
+                                                        Sempre recomendamos que você responda seus convites o mais breve possível!
                                                     </div>
                                                 </div>
                                             </div>
