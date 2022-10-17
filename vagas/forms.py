@@ -1,5 +1,4 @@
-from tkinter.tix import Form
-from django.forms import CharField, ChoiceField
+from django.forms import Form, CharField, ChoiceField
 
 
 class FilterForm(Form):
