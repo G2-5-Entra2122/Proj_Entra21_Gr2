@@ -4,7 +4,6 @@ from django.views.generic import TemplateView
 class HomeView(TemplateView):
     template_name = 'index.html'
 
-
 class EmpresasView(TemplateView):
     template_name = 'empresas-lista.html'
 
@@ -13,8 +12,3 @@ class SobreView(TemplateView):
 
 class ErrorView(TemplateView):
     template_name = '404.html'
-
-class EmpresasPerfilView(TemplateView):
-    template_name = 'empresas-perfil.html'
-
-

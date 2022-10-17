@@ -84,7 +84,7 @@ class PerfilCandidatoUpdateView(UpdateView):
 class PerfilEmpresaUpdateView(UpdateView):
     model = PerfilEmpresas
     fields = ['fantasia', 'razao_social', 'cnpj', 'ie', 'endereco', 'tamanho', 'ramo', 'cep', 'telefone', 'apresentacao']
-    template_name = 'registration/register.html'
+    template_name = 'registration/empresa-perfil.html'
     success_url = reverse_lazy('index')
 
     def get_object(self, queryset=None):
