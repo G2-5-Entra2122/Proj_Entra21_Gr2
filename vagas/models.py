@@ -55,8 +55,8 @@ class Vaga(models.Model):
     local=models.CharField('Local da Vaga',max_length=30,help_text='Onde reside sua empresa, para vagas presenciais. Para trabalho remoto, use "Online".')
 
     OUTRAS_REG_CHOICES=[
-        ('sim','Sim'),
-        ('nao','Não')
+        ('Sim','Sim'),
+        ('Não','Não')
     ]
     
     outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=OUTRAS_REG_CHOICES,max_length=3)

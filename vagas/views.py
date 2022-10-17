@@ -107,14 +107,19 @@ class VagaListView(ListView):
     def get_queryset(self):
         vagas = Vaga.objects.all()        
         search_001 = self.request.GET.get('search-001')
-        filter_field = self.request.GET.get('filter_field')
+        search_002 = self.request.GET.get('search-002')
         if search_001:
             if search_001 != "Todas as categorias":
-                vagas = vagas.filter(categoria=search_001)            
+                vagas = vagas.filter(categoria=search_001)
+            else:
+                vagas=vagas.objects.all()    
 
-        # if search_002:
-        #     if search_002 != "[filtro padrao]":
-        #         vagas = vagas.filter(categoria=search_002)            
+        if search_002:
+            if search_002 != "Todos os niveis":
+                vagas = vagas.filter(nivel=search_002)
+            else:
+                vagas=vagas.objects.all()  
+
         
         return vagas
 
@@ -125,34 +130,6 @@ class VagaListView(ListView):
             'filter_field': self.request.GET.get('filter_field', '')
         })
         return context
-
-
-
-
-        # if request.method == 'GET':
-        #     search = request.GET.get('search')
-        #     if search:
-        #         vaga=Vaga.objects.filter(categoria=search)
-        #         return vaga
-        
-
-        # for x in list([result5]):
-        #     Vaga.fields=[
-        #     x['nome'],
-        #     x['categoria'],
-        #     x['nivel'],
-        #     x['modalidade'],
-        #     x['contrato'],
-        #     x['jornada'],
-        #     x['local'],
-        #     x['outras_reg'],
-        #     x['salmin'],
-        #     x['salmax'],
-        #     x['beneficios'],
-        #     x['pri_habilidade_vaga'],
-        #     ]
-        #     return x
-
 
 
 
