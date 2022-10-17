@@ -106,10 +106,14 @@ class VagaListView(ListView):
 
     def Listafiltro(self):
         def get_queryset(self):
-            query = self.request.GET.get('search')
+            vagas = Vaga.objects.all()
+            search_001 = self.request.GET.get('search-001')
             filter_field = self.request.GET.get('filter_field')
+            if search_001:
+                if search_001 != "Todas as categorias":
+                    vagas = vagas.filter(categoria=search_001)            
 
-            return Vaga.objects.all()
+            return vagas
 
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
