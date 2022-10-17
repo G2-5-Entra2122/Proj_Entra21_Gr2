@@ -337,18 +337,25 @@
                                     </div>
 
                                     <div class="widget tw-sidebar-tags-wrap">
-                                        <h4 class="section-head-small mb-4">Job Skills</h4>
+                                        <h4 class="section-head-small mb-4">Habilidades</h4>
 
                                         <div class="tagcloud">
-                                            <a href="javascript:void(0)">Html</a>
-                                            <a href="javascript:void(0)">Python</a>
-                                            <a href="javascript:void(0)">WordPress</a>
-                                            <a href="javascript:void(0)">JavaScript</a>
-                                            <a href="javascript:void(0)">Figma</a>
-                                            <a href="javascript:void(0)">Angular</a>
-                                            <a href="javascript:void(0)">Reactjs</a>
-                                            <a href="javascript:void(0)">Drupal</a>
-                                            <a href="javascript:void(0)">Joomla</a>
+                                            {% if vaga.pri_habilidade_vaga %}
+                                            <a href="javascript:void(0)">{{ vaga.pri_habilidade_vaga }}</a>
+                                            {% endif %}
+                                            {% if vaga.seg_habilidade_vaga %}
+                                            <a href="javascript:void(0)">{{ vaga.seg_habilidade_vaga }}</a>
+                                            {% endif %}
+                                            {% if vaga.ter_habilidade_vaga %}
+                                            <a href="javascript:void(0)">{{ vaga.ter_habilidade_vaga }}</a>
+                                            {% endif %}
+                                            {% if vaga.qua_habilidade_vaga %}
+                                            <a href="javascript:void(0)">{{ vaga.qua_habilidade_vaga }}</a>
+                                            {% endif %}
+                                            {% if vaga.qui_habilidade_vaga %}
+                                            <a href="javascript:void(0)">{{ vaga.qui_habilidade_vaga }}</a>
+                                            {% endif %}
+
                                         </div>
                                     </div>
 
