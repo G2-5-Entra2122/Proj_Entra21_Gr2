@@ -41,7 +41,7 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         ]
     # form_class=VagasForm
     # vagas_obj=Vaga.objects.all()
-    template_name = 'vagas/form.html'
+    template_name = 'vagas/postar-vaga.html'
     success_url=reverse_lazy('minhas-vagas')
 
     def form_valid(self, form):
