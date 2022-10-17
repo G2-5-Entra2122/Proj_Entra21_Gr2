@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
 
-def apply_migration(apps, schema_editor):
+def add_grupos(apps, schema_editor):
     Group = apps.get_model('auth', 'Group')
     Group.objects.bulk_create([
         Group(name=u'Candidato'),
@@ -13,7 +13,7 @@ def apply_migration(apps, schema_editor):
     ])
 
 
-def revert_migration(apps, schema_editor):
+def remove_grupos(apps, schema_editor):
     Group = apps.get_model('auth', 'Group')
     Group.objects.filter(
         name__in=[
@@ -25,7 +25,7 @@ def revert_migration(apps, schema_editor):
 
 
 
-# def apply_migration2(apps, schema_editor):
+# def add_grupos2(apps, schema_editor):
 #     #apps.get_model('accounts','Empresa').object.filter(user_id = 1).update(user = User.objects.create_user(username='anonymous'))
 #     apps.get_model('auth', 'User').objects.filter(user_id=1).update(
 #         user=apps.get_model('auth', 'User').objects.create_user(username='anonymous')
@@ -33,7 +33,7 @@ def revert_migration(apps, schema_editor):
 
 # def criar_empresa(apps, schema_editor):
 #     Empresa = apps.get_model('auth', 'User')
-#     Empresa.objects.bulk_create(fantasia = 'Senior',
+# remove_grupos.objects.bulk_create(fantasia = 'Senior',
 #      razao_social = 'Senior Sistemas', 
 #      cnpj = '80.680.093/0001-81', 
 #      ie = '123456789', 
@@ -53,6 +53,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(apply_migration, revert_migration)
+        migrations.RunPython(add_grupos, remove_grupos )
     ]
 
+remove_grupos
