@@ -6,6 +6,7 @@ from braces.views import GroupRequiredMixin
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -48,7 +49,7 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         form.instance.usuario=self.request.user
 
         url = super().form_valid(form)
-        
+
         return url
 
 
@@ -90,23 +91,21 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
             'qui_habilidade_vaga',
         ]
     template_name = 'vagas/minhasvagas.html'
-    
+
 
     def get_queryset(self):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
         return self.object_list
- 
+
 
 class VagaListView(ListView):
     template_name='vagas/vagas-list.html'
     model = Vaga
     paginate_by = 4
 
-class VagaExibirListView(ListView):
-    template_name='vagas/exibirvaga.html'
+class ExibirVagaDetailView(DetailView):
     model = Vaga
-
-
+    template_name='vagas/exibirvaga.html'
 
 ######################## ALTERAR ##########################
 
@@ -150,8 +149,8 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         context['lead'] = 'Preencha todos os campos obrigatórios.'
         context['botao'] = 'Atualizar'
         return context
-     
-        
+
+
 ######################## DELETE ##########################
 
 
@@ -173,7 +172,3 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
         context['lead'] = 'Confirme para excluir a vaga definitivamente.'
         context['botao'] = 'Deletar'
         return context
-
-
-
-
