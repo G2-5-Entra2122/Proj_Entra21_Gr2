@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 def add_users(apps,schema_editor):
     User.objects.create_user('adriano', 'adriano@machado.tec.br','@Karina1977')
     user = User.objects.get(username='adriano')
-    user.groups.add('Empresa')
+    user.groups.add(2)
     user.save()
 
 
@@ -15,7 +15,7 @@ def add_users(apps,schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_auto')
+        ('vagas', '0002_auto')
     ]
 
     operations = [

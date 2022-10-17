@@ -49,11 +49,10 @@ def remove_grupos(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        ('vagas', '0002_alter_vaga_beneficios_alter_vaga_requisitos'),
     ]
 
     operations = [
         migrations.RunPython(add_grupos, remove_grupos )
     ]
 
-remove_grupos
