@@ -1,185 +1,339 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static\css\about.css">
-    <title>Sobre Nós</title>
-</head>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
 <body>
-    {% load static %}
-    <img width="200" src="{% static 'images/django.png' %}" />
-    <p>
-        <div class="center">
-            <h1>Grupo 2</h1>
-        </div>
-        <div class="center">
-            <h1>Turma Python Matutino On-line</h1>
-        </div>
-        <div class="center">
-            <h1>Entra21 - 2022</h1>
-        </div>
-        <p>
-            <div class="center">
-                <div class="grupo">
-                    Somos o Grupo 2, responsável pelo projeto Experts 4 Hire, é formado pelos alunos abaixo:
+
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Conheça nossa equipe!</h2>
+                            </div>
+                        </div>                     
+                        
+                            <div>
+                                <ul class="wt-breadcrumb breadcrumb-style-2">
+                                    <li><a href="{% url 'index' %}">Início</a></li>
+                                    <li>Equipe</li>
+                                </ul>
+                            </div>                 
+                    </div>
                 </div>
             </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/diego.jpeg' %}"  />
-        </div>
-        <div class="center">
-            <h3>Diego Dalmolini</h3>
-        </div>
-        <p>
-            <div class="center">
-                Prazer tenho 25 anos e atualmente sou estudante do programa 
-                ENTRA21 - Programação em Python.
-                Sou formado em técnico em química pelo Instituto Federal, 
-                mas hoje busco alcançar novos horizontes na área de tecnologia
-                ao qual desde cedo tive muito apreço. 
-                Atualmente estou aprendendo novos recursos necessários para me
-                tornar um profissional completo e preparado para o mercado de trabalho.
-                Utilizo das metodologias ágeis para facilitar a organização e
-                otimizar os processos. 
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/felipe.png' %}"  />
-        </div>
-        <div class="center">
-            <h3>Felipe Sartorato</h3>
-        </div>
-        <p>
-            <div class="center">
-                Entusiasta da Tecnologia.
-                Utilizo das metodologias ágeis para facilitar a organização e
-                otimizar os processos. 
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/santini.png' %}"  />
-        </div>
-        <div class="center">
-            <h3>João Paulo Correia</h3>
-        </div>
-        <p>
-            <div class="center">
-                Olá, sou o Santini, moro em Balneário Camboriu. 
-                Entusiasta da Tecnologia.
-                Utilizo das metodologias ágeis para facilitar a organização e
-                otimizar os processos.
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/jose.jpg' %}"  />
-        </div>
-        <div class="center">
-            <h3>José Orli Goetten</h3>
-        </div>
-        <p>
-            <div class="center">
-                Profissional no ramo da hotelaria com formação em Design de
-                Produto e entusiasta na gastronomia. Investindo em conhecimentos
-                no ramo da tecnologia, inicialmente com ênfase em ferramentas
-                de design e no momento cursando o programa Entra 21 com foco
-                em back end. No programa Entra 21 está cursando Python,
-                banco de dados e metodologias ágeis. Durante o período do
-                programa vem buscando aprimorar seus conhecimentos por meio de
-                plataformas e canais.
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/luiza.jpg' %}"  />
-        </div>
-        <div class="center">
-            <h3>Luíza Bicalho Pollmann</h3>
-        </div>
-        <p>
-            <div class="center">
-                Mineira, mas moro em Florianópolis. 
-                Sou Engenheira Ambiental, busco uma recolocação no mercado e 
-                encontrei na tecnologia a oportunidade de migrar de carreira.
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/mark.png' %}"  />
-        </div>
-        <div class="center">
-            <h3>Mark Odebrecht</h3>
-        </div>
-        
-        <p>
-            <div class="center">
-                Natural de Rio do Sul, 47 anos de idade, formado em Química e
-                MBA em Gestão Empresarial, construiu sua carreira na Indústria 
-                de Tintas, mais especificamente em laboratórios de P&D.
-                Pelo grande interesse em programação, resolveu buscar a
-                migração na carreira focando no Python para fazer isso acontecer.
-                Idealizador do projeto, atuou como PO e também na montagem de
-                views, templates e 
-                bancos de dados fictícios, além de ser o responsável pela
-                manutenção do arquivo README e fazer os 
-                merges da branch "Developer" à "Main".
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/nicolas.jpg' %}"  />
-        </div>
-        <div class="center">
-            <h3>Nicolas Felipe da Silva</h3>
-        </div>
-        <p>
-            <div class="center">
-                Natural de Schroeder, SC, 20 anos de idade, está iniciando no mundo da programação, 
-                focando no front-end com as tecnologias HTML5, CSS3, sass, bootstrap, JavaScript e ReactJS.
-                Neste projeto, ficou encarregado de ser um dos desenvolvedores front-end.
-            </div>
+            <!-- OUR BLOG START -->
+            <div class="section-full p-t120  p-b90 site-bg-white">
+                
 
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/raquel.png' %}" />
+                <div class="container">
+                    <div class="row">
+                        
+                        <!-- <div class="col-lg-4 col-md-12 rightSidebar">
+
+                            <div class="twm-advertisment" style="background-image:url(http://thememajestic.com/jobzilla/images/add-bg.jpg);">
+                               <div class="overlay"></div>
+                               <h4 class="twm-title">Recruiting?</h4>
+                               <p>Get Best Matched Jobs On your <br>
+                                Email. Add Resume NOW!</p>
+                                <a href="http://thememajestic.com/jobzilla/about-1.html" class="site-button white">Read More</a> 
+                            </div>
+
+                        </div> -->
+
+                            <div class="twm-candidates-list-wrap">
+                                <ul>
+                                     <li>
+                                         <div class="twm-candidates-list-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <div class="twm-media-pic">
+                                                    <img src="{% static 'images/diego.jpeg' %}" alt="#">
+                                                 </div>
+                                                 <div class="twm-candidates-tag"><span>Featured</span></div>
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                     <h5>Diego Dalmolini </h5>
+                                                 </a>
+                                                 <p>Prazer tenho 25 anos e atualmente sou estudante do programa 
+                                                    ENTRA21 - Programação em Python.
+                                                    Sou formado em técnico em química pelo Instituto Federal, 
+                                                    mas hoje busco alcançar novos horizontes na área de tecnologia
+                                                    ao qual desde cedo tive muito apreço. 
+                                                    Atualmente estou aprendendo novos recursos necessários para me
+                                                    tornar um profissional completo e preparado para o mercado de trabalho.
+                                                    Utilizo das metodologias ágeis para facilitar a organização e
+                                                    otimizar os processos. <br>
+                                                    <br>
+                                                    <b>Contatos:</b>
+                                                    Fone: (47) 99610-6088<br>
+                                                    E-mail: diegosfs_ufsc@hotmail.com<br>
+                                                    Linkedin: linkedin.com/in/diegodalmolini<br>
+                                                    Github: github.com/diegodalmolini<br>
+                                                    https://linktr.ee/diegodalmolini<br></p>
+                                                 
+                                                 <div class="twm-fot-content">
+                                                     <div class="twm-left-info">
+                                                        <p class="twm-candidate-address"><i class="feather-map-pin"></i>Jaraguá do Sul</p>
+                                                        <div class="twm-jobs-vacancies">$20<span>/ Day</span></div>
+                                                     </div>
+                                                     <div class="twm-right-btn">
+                                                         <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                     </div>
+                                                </div>
+                                             </div>
+                                             
+                                         </div>
+                                     </li>
+
+                                     <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic2.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Peter Hawkins</h4>
+                                                </a>
+                                                <p>Medical Professed</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$7<span>/ Hour</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic3.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Ralph Johnson  </h4>
+                                                </a>
+                                                <p>Bank Manger</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$180<span>/ Day</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.htmll" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic4.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Randall Henderson </h4>
+                                                </a>
+                                                <p>IT Contractor</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$90<span>/ Week</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic5.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Randall Warren</h4>
+                                                </a>
+                                                <p>Digital & Creative</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$95<span>/ Day</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic6.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Christina Fischer </h4>
+                                                </a>
+                                                <p>Charity & Voluntary</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$19<span>/ Hour</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic7.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Wanda Willis </h4>
+                                                </a>
+                                                <p>Marketing & PR</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$12<span>/ Day</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic8.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Peter Hawkins</h4>
+                                                </a>
+                                                <p>Public Sector</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$7<span>/ Hour</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="http://thememajestic.com/jobzilla/images/candidates/pic9.jpg" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><span>Featured</span></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-job-title">
+                                                    <h4>Kathleen Moreno </h4>
+                                                </a>
+                                                <p>Sales & Marketing</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>New York</p>
+                                                       <div class="twm-jobs-vacancies">$125<span>/ Week</span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="http://thememajestic.com/jobzilla/candidate-detail.html" class="twm-view-prifile site-text-primary">View Profile</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>   
+            <!-- OUR BLOG END -->
+          
+            
+     
         </div>
-        <div class="center">
-            <h3>Raquel Schwartz dos Santos</h3>
-        </div>
-        <p>
-            <div class="center">
-                Natural de Blumenau/SC, com 34 anos hoje vivo em Barra Velha.
-                Graduada em Ciências Contábeis, fotógrafa por amor, resolvi 
-                migrar de carreira e buscar novas oportunidades na tecnologia.
-                Trabalhei por mais de 13 anos na área fiscal e contábil, com
-                experiências em implantação/migração de sistemas e treinamentos.
-                Em busca de novos desafios profissionais na área da Tecnologia
-                da Informação. 
-                Dinâmica, responsável, comunicativa e com espírito de
-                equipe.
-                Pronta para colocar em prática meus conhecimentos e habilidades.
-                Disposta a me aprimorar cada vez mais buscando conhecimentos e 
-                almejando meu crescimento profissional e também da empresa.
-                Atualmente estou cursando o programa Entra21 em Python.
-                No projeto atuo como Scrum Master, desenvolvedora, assim como 
-                tester.
-            </div>
-        </p>            
-    </p>
+        <!-- CONTENT END -->
+
 </body>
+
+
+<!-- Mirrored from thememajestic.com/jobzilla/candidate-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 15 Sep 2022 13:04:32 GMT -->
 </html>
+{% include 'rodape.html'%}
+{% endblock %}

@@ -272,8 +272,9 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
+  margin-left: 40px; /*inclui aqui - a fonte h5 nao estava sendo usada, coloquei com esse espaçamento para poder usar na página sobre*/
 }
 
 h6 {
@@ -8249,10 +8250,11 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   padding: 20px;
   border-radius: 10px;
   display: flex;
-  align-items: center;
+  /*align-items: center;*/ /*retirei daqui */
   width: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
+  text-align: justify;
 }
 @media (max-width: 575px) {
   .twm-candidates-list-style1 {
@@ -8263,7 +8265,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .twm-candidates-list-style1 .twm-media {
   width: 110px;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 10px; /*essa aqui é a distancia da foto ate o inicio do bloco à esquerda*/
 }
 @media (max-width: 575px) {
   .twm-candidates-list-style1 .twm-media {
@@ -8273,13 +8275,13 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   }
 }
 .twm-candidates-list-style1 .twm-media .twm-media-pic {
-  width: 90px;
-  height: 90px;
+  width: 120px; /*aqui fica a foto individual na página sobre/about/ candidato list*/
+  height: 120px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   top: -50px;
-  margin-bottom: -30px;
+  margin-bottom: -40px;
 }
 .twm-candidates-list-style1 .twm-media .twm-media-pic img {
   display: inline-block;
@@ -8287,12 +8289,14 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .twm-candidates-list-style1 .twm-media .twm-candidates-tag span {
   color: #4882FF;
   border-radius: 5px;
-  padding: 5px 12px;
+  padding: 5px 29px; /*aqui é o tamanho do botão embaixo da foto  na pagina sobre*/
   background-color: #dbe6f7;
 }
 .twm-candidates-list-style1 p {
   font-size: 14px;
   margin-bottom: 5px;
+  margin-left: 40px; /* aqui fica a margem do texto de descrição de cada pessoa no sobre*/
+  margin-right: 30px;
 }
 .twm-candidates-list-style1 .twm-mid-content {
   flex-grow: 1;
@@ -8335,7 +8339,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 /*Candidate grid*/
-.twm-candidates-grid-style1 {
+/*.twm-candidates-grid-style1 {
   background-color: #fff;
   border: 1px solid #ddd;
   position: relative;
@@ -8365,7 +8369,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   padding: 5px 12px;
   background-color: #046c38;
   /* nao encontrei #046c38 é um azul bem clarinho de fundo*/
-}
+/*}
 .twm-candidates-grid-style1 p {
   font-size: 14px;
   margin-bottom: 10px;
@@ -8394,7 +8398,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   color: #046c38;
   margin-left: 5px;
   /* nao encontrei #046c38 é verde*/
-}
+/*}
 .twm-candidates-grid-style1 .twm-fot-content .twm-left-info {
   display: flex;
   justify-content: space-between;
