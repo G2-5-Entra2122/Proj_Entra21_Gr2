@@ -106,47 +106,35 @@ class VagaListView(ListView):
     
     def get_queryset(self):
         vagas = Vaga.objects.all()        
-        search_001 = self.request.GET.get('search-001')
+        search_001 = self.request.GET.get('s01')
         if search_001:
-            if search_001 != "Todas as categorias":
+            if search_001 != "todas-as-categorias":
                 vagas = vagas.filter(categoria=search_001)
-            elif search_001 == "Todas as categorias":
-                vagas=vagas.objects.all()    
-
-        search_002 = self.request.GET.get('search-002')
+            
+        search_002 = self.request.GET.get('s02')
         if search_002:
-            if search_002 != "Todos os niveis":
+            if search_002 != "to":
                 vagas = vagas.filter(nivel=search_002)
-            elif search_002 == "Todos os niveis":
-                vagas=vagas.objects.all()
 
         search_003 = self.request.GET.get('search-003')
         if search_003:
             if search_003 != "Todas as modalidades":
                 vagas = vagas.filter(modalidade=search_003)
-            elif search_003 == "Todas as modalidades":
-                vagas=vagas.objects.all()
 
         search_004 = self.request.GET.get('search-004')
         if search_004:
             if search_004 != "Tipo de contrato":
                 vagas = vagas.filter(contrato=search_004)
-            elif search_004 == "Tipo de contrato":
-                vagas=vagas.objects.all()
 
         search_005 = self.request.GET.get('search-005')
         if search_005:
             if search_005 != "Tipo de jornada":
                 vagas = vagas.filter(jornada=search_005)
-            elif search_005 == "Tipo de jornada":
-                vagas=vagas.objects.all()
 
         search_006 = self.request.GET.get('search-006')
         if search_006:
             if search_005 != "Aceita outra região?":
                 vagas = vagas.filter(outras_reg=search_006)
-            elif search_006 == "Aceita outra região?":
-                vagas=vagas.objects.all()
 
         return vagas
 
