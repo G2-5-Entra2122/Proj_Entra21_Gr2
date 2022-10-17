@@ -125,7 +125,6 @@
                                                 <option value="Mobile">Mobile</option>
                                             </select>
                                         <br><br>
-                                        <br><br>
 
                                         <h4 class="section-head-small mb-4">Nível</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
@@ -136,9 +135,8 @@
                                                 <option value="Sênior">Sênior</option>
                                             </select>
                                         <br><br>
-                                        <br><br>
                                         
-                                        <!-- <h4 class="section-head-small mb-4">Modalidade</h4>
+                                        <h4 class="section-head-small mb-4">Modalidade</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
                                                 data-bv-field="size" id="search-003" name="search-003" value="{{ request.GET.modalidade }}">
                                                 <option selected>Todas as modalidades</option>
@@ -147,10 +145,39 @@
                                                 <option value="Remoto">Remoto</option>
                                             </select>
                                         <br><br>
-                                        <br><br> -->
 
+                                        <h4 class="section-head-small mb-4">Tipo de contrato</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="search-004" name="search-004" value="{{ request.GET.contrato }}">
+                                                <option selected>Tipo de contrato</option>
+                                                <option value="Estágio">Estágio</option>
+                                                <option value="CLT">CLT</option>
+                                                <option value="Freelance">Freelance</option>
+                                                <option value="PJ">PJ</option>
+                                                <option value="Voluntário">Voluntário</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Jornada</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="search-005" name="search-005" value="{{ request.GET.jornada }}">
+                                                <option selected>Tipo de jornada</option>
+                                                <option value="Período Integral">Período Integral</option>
+                                                <option value="Meio Preíodo">Meio Preíodo</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Aceita candidatos de outras regiões?</h4>
+                                        <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                            data-bv-field="size" id="search-006" name="search-006" value="{{ request.GET.outras_reg }}">
+                                            <option selected>Aceita outra região?</option>
+                                            <option value="Sim">Sim</option>
+                                            <option value="Não">Não</option>
+                                        </select>
+                                        <br><br>
 
                                         <input type="submit" value="Filtrar">
+
                                     </form>
 
                                 </div>
