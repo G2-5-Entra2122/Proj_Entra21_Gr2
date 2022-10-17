@@ -2,6 +2,9 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
+from django.forms import ModelForm
+
+from accounts.models import PerfilEmpresas
 
 
 
@@ -30,3 +33,9 @@ class EmpresaForm(UserCreationForm):
             raise ValidationError(f'O email {e} já está em uso.')
         return e
 
+class EmpresaPerfilForm(ModelForm):
+    class Meta:
+        model = PerfilEmpresas
+        fields = ['fantasia', 'razao_social', 'cnpj', 'ie', 
+                    'endereco', 'tamanho', 'ramo', 'cep', 
+                    'telefone', 'apresentacao', 'usuario']

@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load crispy_forms_tags %}
+{% crispy example_form example_form.helper %}
 {% block content %}
 
 <body>
@@ -66,12 +67,12 @@
                                     <ul>
                                         <li class="active"><a href="{% url '404' %}"><i class="fa fa-user"></i> Perfil da Empresa</a></li>
                                         <li><a href="{% url '404' %}"><i class="fa fa-receipt"></i> Resumo</a></li>
-                                        <li><a href="{% url 'minhas-vagas' %}"><i class="fa fa-suitcase"></i> Gerenciar Vagas</a></li>
-                                        <li><a href="{% url 'postar-vaga' %}"><i class="fa fa-book-reader"></i> Postar Vagas</a></li>
-                                        <li><a href="{% url 'tabela-de-precos' %}"><i class="fa fa-credit-card"></i>Transações</a></li>
+                                        <li><a href="{% url '404' %}"><i class="fa fa-suitcase"></i> Gerenciar Vagas</a></li>
+                                        <li><a href="{% url '404' %}"><i class="fa fa-book-reader"></i> Postar Vagas</a></li>
+                                        <li><a href="{% url '404' %}"><i class="fa fa-credit-card"></i>Transações</a></li>
                                         <li><a href="{% url '404' %}"><i class="fa fa-user-check"></i> Pagina de Candidatos</a></li>
-                                        <li><a href="{% url 'change-password' %}"><i class="fa fa-fingerprint"></i> Mudar Senha</a></li>
-                                        <li><a href="{% url 'logout' %}"><i class="fa fa-share-square"></i> Sair</a></li>
+                                        <li><a href="{% url '404' %}"><i class="fa fa-fingerprint"></i> Mudar Senha</a></li>
+                                        <li><a href="{% url '404' %}"><i class="fa fa-share-square"></i> Sair</a></li>
                                         <!-- <li><a href="{% url 'registrar-candidato' %}"><i class="fa fa-pencil-alt"></i>Registrar Candidato </a></li> -->
                                         <!--<li><a href="{% url '404' %}"><i class="fa fa-pencil-alt"></i>Registro Profissional</a></li>-->
                                     </ul>
@@ -95,10 +96,36 @@
                                         <div class="panel-body wt-panel-body p-a20 m-b30 ">
                                             
                                             <div class="row">
-                                                                
-                                                    <div class="col-xl-6 col-lg-6 col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Nome da Empresa</label>
+                                                <div class="col-xl-6 col-lg-6 col-md-12">
+                                                    <div class="form-group">
+                                                        
+                                                        <form  method="post" ><input type="hidden" name="csrfmiddlewaretoken" value="G6vBCDRcXUsWcsOazvJ9kEvuN8RsLUlYQq2jM1RciSCZq6FqWSLeLqrDjZo6ulyH"> 
+                                                            <div id="div_id_fantasia" class="control-group"> 
+                                                                <label for="id_fantasia" class="control-label requiredField">
+                                                            Nome Fantasia<span class="asteriskField">*</span> </label> 
+                                                            <div class="controls"> <input type="text" name="fantasia" maxlength="100" class="textinput textInput" required id="id_fantasia"> 
+                                                                <p id="hint_id_fantasia" class="help-block">Nome fantasia da sua empresa</p> 
+                                                            </div> 
+                                                        </div> 
+                                                        <div id="div_id_razao_social" class="control-group"> <label for="id_razao_social" class="control-label requiredField">
+                                                            Razão Social<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="razao_social" maxlength="100" class="textinput textInput" required id="id_razao_social"> <p id="hint_id_razao_social" class="help-block">Razão social da sua empresa</p> </div> </div> <div id="div_id_cnpj" class="control-group"> <label for="id_cnpj" class="control-label requiredField">
+                                                            CNPJ<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="cnpj" maxlength="18" class="textinput textInput" required id="id_cnpj"> <p id="hint_id_cnpj" class="help-block">Apenas números</p> </div> </div> <div id="div_id_ie" class="control-group"> <label for="id_ie" class="control-label ">
+                                                            Inscrição Estadual
+                                                        </label> <div class="controls"> <input type="text" name="ie" maxlength="20" class="textinput textInput" id="id_ie"> <p id="hint_id_ie" class="help-block">Inscrição estadual da sua empresa</p> </div> </div> <div id="div_id_endereco" class="control-group"> <label for="id_endereco" class="control-label requiredField">
+                                                            Endereço<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="endereco" maxlength="100" class="textinput textInput" required id="id_endereco"> </div> </div> <div id="div_id_tamanho" class="control-group"> <label for="id_tamanho" class="control-label requiredField">
+                                                            Tamanho<span class="asteriskField">*</span> </label> <div class="controls"> <select name="tamanho" class="select" required id="id_tamanho"> <option value="" selected>---------</option> <option value="pequena">Pequena</option> <option value="media">Média</option> <option value="grande">Grande</option>
+                                            
+                                            </select> </div> </div> <div id="div_id_ramo" class="control-group"> <label for="id_ramo" class="control-label requiredField">
+                                                            Ramo<span class="asteriskField">*</span> </label> <div class="controls"> <select name="ramo" class="select" required id="id_ramo"> <option value="" selected>---------</option> <option value="tecnologia">Tecnologia</option> <option value="servicos">Serviços</option> <option value="financeiro">Financeiro</option> <option value="varejo">Varejo</option> <option value="atacado">Atacado</option> <option value="industria">Industria</option> <option value="comercio">Comércio</option>
+                                            
+                                            </select> </div> </div> <div id="div_id_cep" class="control-group"> <label for="id_cep" class="control-label requiredField">
+                                                            CEP<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="cep" maxlength="9" class="textinput textInput" required id="id_cep"> <p id="hint_id_cep" class="help-block">Apenas números</p> </div> </div> <div id="div_id_telefone" class="control-group"> <label for="id_telefone" class="control-label requiredField">
+                                                            Telefone<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="telefone" maxlength="15" class="textinput textInput" required id="id_telefone"> <p id="hint_id_telefone" class="help-block">Apenas números, com prefixo DDD em 2 dígitos</p> </div> </div> <div id="div_id_apresentacao" class="control-group"> <label for="id_apresentacao" class="control-label requiredField">
+                                                            Apresentação<span class="asteriskField">*</span> </label> <div class="controls"> <textarea name="apresentacao" cols="40" rows="10" maxlength="500" class="textarea" required id="id_apresentacao">
+                                            </textarea> <p id="hint_id_apresentacao" class="help-block">Apresente sua empresa em no máximo 500 caracteres</p> </div> </div> </form>
+
+                                                            <!--{% crispy form %}-->
+                                                            <!-- <label>Nome da Empresa</label>
                                                             <div class="ls-inputicon-box"> 
                                                                 <input class="form-control" name="company_name" type="text" placeholder="Empresa Modelo Ltda">
                                                                 <i class="fs-input-icon fa fa-building"></i>
@@ -224,7 +251,7 @@
                                                             <label>Descrição</label>
                                                             <textarea class="form-control" rows="3">Parabéns! Você acaba de entrar para a maior comunidade de desenvolvedores do mundo.Conte um pouco sobre você.</textarea>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                     
                                                                                                                 
                                                     <div class="col-lg-12 col-md-12">                                   
@@ -296,7 +323,7 @@
                                                                 <i class="fs-input-icon fab fa-instagram"></i>
                                                             </div>
                                                         </div>
-                                                    </div>    
+                                                    </div>     -->
                                                                                                                                                                   
                                                 <div class="col-lg-12 col-md-12">                                   
                                                         <div class="text-left">
