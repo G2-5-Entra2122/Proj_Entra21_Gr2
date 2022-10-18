@@ -20,7 +20,7 @@ def criar_empresa(apps, schema_editor):
         ('Philips', 'PHILIPS DO BRASIL LTDA', '61.086.336/0001-03', '', 'AVENIDA MARCOS PENTEADO DE ULHOA RODRIGUES, 939 TAMBORE','grande', 'tecnologia', '06460-040', '(11) 2125-0428', 'Olá, somos a philips', 7),
         ('Senior Sistemas', 'SENIOR SISTEMAS S/A', '80.680.093/0008-58', '', 'Rua Marginal Emicol, 21500 Jardim Emicol', 'grande', 'tecnologia', '13312-820', 'Olá somos a Senior', 8),
         ('T-Systems', 'T-SYSTEMS DO BRASIL LTDA.', '04.426.565/0001-96', '', 'Rua Olimpiadas, 205 3º Andar VILA OLIMPIA', 'grande', 'tecnologia', '04551-000', 'Olá, somos a tsystems', 9),
-        ('')
+        ('Unifique', 'UNIFIQUE TELECOMUNICACOES S/A', )
     ]
     Empresa = apps.get_model('accounts', 'PerfilEmpresas')
 
