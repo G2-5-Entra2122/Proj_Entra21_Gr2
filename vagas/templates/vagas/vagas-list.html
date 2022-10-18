@@ -52,194 +52,69 @@
 
                                 <div class="sidebar-elements search-bx">
 
-                                    <form>
-
-                                        <div class="form-group mb-4">
-                                            <h4 class="section-head-small mb-4">Categoria</h4>
+                                    <form method="get">
+                                        <h4 class="section-head-small mb-4">Categoria</h4>
                                             <select class="wt-select-bar-large selectpicker" data-live-search="true"
-                                                data-bv-field="size">
-                                                <option selected>Todas as categorias</option>
-                                                <option>Full Stack</option>
-                                                <option>Back-End</option>
-                                                <option>Front-End</option>
+                                                data-bv-field="size" id="src01" name="src01" value="{{ request.GET.cat }}">
+                                                <option selected value="todas-as-categorias">Todas as categorias</option>
+                                                <option value="Full-stack">Full-Stack</option>
+                                                <option value="Back-end">Back-End</option>
+                                                <option value="Front-end">Front-End</option>
+                                                <option value="Mobile">Mobile</option>
                                             </select>
-                                        </div>
+                                        <br><br>
 
-                                        <div class="form-group mb-4">
-                                            <h4 class="section-head-small mb-4">Localização</h4>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Local da Vaga">
-                                                <button class="btn" type="button"><i
-                                                        class="feather-map-pin"></i></button>
-                                            </div>
-                                        </div>
+                                        <h4 class="section-head-small mb-4">Nível</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src02" name="src02" value="{{ request.GET.nivel }}">
+                                                <option selected value="todos-os-niveis">Todos os níveis</option>
+                                                <option value="Junior">Junior</option>
+                                                <option value="Pleno">Pleno</option>
+                                                <option value="Sênior">Sênior</option>
+                                            </select>
+                                        <br><br>
+                                        
+                                        <h4 class="section-head-small mb-4">Modalidade</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src03" name="src03" value="{{ request.GET.modalidade }}">
+                                                <option selected value="todas-as-modalidades">Todas as modalidades</option>
+                                                <option value="Presencial">Presencial</option>
+                                                <option value="Híbrido">Híbrido</option>
+                                                <option value="Remoto">Remoto</option>
+                                            </select>
+                                        <br><br>
 
-                                        <div class="twm-sidebar-ele-filter">
-                                            <h4 class="section-head-small mb-4">Modalidade</h4>
-                                            <ul>
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck1">
-                                                        <label class="form-check-label"
-                                                            for="exampleCheck1">Presencial</label>
-                                                    </div>
-                                                </li>
+                                        <h4 class="section-head-small mb-4">Tipo de contrato</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src04" name="src04" value="{{ request.GET.contrato }}">
+                                                <option selected value="tipo-de-contrato">Tipo de contrato</option>
+                                                <option value="Estágio">Estágio</option>
+                                                <option value="CLT">CLT</option>
+                                                <option value="Freelance">Freelance</option>
+                                                <option value="PJ">PJ</option>
+                                                <option value="Voluntário">Voluntário</option>
+                                            </select>
+                                        <br><br>
 
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck2">
-                                                        <label class="form-check-label" for="exampleCheck2">Híbrido</label>
-                                                    </div>
-                                                </li>
+                                        <h4 class="section-head-small mb-4">Jornada</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="search-005" name="search-005" value="{{ request.GET.jornada }}">
+                                                <option selected value="tipo-de-jornada">Tipo de jornada</option>
+                                                <option value="Período Integral">Período Integral</option>
+                                                <option value="Meio Preíodo">Meio Preíodo</option>
+                                            </select>
+                                        <br><br>
 
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck3">
-                                                        <label class="form-check-label"
-                                                            for="exampleCheck3">Remoto</label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <h4 class="section-head-small mb-4">Aceita candidatos de outras regiões?</h4>
+                                        <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                            data-bv-field="size" id="search-006" name="search-006" value="{{ request.GET.outras_reg }}">
+                                            <option selected value="aceita-outra-regiao">Aceita outra região?</option>
+                                            <option value="Sim">Sim</option>
+                                            <option value="Não">Não</option>
+                                        </select>
+                                        <br><br>
 
-
-                                        <div class="twm-sidebar-ele-filter">
-                                            <h4 class="section-head-small mb-4">Tipo de Vaga</h4>
-                                            <ul>
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck1">
-                                                        <label class="form-check-label"
-                                                            for="exampleCheck1">Freelance</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck2">
-                                                        <label class="form-check-label" for="exampleCheck2">Tempo
-                                                            Integral</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck3">
-                                                        <label class="form-check-label"
-                                                            for="exampleCheck3">Estágio</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck4">
-                                                        <label class="form-check-label" for="exampleCheck4">Meio
-                                                            Período</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck5">
-                                                        <label class="form-check-label"
-                                                            for="exampleCheck5">Temporário</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleCheck6">
-                                                        <label class="form-check-label"
-                                                            for="exampleCheck6">Voluntário</label>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                        <div class="twm-sidebar-ele-filter">
-                                            <h4 class="section-head-small mb-4">Tempo de postagem</h4>
-                                            <ul>
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleradio2">
-                                                        <label class="form-check-label" for="exampleradio2">Últimas 24
-                                                            horas</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleradio3">
-                                                        <label class="form-check-label" for="exampleradio3">Últimos 7
-                                                            dias</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleradio4">
-                                                        <label class="form-check-label" for="exampleradio4">Últimos 14
-                                                            dias</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleradio5">
-                                                        <label class="form-check-label" for="exampleradio5">Últimos 30
-                                                            dias</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input"
-                                                            id="exampleradio6">
-                                                        <label class="form-check-label" for="exampleradio6">Tudo</label>
-                                                    </div>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-
-                                        <div class="twm-sidebar-ele-filter">
-                                            <h4 class="section-head-small mb-4">Tamanho da Empresa</h4>
-                                            <ul>
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="Freelance1">
-                                                        <label class="form-check-label" for="Freelance1">Pequena</label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="FullTime1">
-                                                        <label class="form-check-label" for="FullTime1">Média</label>
-                                                    </div>
-                                                </li>
-
-                                                <li>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="Intership1">
-                                                        <label class="form-check-label" for="Intership1">Grande</label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <input type="submit" value="Filtrar">
 
                                     </form>
 
