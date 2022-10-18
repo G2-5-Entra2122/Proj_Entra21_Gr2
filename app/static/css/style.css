@@ -9629,7 +9629,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   }
 }
 
-/*Side Map*/ /*
+/*Side Map*/ 
 .twm-s-map-iframe {
   padding: 20px;
   background-color: #fff;
@@ -9641,7 +9641,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   border: 0px;
   filter: grayscale(100%);
 }
-Aqui eu nao identifiquei nada entao exclui */
+/*Aqui eu nao identifiquei nada entao exclui */
 /*Side Map2*/ /*
 .twm-m-map-iframe {
   background-color: #fff;
@@ -9655,13 +9655,11 @@ Aqui eu nao identifiquei nada entao exclui */
 }
 */
 /*Sidebar Info*/
-/*
 .twm-s-info3 {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(56, 152, 226, 0.3);
   padding: 30px;
-  margin-top: 90px;
 }
 .twm-s-info3 .twm-s-info-logo-section {
   position: relative;
@@ -9715,7 +9713,6 @@ Aqui eu nao identifiquei nada entao exclui */
   display: block;
   text-align: center;
 }
-*/
 /*Sidebar Info*/ /*
 .twm-s-info {
   background-color: #fff;
