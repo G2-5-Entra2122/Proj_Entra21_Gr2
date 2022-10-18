@@ -20,4 +20,5 @@ class TabeladePrecosView(TemplateView):
 class FaqView(TemplateView):
     template_name = 'faq.html'
 
-
+class TabeladePrecosView(TemplateView):
+    template_name = 'tabela-de-precos.html'
