@@ -1,5 +1,5 @@
 from .models import Vaga
-
+#from .forms import VagasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from braces.views import GroupRequiredMixin
 
@@ -39,8 +39,8 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
             'qua_habilidade_vaga',
             'qui_habilidade_vaga',
         ]
-    # form_class=VagasForm
-    # vagas_obj=Vaga.objects.all()
+    #form_class=VagasForm
+    vagas_obj=Vaga.objects.all()
     template_name = 'vagas/postar-vaga.html'
     success_url=reverse_lazy('minhas-vagas')
 
@@ -58,9 +58,11 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         context['titulo'] = 'Adicionar uma vaga'
         context['lead'] = 'Preencha todos os campos obrigatórios.'
         context['botao'] = 'Cadastrar'
+        
         return context
 
-
+#class VagaCreateView(CreateView):
+#    template_name = 'vagas/postar-vagas.html'
 
 ######################## LIST ##########################
 
