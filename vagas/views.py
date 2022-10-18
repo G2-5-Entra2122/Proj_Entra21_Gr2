@@ -1,4 +1,3 @@
-from requests import request
 from .models import Vaga
 
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -51,7 +50,7 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         form.instance.usuario=self.request.user
 
         url = super().form_valid(form)
-        
+
         return url
 
 
@@ -93,25 +92,25 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
             'qui_habilidade_vaga',
         ]
     template_name = 'vagas/minhasvagas.html'
-    
+
 
     def get_queryset(self):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
         return self.object_list
- 
+
 
 class VagaListView(ListView):
     template_name='vagas/vagas-list.html'
     model = Vaga
     paginate_by = 4
-   
+
     def get_queryset(self):
-        vagas = Vaga.objects.all()        
+        vagas = Vaga.objects.all()
         search_001 = self.request.GET.get('src01')
         if search_001:
             if search_001 != "todas-as-categorias":
                 vagas = vagas.filter(categoria=search_001)
-            
+
         search_002 = self.request.GET.get('src02')
         if search_002:
             if search_002 != "todos-os-niveis":
@@ -126,12 +125,12 @@ class VagaListView(ListView):
         if search_004:
             if search_004 != "tipo-de-contrato":
                 vagas = vagas.filter(contrato=search_004)
-                
+
         search_005 = self.request.GET.get('src05')
         if search_005:
             if search_005 != "tipo-de-jornada":
                 vagas = vagas.filter(jornada=search_005)
-                
+
         search_006 = self.request.GET.get('src06')
         if search_006:
             if search_006 != "aceita-outra-regiao":
@@ -195,8 +194,8 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         context['lead'] = 'Preencha todos os campos obrigatórios.'
         context['botao'] = 'Atualizar'
         return context
-     
-        
+
+
 ######################## DELETE ##########################
 
 
@@ -218,7 +217,3 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
         context['lead'] = 'Confirme para excluir a vaga definitivamente.'
         context['botao'] = 'Deletar'
         return context
-
-
-
-
