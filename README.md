@@ -295,7 +295,16 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 - Construção de filtros para vagas;
 - Será feito migrate para disponibilizar base de dados aos usuários no repositório local;
-- 
+
+
+### 14/10/2022
+
+- Ajustes na paginação da lista de vagas;
+- continuação da construção de filtros de vagas;
+- cadastramento de vagas no DB;
+- finalizada a inserção do DB;
+- lógica do match entre contratantes e candidatos em andamento;
+- Nova demanda: criar o html de visualização de uma vaga selecionada;
 
  
 Referências:

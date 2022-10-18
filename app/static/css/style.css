@@ -4860,33 +4860,31 @@ button.scroltop span {
 }
 
 /*Pagination Style*/
-.pagination-outer {
-  padding-top: 30px;
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@media (max-width: 991px) {
-  .pagination-outer {
-    margin-bottom: 30px;
-  }
-}
-.pagination-outer .pagination-style1 {
+
+.pagination-style1 {
   position: relative;
   display: inline-block;
 }
-.pagination-outer .pagination-style1 ul {
+.pagination-style1 ul {
   list-style: none;
   margin-bottom: 0px;
 }
-.pagination-outer .pagination-style1 ul li {
+.pagination-style1 ul li {
   position: relative;
   margin: 0px 3px 0px;
   display: inline-block;
 }
 @media (max-width: 400px) {
-  .pagination-outer .pagination-style1 ul li {
+  .pagination-style1 ul li {
     margin: 0px 2px 0px;
   }
 }
-.pagination-outer .pagination-style1 ul li.prev a {
+.pagination-style1 ul li.prev a {
   width: 50px;
   height: 50px;
   font-size: 16px;
@@ -4896,12 +4894,12 @@ button.scroltop span {
   letter-spacing: 1px;
 }
 @media (max-width: 420px) {
-  .pagination-outer .pagination-style1 ul li.prev a {
+  .pagination-style1 ul li.prev a {
     width: 30px;
     height: 30px;
   }
 }
-.pagination-outer .pagination-style1 ul li.next a {
+.pagination-style1 ul li.next a {
   width: 50px;
   height: 50px;
   font-size: 16px;
@@ -4911,12 +4909,12 @@ button.scroltop span {
   letter-spacing: 1px;
 }
 @media (max-width: 420px) {
-  .pagination-outer .pagination-style1 ul li.next a {
+  .pagination-style1 ul li.next a {
     width: 30px;
     height: 30px;
   }
 }
-.pagination-outer .pagination-style1 ul li a {
+.pagination-style1 ul li a {
   position: relative;
   width: 50px;
   height: 50px;
@@ -4930,17 +4928,17 @@ button.scroltop span {
   font-weight: 400;
 }
 @media (max-width: 480px) {
-  .pagination-outer .pagination-style1 ul li a {
+  .pagination-style1 ul li a {
     width: 30px;
     height: 30px;
     line-height: 30px;
   }
 }
-.pagination-outer .pagination-style1 ul li.active a {
+.pagination-style1 ul li.active a {
   background-color: #3996F4;
   color: #fff;
 }
-.pagination-outer .pagination-style1 ul li:hover a {
+.pagination-style1 ul li:hover a {
   background-color: #3996F4;
   color: #fff;
 }
@@ -6739,6 +6737,10 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 /*Job post section*/
+.twm-job-address {
+  width: 90%;
+  text-align: justify;
+}
 .twm-jobs-list-wrap {
   max-width: 910px;
   margin: 0px auto;
@@ -6764,8 +6766,12 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 @media (max-width: 767px) {
   .twm-jobs-list-style1 {
     text-align: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px !important;
+  }
+  .twm-job-address {
+    width: 100%;
   }
 }
 .twm-jobs-list-style1 .twm-media {
@@ -6825,6 +6831,8 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   color: #17171d;
   margin: 20px 0px 10px 0px;
   font-size: 14px;
+  width: 200px;
+  padding: 0 10px 0 10px;
 }
 .twm-jobs-list-style1 .twm-right-content .twm-jobs-amount span {
   color: #046c38;
