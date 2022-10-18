@@ -18,7 +18,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/experts-logoteste.png' %}" />
 
     <!-- PAGE TITLE HERE -->
-    <title>Seek-o-Mode</title>
+    {% block title %}
+    <title>Experts 4 Hire</title>
+    {% endblock %}
 
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,7 +73,7 @@
 
                         <div class="logo-header">
                             <div class="logo-header-inner logo-header-one">
-                                <a href="index.html">
+                                <a href="{% url 'index' %}">
                                     <img src="{% static 'images/Logo_gg.png' %}" alt="" width=150% hight=150%>
                                 </a>
                             </div>
@@ -90,9 +92,9 @@
                         <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
 
                             <ul class=" nav navbar-nav">
-                                <li class="has-child"><a href="/index">Início</a>
+                                <li class="has-child"><a href="{% url 'index' %}">Início</a>
                                 </li>
-                                <li class="has-child"><a href="/about">Sobre</a>
+                                <li class="has-child"><a href="{% url 'about' %}">Sobre</a>
                                 </li>                                
                                 <li class="has-child"><a href="{% url 'vaga-list' %}">Vagas</a> 
                                 </li>
@@ -263,10 +265,10 @@
                             <div class="modal-footer">
                                 <span class="modal-f-title">Login ou entre com</span>
                                 <ul class="twm-modal-social">
-                                    <li><a href="javascript.html" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="javascript.html" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="javascript.html" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="javascript.html" class="google-clr"><i class="fab fa-google"></i></a></li>
+                                    <li><a href="https://www.facebook.com/" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://twitter.com/" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.google.com.br/" class="google-clr"><i class="fab fa-google"></i></a></li>
                                 </ul>
                             </div>
 
@@ -394,31 +396,6 @@
 
  	</div>
 
-
-
-<<<<<<< HEAD
-    <!-- JAVASCRIPT  FILES ========================================= -->
-    <script src="js/jquery-3.6.0.min.js"></script><!-- JQUERY.MIN JS -->
-    <script src="js/popper.min.js"></script><!-- POPPER.MIN JS -->
-    <script src="js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
-    <script src="js/magnific-popup.min.js"></script><!-- MAGNIFIC-POPUP JS -->
-    <script src="js/waypoints.min.js"></script><!-- WAYPOINTS JS -->
-    <script src="js/counterup.min.js"></script><!-- COUNTERUP JS -->
-    <script src="js/waypoints-sticky.min.js"></script><!-- STICKY HEADER -->
-    <script src="js/isotope.pkgd.min.js"></script><!-- MASONRY  -->
-    <script src="js/imagesloaded.pkgd.min.js"></script><!-- MASONRY  -->
-    <script src="js/owl.carousel.min.js"></script><!-- OWL  SLIDER  -->
-    <script src="js/theia-sticky-sidebar.js"></script><!-- STICKY SIDEBAR  -->
-    <script src="js/lc_lightbox.lite.js"></script><!-- IMAGE POPUP -->
-    <script src="js/bootstrap-select.min.js"></script><!-- Form js -->
-    <script src="js/dropzone.js"></script><!-- IMAGE UPLOAD  -->
-    <script src="js/jquery.scrollbar.js"></script><!-- scroller -->
-    <script src="js/bootstrap-datepicker.js"></script><!-- scroller -->
-    <script src="js/jquery.dataTables.min.js"></script><!-- Datatable -->
-    <script src="js/dataTables.bootstrap5.min.js"></script><!-- Datatable -->
-    <script src="js/chart.js"></script><!-- Chart -->
-    <script src="js/custom.js"></script><!-- CUSTOM FUCTIONS  -->
-=======
 <!-- JAVASCRIPT  FILES ========================================= --> 
 <script  src="{% static 'js/jquery-3.6.0.min.js' %}"></script><!-- JQUERY.MIN JS -->
 <script  src="{% static 'js/popper.min.js' %}"></script><!-- POPPER.MIN JS -->
