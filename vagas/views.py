@@ -1,4 +1,3 @@
-from requests import request
 from .models import Vaga
 
 from django.contrib.auth.mixins import LoginRequiredMixin
