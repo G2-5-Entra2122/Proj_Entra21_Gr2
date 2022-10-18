@@ -2,7 +2,7 @@
 
 from django.db import migrations
 
-from app1.models import TagDis
+#from app1.models import TagDis
 
 DEFAULT_TAGDIS = (
     ("AC", 325.85, 470.05, 54382, 37699, 16683,	2017),
@@ -143,36 +143,36 @@ DEFAULT_TAGDIS = (
 )
 
 
-def add_TagDis(apps, schema_editor):
-    tagdis = apps.get_model('app1', 'TagDis')
+# def add_TagDis(apps, schema_editor):
+#     tagdis = apps.get_model('app1', 'TagDis')
 
-    for uf, media_geral, media, inscritos, participantes, faltantes, data in DEFAULT_TAGDIS:
-        tgd = TagDis(
-            uf=uf,
-            media_geral=media_geral,
-            media=media,
-            inscritos=inscritos,
-            participantes=participantes,
-            faltantes=faltantes,
-            data=data)
-        tgd.save()
+#     for uf, media_geral, media, inscritos, participantes, faltantes, data in DEFAULT_TAGDIS:
+#         tgd = TagDis(
+#             uf=uf,
+#             media_geral=media_geral,
+#             media=media,
+#             inscritos=inscritos,
+#             participantes=participantes,
+#             faltantes=faltantes,
+#             data=data)
+#         tgd.save()
 
 
-def remove_TagDis(apps, schema_editor):
-    # This is used to migrate backward
-    # You can remove your dog types, or just pass
-    # pass
+# def remove_TagDis(apps, schema_editor):
+#     # This is used to migrate backward
+#     # You can remove your dog types, or just pass
+#     # pass
 
-    for uf, media_geral, media, inscritos, participantes, faltantes, data in DEFAULT_TAGDIS:
-        tgd = TagDis.objects.get(
-            uf=uf,
-            media_geral=media_geral,
-            media=media,
-            inscritos=inscritos,
-            participantes=participantes,
-            faltantes=faltantes,
-            data=data)
-        tgd.delete()
+#     for uf, media_geral, media, inscritos, participantes, faltantes, data in DEFAULT_TAGDIS:
+#         tgd = TagDis.objects.get(
+#             uf=uf,
+#             media_geral=media_geral,
+#             media=media,
+#             inscritos=inscritos,
+#             participantes=participantes,
+#             faltantes=faltantes,
+#             data=data)
+#         tgd.delete()
 
 
 class Migration(migrations.Migration):
@@ -182,5 +182,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(add_TagDis, remove_TagDis)
+    #    migrations.RunPython(add_TagDis, remove_TagDis)
     ]

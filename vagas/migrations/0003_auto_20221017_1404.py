@@ -5,10 +5,25 @@ from django.contrib.auth.models import User
 
 
 def add_users(apps,schema_editor):
-    User.objects.create_user('adriano', 'adriano@machado.tec.br','@Karina1977')
-    user = User.objects.get(username='adriano')
-    user.groups.add(2)
-    user.save()
+    DEFAULT_USERS =[
+        ('ambevtech','contato@ambevtech.com.br','@Ambevtech1234'),
+        ('ailos','contato@ailos.com.br', '@Ailos1234'),
+        ('capgemini', 'contato@capgemini.com.br', '@Capgemini1234'),
+        ('datainfo', 'contato@datainfo.com.br', '@Datainfo1234'),
+        ('farmaciasapp','contato@farmaciasapp.com.br', '@Farmaciasapp1234'),
+        ('havanlabs', 'contato@havanlabs.com.br', '@Havanlabs1234'),
+        ('philips','contato@philips.com.br','@Philips'),
+        ('senior','contato@seniorsistemas.com.br','@Seniorsistemas1234'),
+        ('tsystems', 'contato@tsystems.com.br','@Tsystems1234'),
+        ('unifique', 'contato@unifique.com.br', '@Unifique1234'),
+        ('warren', 'contato@warren.com.br', '@Warren1234')
+        ]
+    for username, email, password in DEFAULT_USERS:
+        user = User.objects.create_user(username, email, password)
+        user.groups.add(2)
+        user.save()
+
+#def remove_users(apps,schema_editor):
 
 
 

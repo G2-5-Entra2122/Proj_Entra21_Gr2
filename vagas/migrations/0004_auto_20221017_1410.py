@@ -9,21 +9,35 @@ from django.contrib.auth.models import User
 #     )
 
 
-# def criar_empresa(apps, schema_editor):
-#     Empresa = apps.get_model('accounts', 'PerfilEmpresa')
-#     Empresa.objects.bulk_create(
-#      fantasia = 'Senior',
-#      razao_social = 'Senior Sistemas', 
-#      cnpj = '80.680.093/0001-81', 
-#      ie = '123456789', 
-#      endereco = 'Rua da Esperanca', 
-#      tamanho = 'pequena', 
-#      ramo = 'tecnologia', 
-#      cep = '88340-080', 
-#      telefone = '(47)3733-2747', 
-#      apresentacao = 'ola sou a senior',
-#      usuario = 
-#    )
+def criar_empresa(apps, schema_editor):
+    DEFAULT_EMPRESAS = [
+        ('AmbevTech', 'AmbevTech LTDA', '81.875.973/0001-76', '', 'RUA THEODORO HOLTRUP, 982 - VILA NOVA','grande', 'tecnologia', '89035-300', '(47)2123-5400', 'Olá, somos a AmbevTech!!',1),
+        ('Central Ailos', 'COOPERATIVA CENTRAL DE CREDITO - AILOS', '05.463.212/0001-29', '', 'RUA GENERAL OSORIO, 1180, VELHA','grande', 'financeiro', '89041-002', '(47)3231-4646', 'Olá, somos a Central Ailos',2),
+        ('Capgemini', 'CAPGEMINI BRASIL S/A', '65.599.953/0001-63', '', 'ALAMEDA GRAJAU, 60 ANDAR 14SALA1401 - ALPHAVILLE', 'grande', 'tecnologia', '06454-050', '(11) 3908-8180', 'Olá, somos a Capgemini!', 3),
+        ('DataInfo', 'DATAINFO SOLUCOES EM TECNOLOGIA DA INFORMACAO LTDA', '05.085.461/0001-28', '', 'AVENIDA PAULISTA, 1636 EDIFPAULISTA CORPORATECONJCOMERCIAL 904 BELA VISTA', 'grande', 'tecnologia', '01310-200', '(11)3287-2301', 'Olá somos a datainfo!',4),
+        ('AppFarmacias', 'APP FARMACIA - DESENVOLVIMENTO DE APLICATIVOS LTDA', '27.487.642/0001-13', '', 'Avenida da Universidade, 3089', 'grande', 'tecnologia', '60020-181', '(85)8802-5286', 'Olá somos a farmácias app', 5),
+        ('Havan Labs', 'HAVAN S.A', '79.379.491/0016-60', '','Rua 15 de Novembro, 1050 CENTRO', '89036-200', 'ROD ANTONIO HEIL, 200', 'grande', 'tecnologia', '88353-100', '(47)3251-5000', 'Se você curte tecnologia, programação e novos desafios o Havan Labs é para você! Somos um time de profissionais voltados para diversas áreas da tecnologia.', 6),
+        ('Philips', 'PHILIPS DO BRASIL LTDA', '61.086.336/0001-03', '', 'AVENIDA MARCOS PENTEADO DE ULHOA RODRIGUES, 939 TAMBORE','grande', 'tecnologia', '06460-040', '(11) 2125-0428', 'Olá, somos a philips', 7),
+        ('Senior Sistemas', 'SENIOR SISTEMAS S/A', '80.680.093/0008-58', '', 'Rua Marginal Emicol, 21500 Jardim Emicol', 'grande', 'tecnologia', '13312-820', 'Olá somos a Senior', 8),
+        ('T-Systems', 'T-SYSTEMS DO BRASIL LTDA.', '04.426.565/0001-96', '', 'Rua Olimpiadas, 205 3º Andar VILA OLIMPIA', 'grande', 'tecnologia', '04551-000', 'Olá, somos a tsystems', 9),
+        ('')
+    ]
+    Empresa = apps.get_model('accounts', 'PerfilEmpresas')
+
+
+    Empresa.objects.create(
+     fantasia = 'Senior',
+     razao_social = 'Senior Sistemas', 
+     cnpj = '80.680.093/0001-81', 
+     ie = '123456789', 
+     endereco = 'Rua da Esperanca', 
+     tamanho = 'pequena', 
+     ramo = 'tecnologia', 
+     cep = '88340-080', 
+     telefone = '(47)3733-2747', 
+     apresentacao = 'ola sou a senior',
+     usuario_id = 8
+   )
 
 class Migration(migrations.Migration):
 
@@ -32,4 +46,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunPython(criar_empresa)
     ]
