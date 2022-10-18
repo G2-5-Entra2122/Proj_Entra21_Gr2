@@ -1,4 +1,3 @@
-from requests import request
 from .models import Vaga
 
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -138,10 +137,14 @@ class VagaListView(ListView):
             if search_006 != "aceita-outra-regiao":
                 vagas = vagas.filter(outras_reg=search_006)
 
+        
+        self.contador = vagas.count()
+
         return vagas
 
     def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+        context = super().get_context_data(*args, **kwargs)    
+        context['contador']  = self.contador 
         context['form'] = FilterForm(initial={
             'search': self.request.GET.get('search', ''),
             'filter_field': self.request.GET.get('filter_field', '')
