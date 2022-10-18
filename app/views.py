@@ -6,7 +6,7 @@ class HomeView(TemplateView):
 
 
 class EmpresasView(TemplateView):
-    template_name = 'empresas.html'
+    template_name = 'empresas-lista.html'
 
 class SobreView(TemplateView):
     template_name = 'about.html'
@@ -14,4 +14,11 @@ class SobreView(TemplateView):
 class ErrorView(TemplateView):
     template_name = '404.html'
 
+class TabeladePrecosView(TemplateView):
+    template_name = 'tabela-de-precos.html'
 
+class FaqView(TemplateView):
+    template_name = 'faq.html'
+
+class TabeladePrecosView(TemplateView):
+    template_name = 'tabela-de-precos.html'
