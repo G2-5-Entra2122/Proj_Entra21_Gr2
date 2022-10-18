@@ -126,15 +126,15 @@ class VagaListView(ListView):
         if search_004:
             if search_004 != "tipo-de-contrato":
                 vagas = vagas.filter(contrato=search_004)
-
+                
         search_005 = self.request.GET.get('src05')
         if search_005:
             if search_005 != "tipo-de-jornada":
                 vagas = vagas.filter(jornada=search_005)
-
+                
         search_006 = self.request.GET.get('src06')
         if search_006:
-            if search_005 != "aceita-outra-regiao":
+            if search_006 != "aceita-outra-regiao":
                 vagas = vagas.filter(outras_reg=search_006)
 
         return vagas

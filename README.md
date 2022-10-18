@@ -312,6 +312,15 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 - Se alguma janela suspensa não sofre modificação, retorna a mensagem de que não há vagas disponíveis;
 - Também foi trabalhado na enumeração, contagem e compressão de objetos;
 
+### 18/10/2022
+
+- Finalizado o filtro de vagas;
+- Novas demandas:
+  - incorporar a parte do filtro da página de lista de vagas e dar pull request;
+  - incorporar a pagina de lista de candidatos + pagina de detalhe de candidato;
+  - arrumar about (botão do linktree); e fazer o pull request;
+  - dar o pull request na pagina de preços;
+  - arrumar o "mostrando 2150 vagas" na pagina de lista de vagas;
 
 
  
