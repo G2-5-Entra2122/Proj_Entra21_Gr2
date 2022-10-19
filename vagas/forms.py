@@ -35,7 +35,7 @@ class VagaForm(forms.ModelForm):
             field.widget.attrs['Class'] = 'form-control'
             field.widget.attrs['placeholder'] = field.label or self.labels[key]
 
-class FilterForm(forms.ModelForm):
+class FilterForm(Form):
     CATEGORIA_CHOICES = (
         ('Full-stack', 'Full-Stack'),
         ('Front-end', 'Front-end'),
