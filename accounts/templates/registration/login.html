@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="twm-home1-banner-section site-bg-gray bg-cover"
-                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg')">
+                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg');height:100vh">
                 <div class="row">
     
                     {% if request.user.is_authenticated %}
@@ -27,15 +27,7 @@
                                 <h3 class="card-title text-center">Login</h3>
                 
                                 <hr>
-                        
-                                <!-- <form method="post">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="next" value="{{ next }}">
-                        
-                                    {{ form|crispy }}
-                
-                                    <button type="submit" class="btn btn-light mt-3">Entrar</button>
-                                </form> -->
+                 
                                 <form method="post">
                                     <div class="modal-header text-center justify-content-center">
                                         <p>Faça login e tenha acesso a todos os recursos do Experts 4 Hire</p>
@@ -43,11 +35,14 @@
                                     <div class="modal-body">
                                         <div class="twm-tabs-style-2">
                                             
-                                            <div class="tab-content" id="myTab2Content">
+                                            <div class="tab-pane fade show active">
                                                 {% csrf_token %}
                                                 <input type="hidden" name="next" value="{{ next }}">
                                                 {{ form|crispy }}
-                                                <button type="submit" class="btn btn-light mt-3">Entrar</button>
+                                                
+                                                <hr>
+                        
+                                                <button type="submit" class="site-button">Entrar</button>
           
                                             
                                             </div>

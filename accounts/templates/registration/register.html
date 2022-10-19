@@ -3,8 +3,8 @@
 {% load static %}
 
 {% block content %}
-<div class="twm-home1-banner-section site-bg-gray bg-cover"
-                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg')">
+<div class="twm-home1-banner-section site-bg-gray bg-cover pb-4"
+                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg');">
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
                         <div class="card auth-card">
@@ -24,7 +24,7 @@
                
                                             <div class="tab-content" id="myTabContent">
                                             <!--Signup Candidate Content-->  
-                                            <div class="tab-pane fade show active" id="sign-candidate">
+                                            <div class="tab-pane fade show active">
                                                 <div class="row">
                                 
                                                     {% csrf_token %}
@@ -32,13 +32,13 @@
         
                                                     {{ form|crispy }}
                                 
-                                                    <button type="submit" class="btn btn-light mt-3">Cadastrar</button>
+                                                    <button type="submit" class="site-button">Cadastrar</button>
                                                     
                                                 </div>
                                             </div>
         
                                             </div>
-                                        </div> 
+                                        </div>  
                                     </div>
                                 
                                     <div class="modal-footer">

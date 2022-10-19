@@ -1,6 +1,6 @@
 from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.auth.models import Group
-from .forms import CandidatoForm, EmpresaForm
+from .forms import CandidatoForm, EmpresaForm, PerfilCandidatosForm, PerfilEmpresasForm
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
@@ -64,8 +64,7 @@ class EmpresaCreate(CreateView):
 
 
 class PerfilCandidatoUpdateView(UpdateView):
-    model = PerfilCandidatos
-    fields = ['nome', 'sobrenome', 'cpf', 'cep', 'data_nasc', 'github', 'linkedin', 'facebook', 'instagram', 'descricao']
+    form_class = PerfilCandidatosForm
     template_name = 'registration/register.html' 
     success_url = reverse_lazy('index')
 
@@ -82,8 +81,7 @@ class PerfilCandidatoUpdateView(UpdateView):
 
 
 class PerfilEmpresaUpdateView(UpdateView):
-    model = PerfilEmpresas
-    fields = ['fantasia', 'razao_social', 'cnpj', 'ie', 'endereco', 'tamanho', 'ramo', 'cep', 'telefone', 'apresentacao']
+    form_class = PerfilEmpresasForm
     template_name = 'registration/register.html'
     success_url = reverse_lazy('index')
 

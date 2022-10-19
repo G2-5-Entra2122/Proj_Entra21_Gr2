@@ -3,7 +3,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
 from django.shortcuts import get_object_or_404
 # from django.views.generic.list import ListView
-
 from .models import Curriculo
 
 
