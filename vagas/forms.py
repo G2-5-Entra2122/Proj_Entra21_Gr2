@@ -1,10 +1,10 @@
 from django.forms import Form, CharField, ChoiceField
-
+from django import forms
 from .models import Vaga
 
 
 class VagaForm(forms.ModelForm):
-    
+
     class Meta:
         model = Vaga
         fields=[
@@ -35,7 +35,7 @@ class VagaForm(forms.ModelForm):
             field.widget.attrs['Class'] = 'form-control'
             field.widget.attrs['placeholder'] = field.label or self.labels[key]
 
-class FilterForm(Form):
+class FilterForm(forms.ModelForm):
     CATEGORIA_CHOICES = (
         ('Full-stack', 'Full-Stack'),
         ('Front-end', 'Front-end'),
@@ -84,4 +84,3 @@ class FilterForm(Form):
     ]
     search = CharField(required=False)
     filter_field = ChoiceField(choices=OUTRAS_REG_CHOICES)
-
