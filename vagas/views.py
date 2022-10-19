@@ -103,7 +103,7 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
 class VagaListView(ListView):
     template_name='vagas/vagas-list.html'
     model = Vaga
-    paginate_by = 4
+    paginate_by = 5
 
     def get_queryset(self):
         vagas = Vaga.objects.all()
