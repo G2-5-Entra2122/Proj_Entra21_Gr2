@@ -4,6 +4,7 @@ from django.views.generic.edit import UpdateView
 from django.shortcuts import get_object_or_404
 # from django.views.generic.list import ListView
 from .models import Curriculo
+from .forms import CurriculoForm
 
 
 
@@ -17,19 +18,8 @@ from .models import Curriculo
 
 class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
     login_url = reverse_lazy('login')
-    model = Curriculo
-    fields = [
-        'categoria',
-        'nivel', 
-        'contrato', 
-        'modalidade',
-        'salario',
-        'pri_habilidade_candidato',
-        'seg_habilidade_candidato',
-        'ter_habilidade_candidato',
-        'qua_habilidade_candidato',
-        'qui_habilidade_candidato'
-        ]
+    form_class = CurriculoForm
+
     template_name = 'candidatos/form.html'
     success_url = reverse_lazy('index')
 
