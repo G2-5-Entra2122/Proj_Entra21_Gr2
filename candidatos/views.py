@@ -2,7 +2,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
 from django.shortcuts import get_object_or_404
-# from django.views.generic.list import ListView
+
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+
+
 from .models import Curriculo
 from .forms import CurriculoForm
 
@@ -50,3 +54,11 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
 # class CurriculoListView(ListView):
 #     model = Curriculo
 #     template_name = 'candidatos/listas/curriculo.html'
+
+class CandidatoListView(ListView):
+    model = Curriculo
+    template_name = 'candidatos/candidatos-list.html'
+
+class CandidatoPerfilView(DetailView):
+    model = Curriculo
+    template_name = 'candidatos/candidatos-perfil.html'

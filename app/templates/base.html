@@ -100,12 +100,12 @@
                                 <li class="has-child"><a href="{% url 'index' %}">Início</a>
                                 </li>
                                 <li class="has-child"><a href="{% url 'about' %}">Sobre</a>
-                                </li>                                
-                                <li class="has-child"><a href="{% url 'vaga-list' %}">Vagas</a> 
+                                </li>
+                                <li class="has-child"><a href="{% url 'vaga-list' %}">Vagas</a>
                                 </li>
                                 <li class="has-child"><a href="{% url 'empresas' %}">Empresas</a>
                                 </li>
-                                <li class="has-child"><a href="javascript:;">Candidatos</a> <!--incluir a pagina do nicollas aqui, não tá no html q foi feito antes-->
+                                <li class="has-child"><a href="{% url 'candidatos-list' %}">Candidatos</a> <!--incluir a pagina do nicollas aqui, não tá no html q foi feito antes-->
                                 </li>
 
                             </ul>
@@ -118,6 +118,7 @@
                             <div class="extra-cell">
                                 <div class="header-nav-btn-section">
                                     <div class="twm-nav-btn-left">
+
                                         {% if request.user|has_group:"Candidato" %}
                                         <div class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink"
@@ -201,7 +202,7 @@
                 </div>
         </header>
         <!-- HEADER END -->
-        
+
         {% block content %}
 
         {% endblock %}
@@ -212,7 +213,7 @@
 
  	</div>
 
-<!-- JAVASCRIPT  FILES ========================================= --> 
+<!-- JAVASCRIPT  FILES ========================================= -->
 <script  src="{% static 'js/jquery-3.6.0.min.js' %}"></script><!-- JQUERY.MIN JS -->
 <script  src="{% static 'js/popper.min.js' %}"></script><!-- POPPER.MIN JS -->
 <script  src="{% static 'js/bootstrap.min.js' %}"></script><!-- BOOTSTRAP.MIN JS -->
