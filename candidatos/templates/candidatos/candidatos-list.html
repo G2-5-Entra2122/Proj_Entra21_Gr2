@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- PAGE TITLE HERE -->
+    {% block title %}
+    <title>Experts 4 Hire | Candidatos</title>
+    {% endblock %}
+    
+{% block content %}
+<body>
+    <!-- CONTENT START -->
+    <div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center"
+            style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+            <div class="overlay-main site-bg-white opacity-01"></div>
+            <div class="container">
+                <div class="wt-bnr-inr-entry">
+                    <div class="banner-title-outer">
+                        <div class="banner-title-name">
+                            <h2 class="wt-title">Candidatos á sua Espera</h2>
+                        </div>
+                    </div>
+                    <!-- BREADCRUMB ROW -->
+
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{% url 'index' %}">Início</a></li>
+                            <li>Lista de Candidatos</li>
+                        </ul>
+                    </div>
+
+                    <!-- BREADCRUMB ROW END -->
+                </div>
+            </div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+
+        <!-- OUR BLOG START -->
+        <div class="section-full p-t120  p-b90 site-bg-white">
+
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-12 rightSidebar">
+
+                        <div class="side-bar">
+
+                            <div class="sidebar-elements search-bx">
+
+                                <form>
+
+                                    <div class="form-group mb-4">
+                                        <h4 class="section-head-small mb-4">Categoria</h4>
+                                        <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                            data-bv-field="size">
+                                            <option selected>Todas as categorias</option>
+                                            <option>Full Stack</option>
+                                            <option>Back-End</option>
+                                            <option>Front-End</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group mb-4">
+                                        <h4 class="section-head-small mb-4">Localização</h4>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Local da Vaga">
+                                            <button class="btn" type="button"><i
+                                                    class="feather-map-pin"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="twm-sidebar-ele-filter">
+                                        <h4 class="section-head-small mb-4">Modalidade</h4>
+                                        <ul>
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck1">
+                                                    <label class="form-check-label"
+                                                        for="exampleCheck1">Presencial</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck2">
+                                                    <label class="form-check-label" for="exampleCheck2">Híbrido</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck3">
+                                                    <label class="form-check-label"
+                                                        for="exampleCheck3">Remoto</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="twm-sidebar-ele-filter">
+                                        <h4 class="section-head-small mb-4">Contrato</h4>
+                                        <ul>
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck1">
+                                                    <label class="form-check-label"
+                                                        for="exampleCheck1">Freelance</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck2">
+                                                    <label class="form-check-label" for="exampleCheck2">Tempo
+                                                        Integral</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck3">
+                                                    <label class="form-check-label"
+                                                        for="exampleCheck3">Estágio</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck4">
+                                                    <label class="form-check-label" for="exampleCheck4">Meio
+                                                        Período</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck5">
+                                                    <label class="form-check-label"
+                                                        for="exampleCheck5">Temporário</label>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class=" form-check">
+                                                    <input type="checkbox" class="form-check-input"
+                                                        id="exampleCheck6">
+                                                    <label class="form-check-label"
+                                                        for="exampleCheck6">Voluntário</label>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                        <div class="twm-advertisment">
+                            <div class="overlay"></div>
+                            <h4 class="twm-title">Procurando candidatos?</h4>
+                            <p>Obtenha os candidatos que você procura em seu E-mail. Adicionar vagas AGORA!
+                            </p>
+                            <a href="about-1.html" class="site-button white">Saber Mais</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 col-md-12">
+                        <!--Filter Short By-->
+                        <div class="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
+                            <span class="woocommerce-result-count-left">Mostrando 2,150 candidatos</span>
+
+                            <form class="woocommerce-ordering twm-filter-select" method="get">
+                                <span class="woocommerce-result-count">Filtro</span>
+                                <select class="wt-select-bar-2 selectpicker" data-live-search="true"
+                                    data-bv-field="size">
+                                    <option>Mostrar 10</option>
+                                    <option>Mostrar 20</option>
+                                    <option>Mostrar 30</option>
+                                    <option>Mostrar 40</option>
+                                    <option>Mostrar 50</option>
+                                    <option>Mostrar 60</option>
+                                </select>
+                            </form>
+
+                        </div>
+
+                        <div class="twm-candidates-list-wrap">
+                            <ul>
+                                {% for curriculo in object_list %}
+                                <li>
+                                    <div class="twm-candidates-list-style1 mb-5">
+                                        <div class="twm-media-pic" style="padding-right: 20px;">
+                                            <img src="{% static 'images/candidates/icon-candidate.jpeg' %}" width="150px" alt="#">
+                                         </div>
+                                        <div class="twm-mid-content">
+                                            <h4>{{ curriculo.categoria }}</h4>
+                                            <ul>
+                                                <li>Linguagens: {{ curriculo.pri_habilidade_candidato }}, {{ curriculo.seg_habilidade_candidato }}, {{ curriculo.ter_habilidade_candidato }}, {{ curriculo.qua_habilidade_candidato }}, {{ curriculo.qui_habilidade_candidato }} </li>
+                                                <li>Senioridade: {{ curriculo.nivel }}</li>
+                                                <li>Contrato: {{ curriculo.contrato }}</li>
+                                                <li>Modalidade: {{ curriculo.modalidade }}</li>
+                                            </ul>
+
+                                            <div class="twm-fot-content">
+                                                <div class="twm-left-info">
+                                                    <p class="twm-candidate-address"><i
+                                                            class="feather-map-pin"></i>New York</p>
+                                                    <div class="twm-jobs-vacancies">R${{ curriculo.salario }}<span>/ Mês</span></div>
+                                                </div>
+                                                <div class="twm-right-btn">
+                                                    <a href="{% url 'candidato-perfil' curriculo.pk %}"
+                                                        class="twm-view-prifile site-text-primary">Ver Perfil</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                {% empty %}
+                                    <p>Não foram encotrados candidatos disponíveis</p>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="pagination-outer">
+                            <div class="pagination-style1">
+                                <ul class="clearfix">
+                                    <li class="prev"><a href="javascript:;"><span> <i class="fa fa-angle-left"></i>
+                                            </span></a></li>
+                                    <li><a href="javascript:;">1</a></li>
+                                    <li class="active"><a href="javascript:;">2</a></li>
+                                    <li><a href="javascript:;">3</a></li>
+                                    <li><a class="javascript:;" href="javascript:;"><i
+                                                class="fa fa-ellipsis-h"></i></a></li>
+                                    <li><a href="javascript:;">5</a></li>
+                                    <li class="next"><a href="javascript:;"><span> <i class="fa fa-angle-right"></i>
+                                            </span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- OUR BLOG END -->
+
+    </div>
+    <!-- CONTENT END -->
+    
+    <!-- FOOTER START -->
+    {% include 'rodape.html' %}
+    <!-- FOOTER END -->
+    {% endblock %}    
+
+</body>
+
+</html>

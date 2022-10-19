@@ -1,19 +1,633 @@
 {% extends 'base.html' %}
-
-{% block title %}Home{% endblock %}
-
+{% load static %}
 {% block content %}
-<div class="row">
-    <div class="col">
-                <h4 class="card-title text-center">Home</h4>
-                {% if user.perfilcandidato.nome %}        
-                Bem vindo ao sistema {{ user.perfilcandidato.nome }} {{ user.perfilcandidato.sobrenome }}.
-                {% else %}
-                Você precisa completar seu cadastro. Acesse os <a href="{% url 'atualizar-dados' %}">meus dados</a> para atualizar.
-                {% endif %}
+        <!-- CONTENT START -->
+        <div class="page-content">
 
-    </div>
-</div>
+            <!--Banner Start-->
+            <div class="twm-home1-banner-section site-bg-gray bg-cover"
+                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg')">
+                <div class="row">
+
+                    <!--Left Section-->
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="twm-bnr-left-section">
+                            <div class="twm-bnr-title-small">Mais de <span class="site-text-primary">3000+</span>
+                                Experts contratados</div>
+                            <div class="twm-bnr-title-large">Encontre o <span class="site-text-primary">trabalho</span> que
+                                combina com você</div>
+                        </div>
+                    </div>
+
+                    <!--right Section-->
+                    <div class="col-xl-6 col-lg-6 col-md-12 twm-bnr-right-section">
+                        <div class="twm-bnr-right-content">
+
+                            <div class="twm-img-bg-circle-area">
+                                <div class="twm-img-bg-circle1 rotate-center"><span></span></div>
+                                <div class="twm-img-bg-circle2 rotate-center-reverse"><span></span></div>
+                                <div class="twm-img-bg-circle3"><span></span></div>
+                            </div>
+
+                            <div class="twm-bnr-right-carousel">
+                                <div class="owl-carousel twm-h1-bnr-carousal">
+                                    <div class="item">
+                                        <div class="slide-img">
+                                            <img src="{% static 'images/imagens-experts/homem.png' %}" alt="#" width=60% height=60%>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="slide-img">
+                                            <div class="slide-img">
+                                                <img src="{% static 'images/imagens-experts/mulher.png' %}" alt="#" width=60% height=60%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="twm-bnr-blocks-position-wrap">
+                                    <!--icon-block-1-->
+                                    <div class="twm-bnr-blocks twm-bnr-blocks-position-1">
+                                        <div class="twm-icon">
+                                            <img src="{% static 'images/main-slider/slider1/icon-1.png' %}" alt="">
+                                        </div>
+                                        <div class="twm-content">
+                                            <div class="tw-count-number text-clr-sky">
+                                                <span class="counter">38</span>
+                                            </div>
+                                            <p class="icon-content-info">Empresas parceiras</p>
+                                        </div>
+                                    </div>
+
+                                    <!--icon-block-2-->
+                                    <div class="twm-bnr-blocks twm-bnr-blocks-position-2">
+                                        <div class="twm-icon">
+                                            <img src="{% static 'images/main-slider/slider1/icon-2.png' %}" alt="">
+                                        </div>
+                                        <div class="twm-content">
+                                            <div class="tw-count-number text-clr-pink">
+                                                <span class="counter">12</span> +
+                                            </div>
+                                            <p class="icon-content-info">Diferentes países </p>
+                                        </div>
+                                    </div>
+
+                                    <!--icon-block-3-->
+                                    <div class="twm-bnr-blocks-3 twm-bnr-blocks-position-3">
+                                        <div class="twm-pics">
+                                            <span><img src="{% static 'images/main-slider/slider1/user/u-1.jpg' %}"
+                                                    alt=""></span>
+                                            <span><img src="{% static 'images/main-slider/slider1/user/u-2.jpg' %}"
+                                                    alt=""></span>
+                                            <span><img src="{% static 'images/main-slider/slider1/user/u-3.jpg' %}"
+                                                    alt=""></span>
+                                            <span><img src="{% static 'images/main-slider/slider1/user/u-4.jpg' %}"
+                                                    alt=""></span>
+                                            <span><img src="{% static 'images/main-slider/slider1/user/u-5.jpg' %}"
+                                                    alt=""></span>
+                                            <span><img src="{% static 'images/main-slider/slider1/user/u-6.jpg' %}"
+                                                    alt=""></span>
+                                        </div>
+                                        <div class="twm-content">
+                                            <div class="tw-count-number text-clr-green">
+                                                <span class="counter">3</span>K+
+                                            </div>
+                                            <p class="icon-content-info">DEVs contratados</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--Samll Ring Left-->
+                            <div class="twm-small-ring-l slide-top-animation"></div>
+                            <div class="twm-small-ring-2 slide-top-animation"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="twm-gradient-text">
+                    Experts
+                </div>
+            </div>
+            <!--Banner End-->
+
+            <!-- HOW IT WORK SECTION START -->
+
+            <div class="section-full p-t120 p-b90 site-bg-white twm-how-it-work-area">
+
+                <div class="container">
+
+                    <!-- TITLE START-->
+                    <div class="section-head center wt-small-separator-outer">
+                        <div class="wt-small-separator site-text-primary">
+                            <div>Comece a trabalhar agora</div>
+                        </div>
+                        <h2 class="wt-title">Como funciona</h2>
+                    </div>
+
+                    <!-- TITLE END-->
+
+                    <div class="twm-how-it-work-section">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="twm-w-process-steps">
+                                    <span class="twm-large-number">01</span>
+                                    <div class="twm-w-pro-top bg-clr-sky">
+                                        <div class="twm-media">
+                                            <span><img src="{% static 'images/work-process/icon1.png' %}"
+                                                    alt="icon1"></span>
+                                        </div>
+                                        <h4 class="twm-title">Registre<br>sua conta</h4>
+                                    </div>
+                                    <p>Você precisa criar sua conta com o máximo de informações possível.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="twm-w-process-steps">
+                                    <span class="twm-large-number">02</span>
+                                    <div class="twm-w-pro-top bg-clr-pink">
+                                        <div class="twm-media">
+                                            <span><img src="{% static 'images/work-process/icon2.png' %}"
+                                                    alt="icon1"></span>
+                                        </div>
+                                        <h4 class="twm-title">Candidate-se<br>
+                                            para a vaga de interesse</h4>
+                                    </div>
+                                    <p>Ao criar sua conta você poderá filtrar trabalhos do seu interesse.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                <div class="twm-w-process-steps">
+                                    <span class="twm-large-number">03</span>
+                                    <div class="twm-w-pro-top bg-clr-green">
+                                        <div class="twm-media">
+                                            <span><img src="{% static 'images/work-process/icon3.png' %}"
+                                                    alt="icon1"></span>
+                                        </div>
+                                        <h4 class="twm-title">Anexe <br>seu currículo</h4>
+                                    </div>
+                                    <p>Você deverá anexar seu currículo com mais informações sobre você</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPLORE NEW LIFE START -->
+            <div class="section-full p-t120 p-b120 twm-explore-area bg-cover "
+                style="background-image: url('/static/images/background/bg-1.jpg' );">
+                <div class="container">
+
+                    <div class="section-content">
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-12">
+                                <div class="twm-explore-media-wrap">
+                                    <div class="twm-media">
+                                        <img src="{% static 'images/imagens-experts/mulher4.png' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8 col-md-12">
+                                <div class="twm-explore-content-outer">
+                                    <div class="twm-explore-content">
+
+                                        <div class="twm-l-line-1"></div>
+                                        <div class="twm-l-line-2"></div>
+
+                                        <div class="twm-r-circle-1"></div>
+                                        <div class="twm-r-circle-2"></div>
+
+                                        <div class="twm-title-small">Projeto Fictício</div>
+                                        <div class="twm-title-large">
+                                            <h2>Este é um site fictício para portfólio. </h2>
+                                            <p>Este é um site fictício elaborado por alunos do Entra21 - Proway - Turma de Python online, como trabalho de conclusão de curso.</p>
+                                        </div>
+                                        <div class="twm-upload-file">
+                                            <button type="button" class="site-button"><a href="{% url 'about' %}">Entre em contato conosco</a><i
+                                                    class="feather-upload"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="twm-bold-circle-right"></div>
+                                    <div class="twm-bold-circle-left"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- EXPLORE NEW LIFE END -->
+
+            <!-- TOP COMPANIES START -->
+            <div class="section-full p-t120  site-bg-white twm-companies-wrap">
+
+                <!-- TITLE START-->
+                <div class="section-head center wt-small-separator-outer">
+                    <div class="wt-small-separator site-text-primary">
+                        <div>Empresas Parceiras</div>
+                    </div>
+                    <h2 class="wt-title">Trabalhe nas melhores empresas</h2>
+                </div>
+                <!-- TITLE END-->
+
+                <div class="container">
+                    <div class="section-content">
+                        <div class="owl-carousel home-client-carousel2 owl-btn-vertical-center">
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/ambevtech190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/capgemini190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/centralailos190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/datainfo190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/farmaciasapp190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/havanlabs190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/philips190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/senior190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/tsystems190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/unifique190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/warren190px.png' %}"
+                                                alt=""></a>
+                                    </div>
+                                </div>
+                            </div>                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TOP COMPANIES END -->
+
+            <!-- JOB POST START -->
+            <div class="section-full p-t70 p-b90 site-bg-light-purple twm-bg-ring-wrap">
+                <div class="twm-bg-ring-right"></div>
+                <div class="twm-bg-ring-left"></div>
+                <div class="container">
+
+                    <!-- TITLE START-->
+                    <div class="section-head center wt-small-separator-outer">
+                        <div class="wt-small-separator site-text-primary">
+                            <div>Vagas mais recentes</div>
+                        </div>
+                        <h2 class="wt-title">Trilhe a carreira que você merece</h2>
+                    </div>
+                    <!-- TITLE END-->
 
 
+                    <div class="section-content">
+                        <div class="twm-jobs-list-wrap">
+                            <ul>
+                                <li>
+                                    <div class="twm-jobs-list-style1 mb-5">
+                                        <div class="twm-mid-content">
+                                            <a href="job-detail.html" class="twm-job-title">
+                                                <h4>Desenvolvedor Backend Júnior<span
+                                                        class="twm-job-post-duration"> / Ontem</span></h4>
+                                            </a>
+                                            <p class="twm-job-address">Blumenau, Santa Catarina - Brasil
+                                            </p>
+                                            <a href="{% url 'about' %}" 
+                                                class="twm-job-websites site-text-primary">Clique e saiba mais</a>
+                                        </div>
+                                        <div class="twm-right-content">
+                                            <div class="twm-jobs-category green"><span class="twm-bg-green">Novo!</span>
+                                            </div>
+                                            <div class="twm-jobs-amount">R$ 3500 <span>/ Mês</span></div>
+                                            <a href="job-detail.html" class="twm-jobs-browse site-text-primary">Candidatura simplificada
+                                                </a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="twm-jobs-list-style1 mb-5">
+                                        <div class="twm-mid-content">
+                                            <a href="job-detail.html" class="twm-job-title">
+                                                <h4>Desenvolvedor Python Júnior<span
+                                                        class="twm-job-post-duration"> / semana passada</span></h4>
+                                            </a>
+                                            <p class="twm-job-address">Florianópolis, Santa Catarina - Brasil
+                                            </p>
+                                            <a href="{% url 'about' %}"
+                                                class="twm-job-websites site-text-primary">Clique e saiba mais</a>
+                                        </div>
+                                        <div class="twm-right-content">
+                                            <div class="twm-jobs-category green"><span
+                                                    class="twm-bg-brown">Presencial</span></div>
+                                            <div class="twm-jobs-amount">R$ 4000<span>/ Mês</span></div>
+                                            <a href="job-detail.html" class="twm-jobs-browse site-text-primary">Candidatura simplificada
+                                                </a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="twm-jobs-list-style1 mb-5">
+                                        <div class="twm-mid-content">
+                                            <a href="job-detail.html" class="twm-job-title">
+                                                <h4 class="twm-job-title">Cientista de Dados - Júnior
+                                                    <span class="twm-job-post-duration"> / semana passada </span></h4>
+                                            </a>
+                                            <p class="twm-job-address">Blumenau, Santa Catarina - Brasil
+                                            </p>
+                                            <a href="{% url 'about' %}"
+                                                class="twm-job-websites site-text-primary">Clique e saiba mais</a>
+                                        </div>
+                                        <div class="twm-right-content">
+                                            <div class="twm-jobs-category green"><span
+                                                    class="twm-bg-purple">Remoto</span></div>
+                                            <div class="twm-jobs-amount">R$ 3200 <span>/ Mês</span></div>
+                                            <a href="job-detail.html" class="twm-jobs-browse site-text-primary">Candidatura simplificada
+                                                </a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="twm-jobs-list-style1 mb-5">
+                                        <div class="twm-mid-content">
+                                            <a href="job-detail.html" class="twm-job-title">
+                                                <h4 class="twm-job-title">Desenvolvedor Frontend Júnior <span
+                                                        class="twm-job-post-duration">/ 2 dias atrás</span></h4>
+                                            </a>
+                                            <p class="twm-job-address">Blumenau, Santa Catarina - Brasil
+                                            </p>
+                                            <a href="{% url 'about' %}"
+                                                class="twm-job-websites site-text-primary">{% url 'about' %}</a>
+                                        </div>
+                                        <div class="twm-right-content">
+                                            <div class="twm-jobs-category green"><span
+                                                    class="twm-bg-sky">Freelancer</span></div>
+                                            <div class="twm-jobs-amount">R$ 1200<span>/ Mês</span></div>
+                                            <a href="job-detail.html" class="twm-jobs-browse site-text-primary">Candidatura simplificada
+                                                </a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="twm-jobs-list-style1 mb-5">
+                                        <div class="twm-mid-content">
+                                            <a href="job-detail.html" class="twm-job-title">
+                                                <h4 class="twm-job-title">Product Manager <span
+                                                        class="twm-job-post-duration">/ ontem</span></h4>
+                                            </a>
+                                            <p class="twm-job-address">Florianópolis, Santa Catarina - Brasil
+                                            </p>
+                                            <a href="{% url 'about' %}"
+                                                class="twm-job-websites site-text-primary">Clique e saiba mais</a>
+                                        </div>
+                                        <div class="twm-right-content">
+                                            <div class="twm-jobs-category green"><span
+                                                    class="twm-bg-golden">Temporário</span></div>
+                                            <div class="twm-jobs-amount">R$3700 <span>/ Mês</span></div>
+                                            <a href="job-detail.html" class="twm-jobs-browse site-text-primary">Candidatura simplificada
+                                                </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="text-center m-b30">
+                                <a href="vagas-list.html" class=" site-button">Encontre sua vaga</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- JOB POST END -->
+
+            <!-- TESTIMONIAL SECTION START -->
+            <div class="section-full p-t120 p-b90 site-bg-white twm-testimonial-1-area">
+
+                <div class="container">
+
+                    <div class="wt-separator-two-part">
+                        <div class="row wt-separator-two-part-row">
+                            <div class="col-xl-5 col-lg-6 col-md-12 wt-separator-two-part-left">
+                                <!-- TITLE START-->
+                                <div class="section-head left wt-small-separator-outer">
+                                    <div class="wt-small-separator site-text-primary">
+                                        <div>Depoimentos dos experts</div>
+                                    </div>
+                                    <h2 class="wt-title">DEVs contam sobre a experiência com a Experts</h2>
+                                </div>
+                                <!-- TITLE END-->
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="section-content">
+
+                        <div class="owl-carousel twm-testimonial-1-carousel owl-btn-bottom-center ">
+
+                            <!-- COLUMNS 1 -->
+                            <div class="item ">
+                                <div class="twm-testimonial-1">
+                                    <div class="twm-testimonial-1-content">
+                                        <div class="twm-testi-media">
+                                            <img src="{% static 'images/imagens-experts/mulher2.png' %}" alt="#">
+                                        </div>
+                                        <div class="twm-testi-content">
+                                            <div class="twm-quote">
+                                                <img src="{% static 'images/quote-dark.png' %}" alt="">
+                                            </div>
+                                            <div class="twm-testi-info">Commitaram na main de novo! assim não dá.
+                                                </div>
+                                            <div class="twm-testi-detail">
+                                                <div class="twm-testi-name">Diego Dalmolini</div>
+                                                <div class="twm-testi-position">Desenvolvedor Backend</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLUMNS 2 -->
+                            <div class="item ">
+                                <div class="twm-testimonial-1">
+                                    <div class="twm-testimonial-1-content">
+                                        <div class="twm-testi-media">
+                                            <img src="{% static 'images/imagens-experts/homem1.png' %}" alt="#">
+                                        </div>
+                                        <div class="twm-testi-content">
+                                            <div class="twm-quote">
+                                                <img src="{% static 'images/quote-dark.png' %}" alt="">
+                                            </div>
+                                            <div class="twm-testi-info">Eu não acho, mas pode ser sim também. Depende.
+                                                </div>
+                                            <div class="twm-testi-detail">
+                                                <div class="twm-testi-name">João Paulo Santini</div>
+                                                <div class="twm-testi-position">Desenvolvedor Backend</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLUMNS 3 -->
+                            <div class="item ">
+                                <div class="twm-testimonial-1">
+                                    <div class="twm-testimonial-1-content">
+                                        <div class="twm-testi-media">
+                                            <img src="{% static 'images/imagens-experts/mulher3.png' %}" alt="#">
+                                        </div>
+                                        <div class="twm-testi-content">
+                                            <div class="twm-quote">
+                                                <img src="{% static 'images/quote-dark.png' %}" alt="">
+                                            </div>
+                                            <div class="twm-testi-info">Fui dropar o banco de dados, dropei da nuvem.
+                                                </div>
+                                            <div class="twm-testi-detail">
+                                                <div class="twm-testi-name">Felipe Sartorato</div>
+                                                <div class="twm-testi-position">DBA</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLUMNS 4 -->
+                            <div class="item ">
+                                <div class="twm-testimonial-1">
+                                    <div class="twm-testimonial-1-content">
+                                        <div class="twm-testi-media">
+                                            <img src="{% static 'images/imagens-experts/homem2.png' %}" alt="#">
+                                        </div>
+                                        <div class="twm-testi-content">
+                                            <div class="twm-quote">
+                                                <img src="{% static 'images/quote-dark.png' %}" alt="">
+                                            </div>
+                                            <div class="twm-testi-info">Vou ali caçar uma treta no linkedin e já volto.
+                                                </div>
+                                            <div class="twm-testi-detail">
+                                                <div class="twm-testi-name">Mark Odebrecht</div>
+                                                <div class="twm-testi-position">PO</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COLUMNS 5 -->
+                            <div class="item ">
+                                <div class="twm-testimonial-1">
+                                    <div class="twm-testimonial-1-content">
+                                        <div class="twm-testi-media">
+                                            <img src="{% static 'images/imagens-experts/mulher3.png' %}" alt="#">
+                                        </div>
+                                        <div class="twm-testi-content">
+                                            <div class="twm-quote">
+                                                <img src="{% static 'images/quote-dark.png' %}" alt="">
+                                            </div>
+                                            <div class="twm-testi-info">Tá errada, Luiza
+                                                </div>
+                                            <div class="twm-testi-detail">
+                                                <div class="twm-testi-name">Autor desconhecido</div>
+                                                <div class="twm-testi-position">A.D.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- CONTENT END -->
+{% include 'rodape.html'%}
 {% endblock %}

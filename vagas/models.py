@@ -7,12 +7,12 @@ from candidatos.models import Habilidade
 class Vaga(models.Model):
     nome=models.CharField('Nome da Vaga',max_length=100,help_text='Exemplo: "Desenvolvedor Web"')
     
-    CATEGORIA_CHOICES = (
+    CATEGORIA_CHOICES = [
         ('Full-stack', 'Full-Stack'),
         ('Front-end', 'Front-end'),
         ('Back-end', 'Back-end'),
         ('Mobile', 'Mobile'),
-    )
+    ]
     categoria = models.CharField('Categoria', max_length=10, choices=CATEGORIA_CHOICES, null=True)
     
     NIVEIS_CHOICES=[
@@ -29,28 +29,28 @@ class Vaga(models.Model):
         ('Híbrido','Híbrido'),
         ('Remoto','Remoto')
     ]
-    modalidade=models.CharField('Modalidade da Vaga',choices=MODALIDADES_CHOICES,max_length=10,null=True)
+    modalidade=models.CharField('Modalidade da Vaga',choices=MODALIDADES_CHOICES,max_length=10,null=True)   
     
-    CONTRATO_CHOICES = (
+    CONTRATO_CHOICES = [
         ('Estágio', 'Estágio'),
         ('CLT', 'CLT'),
         ('Freelance', 'Freelance'),
         ('PJ', 'PJ'),
         ('Voluntário', 'Voluntário'),
-    )
+    ]
     contrato = models.CharField('Contrato', max_length=15, choices=CONTRATO_CHOICES, null=True)
 
-    JORNADA_CHOICES = (
+    JORNADA_CHOICES = [
         ('Período Integral', 'Período Integral'),
         ('Meio Preíodo', 'Meio Período'),
-    )
+    ]
     jornada = models.CharField('Jornada', max_length=30, choices=JORNADA_CHOICES, null=True)
 
     local=models.CharField('Local da Vaga',max_length=30,help_text='Onde reside sua empresa, para vagas presenciais. Para trabalho remoto, use "Online".')
 
     OUTRAS_REG_CHOICES=[
-        ('sim','Sim'),
-        ('nao','Não')
+        ('Sim','Sim'),
+        ('Não','Não')
     ]
     
     outras_reg=models.CharField('Aceita candidatos de outras regiões?',choices=OUTRAS_REG_CHOICES,max_length=3)

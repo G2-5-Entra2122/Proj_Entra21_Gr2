@@ -15,6 +15,8 @@ from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404
 
+from .forms import FilterForm
+
 
 
 ######################## CREATE ##########################
@@ -53,7 +55,7 @@ class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
         form.instance.usuario=self.request.user
 
         url = super().form_valid(form)
-        
+
         return url
 
 
@@ -95,16 +97,68 @@ class MinhasVagasListView(GroupRequiredMixin, LoginRequiredMixin, ListView):
             'qui_habilidade_vaga',
         ]
     template_name = 'vagas/minhasvagas.html'
-    
+
 
     def get_queryset(self):
         self.object_list = Vaga.objects.filter(usuario=self.request.user)
         return self.object_list
- 
+
 
 class VagaListView(ListView):
-    template_name='vagas/vaga_list.html'
-    model=Vaga
+    template_name='vagas/vagas-list.html'
+    model = Vaga
+    paginate_by = 4
+
+    def get_queryset(self):
+        vagas = Vaga.objects.all()
+        search_001 = self.request.GET.get('src01')
+        if search_001:
+            if search_001 != "todas-as-categorias":
+                vagas = vagas.filter(categoria=search_001)
+
+        search_002 = self.request.GET.get('src02')
+        if search_002:
+            if search_002 != "todos-os-niveis":
+                vagas = vagas.filter(nivel=search_002)
+
+        search_003 = self.request.GET.get('src03')
+        if search_003:
+            if search_003 != "todas-as-modalidades":
+                vagas = vagas.filter(modalidade=search_003)
+
+        search_004 = self.request.GET.get('src04')
+        if search_004:
+            if search_004 != "tipo-de-contrato":
+                vagas = vagas.filter(contrato=search_004)
+
+        search_005 = self.request.GET.get('src05')
+        if search_005:
+            if search_005 != "tipo-de-jornada":
+                vagas = vagas.filter(jornada=search_005)
+
+        search_006 = self.request.GET.get('src06')
+        if search_006:
+            if search_006 != "aceita-outra-regiao":
+                vagas = vagas.filter(outras_reg=search_006)
+
+        
+        self.contador = vagas.count()
+
+        return vagas
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)    
+        context['contador']  = self.contador 
+        context['form'] = FilterForm(initial={
+            'search': self.request.GET.get('search', ''),
+            'filter_field': self.request.GET.get('filter_field', '')
+        })
+        return context
+
+
+class VagaExibirListView(ListView):
+    template_name='vagas/exibirvaga.html'
+    model = Vaga
 
 
 
@@ -150,8 +204,8 @@ class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
         context['lead'] = 'Preencha todos os campos obrigatórios.'
         context['botao'] = 'Atualizar'
         return context
-     
-        
+
+
 ######################## DELETE ##########################
 
 
@@ -173,7 +227,6 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
         context['lead'] = 'Confirme para excluir a vaga definitivamente.'
         context['botao'] = 'Deletar'
         return context
-
 
 
 ######################## DETAIL ##########################
@@ -377,3 +430,8 @@ class MinhaVagaDetailView(GroupRequiredMixin, LoginRequiredMixin, DetailView):
         qs = qs.values()
         context['curriculo'] = qs
         return context
+
+
+class ExibirVagaDetailView(DetailView):
+    model = Vaga
+    template_name='vagas/exibirvaga.html'

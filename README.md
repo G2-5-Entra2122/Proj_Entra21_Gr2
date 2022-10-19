@@ -290,7 +290,38 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 ### 07/10/2022
 
 - Foram equalizados os nomes das choices entre os apps candidatos e vagas;
-- Serão 
+
+### 13/10/2022
+
+- Construção de filtros para vagas;
+- Será feito migrate para disponibilizar base de dados aos usuários no repositório local;
+
+
+### 14/10/2022
+
+- Ajustes na paginação da lista de vagas;
+- continuação da construção de filtros de vagas;
+- cadastramento de vagas no DB;
+- finalizada a inserção do DB;
+- lógica do match entre contratantes e candidatos em andamento;
+- Nova demanda: criar o html de visualização de uma vaga selecionada;
+
+### 17/10/2022
+
+- Filtros para a página de vagas construídos e funcionando parcialmente. Apenas filtra corretamente, se todos os campos estiverem selecionados.
+- Se alguma janela suspensa não sofre modificação, retorna a mensagem de que não há vagas disponíveis;
+- Também foi trabalhado na enumeração, contagem e compressão de objetos;
+
+### 18/10/2022
+
+- Finalizado o filtro de vagas;
+- Novas demandas:
+  - incorporar a parte do filtro da página de lista de vagas e dar pull request;
+  - incorporar a pagina de lista de candidatos + pagina de detalhe de candidato;
+  - arrumar about (botão do linktree); e fazer o pull request;
+  - dar o pull request na pagina de preços;
+  - arrumar o "mostrando 2150 vagas" na pagina de lista de vagas;
+
 
  
 Referências:
