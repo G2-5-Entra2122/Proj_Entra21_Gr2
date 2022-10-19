@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="max-width:800px">
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">{{ vaga.nome }}</h1>
+        <h4>Categoria -> {{ vaga.categoria}}</h4>
+        <h4>Nível -> {{ vaga.nivel}}</h4>
+        <h4>Modalidade -> {{ vaga.modalidade}}</h4>
+        <h4>Contrato -> {{ vaga.contrato}}</h4>
+        <h4>Jornada -> {{ vaga.jornada}}</h4>
+        <h4>1ª habilidade -> {{ vaga.pri_habilidade_vaga}}</h4>
+        <h4>2ª habilidade -> {{ vaga.seg_habilidade_vaga}}</h4>
+        <h4>3ª habilidade -> {{ vaga.ter_habilidade_vaga}}</h4>
+        <h4>4ª habilidade -> {{ vaga.qua_habilidade_vaga}}</h4>
+        <h4>5ª habilidade -> {{ vaga.qui_habilidade_vaga}}</h4>
+
+
+    </div>
+
+</div>
+
+{{ curriculo }}
+
+{% endblock %}

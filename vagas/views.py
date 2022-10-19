@@ -1,3 +1,6 @@
+from django.db.models import F, When, Value, Q, Count, ExpressionWrapper, Case
+from django.db import models
+from candidatos.models import Curriculo
 from .forms import VagaForm
 from .models import Vaga
 
@@ -130,13 +133,12 @@ class VagaListView(ListView):
         })
         return context
 
+
 class VagaExibirListView(ListView):
     template_name='vagas/exibirvaga.html'
     model = Vaga
 
-class ExibirVagaDetailView(DetailView):
-    model = Vaga
-    template_name='vagas/exibirvaga.html'
+
 
 ######################## ALTERAR ##########################
 
@@ -184,3 +186,211 @@ class MinhasVagasDeleteView(GroupRequiredMixin, LoginRequiredMixin, DeleteView):
         context['lead'] = 'Confirme para excluir a vaga definitivamente.'
         context['botao'] = 'Deletar'
         return context
+
+
+######################## DETAIL ##########################
+
+
+class MinhaVagaDetailView(GroupRequiredMixin, LoginRequiredMixin, DetailView):
+    group_required = u'Empresa'
+    model = Vaga
+    template_name = 'vagas/vaga-detail.html'
+    context_object_name = 'vaga'
+
+    def get_object(self, queryset=None):
+        # self.object = Vaga.objects.get(pk=self.kwargs['pk'], usuario=self.request.user)
+        self.object = get_object_or_404(Vaga, pk=self.kwargs['pk'], usuario=self.request.user)
+        return self.object
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        vaga = self.object
+        # vaga.categoria='back_end'
+        # vaga.nivel='pleno'
+        qs = Curriculo.objects.filter(nivel=vaga.nivel)
+        
+        
+        exp = Case(
+            When(categoria__exact=vaga.categoria, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(modalidade__exact=vaga.modalidade, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(contrato__exact=vaga.contrato, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+
+        # Candidato Primeira Habildiade    
+
+        exp += Case(
+            When(pri_habilidade_candidato__exact=vaga.pri_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(pri_habilidade_candidato__exact=vaga.seg_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(pri_habilidade_candidato__exact=vaga.ter_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(pri_habilidade_candidato__exact=vaga.qua_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(pri_habilidade_candidato__exact=vaga.qui_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+
+        # Candidato Segunda Habildiade
+
+        exp += Case(
+            When(seg_habilidade_candidato__exact=vaga.pri_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(seg_habilidade_candidato__exact=vaga.seg_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(seg_habilidade_candidato__exact=vaga.ter_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(seg_habilidade_candidato__exact=vaga.qua_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(seg_habilidade_candidato__exact=vaga.qui_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+
+        # Candidato Terceira Habildiade
+
+        exp += Case(
+            When(ter_habilidade_candidato__exact=vaga.pri_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(ter_habilidade_candidato__exact=vaga.seg_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(ter_habilidade_candidato__exact=vaga.ter_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(ter_habilidade_candidato__exact=vaga.qua_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(ter_habilidade_candidato__exact=vaga.qui_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+
+        # Candidato Quarta Habildiade
+
+        exp += Case(
+            When(qua_habilidade_candidato__exact=vaga.pri_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(qua_habilidade_candidato__exact=vaga.seg_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(qua_habilidade_candidato__exact=vaga.ter_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(qua_habilidade_candidato__exact=vaga.qua_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            When(qua_habilidade_candidato__exact=vaga.qui_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+
+        # Candidato Quinta Habildiade
+
+        exp += Case(
+
+            When(qui_habilidade_candidato__exact=vaga.pri_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            
+            When(qui_habilidade_candidato__exact=vaga.seg_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            
+            When(qui_habilidade_candidato__exact=vaga.ter_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            
+            When(qui_habilidade_candidato__exact=vaga.qua_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+        exp += Case(
+            
+            When(qui_habilidade_candidato__exact=vaga.qui_habilidade_vaga, then=10),
+            default=0, 
+            output_field=models.IntegerField()
+            )
+
+
+        if vaga.categoria != 'Mobile':
+            exp += Case(
+                When(categoria__exact='full_stack', then=10),
+                default=0, 
+                output_field=models.IntegerField()
+                )
+
+        # qs = qs.filter(categoria='full_stack').annotate(pontos=1)
+        # qs = qs | qs.filter(Q(categoria__exact=Value(vaga.categoria))).annotate(pontos=F('pontos')+1)        
+
+        # exp = models.Value(models.F('categoria') == vaga.categoria)
+        # qs = qs.annotate(pontos=models.Value(vaga.categoria, output_field=models.CharField()))
+        qs = qs.annotate(pontos=exp) 
+        # qs = qs.filter(pontos = 10).values()
+        qs = qs.values()
+        context['curriculo'] = qs
+        return context
+
+
+class ExibirVagaDetailView(DetailView):
+    model = Vaga
+    template_name='vagas/exibirvaga.html'
