@@ -1,7 +1,7 @@
-
 from django.db.models import F, When, Value, Q, Count, ExpressionWrapper, Case
 from django.db import models
 from candidatos.models import Curriculo
+from .forms import VagaForm
 from .models import Vaga
 
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -25,29 +25,7 @@ from .forms import FilterForm
 class VagaCreateView(GroupRequiredMixin, LoginRequiredMixin, CreateView):
     group_required= u'Empresa'
     login_url=reverse_lazy('login')
-    model = Vaga
-    fields=[
-            'nome',
-            'categoria',
-            'nivel',
-            'descricao',
-            'modalidade',
-            'contrato',
-            'jornada',
-            'local',
-            'outras_reg',
-            'requisitos',
-            'salmin',
-            'salmax',
-            'beneficios',
-            'pri_habilidade_vaga',
-            'seg_habilidade_vaga',
-            'ter_habilidade_vaga',
-            'qua_habilidade_vaga',
-            'qui_habilidade_vaga',
-        ]
-    # form_class=VagasForm
-    # vagas_obj=Vaga.objects.all()
+    form_class = VagaForm
     template_name = 'vagas/form.html'
     success_url=reverse_lazy('minhas-vagas')
 
@@ -168,27 +146,8 @@ class VagaExibirListView(ListView):
 class VagaUpdateView(GroupRequiredMixin, LoginRequiredMixin, UpdateView):
     group_required = u'Empresa'
     login_url = reverse_lazy('login')
-    model = Vaga
-    fields=[
-            'nome',
-            'categoria',
-            'nivel',
-            'descricao',
-            'modalidade',
-            'contrato',
-            'jornada',
-            'local',
-            'outras_reg',
-            'requisitos',
-            'salmin',
-            'salmax',
-            'beneficios',
-            'pri_habilidade_vaga',
-            'seg_habilidade_vaga',
-            'ter_habilidade_vaga',
-            'qua_habilidade_vaga',
-            'qui_habilidade_vaga',
-        ]
+    form_class = VagaForm
+  
     template_name = 'vagas/form.html'
     success_url = reverse_lazy('minhas-vagas')
 

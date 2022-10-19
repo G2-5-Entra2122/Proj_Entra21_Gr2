@@ -1,4 +1,5 @@
 {% load static %}
+{% load auth_extras %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,6 +29,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"><!-- BOOTSTRAP STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
     <!-- FONTAWESOME STYLE SHEET -->
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/feather.css' %}"><!-- FEATHER ICON SHEET -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
     <!-- OWL CAROUSEL STYLE SHEET -->
@@ -108,23 +113,88 @@
                         </div>
 
                         <!-- Header Right Section-->
+
                         <div class="extra-nav header-2-nav">
                             <div class="extra-cell">
                                 <div class="header-nav-btn-section">
                                     <div class="twm-nav-btn-left">
-                                        <a class="twm-nav-sign-up" data-bs-toggle="modal" href="#sign_up_popup"
-                                            role="button"><!--obs: essa parte aqui antes era o sign up, mas abre a pop up para registro-->
-                                            <i class="feather-log-in"></i>
-                                             Registre-se
-                                        </a>
+
+                                        {% if request.user|has_group:"Candidato" %}
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-user-check"></i>
+                                                <span id="username">Seja bem-vindo(a) {{ request.user }}!</span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{% url 'atualizar-dados-candidato' %}">
+                                                    <i class="fa-regular fa-file"></i>
+                                                    Meus dados</a>
+                    
+                                                <a class="dropdown-item" href="{% url 'change-password' %}">
+                                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                                    Alterar senha</a>
+                    
+                                                <a class="dropdown-item" href="{% url 'atualizar-curriculo' %}">
+                                                    <i class="fa-solid fa-paste"></i>
+                                                    Meu curriculo</a>
+                    
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="{% url 'logout' %}">
+                                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                                    Sair</a>
+                                            </div>
+                                        </div>
+                                        {% elif request.user|has_group:"Empresa" %}
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa-solid fa-user-check"></i>
+                                                <span id="username">Seja bem-vindo(a) {{ request.user }}!</span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{% url 'atualizar-dados-empresas' %}">
+                                                    <i class="fa-regular fa-file"></i>
+                                                    Dados empresa</a>
+                                                <a class="dropdown-item" href="{% url 'minhas-vagas' %}">
+                                                    <i class="fa-regular fa-file"></i>
+                                                    Minhas vagas</a>
+                                                <a class="dropdown-item" href="{% url 'change-password' %}">
+                                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                                    Alterar senha</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="{% url 'logout' %}">
+                                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                                    Sair</a>
+                                            </div>
+                                        </div>
+                                        {% else %}
+                                        <div class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                                <span id="username">Registrar</span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="{% url 'registrar-candidato' %}">
+                                                    <i class="fa fa-user-tie" aria-hidden="true"></i>
+                                                    Candidato</a>
+                                                <a class="dropdown-item" href="{% url 'registrar-empresa' %}">
+                                                    <i class="fa-solid fa-users"></i>
+                                                    Empresa</a>
+                                                <div class="dropdown-divider"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="twm-nav-btn-right">
-                                        <a class="twm-nav-post-a-job" data-bs-toggle="modal" href="#sign_up_popup2"
+                                        <a class="twm-nav-post-a-job" href="{% url 'login' %}"
                                             role="button">
-                                            <i class="feather-briefcase"></i><!--obs: essa parte aqui antes era o post a job, mas precisamos da pop up login separado da registro-->
+                                            <i class="feather-briefcase"></i>
                                              Login
                                         </a>
+                                        
                                     </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -139,259 +209,6 @@
         <!-- BUTTON TOP START -->
 		<button class="scroltop"><span class="fa fa-angle-up  relative" id="btn-vibrate"></span></button>
 
-        <!--Model Popup Section Start-->
-            <!--Signup popup -->
-            <div class="modal fade twm-sign-up" id="sign_up_popup" aria-hidden="true" aria-labelledby="sign_up_popupLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <form>
-
-                            <div class="modal-header">
-                                <h2 class="modal-title" id="sign_up_popupLabel">Acesse já</h2>
-                                <p>Cadastre-se e tenha acesso a todos os recursos do Experts 4 Hire</p>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-
-                            <div class="modal-body">
-                                <div class="twm-tabs-style-2">
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-                                    <!--Signup Candidate-->
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#sign-candidate" type="button"><i class="fas fa-user-tie"></i>Candidato</button>
-                                    </li>
-                                    <!--Signup Employer-->
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#sign-Employer" type="button"><i class="fas fa-building"></i>Empresa</button>
-                                    </li>
-
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                    <!--Signup Candidate Content-->
-                                    <div class="tab-pane fade show active" id="sign-candidate">
-                                        <div class="row">
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="username" type="text" required="" class="form-control" placeholder="Usuário">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="email" type="text" class="form-control" required="" placeholder="Senha">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="phone" type="text" class="form-control" required="" placeholder="E-mail">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="phone" type="text" class="form-control" required="" placeholder="Celular">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input" id="agree1">
-                                                        <label class="form-check-label" for="agree1">Eu concordo com os <a href="javascript:;">Termos de Uso</a></label>
-                                                        <p>Já é registrado?
-                                                            <button class="twm-backto-login" data-bs-target="#sign_up_popup2" data-bs-toggle="modal" data-bs-dismiss="modal">Faça login aqui</button>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <button type="submit" class="site-button">Acesse já</button>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!--Signup Employer Content-->
-                                    <div class="tab-pane fade" id="sign-Employer">
-                                        <div class="row">
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="username" type="text" required="" class="form-control" placeholder="Usuário">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="email" type="text" class="form-control" required="" placeholder="Senha">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="phone" type="text" class="form-control" required="" placeholder="E-mail">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <input name="phone" type="text" class="form-control" required="" placeholder="Celular">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-12">
-                                                <div class="form-group mb-3">
-                                                    <div class=" form-check">
-                                                        <input type="checkbox" class="form-check-input" id="agree2">
-                                                        <label class="form-check-label" for="agree2">Eu concordo com os <a href="javascript:;">Termos de uso</a></label>
-                                                        <p>Já é registrado?
-                                                            <button class="twm-backto-login" data-bs-target="#sign_up_popup2" data-bs-toggle="modal" data-bs-dismiss="modal">Faça login aqui</button>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <button type="submit" class="site-button">Acesse já</button>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="modal-footer">
-                                <span class="modal-f-title">Login ou entre com</span>
-                                <ul class="twm-modal-social">
-                                    <li><a href="https://www.facebook.com/" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="https://twitter.com/" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="https://www.linkedin.com/" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="https://www.google.com.br/" class="google-clr"><i class="fab fa-google"></i></a></li>
-                                </ul>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-            <!--Login popup -->
-            <div class="modal fade twm-sign-up" id="sign_up_popup2" aria-hidden="true" aria-labelledby="sign_up_popupLabel2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-
-                        <form>
-                            <div class="modal-header">
-                                <h2 class="modal-title" id="sign_up_popupLabel2">Login</h2>
-                                <p>Faça login e tenha acesso a todos os recursos do Experts 4 Hire</p>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="twm-tabs-style-2">
-                                    <ul class="nav nav-tabs" id="myTab2" role="tablist">
-
-                                        <!--Login Candidate-->
-                                        <li class="nav-item">
-                                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#login-candidate" type="button"><i class="fas fa-user-tie"></i>Candidato</button>
-                                        </li>
-                                        <!--Login Employer-->
-                                        <li class="nav-item">
-                                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#login-Employer" type="button"><i class="fas fa-building"></i>Empresa</button>
-                                        </li>
-
-                                    </ul>
-
-                                    <div class="tab-content" id="myTab2Content">
-                                        <!--Login Candidate Content-->
-                                        <div class="tab-pane fade show active" id="login-candidate">
-                                            <div class="row">
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mb-3">
-                                                        <input name="username" type="text" required="" class="form-control" placeholder="Usearname*">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mb-3">
-                                                        <input name="email" type="text" class="form-control" required="" placeholder="Password*">
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mb-3">
-                                                        <div class=" form-check">
-                                                            <input type="checkbox" class="form-check-input" id="Password3">
-                                                            <label class="form-check-label rem-forgot" for="Password3">Lembrar minhas credenciais<a href="javascript:;">Esqueci a senha</a></label>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="site-button">Login</button>
-                                                    <div class="mt-3 mb-3">Ainda não tem uma conta?
-                                                        <button class="twm-backto-login" data-bs-target="#sign_up_popup" data-bs-toggle="modal" data-bs-dismiss="modal">Inscreva-se</button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <!--Login Employer Content-->
-                                        <div class="tab-pane fade" id="login-Employer">
-                                            <div class="row">
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mb-3">
-                                                        <input name="username" type="text" required="" class="form-control" placeholder="Usuário">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mb-3">
-                                                        <input name="email" type="text" class="form-control" required="" placeholder="Senha">
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="col-lg-12">
-                                                    <div class="form-group mb-3">
-                                                        <div class=" form-check">
-                                                            <input type="checkbox" class="form-check-input" id="Password4">
-                                                            <label class="form-check-label rem-forgot" for="Password4">Lembrar minhas credenciais <a href="javascript:;">Esqueci a senha</a></label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <button type="submit" class="site-button">Login</button>
-                                                    <div class="mt-3 mb-3">Ainda não tem uma conta?
-                                                        <button class="twm-backto-login" data-bs-target="#sign_up_popup" data-bs-toggle="modal" data-bs-dismiss="modal">Entre</button>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <span class="modal-f-title">Login ou entre com</span>
-                                <ul class="twm-modal-social">
-                                    <li><a href="javascript.html" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="javascript.html" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="javascript.html" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="javascript.html" class="google-clr"><i class="fab fa-google"></i></a></li>
-                                </ul>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        <!--Model Popup Section End-->
 
 
  	</div>
@@ -417,6 +234,19 @@
 <script  src="{% static 'js/dataTables.bootstrap5.min.js' %}"></script><!-- Datatable -->
 <script  src="{% static 'js/chart.js' %}"></script><!-- Chart -->
 <script  src="{% static 'js/custom.js' %}"></script><!-- CUSTOM FUCTIONS  -->
+
+<script>
+    const btn = document.querySelector('#navbarDropdownMenuLink')
+    const menu = document.querySelector('[aria-labelledby="navbarDropdownMenuLink"]')
+    btn.addEventListener('click',() => {
+        if(menu.classList.contains('show')){
+            menu.classList.remove('show')
+        }else{
+            menu.classList.add('show')
+        }
+
+    })
+</script>
 
 
 </body>
