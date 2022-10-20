@@ -285,9 +285,9 @@ def add_habilidades(apps, schema_editor):
     ]
 
     habil = apps.get_model('candidatos','Habilidade')
-    for habldd in DEFAULT_HABILIDADES:
+    for habilidade in DEFAULT_HABILIDADES:
         habil.objects.create(
-            habilidade = habldd
+            habilidade = habilidade
         )
 
 

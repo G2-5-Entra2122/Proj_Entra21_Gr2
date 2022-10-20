@@ -2,17 +2,28 @@
 
 from django.db import migrations
 from candidatos.models import Habilidade
+from vagas.models import Vaga
 #nome, categoria, nivel, descriçao, modalidade, contrato, jornada, local,
 # outras_reg, requisitos, salmin, salmax, benefícios, data, pri_habilidade_vaga,
 #seg_habilidade_vaga, ter_habilidade_vaga, qua_habilidade_vaga, qui_habilidade_vaga,
 #usuario
+
+# DEFAULT_VAGAS = [
+#     ('Programador back-end', 'Back-end', 'Junior','criação de modelos de dados', 'Presencial', 'CLT', 'Período Integral', 'Blumenau', 'nao', 'Python, Django, SQL, Git/GitHub', 2500.00,3800.00,'Vale transporte, Plano de saúde, Plano odontológico, Vale Refeição.', 208,'','','','',1)
+#     ]
+
+# lista =[]
+
+# lista.append(Vaga('Programador back-end', 'Back-end', 'Junior','criação de modelos de dados', 'Presencial', 'CLT', 'Período Integral', 'Blumenau', 'nao', 'Python, Django, SQL, Git/GitHub', 2500.00,3800.00,'Vale transporte, Plano de saúde, Plano odontológico, Vale Refeição.', 208,'','','','',1))
+
+
 
 
 def criar_vagas(apps,schema_editor):
     DEFAULT_VAGAS = [
         ('Programador back-end', 'Back-end', 'Junior','criação de modelos de dados', 'Presencial', 'CLT', 'Período Integral', 'Blumenau', 'nao', 'Python, Django, SQL, Git/GitHub', 2500.00,3800.00,'Vale transporte, Plano de saúde, Plano odontológico, Vale Refeição.', 208,'','','','',1)
     ]
-
+    hab = Habilidade(habilidade = 'pythondjando')
     vaga = apps.get_model('vagas','Vaga')
     for nome, categoria, nivel, descricao, modalidade, contrato, jornada, local, outras_reg,requisitos,salmin,salmax,beneficios,pri,seg,ter,qua,qui,usuario_id in DEFAULT_VAGAS:
         vaga.objects.create(
@@ -20,7 +31,7 @@ def criar_vagas(apps,schema_editor):
             categoria = categoria,
             nivel = nivel,
             descricao = descricao,
-            modalidede = modalidade,
+            modalidade = modalidade,
             contrato = contrato,
             jornada = jornada,
             local = local,
@@ -29,11 +40,11 @@ def criar_vagas(apps,schema_editor):
             salmin = salmin,
             salmax = salmax,
             beneficios = beneficios,
-            pri_habilidade_vaga = pri,
-            seg_habilidade_vaga = seg,
-            ter_habilidade_vaga = ter,
-            qua_habilidade_vaga = qua,
-            qui_habilidade_vaga = qui,
+            pri_habilidade_vaga_id = pri,
+            seg_habilidade_vaga_id = seg,
+            ter_habilidade_vaga_id = ter,
+            qua_habilidade_vaga_id = qua,
+            qui_habilidade_vaga_id = qui,
             usuario_id = usuario_id
             )
 
