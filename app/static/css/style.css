@@ -13224,6 +13224,14 @@ strong {
   }
 }
 /*Candidate pages start------------------------------------------------------------*/
+.btn-filter {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #0D6EFD;
+  color: white;
+  border: none;
+}
+
 .side-bar-st-1 {
   background: #d4e6ff;
   padding: 30px;

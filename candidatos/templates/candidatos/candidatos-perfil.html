@@ -79,11 +79,21 @@
 
                                 <div class="tw-sidebar-tags-wrap">
                                     <div class="tagcloud">
+                                        {% if curriculo.pri_habilidade_candidato %}
                                         <a href="javascript:void(0)">{{ curriculo.pri_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.seg_habilidade_candidato %}
                                         <a href="javascript:void(0)">{{ curriculo.seg_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.ter_habilidade_candidato %}
                                         <a href="javascript:void(0)">{{ curriculo.ter_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.qua_habilidade_candidato %}
                                         <a href="javascript:void(0)">{{ curriculo.qua_habilidade_candidato }}</a>
-                                        <a href="javascript:void(0)">{{ curriculo.qui_habilidade_candidato }}</a>                                          
+                                        {% endif %}
+                                        {% if curriculo.qui_habilidade_candidato %}
+                                        <a href="javascript:void(0)">{{ curriculo.qui_habilidade_candidato }}</a>
+                                        {% endif %}                                          
                                     </div>
                                 </div>
 

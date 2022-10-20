@@ -19,7 +19,7 @@
                 <div class="wt-bnr-inr-entry">
                     <div class="banner-title-outer">
                         <div class="banner-title-name">
-                            <h2 class="wt-title">Candidatos á sua Espera</h2>
+                            <h2 class="wt-title">Candidatos a sua espera</h2>
                         </div>
                     </div>
                     <!-- BREADCRUMB ROW -->
@@ -50,18 +50,18 @@
 
                             <div class="sidebar-elements search-bx">
 
-                                <form>
+                                <form method="get">
 
-                                    <div class="form-group mb-4">
-                                        <h4 class="section-head-small mb-4">Categoria</h4>
-                                        <select class="wt-select-bar-large selectpicker" data-live-search="true"
-                                            data-bv-field="size">
-                                            <option selected>Todas as categorias</option>
-                                            <option>Full Stack</option>
-                                            <option>Back-End</option>
-                                            <option>Front-End</option>
-                                        </select>
-                                    </div>
+                                    <h4 class="section-head-small mb-4">Categoria</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src01" name="src01" value="{{ request.GET.cat }}">
+                                                <option selected value="todas-as-categorias">Todas as categorias</option>
+                                                <option value="Full-stack">Full-Stack</option>
+                                                <option value="Back-end">Back-End</option>
+                                                <option value="Front-end">Front-End</option>
+                                                <option value="Mobile">Mobile</option>
+                                            </select>
+                                        <br><br>
 
                                     <div class="form-group mb-4">
                                         <h4 class="section-head-small mb-4">Localização</h4>
@@ -72,96 +72,29 @@
                                         </div>
                                     </div>
 
-                                    <div class="twm-sidebar-ele-filter">
-                                        <h4 class="section-head-small mb-4">Modalidade</h4>
-                                        <ul>
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck1">
-                                                    <label class="form-check-label"
-                                                        for="exampleCheck1">Presencial</label>
-                                                </div>
-                                            </li>
+                                    <h4 class="section-head-small mb-4">Modalidade</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src02" name="src02" value="{{ request.GET.modalidade }}">
+                                                <option selected value="todas-as-modalidades">Todas as modalidades</option>
+                                                <option value="Presencial">Presencial</option>
+                                                <option value="Híbrido">Híbrido</option>
+                                                <option value="Remoto">Remoto</option>
+                                            </select>
+                                        <br><br>
 
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck2">
-                                                    <label class="form-check-label" for="exampleCheck2">Híbrido</label>
-                                                </div>
-                                            </li>
+                                        <h4 class="section-head-small mb-4">Tipo de contrato</h4>
+                                        <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                            data-bv-field="size" id="src03" name="src03" value="{{ request.GET.contrato }}">
+                                            <option selected value="tipo-de-contrato">Tipo de contrato</option>
+                                            <option value="Estágio">Estágio</option>
+                                            <option value="CLT">CLT</option>
+                                            <option value="Freelance">Freelance</option>
+                                            <option value="PJ">PJ</option>
+                                            <option value="Voluntário">Voluntário</option>
+                                        </select>
+                                    <br><br>
 
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck3">
-                                                    <label class="form-check-label"
-                                                        for="exampleCheck3">Remoto</label>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="twm-sidebar-ele-filter">
-                                        <h4 class="section-head-small mb-4">Contrato</h4>
-                                        <ul>
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck1">
-                                                    <label class="form-check-label"
-                                                        for="exampleCheck1">Freelance</label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck2">
-                                                    <label class="form-check-label" for="exampleCheck2">Tempo
-                                                        Integral</label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck3">
-                                                    <label class="form-check-label"
-                                                        for="exampleCheck3">Estágio</label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck4">
-                                                    <label class="form-check-label" for="exampleCheck4">Meio
-                                                        Período</label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck5">
-                                                    <label class="form-check-label"
-                                                        for="exampleCheck5">Temporário</label>
-                                                </div>
-                                            </li>
-
-                                            <li>
-                                                <div class=" form-check">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        id="exampleCheck6">
-                                                    <label class="form-check-label"
-                                                        for="exampleCheck6">Voluntário</label>
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
+                                    <input class="btn-filter" type="submit" value="Filtrar">
 
                                 </form>
 
@@ -182,7 +115,7 @@
                     <div class="col-lg-8 col-md-12">
                         <!--Filter Short By-->
                         <div class="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
-                            <span class="woocommerce-result-count-left">Mostrando 2,150 candidatos</span>
+                            <span class="woocommerce-result-count-left">Mostrando {{ contador }} candidato(s)</span>
 
                             <form class="woocommerce-ordering twm-filter-select" method="get">
                                 <span class="woocommerce-result-count">Filtro</span>
