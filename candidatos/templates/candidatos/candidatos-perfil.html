@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+    <!-- PAGE TITLE HERE -->
+    {% block title %}
+    <title>Experts 4 Hire | Perfil Candidato</title>
+    {% endblock %}
+    
+{% block content %}
+<body>
+    <!-- CONTENT START -->
+    <div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+            <div class="overlay-main site-bg-white opacity-01"></div>
+            <div class="container">
+                <div class="wt-bnr-inr-entry">
+                    <div class="banner-title-outer">
+                        <div class="banner-title-name">
+                            <h2 class="wt-title">Detalhes do Candidato</h2>
+                        </div>
+                    </div>
+                    <!-- BREADCRUMB ROW -->                            
+                    
+                        <div>
+                            <ul class="wt-breadcrumb breadcrumb-style-2">
+                                <li><a href="{% url 'index' %}">Início</a></li>
+                                <li>Perfil do Candidato</li>
+                            </ul>
+                        </div>
+                    
+                    <!-- BREADCRUMB ROW END -->                        
+                </div>
+            </div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+
+
+
+        <!-- OUR BLOG START -->
+        <div class="section-full  p-t120 p-b90 bg-white">
+            <div class="container">
+            
+                <!-- BLOG SECTION START -->
+                <div class="section-content">
+                    <div class="row d-flex justify-content-center">
+                    
+                        <div class="col-lg-8 col-md-12">
+                            <!-- Candidate detail START -->
+                            <div class="cabdidate-de-info">
+                                <div class="twm-candi-self-wrap overlay-wraper" style="background-image:url('/static/images/candidates/candidate-detail-bg.jpg');">
+                                    <div class="overlay-main site-bg-primary opacity-01"></div>
+                                    <div class="twm-candi-self-info">
+                                        <div class="twm-candi-self-top" style="color: black;">
+                                            <div class="twm-candi-fee"style="color: black;">R${{ curriculo.salario }} / Mês</div>
+                                            <div class="twm-media">
+                                                <img src="{% static '/images/candidates/icon-candidate.jpeg' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                
+                                                <p>{{ curriculo.categoria }}</p>
+                                                <p class="twm-candidate-address"><i class="feather-map-pin"></i>Blumenau, SC </p>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="twm-candi-self-bottom">
+                                            <a href="javascript:;" class="site-button outline-white" style="color: black;">Like</a>
+                                            <a href="{% url 'tabela-de-precos' %}" class="site-button secondry">Baixar CV</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="twm-s-title">Sobre mim</h4>
+
+                                <p>Estou em busca da minha transição de carreira, sou formado em contabilidade com mais de 11 anos de experiência na área, em minha última experiência profissional, era responsável pela elaboração e validação das informações pertinentes ao custo e budget (financial planning & analysis), desenvolvendo relatórios, validações e apontando possíveis melhorias ao conselho de diretores auxiliando assim nas tomadas de decisões.</p>
+
+                                <p>Sempre fui fascinado pela área de tecnologia, por mais tenha seguido uma carreira diferente à primeiro momento, após ter a oportunidade de desempenhar a função onde era necessário acessar bancos de dados (postgreSQL e OracleDB) para cruzar e obter certas informações que nao eram acessíveis diretamente pelo ERP, minha vontade de rumar à área de tecnologia avivou-se ainda mais.</p>
+
+                                <h4 class="twm-s-title">Habilidades</h4>
+
+                                <div class="tw-sidebar-tags-wrap">
+                                    <div class="tagcloud">
+                                        {% if curriculo.pri_habilidade_candidato %}
+                                        <a href="javascript:void(0)">{{ curriculo.pri_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.seg_habilidade_candidato %}
+                                        <a href="javascript:void(0)">{{ curriculo.seg_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.ter_habilidade_candidato %}
+                                        <a href="javascript:void(0)">{{ curriculo.ter_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.qua_habilidade_candidato %}
+                                        <a href="javascript:void(0)">{{ curriculo.qua_habilidade_candidato }}</a>
+                                        {% endif %}
+                                        {% if curriculo.qui_habilidade_candidato %}
+                                        <a href="javascript:void(0)">{{ curriculo.qui_habilidade_candidato }}</a>
+                                        {% endif %}                                          
+                                    </div>
+                                </div>
+
+                            </div>
+                                                        
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-12 rightSidebar">
+
+                            <div class="side-bar-2">
+
+                                <div class="twm-s-map mb-5">
+                                    <h4 class="section-head-small mb-4">Localização</h4> 
+                                    <div class="twm-s-map-iframe">
+                                        <iframe height="270" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.8534521658976!2d-118.2533646842856!3d34.073270780600225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c6fd9829c6f3%3A0x6ecd11bcf4b0c23a!2s1363%20Sunset%20Blvd%2C%20Los%20Angeles%2C%20CA%2090026%2C%20USA!5e0!3m2!1sen!2sin!4v1620815366832!5m2!1sen!2sin"></iframe>
+                                    </div>
+                                </div>
+                                
+                                    <h4 class="section-head-small mb-4">Informações do Perfil</h4> 
+                                    <div class="twm-s-info3">
+                                        <ul>
+
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    <i class="fas fa-money-bill-wave"></i>
+                                                    <span class="twm-title">Preferência de Salário</span>
+                                                    <div class="twm-s-info-discription">R${{ curriculo.salario }} / Mês</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    <i class="fas fa-clock"></i>
+                                                    <span class="twm-title">Senioridade</span>
+                                                    <div class="twm-s-info-discription">{{ curriculo.nivel }}</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    <i class="fas fa-venus-mars"></i>
+                                                    <span class="twm-title">Contrato</span>
+                                                    <div class="twm-s-info-discription">{{ curriculo.contrato }}</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    <i class="fas fa-mobile-alt"></i>
+                                                    <span class="twm-title">Celular</span>
+                                                    <div class="twm-s-info-discription">(20) 93029-3026</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    <i class="fas fa-at"></i>
+                                                    <span class="twm-title">Email</span>
+                                                    <div class="twm-s-info-discription">algumemail@gmail.com</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    <i class="fas fa-book-reader"></i>
+                                                    <span class="twm-title">Qualificação</span>
+                                                    <div class="twm-s-info-discription">{{ curriculo.categoria }}</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="twm-s-info-inner">
+                                                    
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span class="twm-title">Endereço</span>
+                                                    <div class="twm-s-info-discription">1363-1385 Sunset Blvd Angeles, CA 90026 ,USA</div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                        
+                                    </div>
+                            </div>
+                            
+                        </div>
+                    
+                    </div>
+                                            
+                </div>
+                
+            </div>
+            
+        </div>   
+        <!-- OUR BLOG END -->          
+        
+    
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    {% include 'rodape.html' %}
+    <!-- FOOTER END -->
+    {% endblock %}
+
+</body>
+
+</html>

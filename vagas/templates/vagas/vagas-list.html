@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    <!-- PAGE TITLE HERE -->
+    {% block title %}
+    <title>Experts 4 Hire | Vagas</title>
+    {% endblock %}
+
+{% block content %}
+
+
+<body>
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center"
+                style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">As melhores vagas aqui</h2>
+                            </div>
+                        </div>
+                        <!-- BREADCRUMB ROW -->
+
+                        <div>
+                            <ul class="wt-breadcrumb breadcrumb-style-2">
+                                <li><a href="{% url 'index' %}">Início</a></li>
+                                <li>Lista de vagas</li>
+                            </ul>
+                        </div>
+
+                        <!-- BREADCRUMB ROW END -->
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+
+            <!-- OUR BLOG START -->
+            <div class="section-full p-t120  p-b90 site-bg-white">
+
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-12 rightSidebar">
+
+                            <div class="side-bar">
+
+                                <div class="sidebar-elements search-bx">
+
+                                    <form method="get">
+                                        <h4 class="section-head-small mb-4">Categoria</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src01" name="src01" value="{{ request.GET.cat }}">
+                                                <option selected value="todas-as-categorias">Todas as categorias</option>
+                                                <option value="Full-stack">Full-Stack</option>
+                                                <option value="Back-end">Back-End</option>
+                                                <option value="Front-end">Front-End</option>
+                                                <option value="Mobile">Mobile</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Nível</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src02" name="src02" value="{{ request.GET.nivel }}">
+                                                <option selected value="todos-os-niveis">Todos os níveis</option>
+                                                <option value="Junior">Junior</option>
+                                                <option value="Pleno">Pleno</option>
+                                                <option value="Sênior">Sênior</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Modalidade</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src03" name="src03" value="{{ request.GET.modalidade }}">
+                                                <option selected value="todas-as-modalidades">Todas as modalidades</option>
+                                                <option value="Presencial">Presencial</option>
+                                                <option value="Híbrido">Híbrido</option>
+                                                <option value="Remoto">Remoto</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Tipo de contrato</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src04" name="src04" value="{{ request.GET.contrato }}">
+                                                <option selected value="tipo-de-contrato">Tipo de contrato</option>
+                                                <option value="Estágio">Estágio</option>
+                                                <option value="CLT">CLT</option>
+                                                <option value="Freelance">Freelance</option>
+                                                <option value="PJ">PJ</option>
+                                                <option value="Voluntário">Voluntário</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Jornada</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src05" name="src05" value="{{ request.GET.jornada }}">
+                                                <option selected value="tipo-de-jornada">Tipo de jornada</option>
+                                                <option value="Período Integral">Período Integral</option>
+                                                <option value="Meio Preíodo">Meio Preíodo</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Aceita candidatos de outras regiões?</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src06" name="src06" value="{{ request.GET.outras_reg }}">
+                                                <option selected value="aceita-outra-regiao">Aceita outra região?</option>
+                                                <option value="Sim">Sim</option>
+                                                <option value="Não">Não</option>
+                                            </select>
+                                        <br><br>
+
+                                        <input class="btn-filter" type="submit" value="Filtrar">
+
+                                    </form>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="twm-advertisment">
+                                <div class="overlay"></div>
+                                <h4 class="twm-title">Procurando emprego?</h4>
+                                <p>Obtenha as melhores vagas correspondentes em seu E-mail. Adicionar currículo AGORA!
+                                </p>
+                                <a href="{% url 'atualizar-curriculo' %}" class="site-button white">Saber Mais</a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-8 col-md-12">
+                            <!--Filter Short By-->
+                            <div class="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
+                                <span class="woocommerce-result-count-left">Mostrando {{ contador }} vaga(s)</span>
+
+                                <form class="woocommerce-ordering twm-filter-select" method="get">
+                                    <span class="woocommerce-result-count">Ordenar Por</span>
+                                    <select class="wt-select-bar-2 selectpicker" data-live-search="true"
+                                        data-bv-field="size">
+                                        <option>Mais Recente</option>
+                                        <option>Mais Antiga</option>
+                                        <option>Maior Salário</option>
+                                        <option>Menor Salário</option>
+                                    </select>
+                                    <select class="wt-select-bar-2 selectpicker" data-live-search="true"
+                                        data-bv-field="size">
+                                        <option>Mostrar 10</option>
+                                        <option>Mostrar 20</option>
+                                        <option>Mostrar 30</option>
+                                        <option>Mostrar 40</option>
+                                        <option>Mostrar 50</option>
+                                        <option>Mostrar 60</option>
+                                    </select>
+                                </form>
+
+                            </div>
+
+                            <div class="twm-jobs-list-wrap">
+                                <ul>
+                                    {% for vaga in object_list %}
+                                    <li>
+                                        <div class="twm-jobs-list-style1 mb-5">
+                                            <div>
+                                                <a href="exibirvaga/{{ vaga.id }}/" class="twm-job-title">
+                                                    <h4>{{ vaga.nome }}<span class="twm-job-post-duration">/ 1 dia
+                                                            atrás</span></h4>
+                                                </a>
+                                                <p class="twm-job-address">{{ vaga.descricao }}</p>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-category green"><span
+                                                        class="twm-bg-green">{{ vaga.nivel }}</span>
+                                                </div>
+                                                <div class="twm-jobs-amount">R${{ vaga.salmin }} a R${{ vaga.salmax }} <span>/ Mês</span></div>
+                                                <p class="twm-jobs-browse site-text-primary">{{ vaga.modalidade }}</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% empty %}
+                                        <p>Não foram encotradas vagas disponíveis</p>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% include "includes/pagination.html" %}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- OUR BLOG END -->
+
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER START -->
+        {% include 'rodape.html' %}
+        <!-- FOOTER END -->
+        {% endblock %}
+
+</body>
+
+</html>

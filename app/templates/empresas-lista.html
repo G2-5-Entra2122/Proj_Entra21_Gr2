@@ -1,0 +1,403 @@
+{% extends 'base.html' %}
+
+{% load static %}
+    {% block title %}
+    <title>Experts 4 Hire | Empresas</title>
+    {% endblock %}
+{% block content %}
+
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Empresas Parceiras</h2>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+            <!-- INNER PAGE BANNER END -->
+
+            <!-- Employer Grid START -->
+            <div class="section-full p-t120  p-b90 site-bg-white">
+                <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-lg-4 col-md-12 rightSidebar">
+
+                            <div class="side-bar">
+
+                                <div class="sidebar-elements search-bx">
+                                                                            
+                                    <form>
+
+                                        <div class="form-group mb-4">
+                                            <h4 class="section-head-small mb-4">Categoria</h4>
+                                            <select class="wt-select-bar-large selectpicker"  data-live-search="true" data-bv-field="size">
+                                                <option selected>Todas categorias</option>
+                                                <option>Serviços de investimentos</option>
+                                                <option>Empresa de telecomunicação</option>
+                                                <option>Empresa de software</option>
+                                                <option>Tecnologia</option>
+                                                <option>Farmácia</option>
+                                                <option>Consultoria empresarial</option>
+                                                <option>Cooperativa de crédito</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            <h4 class="section-head-small mb-4">Palavra-chave</h4>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Título ou palavra-chave">
+                                                <button class="btn" type="button"><i class="feather-search"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mb-4">
+                                            <h4 class="section-head-small mb-4">Localização</h4>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Cidade">
+                                                <button class="btn" type="button"><i class="feather-map-pin"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="twm-sidebar-ele-filter">
+                                            <h4 class="section-head-small mb-4">Última postagem</h4>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio1">
+                                                        <label class="form-check-label" for="exampleradio1">Há uma hora</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio2">
+                                                        <label class="form-check-label" for="exampleradio2">Últimas 24h</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio3">
+                                                        <label class="form-check-label" for="exampleradio3">Últimos 7 dias</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio4">
+                                                        <label class="form-check-label" for="exampleradio4">Últimos 14 dias</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio5">
+                                                        <label class="form-check-label" for="exampleradio5">Últimos 30 dias</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="exampleradio6">
+                                                        <label class="form-check-label" for="exampleradio6">Todos</label>
+                                                    </div>
+                                                </li>
+                             
+                                            </ul>
+                                        </div>
+
+                                        <div class="twm-sidebar-ele-filter">
+                                            <h4 class="section-head-small mb-4">Tipo de vaga</h4>
+                                            <ul>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="Freelance1">
+                                                        <label class="form-check-label" for="Freelance1">Freelance</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="FullTime1">
+                                                        <label class="form-check-label" for="FullTime1">Integral</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="Intership1">
+                                                        <label class="form-check-label" for="Intership1">Voluntário</label>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="form-check">
+                                                        <input type="radio" class="form-check-input" id="Part-Time1">
+                                                        <label class="form-check-label" for="Part-Time1">Meio período</label>
+                                                    </div>
+                                                </li>
+                             
+                                            </ul>
+                                        </div>
+                                        
+                                    </form>
+                                    
+                                </div>
+
+                                
+                            </div>
+
+                            <div class="twm-advertisment">
+                               <div class="overlay"></div>
+                               <h4 class="twm-title">Recrutando?</h4>
+                               <p>Receba os currículos que mais <br>
+                                correspondem ao perfil que você busca</p>
+                                <a href="{% url 'index' %}" class="site-button white">Saiba mais</a> 
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-8 col-md-12">
+                            <!--Filter Short By-->
+                            <div class="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
+                                <span class="woocommerce-result-count-left">Mostrando 1-8 de 10 resultados</span>
+                               
+                                <form class="woocommerce-ordering twm-filter-select" method="get">
+                                    <span class="woocommerce-result-count">Ordenar por</span>
+                                    <select class="wt-select-bar-2 selectpicker"  data-live-search="true" data-bv-field="size">
+                                        <option>Mais recente</option>
+                                        <option>Ordem alfabética</option>
+                                        <option>Mais antiga</option>
+                                    </select>
+                                    <select class="wt-select-bar-2 selectpicker"  data-live-search="true" data-bv-field="size">
+                                        <option>Mostrar 10</option>
+                                        <option>Mostrar 20</option>
+                                        <option>Mostrar 30</option>
+
+                                    </select>
+                                </form>
+
+                            </div>
+
+                            <div class="twm-employer-list-wrap">
+                                <div class="row">
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="{% static 'images/jobs-company/centralailos190px.png' %}" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="https://www.ailos.coop.br/" class="twm-job-title">
+                                                     <h4>Central Ailos</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">Blumenau</p>
+                                                 <a href="https://www.ailos.coop.br/" class="twm-job-websites site-text-primary">Cooperativa de crédito</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                 <div class="twm-jobs-vacancies"><span>{{ vagas.count }}</span>Vagas</div> <!--arrumar o contador de vagas aqui-->
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="{% static 'images/jobs-company/ambevtech190px.png' %}" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="https://www.ambevtech.com.br/" class="twm-job-title">
+                                                     <h4>Ambev Tech</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">Vila Nova, Blumenau - SC</p>
+                                                 <a href="https://www.ambevtech.com.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>30</span>Vagas</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="{% static 'images/jobs-company/capgemini190px.png' %}" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="https://www.capgemini.com/br-pt/" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Capgemini</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">Itoupavazinha, Blumenau - SC</p>
+                                                 <a href="https://www.capgemini.com/br-pt/" class="twm-job-websites site-text-primary">Consultoria empresarial</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>32</span>Vagas</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="{% static 'images/jobs-company/datainfo190px.png' %}" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="https://www.datainfo.inf.br/" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Datainfo</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">Vorstadt, Blumenau - SC</p>
+                                                 <a href="https://www.datainfo.inf.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>38</span>Vagas</div>
+                                             </div>
+                                         </div>
+                                     </div>
+     
+                                     <div class="col-lg-6 col-md-6">
+                                         <div class="twm-employer-grid-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <img src="{% static 'images/jobs-company/farmaciasapp190px.png' %}" alt="#">
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="https://www.farmaciasapp.com.br/" class="twm-job-title">
+                                                     <h4 class="twm-job-title">Farmácias App</h4>
+                                                 </a>
+                                                 <p class="twm-job-address">Blumenau - SC</p>
+                                                 <a href="https://www.farmaciasapp.com.br/" class="twm-job-websites site-text-primary">Farmácia</a>
+                                             </div>
+                                             <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>40</span>Vagas</div>
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/havanlabs190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://havanlabs.gupy.io/" class="twm-job-title">
+                                                    <h4>Havan Labs</h4>
+                                                </a>
+                                                <p class="twm-job-address">Centro, Brusque - SC</p>
+                                                <a href="https://havanlabs.gupy.io/" class="twm-job-websites site-text-primary">Tecnologia</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>38</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>
+    
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/philips190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://www.philips.com.br/" class="twm-job-title">
+                                                    <h4>Philips</h4>
+                                                </a>
+                                                <p class="twm-job-address">Itoupava Norte, Blumenau - SC</p>
+                                                <a href="https://www.philips.com.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>35</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>
+    
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/senior190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://www.senior.com.br/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Senior</h4>
+                                                </a>
+                                                <p class="twm-job-address">Victor Konder, Blumenau - SC</p>
+                                                <a href="https://www.senior.com.br/" class="twm-job-websites site-text-primary">Empresa de software</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>65</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>
+    
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/tsystems190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://www.t-systems.com/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">T-Systems</h4>
+                                                </a>
+                                                <p class="twm-job-address">Bom Retiro, Blumenau - SC</p>
+                                                <a href="https://www.t-systems.com/" class="twm-job-websites site-text-primary">Empresa de software</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>50</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/unifique190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://unifique.com.br/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Unifique</h4>
+                                                </a>
+                                                <p class="twm-job-address">Centro, Blumenau - SC</p>
+                                                <a href="https://unifique.com.br/" class="twm-job-websites site-text-primary">Empresa de telecomunicação</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>20</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>                                     
+                                     <div class="col-lg-6 col-md-6">
+                                        <div class="twm-employer-grid-style1 mb-5">
+                                            <div class="twm-media">
+                                                <img src="{% static 'images/jobs-company/warren190px.png' %}" alt="#">
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://warren.com.br/" class="twm-job-title">
+                                                    <h4 class="twm-job-title">Warren</h4>
+                                                </a>
+                                                <p class="twm-job-address">Centro, Blumenau - SC</p>
+                                                <a href="https://warren.com.br/" class="twm-job-websites site-text-primary">Serviços de investimentos</a>
+                                            </div>
+                                            <div class="twm-right-content">
+                                                <div class="twm-jobs-vacancies"><span>28</span>Vagas</div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>   
+     
+        </div>
+
+ 	</div>
+</body>
+</html>
+{% include 'rodape.html'%}
+{% endblock %}
+

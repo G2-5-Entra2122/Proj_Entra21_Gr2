@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- PAGE TITLE HERE -->
+    {% block title %}
+    <title>Experts 4 Hire | Candidatos</title>
+    {% endblock %}
+    
+{% block content %}
+<body>
+    <!-- CONTENT START -->
+    <div class="page-content">
+
+        <!-- INNER PAGE BANNER -->
+        <div class="wt-bnr-inr overlay-wraper bg-center"
+            style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+            <div class="overlay-main site-bg-white opacity-01"></div>
+            <div class="container">
+                <div class="wt-bnr-inr-entry">
+                    <div class="banner-title-outer">
+                        <div class="banner-title-name">
+                            <h2 class="wt-title">Candidatos a sua espera</h2>
+                        </div>
+                    </div>
+                    <!-- BREADCRUMB ROW -->
+
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{% url 'index' %}">Início</a></li>
+                            <li>Lista de Candidatos</li>
+                        </ul>
+                    </div>
+
+                    <!-- BREADCRUMB ROW END -->
+                </div>
+            </div>
+        </div>
+        <!-- INNER PAGE BANNER END -->
+
+        <!-- OUR BLOG START -->
+        <div class="section-full p-t120  p-b90 site-bg-white">
+
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-12 rightSidebar">
+
+                        <div class="side-bar">
+
+                            <div class="sidebar-elements search-bx">
+
+                                <form method="get">
+
+                                    <h4 class="section-head-small mb-4">Categoria</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src01" name="src01" value="{{ request.GET.cat }}">
+                                                <option selected value="todas-as-categorias">Todas as categorias</option>
+                                                <option value="Full-stack">Full-Stack</option>
+                                                <option value="Back-end">Back-End</option>
+                                                <option value="Front-end">Front-End</option>
+                                                <option value="Mobile">Mobile</option>
+                                            </select>
+                                        <br><br>
+
+                                    <div class="form-group mb-4">
+                                        <h4 class="section-head-small mb-4">Localização</h4>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Local da Vaga">
+                                            <button class="btn" type="button"><i
+                                                    class="feather-map-pin"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="section-head-small mb-4">Modalidade</h4>
+                                            <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                                data-bv-field="size" id="src02" name="src02" value="{{ request.GET.modalidade }}">
+                                                <option selected value="todas-as-modalidades">Todas as modalidades</option>
+                                                <option value="Presencial">Presencial</option>
+                                                <option value="Híbrido">Híbrido</option>
+                                                <option value="Remoto">Remoto</option>
+                                            </select>
+                                        <br><br>
+
+                                        <h4 class="section-head-small mb-4">Tipo de contrato</h4>
+                                        <select class="wt-select-bar-large selectpicker" data-live-search="true"
+                                            data-bv-field="size" id="src03" name="src03" value="{{ request.GET.contrato }}">
+                                            <option selected value="tipo-de-contrato">Tipo de contrato</option>
+                                            <option value="Estágio">Estágio</option>
+                                            <option value="CLT">CLT</option>
+                                            <option value="Freelance">Freelance</option>
+                                            <option value="PJ">PJ</option>
+                                            <option value="Voluntário">Voluntário</option>
+                                        </select>
+                                    <br><br>
+
+                                    <input class="btn-filter" type="submit" value="Filtrar">
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                        <div class="twm-advertisment">
+                            <div class="overlay"></div>
+                            <h4 class="twm-title">Procurando candidatos?</h4>
+                            <p>Obtenha os candidatos que você procura em seu E-mail. Adicionar vagas AGORA!
+                            </p>
+                            <a href="{% url 'minhasvagas-adicionar' %}" class="site-button white">Saber Mais</a>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="col-lg-8 col-md-12">
+                        <!--Filter Short By-->
+                        <div class="product-filter-wrap d-flex justify-content-between align-items-center m-b30">
+                            <span class="woocommerce-result-count-left">Mostrando {{ contador }} candidato(s)</span>
+
+                            <form class="woocommerce-ordering twm-filter-select" method="get">
+                                <span class="woocommerce-result-count">Filtro</span>
+                                <select class="wt-select-bar-2 selectpicker" data-live-search="true"
+                                    data-bv-field="size">
+                                    <option>Mostrar 10</option>
+                                    <option>Mostrar 20</option>
+                                    <option>Mostrar 30</option>
+                                    <option>Mostrar 40</option>
+                                    <option>Mostrar 50</option>
+                                    <option>Mostrar 60</option>
+                                </select>
+                            </form>
+
+                        </div>
+
+                        <div class="twm-candidates-list-wrap">
+                            <ul>
+                                {% for curriculo in object_list %}
+                                <li>
+                                    <div class="twm-candidates-list-style1 mb-5">
+                                        <div class="twm-media-pic" style="padding-right: 20px;">
+                                            <img src="{% static 'images/candidates/icon-candidate.jpeg' %}" width="150px" alt="#">
+                                         </div>
+                                        <div class="twm-mid-content">
+                                            <h4>{{ curriculo.categoria }}</h4>
+                                            <ul>
+                                                <li>Linguagens: {{ curriculo.pri_habilidade_candidato }}, {{ curriculo.seg_habilidade_candidato }}, {{ curriculo.ter_habilidade_candidato }}, {{ curriculo.qua_habilidade_candidato }}, {{ curriculo.qui_habilidade_candidato }} </li>
+                                                <li>Senioridade: {{ curriculo.nivel }}</li>
+                                                <li>Contrato: {{ curriculo.contrato }}</li>
+                                                <li>Modalidade: {{ curriculo.modalidade }}</li>
+                                            </ul>
+
+                                            <div class="twm-fot-content">
+                                                <div class="twm-left-info">
+                                                    <div class="twm-jobs-vacancies">R${{ curriculo.salario }}<span>/ Mês</span></div>
+                                                </div>
+                                                <div class="twm-right-btn">
+                                                    <a href="{% url 'candidato-perfil' curriculo.pk %}"
+                                                        class="twm-view-prifile site-text-primary">Ver Perfil</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                {% empty %}
+                                    <p>Não foram encotrados candidatos disponíveis</p>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% include "includes/paginationCandidato.html" %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- OUR BLOG END -->
+
+    </div>
+    <!-- CONTENT END -->
+    
+    <!-- FOOTER START -->
+    {% include 'rodape.html' %}
+    <!-- FOOTER END -->
+    {% endblock %}    
+
+</body>
+
+</html>
