@@ -58,6 +58,7 @@ class CurriculosUpdateView(LoginRequiredMixin, UpdateView):
 class CandidatoListView(ListView):
     model = Curriculo
     template_name = 'candidatos/candidatos-list.html'
+    paginate_by = 4
 
     def get_queryset(self):
         candidatos = Curriculo.objects.all()
