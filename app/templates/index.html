@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+    {% block title %}
+    <title>Experts 4 Hire | Início</title>
+    {% endblock %}
 {% block content %}
         <!-- CONTENT START -->
         <div class="page-content">
@@ -138,7 +141,7 @@
                                         </div>
                                         <h4 class="twm-title">Registre<br>sua conta</h4>
                                     </div>
-                                    <p>Você precisa criar sua conta com o máximo de informações possível.</p>
+                                    <p>Você precisa criar sua conta com o máximo de informações possíveis.</p>
                                 </div>
                             </div>
 
@@ -167,7 +170,7 @@
                                         </div>
                                         <h4 class="twm-title">Anexe <br>seu currículo</h4>
                                     </div>
-                                    <p>Você deverá anexar seu currículo com mais informações sobre você</p>
+                                    <p>Você deverá anexar seu currículo com mais informações sobre você.</p>
                                 </div>
                             </div>
                         </div>
@@ -242,7 +245,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/ambevtech190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo ambev-tech"></a>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +254,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/capgemini190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo capgemini"></a>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +263,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/centralailos190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo central-ailos"></a>
                                     </div>
                                 </div>
                             </div>
@@ -269,7 +272,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/datainfo190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo data-info"></a>
                                     </div>
                                 </div>
                             </div>
@@ -278,7 +281,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/farmaciasapp190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo farmacias-app"></a>
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +290,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/havanlabs190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo havan-labs"></a>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +299,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/philips190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo philips"></a>
                                     </div>
                                 </div>
                             </div>
@@ -305,7 +308,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/senior190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo sênior"></a>
                                     </div>
                                 </div>
                             </div>
@@ -314,7 +317,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/tsystems190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo t-systems"></a>
                                     </div>
                                 </div>
                             </div>
@@ -323,7 +326,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/unifique190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo unifique"></a>
                                     </div>
                                 </div>
                             </div>
@@ -331,7 +334,7 @@
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
                                         <a href="employer-list.html"><img src="{% static 'images\jobs-company/warren190px.png' %}"
-                                                alt=""></a>
+                                                alt="logo warren"></a>
                                     </div>
                                 </div>
                             </div>                            
@@ -472,7 +475,7 @@
                                 </li>
                             </ul>
                             <div class="text-center m-b30">
-                                <a href="vagas-list.html" class=" site-button">Encontre sua vaga</a>
+                                <a href="{% url 'vaga-list' %}" class=" site-button">Encontre sua vaga</a>
                             </div>
                         </div>
                     </div>
