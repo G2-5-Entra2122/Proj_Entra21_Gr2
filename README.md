@@ -105,6 +105,20 @@ Isso é feito, para que as competências técnicas sejam a primeira vitrine apre
 
 A intenção é que, com os mini-currículos em mãos, o profissional responsável pelo anúncio possa tomar a decisão de quais perfis completos deseja visualizar, seja por decisão própria ou por intermédio da análise dos mesmos que podem ser impressos e apresentados ao superior responsável pela posição.
 
+
+### Bugs conhecidos em 21/10/2022
+
+- Sistema de match não rodando;
+- Sistema de alteração de senhas;
+- Página de vaga individual contendo quadros do template que devem ser deletados;
+- Menu suspenso não aparece em aparelhos mobile em visualização vertical. Em visualização horizontal, o menu suspenso aparece e não recolhe;
+- Logos de empresas (página inicial) aparecem comprimidos na visualização vertical;
+- Adicionar vagas não funcionando;
+
+
+
+## Histórico das principais ações durante o projeto
+
 #### 18/08/2022
 
 - Início dos trabalhos, onde foram finalizadas a História do Usuário e a descrição da idéia;
