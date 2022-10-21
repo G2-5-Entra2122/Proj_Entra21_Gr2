@@ -107,7 +107,7 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 
 
-### Bugs conhecidos em 21/10/2022
+## Bugs conhecidos em 21/10/2022
 
 - Sistema de match não rodando;
 - Sistema de alteração de senhas;
