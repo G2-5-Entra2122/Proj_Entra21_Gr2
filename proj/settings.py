@@ -17,7 +17,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = True
+DEBUG = False
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -139,6 +139,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
+
+try:
+    DBPASSWORD=os.getenv('DBPASSWORD')
+except ImportError:
+    pass
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'pye2122g2',
+        'USER': 'pye2122g2',
+        'PASSWORD': DBPASSWORD,
+        'HOST': '3.89.36.150',
+        'PORT': '3306',
+    }
+}
 
 try:
     from . local_settings import *
