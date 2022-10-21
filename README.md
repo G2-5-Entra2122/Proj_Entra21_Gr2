@@ -186,11 +186,6 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 - Criada a conta de email para o grupo de trabalho;
 - Esse endereço será usado para cadastro no Heroku, onde o prjeto será publicado;
-- Endereço: grupo2pythonentra21@gmail.com;
-- Senha: Grupo2entra21;
-- Aberta a conta no Heroku;
-- O endereço de email é o informado acima;
-- A senha é: Grupo2entra2122&
 
 
 ### 20/09/2022
