@@ -6,17 +6,25 @@ from django.contrib.auth.models import User
 
 def add_users(apps,schema_editor):
     DEFAULT_USERS =[
-        ('ambevtech','contato@ambevtech.com.br','@Ambevtech1234'),
-        ('ailos','contato@ailos.com.br', '@Ailos1234'),
-        ('capgemini', 'contato@capgemini.com.br', '@Capgemini1234'),
-        ('datainfo', 'contato@datainfo.com.br', '@Datainfo1234'),
-        ('farmaciasapp','contato@farmaciasapp.com.br', '@Farmaciasapp1234'),
-        ('havanlabs', 'contato@havanlabs.com.br', '@Havanlabs1234'),
-        ('philips','contato@philips.com.br','@Philips'),
-        ('senior','contato@seniorsistemas.com.br','@Seniorsistemas1234'),
-        ('tsystems', 'contato@tsystems.com.br','@Tsystems1234'),
-        ('unifique', 'contato@unifique.com.br', '@Unifique1234'),
-        ('warren', 'contato@warren.com.br', '@Warren1234')
+        ('ambevtech','contato@ambevtech.com.br','@Empresa123'),
+        ('ailos','contato@ailos.com.br', '@Empresa123'),
+        ('capgemini', 'contato@capgemini.com.br', '@Empresa123'),
+        ('datainfo', 'contato@datainfo.com.br', '@Empresa123'),
+        ('farmaciasapp','contato@farmaciasapp.com.br', '@Empresa123'),
+        ('havanlabs', 'contato@havanlabs.com.br', '@Empresa123'),
+        ('philips','contato@philips.com.br','@Empresa123'),
+        ('senior','contato@seniorsistemas.com.br','@Empresa123'),
+        ('tsystems', 'contato@tsystems.com.br','@Empresa123'),
+        ('unifique', 'contato@unifique.com.br', '@Empresa123'),
+        ('warren', 'contato@warren.com.br', '@Empresa123'),
+        ('raquel','raquel@raquel.com.br','@Candidato123'),
+        ('mark','mark@mark.com.br','@Candidato123'),
+        ('nicolas','nicolas@nicolas.com.br','@Candidato123'),
+        ('luiza','luiza@luiza.com.br','@Candidato123'),
+        ('diego','diego@diego.com.br', '@Candidato123'),
+        ('felipe', 'felipe@felipe.com.br', '@Candidato123'),
+        ('jose','jose@jose.com.br','@Candidato123'),
+        ('joao','joao@joao.com.br','@Candidato123')
         ]
     for username, email, password in DEFAULT_USERS:
         user = User.objects.create_user(username, email, password)
