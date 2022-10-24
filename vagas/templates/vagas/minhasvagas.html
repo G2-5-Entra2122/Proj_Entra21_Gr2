@@ -3,14 +3,8 @@
  
  
 {% block content %} 
-<h3>
-    Lista de Vagas
-    <a href="{% url 'minhasvagas-adicionar' %}" class="btn btn-primary btn-sm float-right">Adicionar uma vaga</a>
-</h3>
 
-
-
-<hr> 
+<hr style="margin-top: 100px;"> 
 <div class="table-responsive"></div> 
     <table class="table table-striped"> 
         <tr> 
@@ -47,4 +41,8 @@
         {% endfor %} 
     </table> 
  
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <a href="{% url 'minhasvagas-adicionar' %}" class="btn btn-primary btn-sm float-right">Adicionar uma vaga</a>
+    </div>
+
 {% endblock %}
