@@ -105,6 +105,20 @@ Isso é feito, para que as competências técnicas sejam a primeira vitrine apre
 
 A intenção é que, com os mini-currículos em mãos, o profissional responsável pelo anúncio possa tomar a decisão de quais perfis completos deseja visualizar, seja por decisão própria ou por intermédio da análise dos mesmos que podem ser impressos e apresentados ao superior responsável pela posição.
 
+
+### Bugs conhecidos em 21/10/2022
+
+- Sistema de match não rodando;
+- Sistema de alteração de senhas;
+- Página de vaga individual contendo quadros do template que devem ser deletados;
+- Menu suspenso não aparece em aparelhos mobile em visualização vertical. Em visualização horizontal, o menu suspenso aparece e não recolhe;
+- Logos de empresas (página inicial) aparecem comprimidos na visualização vertical;
+- Adicionar vagas não funcionando;
+
+
+
+## Histórico das principais ações durante o projeto
+
 #### 18/08/2022
 
 - Início dos trabalhos, onde foram finalizadas a História do Usuário e a descrição da idéia;
@@ -186,11 +200,6 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 - Criada a conta de email para o grupo de trabalho;
 - Esse endereço será usado para cadastro no Heroku, onde o prjeto será publicado;
-- Endereço: grupo2pythonentra21@gmail.com;
-- Senha: Grupo2entra21;
-- Aberta a conta no Heroku;
-- O endereço de email é o informado acima;
-- A senha é: Grupo2entra2122&
 
 
 ### 20/09/2022
@@ -295,7 +304,33 @@ A intenção é que, com os mini-currículos em mãos, o profissional responsáv
 
 - Construção de filtros para vagas;
 - Será feito migrate para disponibilizar base de dados aos usuários no repositório local;
-- 
+
+
+### 14/10/2022
+
+- Ajustes na paginação da lista de vagas;
+- continuação da construção de filtros de vagas;
+- cadastramento de vagas no DB;
+- finalizada a inserção do DB;
+- lógica do match entre contratantes e candidatos em andamento;
+- Nova demanda: criar o html de visualização de uma vaga selecionada;
+
+### 17/10/2022
+
+- Filtros para a página de vagas construídos e funcionando parcialmente. Apenas filtra corretamente, se todos os campos estiverem selecionados.
+- Se alguma janela suspensa não sofre modificação, retorna a mensagem de que não há vagas disponíveis;
+- Também foi trabalhado na enumeração, contagem e compressão de objetos;
+
+### 18/10/2022
+
+- Finalizado o filtro de vagas;
+- Novas demandas:
+  - incorporar a parte do filtro da página de lista de vagas e dar pull request;
+  - incorporar a pagina de lista de candidatos + pagina de detalhe de candidato;
+  - arrumar about (botão do linktree); e fazer o pull request;
+  - dar o pull request na pagina de preços;
+  - arrumar o "mostrando 2150 vagas" na pagina de lista de vagas;
+
 
  
 Referências:

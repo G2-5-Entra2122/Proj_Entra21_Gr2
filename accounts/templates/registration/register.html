@@ -2,29 +2,64 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block title %}{{ titulo }}{% endblock %}
-
 {% block content %}
-<div class="row">
-    <div class="col-md-4 offset-md-4">
-        <div class="card  auth-card">
-            <div class="card-body">
-                <h4 class="card-title text-center">{{ titulo }}</h4>
+<div class="twm-home1-banner-section site-bg-gray bg-cover pb-4"
+                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg');">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <div class="card auth-card">
+                            <div class="card-body">
+                                <form method="post">
+                                    <div class="modal-header text-center justify-content-center">
+    
+                                        <p>Cadastre-se e tenha acesso a todos os recursos do Experts 4 Hire</p>
+            
+                                    </div>
+                                
+                                    <div class="modal-body">
+                                        <div class="twm-tabs-style-2">
+                                            <div class="modal-header text-center justify-content-center">
+                                                <h3><strong>{{ titulo }}</strong></h3>
+                                            </div>
+               
+                                            <div class="tab-content" id="myTabContent">
+                                            <!--Signup Candidate Content-->  
+                                            <div class="tab-pane fade show active">
+                                                <div class="row">
+                                
+                                                    {% csrf_token %}
         
-                <form method="post">
-                    {% csrf_token %}
         
+                                                    {{ form|crispy }}
+                                
+                                                    <button type="submit" class="site-button">Cadastrar</button>
+                                                    
+                                                </div>
+                                            </div>
         
-                    {{ form|crispy }}
+                                            </div>
+                                        </div>  
+                                    </div>
+                                
+                                    <div class="modal-footer">
+                                        <span class="modal-f-title">Login ou entre com</span>
+                                        <ul class="twm-modal-social">
+                                            <li><a href="https://www.facebook.com/" class="facebook-clr"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://twitter.com/" class="twitter-clr"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/" class="linkedin-clr"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="https://www.google.com.br/" class="google-clr"><i class="fab fa-google"></i></a></li>
+                                        </ul>
+                                    </div>
+                                
+                                </form>
 
-                    <button type="submit" class="btn btn-light mt-3">Cadastrar</button>
-                </form>
-
-              
-            </div>
-        </div>
-    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </div>
+
+    
 {% endblock %}
 
 {% block scripts %}

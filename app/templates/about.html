@@ -1,185 +1,406 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static\css\about.css">
-    <title>Sobre Nós</title>
-</head>
+{% extends 'base.html' %}
+
+{% load static %}
+    {% block title %}
+    <title>Experts 4 Hire | Sobre</title>
+    {% endblock %}
+{% block content %}
 <body>
-    {% load static %}
-    <img width="200" src="{% static 'images/django.png' %}" />
-    <p>
-        <div class="center">
-            <h1>Grupo 2</h1>
-        </div>
-        <div class="center">
-            <h1>Turma Python Matutino On-line</h1>
-        </div>
-        <div class="center">
-            <h1>Entra21 - 2022</h1>
-        </div>
-        <p>
-            <div class="center">
-                <div class="grupo">
-                    Somos o Grupo 2, responsável pelo projeto Experts 4 Hire, é formado pelos alunos abaixo:
+
+        <!-- CONTENT START -->
+        <div class="page-content">
+
+            <!-- INNER PAGE BANNER -->
+            <div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url('/static/images/banner/top-page-bg.jpg');">
+                <div class="overlay-main site-bg-white opacity-01"></div>
+                <div class="container">
+                    <div class="wt-bnr-inr-entry">
+                        <div class="banner-title-outer">
+                            <div class="banner-title-name">
+                                <h2 class="wt-title">Conheça nossa equipe!</h2>
+                            </div>
+                        </div>                     
+                        
+                            <div>
+                                <ul class="wt-breadcrumb breadcrumb-style-2">
+                                    <li><a href="{% url 'index' %}">Início</a></li>
+                                    <li>Equipe</li>
+                                </ul>
+                            </div>                 
+                    </div>
                 </div>
             </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/diego.jpeg' %}"  />
-        </div>
-        <div class="center">
-            <h3>Diego Dalmolini</h3>
-        </div>
-        <p>
-            <div class="center">
-                Prazer tenho 25 anos e atualmente sou estudante do programa 
-                ENTRA21 - Programação em Python.
-                Sou formado em técnico em química pelo Instituto Federal, 
-                mas hoje busco alcançar novos horizontes na área de tecnologia
-                ao qual desde cedo tive muito apreço. 
-                Atualmente estou aprendendo novos recursos necessários para me
-                tornar um profissional completo e preparado para o mercado de trabalho.
-                Utilizo das metodologias ágeis para facilitar a organização e
-                otimizar os processos. 
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/felipe.png' %}"  />
-        </div>
-        <div class="center">
-            <h3>Felipe Sartorato</h3>
-        </div>
-        <p>
-            <div class="center">
-                Entusiasta da Tecnologia.
-                Utilizo das metodologias ágeis para facilitar a organização e
-                otimizar os processos. 
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/santini.png' %}"  />
-        </div>
-        <div class="center">
-            <h3>João Paulo Correia</h3>
-        </div>
-        <p>
-            <div class="center">
-                Olá, sou o Santini, moro em Balneário Camboriu. 
-                Entusiasta da Tecnologia.
-                Utilizo das metodologias ágeis para facilitar a organização e
-                otimizar os processos.
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/jose.jpg' %}"  />
-        </div>
-        <div class="center">
-            <h3>José Orli Goetten</h3>
-        </div>
-        <p>
-            <div class="center">
-                Profissional no ramo da hotelaria com formação em Design de
-                Produto e entusiasta na gastronomia. Investindo em conhecimentos
-                no ramo da tecnologia, inicialmente com ênfase em ferramentas
-                de design e no momento cursando o programa Entra 21 com foco
-                em back end. No programa Entra 21 está cursando Python,
-                banco de dados e metodologias ágeis. Durante o período do
-                programa vem buscando aprimorar seus conhecimentos por meio de
-                plataformas e canais.
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/luiza.jpg' %}"  />
-        </div>
-        <div class="center">
-            <h3>Luíza Bicalho Pollmann</h3>
-        </div>
-        <p>
-            <div class="center">
-                Mineira, mas moro em Florianópolis. 
-                Sou Engenheira Ambiental, busco uma recolocação no mercado e 
-                encontrei na tecnologia a oportunidade de migrar de carreira.
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/mark.png' %}"  />
-        </div>
-        <div class="center">
-            <h3>Mark Odebrecht</h3>
-        </div>
-        
-        <p>
-            <div class="center">
-                Natural de Rio do Sul, 47 anos de idade, formado em Química e
-                MBA em Gestão Empresarial, construiu sua carreira na Indústria 
-                de Tintas, mais especificamente em laboratórios de P&D.
-                Pelo grande interesse em programação, resolveu buscar a
-                migração na carreira focando no Python para fazer isso acontecer.
-                Idealizador do projeto, atuou como PO e também na montagem de
-                views, templates e 
-                bancos de dados fictícios, além de ser o responsável pela
-                manutenção do arquivo README e fazer os 
-                merges da branch "Developer" à "Main".
-            </div>
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/nicolas.jpg' %}"  />
-        </div>
-        <div class="center">
-            <h3>Nicolas Felipe da Silva</h3>
-        </div>
-        <p>
-            <div class="center">
-                Natural de Schroeder, SC, 20 anos de idade, está iniciando no mundo da programação, 
-                focando no front-end com as tecnologias HTML5, CSS3, sass, bootstrap, JavaScript e ReactJS.
-                Neste projeto, ficou encarregado de ser um dos desenvolvedores front-end.
-            </div>
+            <div class="section-full p-t120  p-b90 site-bg-white">
+                
 
-        </p>
-    </p>
-    <p>
-        <div class="center">
-            <img width = "147.6" src="{% static 'images/raquel.png' %}" />
+                <div class="container">
+                    <div class="row">
+                        
+
+                            <div class="twm-candidates-list-wrap">
+                                <ul>
+                                     <li>
+                                         <div class="twm-candidates-list-style1 mb-5">
+                                             <div class="twm-media">
+                                                 <div class="twm-media-pic">
+                                                    <img src="{% static 'images/diego.jpeg' %}" alt="#">
+                                                 </div>
+                                                 <div class="twm-candidates-tag"><a href="https://linktr.ee/diegodalmolini"><span>Contatos</span></a></div>
+                                             </div>
+                                             <div class="twm-mid-content">
+                                                 <a href="https://linktr.ee/diegodalmolini" class="twm-job-title">
+                                                     <h5>Diego Dalmolini </h5>
+                                                 </a>
+                                                 <p>Prazer tenho 25 anos e atualmente sou estudante do programa 
+                                                    ENTRA21 - Programação em Python.
+                                                    Sou formado em técnico em química pelo Instituto Federal, 
+                                                    mas hoje busco alcançar novos horizontes na área de tecnologia
+                                                    ao qual desde cedo tive muito apreço. 
+                                                    Atualmente estou aprendendo novos recursos necessários para me
+                                                    tornar um profissional completo e preparado para o mercado de trabalho.
+                                                    Utilizo das metodologias ágeis para facilitar a organização e
+                                                    otimizar os processos. <br>
+                                                    <br>
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (47) 99610-6088<br>
+                                                    E-mail: diegosfs_ufsc@hotmail.com<br>
+                                                    Linkedin: linkedin.com/in/diegodalmolini<br>
+                                                    Github: github.com/diegodalmolini<br>
+                                                    https://linktr.ee/diegodalmolini<br></p>
+                                                 
+                                                 <div class="twm-fot-content">
+                                                     <div class="twm-left-info">
+                                                        <p class="twm-candidate-address"><i class="feather-map-pin"></i>Jaraguá do Sul</p>
+                                                        <div class="twm-jobs-vacancies"><span></span></div>
+                                                     </div>
+                                                     <div class="twm-right-btn">
+                                                         <a href="https://linktr.ee/diegodalmolini" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                     </div>
+                                                </div>
+                                             </div>
+                                             
+                                         </div>
+                                     </li>
+
+                                     <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/felipe.png' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/felipesartorato"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/felipesartorato" class="twm-job-title">
+                                                    <h5>Felipe Sartorato</h5>
+                                                </a>
+                                                <p> Olá, sou o Felipe, tenho 28 anos, músico e desenvolvedor Python em constante aprendizado.
+                                                    Aberto a novos desafios e experiências e disposto a pôr em 
+                                                    prática os conhecimentos adquiridos para expandir meus horizontes
+                                                    dentro da área da tecnologia.<br>
+                                                    <br> 
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (48) 99177-8339<br>
+                                                    E-mail: felipesartorato@proton.me<br>
+                                                    Linkedin: linkedin.com/in/felipehsartorato<br>
+                                                    Github: github.com/fsartorato23<br>
+                                                    https://linktr.ee/felipesartorato</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Palhoça</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/felipesartorato" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/santini.png' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/joaopaulosantini"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/joaopaulosantini" class="twm-job-title">
+                                                    <h5>João Paulo Correia</h5>
+                                                </a>
+                                                <p>Olá, eu sou o Santini, sou paulista do interior e resido há 8
+                                                    (oito) anos em Camboriú, tenho 31 (trinta e um) anos, desde os 
+                                                    17 (dezessete) trabalhei na área administrativa, e desde a 
+                                                    entrada no programa ENTRA21 queimei minha ponte e mergulhei de 
+                                                    cabeça na área de tecnologia com a intenção de migrar minha 
+                                                    carreira para algo que me dê prazer em desempenhar. 
+                                                    Busco uma pronta recolocação no mercado para que eu possa 
+                                                    direcionar o meu foco e energia dos meus estudos para as 
+                                                    necessidades da empresa e me firmar como um profissional de T.I.,
+                                                    sabendo que as habilidades ['Lógica de Programação',
+                                                    'Banco de Dados', 'Metodologias Ágeis', 'Git GitHub', 'Python',
+                                                    'Django'] são compatíveis apenas com o ínico dessa carreira.
+                                                    Boa comunicação,  trabalho colaborativo, empatia e com uma visão
+                                                    sistêmica, me adapto fácil a qualquer ambiente e grupo de trabalho.
+                                                    Alguns dos meus hobbies são: Viajar, jogar e assistir futebol, 
+                                                    churrasco e cinema.<br>
+                                                    <br>
+
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (47) 99116-1008 <br>
+                                                    E-mail: joaopaulosantini@gmail.com <br>
+                                                    Linkedin: linkedin.com/in/jpsantini-tec/ <br>
+                                                    Github: github.com/Santini18 <br>
+                                                    https://linktr.ee/joaopaulosantini <br></p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Balneário Camboriú</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/joaopaulosantini" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/jose.jpg' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/JoseGoetten"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/JoseGoetten" class="twm-job-title">
+                                                    <h5>José Orli Goetten</h5>
+                                                </a>
+                                                <p>Profissional no ramo da hotelaria com formação em Design de
+                                                    Produto e entusiasta na gastronomia. Investindo em conhecimentos
+                                                    no ramo da tecnologia, inicialmente com ênfase em ferramentas
+                                                    de design e no momento cursando o programa Entra 21 com foco
+                                                    em back end. No programa Entra 21 está cursando Python,
+                                                    banco de dados e metodologias ágeis. Durante o período do
+                                                    programa vem buscando aprimorar seus conhecimentos por meio de
+                                                    plataformas e canais.<br>
+                                                    <br>
+                                    
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (47) 99657-2521<br>
+                                                    E-mail: joseh.goetten@gmail.com<br>
+                                                    Linkedin: linkedin.com/in/josegoetten-dev<br>
+                                                    Github: github.com/JoseGoetten<br>
+                                                    https://linktr.ee/JoseGoetten</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Palhoça</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/JoseGoetten" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/luiza.jpg' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/luizapollmann"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/luizapollmann" class="twm-job-title">
+                                                    <h5>Luiza Bicalho Pollmann</h5>
+                                                </a>
+                                                <p> Mineira, engenheira sanitarista e ambiental em transição de carreira
+                                                    para a área da tecnologia. O ambiente de inovação me fascina e
+                                                    é com isso que eu quero trabalhar. Iniciei a transição de 
+                                                    carreira em 2021, cursando desenvolvimento web nível 1 e 
+                                                    encontrei no Entra21 a possibilidade de me capacitar mais e
+                                                    finalmente ingressar nesse mercado de trabalho.<br>
+                                                    <br>
+                                    
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (48) 99852-7352<br>
+                                                    E-mail: luizabpollmann@gmail.com<br>
+                                                    Linkedin: linkedin.com/in/luiza-bicalho-pollmann<br>
+                                                    Github: github.com/luizabpollmann<br>
+                                                    https://linktr.ee/luizapollmann</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Florianópolis</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/luizapollmann" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/mark.png' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/markodebrecht?utm_source=qr_code"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/markodebrecht?utm_source=qr_code" class="twm-job-title">
+                                                    <h5>Mark Odebrecht</h5>
+                                                </a>
+                                                <p>Natural de Rio do Sul, 47 anos de idade, formado em Química e
+                                                    MBA em Gestão Empresarial, construiu sua carreira na Indústria 
+                                                    de Tintas, mais especificamente em laboratórios de P&D.
+                                                    Pelo grande interesse em programação, resolveu buscar a
+                                                    migração na carreira focando no Python para fazer isso acontecer.
+                                                    Idealizador do projeto, atuou como PO e também na montagem de
+                                                    views, templates e 
+                                                    bancos de dados fictícios, além de ser o responsável pela
+                                                    manutenção do arquivo README e fazer os 
+                                                    merges da branch "Developer" à "Main".<br>
+                                                    <br>
+                                    
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (11) 94842-0395<br>
+                                                    E-mail: markodebrecht@gmail.com<br>
+                                                    Linkedin: linkedin.com/in/markodebrecht<br>
+                                                    Github: github.com/Mark-Odebrecht<br>
+                                                    https://linktr.ee/markodebrecht?utm_source=qr_code</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Rio do Sul</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/markodebrecht?utm_source=qr_code" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/nicolas.jpg' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/nicolasfelsi"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/nicolasfelsi" class="twm-job-title">
+                                                    <h5>Nicolas Felipe da Silva</h5>
+                                                </a>
+                                                <p>Natural de Schroeder, SC, 20 anos de idade, estou em busca de meu primeiro emprego como desenvolvedor, fazendo cursos fullstack focados nas tecnologias que pretendo utilizar futuramente. Sempre evoluindo na área para crescer nesse mercado que possui diversas oportunidades, e estou sempre pegando projetos e desafios para aperfeiçoar minhas habilidades.
+                                                Neste projeto, fiquei encarregado de ser um dos desenvolvedores front-end.<br><br>                                                   
+                                    
+                                                    <b>Contatos:</b><br>
+                                                    Fone: (47) 98445-3110<br>
+                                                    E-mail: nicolasfelipe3702@gmail.com<br>
+                                                    Linkedin: linkedin.com/in/nicolasfelsidev<br>
+                                                    Github: github.com/Nicolas-FelSi<br>
+                                                    https://linktr.ee/nicolasfelsi</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Schreder</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/nicolasfelsi" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="twm-candidates-list-style1 mb-5">
+                                            <div class="twm-media">
+                                                <div class="twm-media-pic">
+                                                   <img src="{% static 'images/raquel.png' %}" alt="#">
+                                                </div>
+                                                <div class="twm-candidates-tag"><a href="https://linktr.ee/raquelschwartz"><span>Contatos</span></a></div>
+                                            </div>
+                                            <div class="twm-mid-content">
+                                                <a href="https://linktr.ee/raquelschwartz" class="twm-job-title">
+                                                    <h5>Raquel Schwartz dos Santos</h5>
+                                                </a>
+                                                <p>Natural de Blumenau/SC, com 34 anos hoje vivo em Barra Velha.
+                                                    Graduada em Ciências Contábeis, fotógrafa por amor, resolvi 
+                                                    migrar de carreira e buscar novas oportunidades na tecnologia.
+                                                    Trabalhei por mais de 13 anos na área fiscal e contábil, com
+                                                    experiências em implantação/migração de sistemas e treinamentos.
+                                                    Em busca de novos desafios profissionais na área da Tecnologia
+                                                    da Informação. 
+                                                    Dinâmica, responsável, comunicativa e com espírito de
+                                                    equipe.
+                                                    Pronta para colocar em prática meus conhecimentos e habilidades.
+                                                    Disposta a me aprimorar cada vez mais buscando conhecimentos e 
+                                                    almejando meu crescimento profissional e também da empresa.
+                                                    Atualmente estou cursando o programa Entra21 em Python.
+                                                    No projeto atuo como Scrum Master, desenvolvedora, assim como 
+                                                    tester.<br>
+                                                    <br>
+                                    
+                                                    <b>Contatos: </b><br>
+                                                    Fone: (47) 98483-8370<br>
+                                                    E-mail: raquel.bnu@gmail.com<br>
+                                                    Linkedin: linkedin.com/in/raquel-schwartz-dos-santos<br>
+                                                    Github: github.com/RaquelSchwartz<br>
+                                                    https://linktr.ee/raquelschwartz</p>
+                                                
+                                                <div class="twm-fot-content">
+                                                    <div class="twm-left-info">
+                                                       <p class="twm-candidate-address"><i class="feather-map-pin"></i>Barra Velha</p>
+                                                       <div class="twm-jobs-vacancies"><span></span></div>
+                                                    </div>
+                                                    <div class="twm-right-btn">
+                                                        <a href="https://linktr.ee/raquelschwartz" class="twm-view-prifile site-text-primary">Entre em contato comigo</a>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>  
+            
+     
         </div>
-        <div class="center">
-            <h3>Raquel Schwartz dos Santos</h3>
-        </div>
-        <p>
-            <div class="center">
-                Natural de Blumenau/SC, com 34 anos hoje vivo em Barra Velha.
-                Graduada em Ciências Contábeis, fotógrafa por amor, resolvi 
-                migrar de carreira e buscar novas oportunidades na tecnologia.
-                Trabalhei por mais de 13 anos na área fiscal e contábil, com
-                experiências em implantação/migração de sistemas e treinamentos.
-                Em busca de novos desafios profissionais na área da Tecnologia
-                da Informação. 
-                Dinâmica, responsável, comunicativa e com espírito de
-                equipe.
-                Pronta para colocar em prática meus conhecimentos e habilidades.
-                Disposta a me aprimorar cada vez mais buscando conhecimentos e 
-                almejando meu crescimento profissional e também da empresa.
-                Atualmente estou cursando o programa Entra21 em Python.
-                No projeto atuo como Scrum Master, desenvolvedora, assim como 
-                tester.
-            </div>
-        </p>            
-    </p>
+
+
 </body>
+
 </html>
+{% include 'rodape.html'%}
+{% endblock %}

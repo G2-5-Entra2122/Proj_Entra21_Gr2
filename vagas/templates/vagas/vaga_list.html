@@ -3,11 +3,47 @@
 {% load static %}
 
 {% block content %}
-    <h1> Vagas disponíveis </h1>
+<div class="container">
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Vagas</h1>
+        <p class="lead">Todas as vagas disponíveis</p>
+    </div>
+    <div class="py-5">
+        <div class="row">
+            {% for vaga in object_list %}
+            <div class="col-md-4">
+                <a class="text-dark" href=""></a>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-body">
+                        <h2 style="font-size:18px;font-weight:bold;min-height:42px;">
+                            {{ vaga.nome }}
+                        </h2>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">Nivel = {{ vaga.nivel}}</small>
+                            <!-- <small class="text-muted">{{ vaga.descricao}}</small> -->
+                            <!-- <small class="text-muted">{{ vaga.local}}</small> -->
+                            <small class="text-muted">Range salarial R$ {{ vaga.salmin }} a {{ vaga.salmax }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <h2> Não foram encontradas vagas disponíveis </h2>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    <!-- <h1> Vagas disponíveis </h1>
     <hr>
     <body>
         <table class="table table-striped">
+            {{ curriculo }}
+
+          
             {% for x in vaga_list %}
+            <p>
+               
+            </p>
             <p>
                 <h3> {{ x.nome }} - {{  x.nivel }} </h3>
             </p>
@@ -47,5 +83,5 @@
         </table>
         {% empty %}
         <h2> Não foram encontradas vagas disponíveis </h2>
-        {% endfor %}
+        {% endfor %} -->
 {% endblock %}

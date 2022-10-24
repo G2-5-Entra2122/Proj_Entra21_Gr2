@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+    {% block title %}
+    <title>Experts 4 Hire | Início</title>
+    {% endblock %}
 {% block content %}
         <!-- CONTENT START -->
         <div class="page-content">
 
             <!--Banner Start-->
             <div class="twm-home1-banner-section site-bg-gray bg-cover"
-                style="background-image:url({% static 'images/main-slider/slider1/bg1.jpg' %})">
+                style="background-image:url('/static/images/main-slider/slider1/bg1.jpg')">
                 <div class="row">
 
                     <!--Left Section-->
@@ -138,7 +141,7 @@
                                         </div>
                                         <h4 class="twm-title">Registre<br>sua conta</h4>
                                     </div>
-                                    <p>Você precisa criar sua conta com o máximo de informações possível.</p>
+                                    <p>Você precisa criar sua conta com o máximo de informações possíveis.</p>
                                 </div>
                             </div>
 
@@ -167,18 +170,17 @@
                                         </div>
                                         <h4 class="twm-title">Anexe <br>seu currículo</h4>
                                     </div>
-                                    <p>Você deverá anexar seu currículo com mais informações sobre você</p>
+                                    <p>Você deverá anexar seu currículo com mais informações sobre você.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <!-- EXPLORE NEW LIFE START -->
             <div class="section-full p-t120 p-b120 twm-explore-area bg-cover "
-                style="background-image: url({% static 'images/background/bg-1.jpg' %});">
+                style="background-image: url('/static/images/background/bg-1.jpg' );">
                 <div class="container">
 
                     <div class="section-content">
@@ -202,14 +204,13 @@
                                         <div class="twm-r-circle-1"></div>
                                         <div class="twm-r-circle-2"></div>
 
-                                        <div class="twm-title-small">Candidaturas simplificadas</div>
+                                        <div class="twm-title-small">Projeto Fictício</div>
                                         <div class="twm-title-large">
-                                            <h2>Comece a trabalhar agora.
-                                                Cadastre-se. </h2>
-                                            <p>Faça o seu cadastro, encontre o trabalho ideal, candidate-se de forma simplificada e comece a trabalhar logo!</p>
+                                            <h2>Este é um site fictício para portfólio. </h2>
+                                            <p>Este é um site fictício elaborado por alunos do Entra21 - Proway - Turma de Python online, como trabalho de conclusão de curso.</p>
                                         </div>
                                         <div class="twm-upload-file">
-                                            <button type="button" class="site-button">Envie seu currículo<i
+                                            <button type="button" class="site-button"><a href="{% url 'about' %}">Entre em contato conosco</a><i
                                                     class="feather-upload"></i></button>
                                         </div>
                                     </div>
@@ -243,8 +244,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w1.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/ambevtech190px.png' %}"
+                                                alt="logo ambev-tech"></a>
                                     </div>
                                 </div>
                             </div>
@@ -252,8 +253,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w2.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/capgemini190px.png' %}"
+                                                alt="logo capgemini"></a>
                                     </div>
                                 </div>
                             </div>
@@ -261,8 +262,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w3.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/centralailos190px.png' %}"
+                                                alt="logo central-ailos"></a>
                                     </div>
                                 </div>
                             </div>
@@ -270,8 +271,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w4.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/datainfo190px.png' %}"
+                                                alt="logo data-info"></a>
                                     </div>
                                 </div>
                             </div>
@@ -279,8 +280,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w5.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/farmaciasapp190px.png' %}"
+                                                alt="logo farmacias-app"></a>
                                     </div>
                                 </div>
                             </div>
@@ -288,8 +289,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w6.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/havanlabs190px.png' %}"
+                                                alt="logo havan-labs"></a>
                                     </div>
                                 </div>
                             </div>
@@ -297,8 +298,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w1.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/philips190px.png' %}"
+                                                alt="logo philips"></a>
                                     </div>
                                 </div>
                             </div>
@@ -306,8 +307,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w2.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/senior190px.png' %}"
+                                                alt="logo sênior"></a>
                                     </div>
                                 </div>
                             </div>
@@ -315,8 +316,8 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w3.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/tsystems190px.png' %}"
+                                                alt="logo t-systems"></a>
                                     </div>
                                 </div>
                             </div>
@@ -324,11 +325,19 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo client-logo-media">
-                                        <a href="employer-list.html"><img src="{% static 'images/client-logo/w5.png' %}"
-                                                alt=""></a>
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/unifique190px.png' %}"
+                                                alt="logo unifique"></a>
                                     </div>
                                 </div>
                             </div>
+                            <div class="item">
+                                <div class="ow-client-logo">
+                                    <div class="client-logo client-logo-media">
+                                        <a href="employer-list.html"><img src="{% static 'images\jobs-company/warren190px.png' %}"
+                                                alt="logo warren"></a>
+                                    </div>
+                                </div>
+                            </div>                            
 
                         </div>
                     </div>
@@ -364,7 +373,7 @@
                                             </a>
                                             <p class="twm-job-address">Blumenau, Santa Catarina - Brasil
                                             </p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio" //colocar link da lista de empregos
+                                            <a href="{% url 'about' %}" 
                                                 class="twm-job-websites site-text-primary">Clique e saiba mais</a>
                                         </div>
                                         <div class="twm-right-content">
@@ -386,7 +395,7 @@
                                             </a>
                                             <p class="twm-job-address">Florianópolis, Santa Catarina - Brasil
                                             </p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio"
+                                            <a href="{% url 'about' %}"
                                                 class="twm-job-websites site-text-primary">Clique e saiba mais</a>
                                         </div>
                                         <div class="twm-right-content">
@@ -408,7 +417,7 @@
                                             </a>
                                             <p class="twm-job-address">Blumenau, Santa Catarina - Brasil
                                             </p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio"
+                                            <a href="{% url 'about' %}"
                                                 class="twm-job-websites site-text-primary">Clique e saiba mais</a>
                                         </div>
                                         <div class="twm-right-content">
@@ -430,8 +439,8 @@
                                             </a>
                                             <p class="twm-job-address">Blumenau, Santa Catarina - Brasil
                                             </p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio"
-                                                class="twm-job-websites site-text-primary">https://thewebmax.com</a>
+                                            <a href="{% url 'about' %}"
+                                                class="twm-job-websites site-text-primary">{% url 'about' %}</a>
                                         </div>
                                         <div class="twm-right-content">
                                             <div class="twm-jobs-category green"><span
@@ -452,13 +461,13 @@
                                             </a>
                                             <p class="twm-job-address">Florianópolis, Santa Catarina - Brasil
                                             </p>
-                                            <a href="https://themeforest.net/user/thewebmax/portfolio"
+                                            <a href="{% url 'about' %}"
                                                 class="twm-job-websites site-text-primary">Clique e saiba mais</a>
                                         </div>
                                         <div class="twm-right-content">
                                             <div class="twm-jobs-category green"><span
-                                                    class="twm-bg-golden">Temporary</span></div>
-                                            <div class="twm-jobs-amount">$1700 <span>/ Month</span></div>
+                                                    class="twm-bg-golden">Temporário</span></div>
+                                            <div class="twm-jobs-amount">R$3700 <span>/ Mês</span></div>
                                             <a href="job-detail.html" class="twm-jobs-browse site-text-primary">Candidatura simplificada
                                                 </a>
                                         </div>
@@ -466,7 +475,7 @@
                                 </li>
                             </ul>
                             <div class="text-center m-b30">
-                                <a href="job-list.html" class=" site-button">Encontre sua vaga</a>
+                                <a href="{% url 'vaga-list' %}" class=" site-button">Encontre sua vaga</a>
                             </div>
                         </div>
                     </div>
