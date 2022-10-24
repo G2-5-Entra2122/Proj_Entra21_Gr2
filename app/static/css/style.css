@@ -272,8 +272,9 @@ h4 {
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
+  margin-left: 40px; /*inclui aqui - a fonte h5 nao estava sendo usada, coloquei com esse espaçamento para poder usar na página sobre*/
 }
 
 h6 {
@@ -4860,33 +4861,31 @@ button.scroltop span {
 }
 
 /*Pagination Style*/
-.pagination-outer {
-  padding-top: 30px;
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@media (max-width: 991px) {
-  .pagination-outer {
-    margin-bottom: 30px;
-  }
-}
-.pagination-outer .pagination-style1 {
+
+.pagination-style1 {
   position: relative;
   display: inline-block;
 }
-.pagination-outer .pagination-style1 ul {
+.pagination-style1 ul {
   list-style: none;
   margin-bottom: 0px;
 }
-.pagination-outer .pagination-style1 ul li {
+.pagination-style1 ul li {
   position: relative;
   margin: 0px 3px 0px;
   display: inline-block;
 }
 @media (max-width: 400px) {
-  .pagination-outer .pagination-style1 ul li {
+  .pagination-style1 ul li {
     margin: 0px 2px 0px;
   }
 }
-.pagination-outer .pagination-style1 ul li.prev a {
+.pagination-style1 ul li.prev a {
   width: 50px;
   height: 50px;
   font-size: 16px;
@@ -4896,12 +4895,12 @@ button.scroltop span {
   letter-spacing: 1px;
 }
 @media (max-width: 420px) {
-  .pagination-outer .pagination-style1 ul li.prev a {
+  .pagination-style1 ul li.prev a {
     width: 30px;
     height: 30px;
   }
 }
-.pagination-outer .pagination-style1 ul li.next a {
+.pagination-style1 ul li.next a {
   width: 50px;
   height: 50px;
   font-size: 16px;
@@ -4911,12 +4910,12 @@ button.scroltop span {
   letter-spacing: 1px;
 }
 @media (max-width: 420px) {
-  .pagination-outer .pagination-style1 ul li.next a {
+  .pagination-style1 ul li.next a {
     width: 30px;
     height: 30px;
   }
 }
-.pagination-outer .pagination-style1 ul li a {
+.pagination-style1 ul li a {
   position: relative;
   width: 50px;
   height: 50px;
@@ -4930,17 +4929,17 @@ button.scroltop span {
   font-weight: 400;
 }
 @media (max-width: 480px) {
-  .pagination-outer .pagination-style1 ul li a {
+  .pagination-style1 ul li a {
     width: 30px;
     height: 30px;
     line-height: 30px;
   }
 }
-.pagination-outer .pagination-style1 ul li.active a {
+.pagination-style1 ul li.active a {
   background-color: #3996F4;
   color: #fff;
 }
-.pagination-outer .pagination-style1 ul li:hover a {
+.pagination-style1 ul li:hover a {
   background-color: #3996F4;
   color: #fff;
 }
@@ -6739,6 +6738,10 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 /*Job post section*/
+.twm-job-address {
+  width: 90%;
+  text-align: justify;
+}
 .twm-jobs-list-wrap {
   max-width: 910px;
   margin: 0px auto;
@@ -6764,8 +6767,12 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 @media (max-width: 767px) {
   .twm-jobs-list-style1 {
     text-align: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 30px !important;
+  }
+  .twm-job-address {
+    width: 100%;
   }
 }
 .twm-jobs-list-style1 .twm-media {
@@ -6825,6 +6832,8 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   color: #17171d;
   margin: 20px 0px 10px 0px;
   font-size: 14px;
+  width: 200px;
+  padding: 0 10px 0 10px;
 }
 .twm-jobs-list-style1 .twm-right-content .twm-jobs-amount span {
   color: #046c38;
@@ -8241,10 +8250,11 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   padding: 20px;
   border-radius: 10px;
   display: flex;
-  align-items: center;
+  /*align-items: center;*/ /*retirei daqui */
   width: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
+  text-align: justify;
 }
 @media (max-width: 575px) {
   .twm-candidates-list-style1 {
@@ -8255,7 +8265,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .twm-candidates-list-style1 .twm-media {
   width: 110px;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 10px; /*essa aqui é a distancia da foto ate o inicio do bloco à esquerda*/
 }
 @media (max-width: 575px) {
   .twm-candidates-list-style1 .twm-media {
@@ -8265,13 +8275,13 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   }
 }
 .twm-candidates-list-style1 .twm-media .twm-media-pic {
-  width: 90px;
-  height: 90px;
+  width: 120px; /*aqui fica a foto individual na página sobre/about/ candidato list*/
+  height: 120px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
   top: -50px;
-  margin-bottom: -30px;
+  margin-bottom: -40px;
 }
 .twm-candidates-list-style1 .twm-media .twm-media-pic img {
   display: inline-block;
@@ -8279,12 +8289,14 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 .twm-candidates-list-style1 .twm-media .twm-candidates-tag span {
   color: #4882FF;
   border-radius: 5px;
-  padding: 5px 12px;
+  padding: 5px 29px; /*aqui é o tamanho do botão embaixo da foto  na pagina sobre*/
   background-color: #dbe6f7;
 }
 .twm-candidates-list-style1 p {
   font-size: 14px;
   margin-bottom: 5px;
+  margin-left: 40px; /* aqui fica a margem do texto de descrição de cada pessoa no sobre*/
+  margin-right: 30px;
 }
 .twm-candidates-list-style1 .twm-mid-content {
   flex-grow: 1;
@@ -8327,7 +8339,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 }
 
 /*Candidate grid*/
-.twm-candidates-grid-style1 {
+/*.twm-candidates-grid-style1 {
   background-color: #fff;
   border: 1px solid #ddd;
   position: relative;
@@ -8357,7 +8369,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   padding: 5px 12px;
   background-color: #046c38;
   /* nao encontrei #046c38 é um azul bem clarinho de fundo*/
-}
+/*}
 .twm-candidates-grid-style1 p {
   font-size: 14px;
   margin-bottom: 10px;
@@ -8386,7 +8398,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   color: #046c38;
   margin-left: 5px;
   /* nao encontrei #046c38 é verde*/
-}
+/*}
 .twm-candidates-grid-style1 .twm-fot-content .twm-left-info {
   display: flex;
   justify-content: space-between;
@@ -9617,7 +9629,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   }
 }
 
-/*Side Map*/ /*
+/*Side Map*/ 
 .twm-s-map-iframe {
   padding: 20px;
   background-color: #fff;
@@ -9629,7 +9641,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
   border: 0px;
   filter: grayscale(100%);
 }
-Aqui eu nao identifiquei nada entao exclui */
+/*Aqui eu nao identifiquei nada entao exclui */
 /*Side Map2*/ /*
 .twm-m-map-iframe {
   background-color: #fff;
@@ -9643,13 +9655,11 @@ Aqui eu nao identifiquei nada entao exclui */
 }
 */
 /*Sidebar Info*/
-/*
 .twm-s-info3 {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(56, 152, 226, 0.3);
   padding: 30px;
-  margin-top: 90px;
 }
 .twm-s-info3 .twm-s-info-logo-section {
   position: relative;
@@ -9703,7 +9713,6 @@ Aqui eu nao identifiquei nada entao exclui */
   display: block;
   text-align: center;
 }
-*/
 /*Sidebar Info*/ /*
 .twm-s-info {
   background-color: #fff;
@@ -13215,6 +13224,14 @@ strong {
   }
 }
 /*Candidate pages start------------------------------------------------------------*/
+.btn-filter {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #0D6EFD;
+  color: white;
+  border: none;
+}
+
 .side-bar-st-1 {
   background: #d4e6ff;
   padding: 30px;
