@@ -2,12 +2,41 @@
 
 from django.db import migrations
 
+def criar_candidatos(apps, schema_editor):
+    DEFAULT_CANDIDATOS = [
+        ("Luiza","Pollmann","089.585.712-05","88030-361","1992-05-20","https://github.com/luizabpollmann","https://www.linkedin.com/in/luiza-bicalho-pollmann/","https://www.facebook.com/luiza.bicalho.94/","https://www.instagram.com/luizapollmann/","Mineira, engenheira sanitarista e ambiental em transição de carreira para a área da tecnologia. O ambiente de inovação me fascina e é com isso que eu quero trabalhar. Iniciei a transição de carreira em 2021, cursando desenvolvimento web nível 1 e encontrei no Entra21 a possibilidade de me capacitar mais e finalmente ingressar nesse mercado de trabalho.",15),
+        ("Nicolas","Felipe da Silva","132.321.599-82","89275-000","2002-07-03","https://github.com/Nicolas-FelSi","https://www.linkedin.com/in/nicolasfelsidev/","	","	","Me chamo Nicolas, tenho 20 anos e estou em busca de meu primeiro emprego como desenvolvedor, fazendo cursos fullstack focados nas tecnologias que pretendo utilizar futuramente que estão focados no javascript, e estou sempre pegando projetos e desafios para aperfeiçoar minhas habilidades.",14),
+        ("Mark","Odebrecht","012.345.678-90","88811-090","1975-05-05","https://github.com/Mark-Odebrecht","https://www.linkedin.com/in/markodebrecht/","	"," ","Químico em transição de carreira para o desenvolvimento em Python/Django (certificado pelo Programa Entra21), AI/ML/NN (certificados obtidos através da Udemy). Sólidos conhecimentos em versionamento (Git), Scrum, Kanban, DB Relacional, bem como aplicação em diversas bibliotecas, como Pandas, NumPy, Tensorflow, Torch, ScikitLearn, Matplotlib, entre outras. Inglês e alemão fluentes e espanhol intermediário.",13),
+        ("José Horli","dos Santos Goetten","015.489.559-81","88106-205","1977-07-28","https://github.com/JoseGoetten","https://www.linkedin.com/in/josegoetten-dev/"," "," ","Tecnólogo em Design de Produto e profissional no ramo da hotelaria. Atualmente buscando conhecimentos no ramo da tecnologia, inicialmente com ênfase em ferramentas de design e no momento cursando o programa Entra 21 com foco em back end. No programa Entra 21 está cursando Python, banco de dados e metodologias ágeis. Almeja trabalhar em empresa de tecnologia com foco em sustentabilidade e inclusão social.",18),
+        ("Raquel","Schwartz dos Santos","667.886.840-49","89167-166","1988-03-20","github.com/RaquelSchwartz","linkedin.com/in/raquel-schwartz-dos-santos","	","raquel_schwartz","Natural de Blumenau/SC, com 34 anos hoje vivo em Barra Velha. Graduada em Ciências Contábeis, fotógrafa por amor, resolvi migrar de carreira e buscar novas oportunidades na tecnologia. Trabalhei por mais de 13 anos na área fiscal e contábil, com experiências em implantação/migração de sistemas e treinamentos. Em busca de novos desafios profissionais na área da Tecnologia da Informação. Dinâmica, responsável, comunicativa e com espírito de equipe. Pronta para colocar em prática meus conhecimentos e habilidades. Disposta a me aprimorar cada vez mais buscando conhecimentos e almejando meu crescimento profissional e também da empresa. Atualmente estou cursando o programa Entra21 em Python. No projeto atuo como Scrum Master, desenvolvedora, assim como tester.",12),
+        ("João Paulo","Correa Santini","392.639.008-50","88304-075","1991-03-06","	https://github.com/Santini18","https://www.linkedin.com/in/jpsantini-tec/"," "," ","Olá, me chamo Santini, tenho 31 anos e estou passancação na área da tecnologia. Trago uma experiência em várias áreas da administração de alguns seguimentos do mercado que acredito que pode contribuirdo por uma transição de carreira e busco uma recolo, além claro dos cursos na área como o Entra21 Python e outros",19),
+        ("Diego","Dalmolini","123.321.123-00","	89253-670","1996-11-23","https://github.com/diegodalmolini","https://www.linkedin.com/in/diegodalmolini/"," "," ","Prazer tenho 25 anos e atualmente sou estudante do programa ENTRA21 - Programação em Python. Sou formado em técnico em química pelo Instituto Federal, mas hoje busco alcançar novos horizontes na área de tecnologia ao qual desde cedo tive muito apreço. Atualmente estou aprendendo novos recursos necessários para me tornar um profissional completo e preparado para o mercado de trabalho. Utilizo das metodologias ágeis para facilitar a organização e otimizar os processos.",16),
+        ("Felipe","Sartorato","133.739.350-91","88390-000","1994-06-23","github.com/fsartorato23","linkedin.com/in/felipehsartorato"," "," ","Olá, sou o Felipe, tenho 28 anos, músico e desenvolvedor Python em constante aprendizado. Aberto a novos desafios e experiências e disposto a pôr em prática os conhecimentos adquiridos para expandir meus horizontes dentro da área da tecnologia.",17)
+    ]
+
+    Candidato = apps.get_model('accounts', 'PerfilCandidatos')
+
+    for nome, sobrenome, cpf, cep, data_nasc, github, linkedin,facebook, instagram, descricao, usuario in DEFAULT_CANDIDATOS:
+        Candidato.objects.create(
+            nome = nome,
+            sobrenome = sobrenome,
+            cpf = cpf,
+            cep = cep,
+            data_nasc = data_nasc,
+            github = github,
+            linkedin = linkedin,
+            facebook = facebook,
+            instagram = instagram,
+            descricao = descricao,
+            usuario_id = usuario)
+
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('candidatos', '0002_alter_habilidade_habilidade'),
+        ('vagas', '0003_auto_20221017_1404'),
     ]
 
     operations = [
+        migrations.RunPython(criar_candidatos)
     ]
