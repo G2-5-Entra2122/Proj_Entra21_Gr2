@@ -140,21 +140,21 @@ LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
 
-try:
-    DBPASSWORD=os.getenv('DBPASSWORD')
-except ImportError:
-    pass
+# try:
+#     DBPASSWORD=os.getenv('DBPASSWORD')
+# except ImportError:
+#     pass
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'pye2122g2',
-        'USER': 'pye2122g2',
-        'PASSWORD': DBPASSWORD,
-        'HOST': '3.89.36.150',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'pye2122g2',
+#         'USER': 'pye2122g2',
+#         'PASSWORD': DBPASSWORD,
+#         'HOST': '3.89.36.150',
+#         'PORT': '3306',
+#     }
+# }
 
 try:
     from . local_settings import *

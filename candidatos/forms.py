@@ -7,6 +7,16 @@ class CurriculoForm(forms.ModelForm):
     class Meta:
         model = Curriculo
         fields = [
+        'nome',
+        'sobrenome',
+        'cpf',
+        'cep',
+        'data_nasc',
+        'github',
+        'linkedin',
+        'facebook',
+        'instagram',
+        'descricao',
         'categoria',
         'nivel', 
         'contrato', 
