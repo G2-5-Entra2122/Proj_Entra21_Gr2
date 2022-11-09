@@ -2,7 +2,7 @@ from django.urls import path
 
 
 from .views import CurriculosUpdateView
-from .views import CandidatoPerfilView, CandidatoListView, CandidatoDescricaoView
+from .views import CandidatoPerfilView, CandidatoListView
 
 urlpatterns = [
 

@@ -2,24 +2,12 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.exceptions import ValidationError
-from .models import PerfilCandidatos, PerfilEmpresas
+from .models import  PerfilEmpresas
 
 class PerfilEmpresasForm(forms.ModelForm):
     class Meta:
         model = PerfilEmpresas
         fields = ['fantasia', 'razao_social', 'cnpj', 'ie', 'endereco', 'tamanho', 'ramo', 'cep', 'telefone', 'apresentacao']
-    
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        for key, field in self.fields.items():
-            field.widget.attrs['Class'] = 'form-control'
-            field.widget.attrs['placeholder'] = field.label or self.labels[key]
-
-class PerfilCandidatosForm(forms.ModelForm):
-    class Meta:
-        model = PerfilCandidatos
-        fields = ['nome', 'sobrenome', 'cpf', 'cep', 'data_nasc', 'github', 'linkedin', 'facebook', 'instagram', 'descricao']
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

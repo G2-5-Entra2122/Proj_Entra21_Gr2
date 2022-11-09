@@ -4,8 +4,6 @@ from django.views.generic.edit import UpdateView
 from django.shortcuts import get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from accounts.models import PerfilCandidatos
-
 from .models import Curriculo
 from .forms import CurriculoForm
 
@@ -94,6 +92,4 @@ class CandidatoPerfilView(DetailView):
     model = Curriculo
     template_name = 'candidatos/candidatos-perfil.html'
     
-class CandidatoDescricaoView(DetailView):
-    model = PerfilCandidatos
-    template_name = 'candidatos/candidatos-perfil.html'
+    

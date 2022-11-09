@@ -1,27 +1,6 @@
 from django.db import models, migrations
 from django.contrib.auth.models import User
 
-class PerfilCandidatos(models.Model):
-    nome = models.CharField('Nome', max_length=50, null=True)
-    sobrenome = models.CharField('Sobrenome', max_length=50, null=True)
-    cpf = models.CharField('CPF', max_length=14, null=True)
-    cep = models.CharField('CEP', max_length=9, null=True)
-    data_nasc = models.DateField('Data de Nascimento', max_length=10 , null=True)
-    github = models.CharField('GitHub', max_length=100, null=True, blank=True , help_text='URL do seu perfil no GitHub')
-    linkedin = models.CharField('Linkedin', max_length=100, null=True, blank=True , help_text='URL do seu perfil no LinkedIn')
-    facebook = models.CharField('Facebook', max_length=100, null=True, blank=True , help_text='URL do seu perfil no Facebook')
-    instagram = models.CharField('Instagram', max_length=100, null=True, blank=True , help_text='URL do seu perfil no Instagram')
-    descricao = models.TextField('Descrição', max_length=300, null=True, blank=True , help_text='Resumo do seu perfil profissional em no máximo 300 caracteres.')
-    usuario = models.OneToOneField(User, on_delete=models.PROTECT)
-
-    class Meta:
-        verbose_name = 'Candidato'
-        verbose_name_plural = 'Candidatos'
-
-
-    def _str_(self):
-        return self.nome
-
 class PerfilEmpresas(models.Model):
     fantasia = models.CharField('Nome Fantasia', max_length=100, null=True,help_text='Nome fantasia da sua empresa')
     razao_social = models.CharField('Razão Social', max_length=100, null=True,help_text='Razão social da sua empresa')
