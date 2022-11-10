@@ -1,8 +1,16 @@
 from django.views.generic import TemplateView
+from django.views.generic import ListView
+from accounts.models import PerfilEmpresas
 
 
 class HomeView(TemplateView):
     template_name = 'index.html'
+    model = PerfilEmpresas
+        
+    def contador(self):
+        count = PerfilEmpresas.objects.all().count()
+        return count
+    
 
 
 class EmpresasView(TemplateView):

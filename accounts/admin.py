@@ -1,10 +1,6 @@
 from django.contrib import admin
 
-from .models import PerfilCandidatos, PerfilEmpresas
-
-@admin.register(PerfilCandidatos)
-class PerfilCandidatoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'sobrenome', 'data_nasc')
+from .models import  PerfilEmpresas
 
 @admin.register(PerfilEmpresas)
 class PerfilEmpresasAdmin(admin.ModelAdmin):
