@@ -36,6 +36,30 @@ class EmpresaCreate(CreateView):
         context['titulo'] = 'Registro da empresa'
         return context
 
+class CandidatoCreate(CreateView):
+    template_name = 'registration/register.html'
+    form_class = CandidatoForm
+    success_url = reverse_lazy('login')
+
+    def form_valid(self, form):
+
+        grupo = get_object_or_404(Group, name="Candidato")
+        
+        url = super().form_valid(form)
+        
+        self.object.groups.add(grupo)
+        self.object.save()
+
+        CandidatoForm.objects.create(usuario=self.object)
+
+        return url
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        context['titulo'] = 'Registro do candidato'
+        return context
+
 
 class PerfilEmpresaUpdateView(UpdateView):
     form_class = PerfilEmpresasForm
